@@ -10,7 +10,8 @@ namespace Context
     public class GameManager : Singleton<GameManager>
     {
 
-        public static int CURRENTPHASE = 5;
+        public static int CURRENTPHASE = 1;
+        
         /// <summary>
         /// allocation buttons
         /// </summary>
