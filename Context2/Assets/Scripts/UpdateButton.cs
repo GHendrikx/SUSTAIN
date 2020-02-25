@@ -38,9 +38,15 @@ namespace Context
             Data = data;
             Debug.Log(this.Ai);
 
+
+            float currentAllocationMod = GameManager.Instance.UIManager.CalculateAllocationMod();
+
             myButton.onClick.AddListener(()=> ai.GetUpdate(CostOfUpdate,data));
             myButton.onClick.AddListener(() => data.isResearched = true);
+            myButton.onClick.AddListener(() => { UpgradeAbilities.TEMPALLOCATIONPOOL = currentAllocationMod; });
             myButton.onClick.AddListener(() => Destroy(this.gameObject));
         }
+
+
     }
 }

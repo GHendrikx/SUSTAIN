@@ -13,14 +13,15 @@ namespace Context
         private Text memory;
         [SerializeField]
         private UpdateButton[] updateButton;
-
         
         /// <summary>
         /// Update processing points
         /// </summary>
         private void UpdateUI()
         {
-            processing.text = processingAmount.ToString() + " / " + MemoryPoints.ToString();
+           
+            processing.text = UpgradeAbilities.TEMPALLOCATIONPOOL + "/"+ UpgradeAbilities.ALLOCATIONPOOL.ToString();
+            //processing.text = processingAmount.ToString() + " / " + MemoryPoints.ToString();
             memory.text = MemoryPoints.ToString();
         }
         

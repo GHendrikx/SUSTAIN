@@ -84,6 +84,28 @@ namespace Context
                 upgradesTabs[data.typeOfData].InitializeNewSlider(data, AI);
 
         }
+
+        public float CalculateAllocationMod()
+        {
+            float CurrentAllocatieMod = 1;
+
+            foreach (Data currentData in IOFile.data.Data)
+                if (currentData.isResearched)
+                    CurrentAllocatieMod += currentData.allocatieCostMod;
+            Debug.Log(CurrentAllocatieMod + " <Allocation FixedGainAllocation> "+ CalculateFixedGainAllocation());
+            return (CurrentAllocatieMod * CalculateFixedGainAllocation());
+        }
+
+        private float CalculateFixedGainAllocation()
+        {
+            float CurrentFixedGain = 0;
+
+            foreach (Data currentData in IOFile.data.Data)
+                if (currentData.isResearched)
+                    CurrentFixedGain += currentData.allocatieFixedGain;
+
+            return CurrentFixedGain;
+        }
     }
 
 }

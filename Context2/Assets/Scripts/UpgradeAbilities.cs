@@ -8,8 +8,9 @@ namespace Context
 {
     public class UpgradeAbilities : MonoBehaviour
     {
+        public static float TEMPALLOCATIONPOOL;
         [SerializeField]
-        private Text basePointText;
+        public static float ALLOCATIONPOOL = 0;
         [SerializeField]
         private Text abilityPointText;
         [SerializeField]
@@ -17,12 +18,11 @@ namespace Context
 
         public void CalculateStatus(int amount)
         {
-            int basePoints = 0;
+            int basePoints = System.Convert.ToInt32(TEMPALLOCATIONPOOL);
             int points = 0;
 
             try
             {
-                basePoints = Convert.ToInt32(basePointText.text);
                 points = Convert.ToInt32(abilityPointText.text);
             } catch (Exception e)
             {
@@ -38,8 +38,8 @@ namespace Context
             basePoints = basePoints + -amount;
             points = points + amount;
 
-            basePointText.text = basePoints.ToString();
             abilityPointText.text = points.ToString();
+            TEMPALLOCATIONPOOL = basePoints;
         }
 
         /// <summary>
@@ -48,8 +48,15 @@ namespace Context
         /// <param name="data"></param>
         public void UpdateInformation(Data data)
         {
-            Debug.Log(data.desc);
-            informationText.text = data.desc;
+            Debug.Log(data.name);
+
+            if (informationText != null)
+                informationText.text = data.name;
+            else
+            {
+                informationText = GetComponentInChildren<Text>(true);
+                informationText.text = data.name;
+            }
         }
     }
 }

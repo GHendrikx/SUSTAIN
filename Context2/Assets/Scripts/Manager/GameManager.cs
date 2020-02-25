@@ -11,7 +11,21 @@ namespace Context
     {
 
         public static int CURRENTPHASE = 1;
-        
+
+        [SerializeField]
+        private UIManager uiManager;
+        public UIManager UIManager
+        {
+            get
+            {
+                return uiManager;
+            }
+            set
+            {
+                uiManager = value;
+            }
+        }
+
         /// <summary>
         /// allocation buttons
         /// </summary>
