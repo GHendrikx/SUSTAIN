@@ -52,16 +52,12 @@ namespace Context
                     if (data.techPrereq[j] == d.ID)
                     {
                         if (!d.isResearched)
-                            break;
-                        else
-                        {
-                            data.isAvailable = true;
-                            
-                            break;
-                        }
+                            return;
+
                     }
                 }
             }
+            data.isAvailable = true;
 
         }
 
@@ -70,7 +66,7 @@ namespace Context
             if (data.isResearched)
                 return;
             data.isShownInGUI = true;
-            
+
             if (data.typeOfData == 5)
                 return;
 
@@ -82,7 +78,7 @@ namespace Context
 
         public void UpdateUI(Data data, int tab)
         {
-            if(data.typeOfData == 1 || data.typeOfData == 2)
+            if (data.typeOfData == 1 || data.typeOfData == 2)
                 upgradesTabs[data.typeOfData].InitializeNewButton(data, AI);
             else
                 upgradesTabs[data.typeOfData].InitializeNewSlider(data, AI);

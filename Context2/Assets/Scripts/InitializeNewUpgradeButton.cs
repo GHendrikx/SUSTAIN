@@ -25,11 +25,11 @@ namespace Context
             UpdateButton update = button.gameObject.AddComponent<UpdateButton>();
             update.ButtonInformation(data, ai);
             RectTransform rectTransform = button.GetComponent<RectTransform>();
-            //rectTransform.position = new Vector2(rectTransform.position.x, rectTransform.position.y - (amountOfUpgrades * 110));
+            button.transform.GetSiblingIndex();
+            rectTransform.position = new Vector2(rectTransform.position.x, 0 + (transform.childCount * 110));
             button.gameObject.SetActive(true);
             button.GetComponentInChildren<Text>().text = data.name;
             amountOfUpgrades++;
-            Debug.Log(data.name + "FINISHED");
         }
 
         public void InitializeNewSlider(Data data, AI ai)
