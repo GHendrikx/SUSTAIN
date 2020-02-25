@@ -8,6 +8,9 @@ namespace Context
     {
         [SerializeField]
         private Button buttonPrefab;
+        [SerializeField]
+        private UpgradeAbilities upgradeAbilities;
+
         public Tab tab;
         public int amountOfUpgrades;
         public List<Data> initializedData = new List<Data>();
@@ -28,13 +31,15 @@ namespace Context
             button.transform.GetSiblingIndex();
             rectTransform.position = new Vector2(rectTransform.position.x, 0 + (transform.childCount * 110));
             button.gameObject.SetActive(true);
-            button.GetComponentInChildren<Text>().text = data.name;
+            button.GetComponentInChildren<Text>(true).text = data.name;
             amountOfUpgrades++;
         }
 
         public void InitializeNewSlider(Data data, AI ai)
         {
-
+            initializedData.Add(data);
+            UpgradeAbilities upgrade = GameObject.Instantiate(upgradeAbilities, transform);
+            upgrade.UpdateInformation(data);
         }
     }
 }
