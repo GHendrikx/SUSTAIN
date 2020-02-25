@@ -432,7 +432,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 3.06
+  m_Spacing: -40
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -474,7 +474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.00061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &122458042
@@ -2569,7 +2569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.74630153}
   m_AnchorMax: {x: 0.17155764, y: 1}
-  m_AnchoredPosition: {x: -1.0999756, y: 1.5999451}
+  m_AnchoredPosition: {x: -1.0999756, y: 1.5999756}
   m_SizeDelta: {x: -2.199997, y: -2.199997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956623498
@@ -4363,7 +4363,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   ignoreErrorWhenDuplicatedInstance: 0
+  ioManager: {fileID: 1645786717}
   uiManager: {fileID: 1645786720}
+  ai: {fileID: 1645786718}
 --- !u!114 &1645786717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4395,8 +4397,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   processingPoints: 0
   processingAmount: 1
-  researchPoints: 1
+  researchPoints: 791
   memoryPoints: 1000
+  SetTurn: 0
   processing: {fileID: 895714677}
   memory: {fileID: 176832662}
   updateButton: []

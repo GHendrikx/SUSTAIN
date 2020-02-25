@@ -30,7 +30,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8447454157988369181}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -105,10 +105,10 @@ RectTransform:
   m_Father: {fileID: 8447454157988369181}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.64000005}
+  m_AnchorMin: {x: 0.14, y: 0.65000004}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.20001984}
-  m_SizeDelta: {x: 0, y: -0.4}
+  m_AnchoredPosition: {x: 4.4000015, y: -0.70000076}
+  m_SizeDelta: {x: 14, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1992228785640538495
 CanvasRenderer:
@@ -257,7 +257,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8447454157988369181}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -647,8 +647,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8447454157076400120}
   - {fileID: 7105042462588943857}
+  - {fileID: 8447454157076400120}
   - {fileID: 8447454157964502512}
   - {fileID: 8447454157310785432}
   - {fileID: 3919871451843769909}
@@ -683,6 +683,7 @@ MonoBehaviour:
     techPrereq: 
     locks: 0
     isResearched: 0
+    hasTarget: 0
     isUsed: 0
     isAvailable: 0
     isShownInGUI: 0
@@ -694,6 +695,12 @@ MonoBehaviour:
     materialCost: 0
     droneCost: 0
     powerCost: 0
+    doneTimes: 0
+    doneGain: 0
+    doneDesc: 
+    doneAmount: 0
+    doneLevel: 0
+    doneTarget: 0
     neededSupervisorTrust: 0
     neededLocalTrust: 0
     neededGlobalTrust: 0
@@ -785,6 +792,7 @@ MonoBehaviour:
     natNeutralControlled: 0
     natLikesControlled: 0
   Instance: {fileID: 0}
+  CurrentDoneTarget: 0
   abilityPointText: {fileID: 8447454157076400127}
   informationText: {fileID: 8104857987183397697}
   PlusButton: {fileID: 8447454157310785439}

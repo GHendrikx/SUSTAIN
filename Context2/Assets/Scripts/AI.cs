@@ -59,7 +59,7 @@ namespace Context
 
         //if you can add points this bool will become true
         private bool addPoints;
-
+        public bool SetTurn = false;
 
         private void Start()
         {
@@ -80,6 +80,13 @@ namespace Context
                 AddTimer();
             }
                 UpdateUI();
+
+            if (SetTurn)
+            {
+                UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
+                UpgradeAbilities.TEMPALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
+                SetTurn = false;
+            }
         }
 
         private void UpdatePoints() 
