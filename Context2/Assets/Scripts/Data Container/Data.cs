@@ -13,6 +13,7 @@
         public int[] techPrereq;
         public int locks;
         public bool isResearched;
+        public bool hasTarget;
         public bool isUsed;
         public bool isAvailable;
         public bool isShownInGUI;
@@ -25,6 +26,13 @@
         public int materialCost;
         public int droneCost;
         public int powerCost;
+
+        public int doneTimes;
+        public int doneGain;
+        public string doneDesc;
+        public int doneAmount;
+        public int doneLevel;
+        public int doneTarget;
 
         public float neededSupervisorTrust;
         public float neededLocalTrust;

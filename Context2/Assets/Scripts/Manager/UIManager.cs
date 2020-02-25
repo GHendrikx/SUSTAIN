@@ -92,7 +92,7 @@ namespace Context
             foreach (Data currentData in IOFile.data.Data)
                 if (currentData.isResearched)
                     CurrentAllocatieMod += currentData.allocatieCostMod;
-            Debug.Log(CurrentAllocatieMod + " <Allocation FixedGainAllocation> "+ CalculateFixedGainAllocation());
+
             return (CurrentAllocatieMod * CalculateFixedGainAllocation());
         }
 

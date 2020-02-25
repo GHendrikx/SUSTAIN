@@ -10,8 +10,23 @@ namespace Context
     public class GameManager : Singleton<GameManager>
     {
 
-        public static int CURRENTPHASE = 1;
+        public static int CURRENTPHASE = 5;
 
+        [SerializeField]
+        private IOManager ioManager;
+        public IOManager IOManager 
+        {
+            get
+            {
+                return ioManager;
+            }
+            set
+            {
+                ioManager = value;
+            }
+        
+        }
+        
         [SerializeField]
         private UIManager uiManager;
         public UIManager UIManager
@@ -55,6 +70,20 @@ namespace Context
             set
             {
                 researchButtons = value;
+            }
+        }
+
+        [SerializeField]
+        private AI ai;
+        public AI AI
+        {
+            get
+            {
+                return ai;
+            }
+            set
+            {
+                ai = value;
             }
         }
 
