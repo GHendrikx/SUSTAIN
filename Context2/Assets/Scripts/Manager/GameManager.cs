@@ -10,7 +10,7 @@ namespace Context
     public class GameManager : Singleton<GameManager>
     {
 
-        public static int CURRENTPHASE = 1;
+        public static int CURRENTPHASE = 5;
 
         [SerializeField]
         private UIManager uiManager;

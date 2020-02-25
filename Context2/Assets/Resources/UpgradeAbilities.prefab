@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6213563510719332115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7105042462588943857}
+  - component: {fileID: 5621544880357911100}
+  - component: {fileID: 7060588649390065548}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7105042462588943857
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213563510719332115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8447454157988369181}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 77.75, y: 26.85}
+  m_SizeDelta: {x: 255.49, y: 46.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5621544880357911100
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213563510719332115}
+  m_CullTransparentMesh: 0
+--- !u!114 &7060588649390065548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213563510719332115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6484575562680439790
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,11 +103,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8447454157988369181}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.64000005}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.20002}
+  m_AnchoredPosition: {x: 0, y: 0.20001984}
   m_SizeDelta: {x: 0, y: -0.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1992228785640538495
@@ -67,8 +140,8 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
+    m_BestFit: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -188,8 +261,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 141.98, y: 29.9}
+  m_SizeDelta: {x: 36.94, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8447454157076400126
 CanvasRenderer:
@@ -342,11 +415,11 @@ RectTransform:
   m_Children:
   - {fileID: 8447454157194306497}
   m_Father: {fileID: 8447454157988369181}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.15004, y: 0}
+  m_AnchoredPosition: {x: 179, y: 29.9}
   m_SizeDelta: {x: 41.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8447454157310785437
@@ -427,18 +500,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8447454157310785438}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8447454157988369180}
-        m_MethodName: CalculateStatus
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8447454157964502513
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,11 +533,11 @@ RectTransform:
   m_Children:
   - {fileID: 8447454156775524545}
   m_Father: {fileID: 8447454157988369181}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.17, y: 0}
+  m_AnchoredPosition: {x: 105.1, y: 29.9}
   m_SizeDelta: {x: 31.95, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8447454157964502517
@@ -556,18 +618,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8447454157964502518}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8447454157988369180}
-        m_MethodName: CalculateStatus
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8447454157988369182
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +648,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8447454157076400120}
+  - {fileID: 7105042462588943857}
   - {fileID: 8447454157964502512}
   - {fileID: 8447454157310785432}
   - {fileID: 3919871451843769909}
@@ -620,6 +672,120 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d189cecc83bdb94f8c2e778b0c0cf77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePointText: {fileID: 8447454157194306496}
+  data:
+    ID: 0
+    name: 
+    desc: 
+    isPrototype: 0
+    sdgType: 
+    typeOfData: 0
+    neededPhase: 0
+    techPrereq: 
+    locks: 0
+    isResearched: 0
+    isUsed: 0
+    isAvailable: 0
+    isShownInGUI: 0
+    isActive: 0
+    creativityCost: 0
+    researchCost: 0
+    allocatieCost: 0
+    fundsCost: 0
+    materialCost: 0
+    droneCost: 0
+    powerCost: 0
+    neededSupervisorTrust: 0
+    neededLocalTrust: 0
+    neededGlobalTrust: 0
+    neededNationalTrust: 0
+    sdgChange01: 0
+    sdgChange02: 0
+    sdgChange03: 0
+    sdgChange04: 0
+    sdgChange05: 0
+    sdgChange06: 0
+    sdgChange07: 0
+    sdgChange08: 0
+    sdgChange09: 0
+    sdgChange10: 0
+    sdgChange11: 0
+    sdgChange12: 0
+    sdgChange13: 0
+    sdgChange14: 0
+    sdgChange15: 0
+    sdgChange16: 0
+    sdgChange17: 0
+    amount: 0
+    creativityGain: 0
+    creativityFixedGain: 0
+    creativityGainMod: 0
+    researchGain: 0
+    researchFixedGain: 0
+    researchGainMod: 0
+    researchLimit: 0
+    researchLimitMod: 0
+    allocatieFixedGain: 0
+    allocatieLimit: 0
+    allocatieCostMod: 0
+    fundsGain: 0
+    fundsFixedGain: 0
+    fundsGainMod: 0
+    droneGain: 0
+    droneGainMod: 0
+    droneLimit: 0
+    localRebelliousAngry: 0
+    localAngryDislkes: 0
+    localDislikesNeutral: 0
+    localNeutralLikes: 0
+    localLikesLoves: 0
+    localLovesControlled: 0
+    localRebelliousControlled: 0
+    localAngryControlled: 0
+    localDislikesControlled: 0
+    localNeutralControlled: 0
+    localLikesControlled: 0
+    rebellionRiskMod: 0
+    cyberSecurity: 0
+    droneStrengthMod: 0
+    globalRebelliousAngry: 0
+    globalAngryDislikes: 0
+    globalDislikesNeutral: 0
+    globalNeutralLikes: 0
+    globalLikesLoves: 0
+    globalLovesControlled: 0
+    globalRebelliousControlled: 0
+    globalAngryControlled: 0
+    globalDislikesControlled: 0
+    globalNeutralControlled: 0
+    globalLikesControlled: 0
+    svRebelliousAngry: 0
+    svAngryDislike: 0
+    svDislikesNeutral: 0
+    svNeutralLikes: 0
+    svLikesLoves: 0
+    svLovesControlled: 0
+    svRebelliousControlled: 0
+    svAngryControlled: 0
+    svDislikesControlled: 0
+    svNeutralControlled: 0
+    svLikesControlled: 0
+    localPopulationGrowthMod: 0
+    globalPopulationGrowthMod: 0
+    housingAmount: 0
+    housingEfficiency: 0
+    natRebelliousAngry: 0
+    natAngryDislike: 0
+    natDislikesNeutral: 0
+    natNeutralLikes: 0
+    natLikesLoves: 0
+    natLovesControlled: 0
+    natRebelliousControlled: 0
+    natAngryControlled: 0
+    natDislikesControlled: 0
+    natNeutralControlled: 0
+    natLikesControlled: 0
+  Instance: {fileID: 0}
   abilityPointText: {fileID: 8447454157076400127}
   informationText: {fileID: 8104857987183397697}
+  PlusButton: {fileID: 8447454157310785439}
+  MinButton: {fileID: 8447454157964502519}

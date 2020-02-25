@@ -8,6 +8,9 @@ namespace Context
 {
     public class UpgradeAbilities : MonoBehaviour
     {
+        private static List<UpgradeAbilities> upgradeAbilities = new List<UpgradeAbilities>();
+        public Data data;
+        public GameObject Instance;
         public static float TEMPALLOCATIONPOOL;
         [SerializeField]
         public static float ALLOCATIONPOOL = 0;
@@ -15,6 +18,10 @@ namespace Context
         private Text abilityPointText;
         [SerializeField]
         private Text informationText;
+
+        public Button PlusButton;
+        public Button MinButton;
+
 
         public void CalculateStatus(int amount)
         {
@@ -48,14 +55,32 @@ namespace Context
         /// <param name="data"></param>
         public void UpdateInformation(Data data)
         {
-            Debug.Log(data.name);
-
+            this.Instance = gameObject;
+            this.data = data;
+            upgradeAbilities.Add(this);
+            LockCheck();
             if (informationText != null)
-                informationText.text = data.name;
+                informationText.text = data.name + "(" + data.allocatieCost + ")";
             else
             {
                 informationText = GetComponentInChildren<Text>(true);
-                informationText.text = data.name;
+                informationText.text = data.name + "(" + data.allocatieCost + ")";
+            }
+        }
+
+        private void LockCheck()
+        {
+            for (int i = 0; i < upgradeAbilities.Count; i++)
+            {
+                if (data.locks == upgradeAbilities[i].data.ID)
+                {
+                    int points = System.Convert.ToInt32(upgradeAbilities[i].abilityPointText.text);
+                    if(points > 0)
+                        for (int j = 0; j < points; j++)
+                            upgradeAbilities[i].CalculateStatus(-1);
+
+                    Destroy(upgradeAbilities[i].Instance);
+                }
             }
         }
     }

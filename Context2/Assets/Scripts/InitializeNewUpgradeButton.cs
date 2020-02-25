@@ -15,10 +15,6 @@ namespace Context
         public int amountOfUpgrades;
         public List<Data> initializedData = new List<Data>();
 
-        private void Start()
-        {
-            Debug.Log(this.gameObject);
-        }
 
         public void InitializeNewButton(Data data,AI ai)
         {
@@ -40,9 +36,11 @@ namespace Context
             
             if (!data.isPrototype)
                 return;
-
+            //Debug.Log(data.allocatieCost + "<>" + data.name);
             initializedData.Add(data);
             UpgradeAbilities upgrade = GameObject.Instantiate(upgradeAbilities, transform);
+            upgrade.MinButton.onClick.AddListener(() => upgrade.CalculateStatus(-data.allocatieCost));
+            upgrade.PlusButton.onClick.AddListener(() => upgrade.CalculateStatus(data.allocatieCost));
             upgrade.UpdateInformation(data);
         }
     }

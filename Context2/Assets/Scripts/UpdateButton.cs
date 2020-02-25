@@ -13,6 +13,7 @@ namespace Context
         public Button myButton;
         private AI Ai;
         private Data Data;
+        private float BackupAllocationPoints;
         private void Update()
         {
             if (Ai == null)
@@ -36,15 +37,25 @@ namespace Context
             this.CostOfUpdate = data.researchCost;
             Ai = ai;
             Data = data;
-            Debug.Log(this.Ai);
 
+            BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
 
-            float currentAllocationMod = GameManager.Instance.UIManager.CalculateAllocationMod();
-
+            Debug.Log(data.name);
             myButton.onClick.AddListener(()=> ai.GetUpdate(CostOfUpdate,data));
             myButton.onClick.AddListener(() => data.isResearched = true);
-            myButton.onClick.AddListener(() => { UpgradeAbilities.TEMPALLOCATIONPOOL = currentAllocationMod; });
+            myButton.onClick.AddListener(() => AllocationUpdate());
             myButton.onClick.AddListener(() => Destroy(this.gameObject));
+        }
+
+        private void AllocationUpdate()
+        {
+            
+            float currentAllocationMod = GameManager.Instance.UIManager.CalculateAllocationMod();
+            float temp = UpgradeAbilities.ALLOCATIONPOOL;
+            float calculation = currentAllocationMod - temp;
+            if (currentAllocationMod > BackupAllocationPoints)
+                UpgradeAbilities.TEMPALLOCATIONPOOL += calculation;
+            UpgradeAbilities.ALLOCATIONPOOL = currentAllocationMod;
         }
 
 
