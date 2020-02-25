@@ -63,6 +63,8 @@ namespace Context
 
         private void Start()
         {
+            UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
+            UpgradeAbilities.TEMPALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
             AddTimer();
             UpdateUI();
         }
@@ -76,8 +78,8 @@ namespace Context
                     UpdatePoints();
 
                 AddTimer();
-                UpdateUI();
             }
+                UpdateUI();
         }
 
         private void UpdatePoints() 

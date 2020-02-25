@@ -37,6 +37,10 @@ namespace Context
 
         public void InitializeNewSlider(Data data, AI ai)
         {
+            
+            if (!data.isPrototype)
+                return;
+
             initializedData.Add(data);
             UpgradeAbilities upgrade = GameObject.Instantiate(upgradeAbilities, transform);
             upgrade.UpdateInformation(data);
