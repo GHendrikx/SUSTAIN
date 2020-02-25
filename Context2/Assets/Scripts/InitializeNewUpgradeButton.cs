@@ -25,7 +25,7 @@ namespace Context
             UpdateButton update = button.gameObject.AddComponent<UpdateButton>();
             update.ButtonInformation(data, ai);
             RectTransform rectTransform = button.GetComponent<RectTransform>();
-            //rectTransform.position = new Vector2(rectTransform.position.x, rectTransform.position.y - (amountOfUpgrades * 110));
+            rectTransform.position = new Vector2(rectTransform.position.x, 0);//button.transform.GetSiblingIndex() * 110f); transform.parent.gameObject.GetComponent<RectTransform>().position.y - 65f -
             button.gameObject.SetActive(true);
             button.GetComponentInChildren<Text>().text = data.name;
             amountOfUpgrades++;
