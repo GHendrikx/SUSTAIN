@@ -4,35 +4,52 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeAbilities : MonoBehaviour
+namespace Context
 {
-    [SerializeField]
-    private Text basePointText;
-    [SerializeField]
-    private Text abilityPointText;
-
-    public void CalculateStatus(int amount)
+    public class UpgradeAbilities : MonoBehaviour
     {
-        int basePoints = 0;
-        int points = 0;
+        [SerializeField]
+        private Text basePointText;
+        [SerializeField]
+        private Text abilityPointText;
+        [SerializeField]
+        private Text informationText;
 
-        try
+        public void CalculateStatus(int amount)
         {
-            basePoints = Convert.ToInt32(basePointText.text);
-            points = Convert.ToInt32(abilityPointText.text);
+            int basePoints = 0;
+            int points = 0;
+
+            try
+            {
+                basePoints = Convert.ToInt32(basePointText.text);
+                points = Convert.ToInt32(abilityPointText.text);
+            } catch (Exception e)
+            {
+                Debug.LogError("Contact Geoffrey Hendrikx when you get this error " +
+                    "Give him the following information: \n" + e);
+                
+                Debug.Break();
+            }
+
+            if ((basePoints + -amount) < 0 || (points + amount) < 0)
+                return;
+
+            basePoints = basePoints + -amount;
+            points = points + amount;
+
+            basePointText.text = basePoints.ToString();
+            abilityPointText.text = points.ToString();
         }
-        catch(Exception e)
+
+        /// <summary>
+        /// Updating the Information
+        /// </summary>
+        /// <param name="data"></param>
+        public void UpdateInformation(Data data)
         {
-            Debug.Log("Contact Geoffrey Hendrikx when you get this error");
+            Debug.Log(data.desc);
+            informationText.text = data.desc;
         }
-
-        if ((basePoints + -amount) < 0 || (points + amount) < 0)
-            return;
-
-        basePoints = basePoints + -amount;
-        points = points + amount;
-
-        basePointText.text = basePoints.ToString();
-        abilityPointText.text = points.ToString();
     }
 }
