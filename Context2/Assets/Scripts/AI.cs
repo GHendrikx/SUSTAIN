@@ -166,7 +166,9 @@ namespace Context
             researchPoints -= data.researchCost;
             
             UpdateUI();
-            Debug.Log(researchPoints);
+
+            //Debug.Log(researchPoints);
+            Debug.Log(creativityPoints);
 
             HASUPDATE.Add(data);
             processingAmount -= amount;
