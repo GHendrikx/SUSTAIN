@@ -74,6 +74,7 @@ namespace Context
 
                     UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget = currentDoneTarget;
                     GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += 1;
+                    UpgradeAbilities.TEMPALLOCATIONPOOL += 1;
                 }
 
                 if (UpgradeAbilities.upgradeAbilities[i].data.hasTarget)
