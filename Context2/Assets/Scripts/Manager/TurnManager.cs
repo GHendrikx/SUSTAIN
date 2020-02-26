@@ -51,8 +51,10 @@ namespace Context
                     + UpgradeAbilities.upgradeAbilities[i].data.doneDesc;
                 }
             }
-            Debug.Log("Called");
+            
             TimerManager.Instance.AddTimer(GoToNextTurn,1);
+            TimerManager.Instance.AddTimer(GameManager.Instance.AI.researchData.UpdateResearch,1);
+            TimerManager.Instance.AddTimer(GameManager.Instance.AI.creativityData.UpdateCreativity, 1);
         }
 
         public void GoToNextTurn()
@@ -65,7 +67,11 @@ namespace Context
 
                 int points = System.Convert.ToInt32(UpgradeAbilities.upgradeAbilities[i].AbilityPointText.text);
                 UpgradeAbilities.upgradeAbilities[i].data.doneTimes += UpgradeAbilities.upgradeAbilities[i].data.doneGain * points;
+                
+                if(UpgradeAbilities.upgradeAbilities[i].data.researchGain > 0)
+                {
 
+                }
                 if (UpgradeAbilities.upgradeAbilities[i].data.doneTimes >= currentDoneTarget && UpgradeAbilities.upgradeAbilities[i].data.hasTarget)
                 {
                     UpgradeAbilities.upgradeAbilities[i].data.doneLevel += 1;

@@ -474,7 +474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00061035156}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &122458042
@@ -685,8 +685,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.40251845, y: 0.117000006}
   m_AnchorMax: {x: 1, y: 0.337}
-  m_AnchoredPosition: {x: -0.33900452, y: 0.5}
-  m_SizeDelta: {x: 0, y: -1}
+  m_AnchoredPosition: {x: -0.33900452, y: -18.42}
+  m_SizeDelta: {x: 0, y: 36.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &217280190
 GameObject:
@@ -3785,6 +3785,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1727579305}
+        m_MethodName: UpdateResearch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1499440944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4395,10 +4406,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2294f7b32222294f8486285d41dcbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  researchData: {fileID: 1727579305}
+  creativityData: {fileID: 1727579307}
   processingPoints: 0
   processingAmount: 1
-  researchPoints: 791
-  memoryPoints: 1000
+  researchPoints: 0
+  CurrentResearchGainMod: 0
   SetTurn: 0
   processing: {fileID: 895714677}
   memory: {fileID: 176832662}
@@ -4585,6 +4598,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1727579304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1727579306}
+  - component: {fileID: 1727579305}
+  - component: {fileID: 1727579307}
+  m_Layer: 0
+  m_Name: CalculateObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1727579305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727579304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59153785b9547ad4d8b8a26e66c97c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ioManager: {fileID: 1645786717}
+  CurrentResearchLimit: 0
+  CurrentResearchLimitMod: 0
+  CurrentResearchPoints: 0
+  CurrentResearchGain: 0
+  CurrentResearchGainMod: 1
+  ai: {fileID: 1645786718}
+--- !u!4 &1727579306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727579304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 653.51953, y: 575.94324, z: -225.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1727579307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727579304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd440713a9c129488ca25caae6a5b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ioManager: {fileID: 1645786717}
+  CurrentCreativityPoints: 0
+  CurrentCreativityGain: 0
+  CurrentCreativityGainMod: 1
+  ai: {fileID: 1645786718}
 --- !u!1 &1737515295
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,7 +5563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca629b74dbeb22f40aaa9e7624ff4d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: a319b27740ab1bb4abbb67425d6e8cfd, type: 3}
+  textAsset: {fileID: 4900000, guid: 9beadb76c91d8f84aa33baf47d596fea, type: 3}
 --- !u!4 &2042627487
 Transform:
   m_ObjectHideFlags: 0

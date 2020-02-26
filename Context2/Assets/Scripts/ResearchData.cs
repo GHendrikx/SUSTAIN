@@ -9,90 +9,111 @@ namespace Context
     public class ResearchData : MonoBehaviour
     {
         private Data[] data;
+        [SerializeField]
         private IOManager ioManager;
         private float researchPoints;
         private float startAmount;
         public float CurrentResearchLimit;
+        public float CurrentResearchLimitMod;
         public float CurrentResearchPoints;
         public float CurrentResearchGain;
         public float CurrentResearchGainMod = 1;
+        [SerializeField]
         private AI ai;
         private float researchOffset = 0;
 
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             data = ioManager.data.Data;
-            TimerManager.Instance.AddTimer(UpdateResearch, 1);
         }
 
         // Update is called once per frame
-        void UpdateResearch()
+        public void UpdateResearch()
         {
             CalculateResearchGainMod();
             CalculateResearchGain();
             CalculateResearchPoints();
+            CalculateResearchLimitMod();
             CalculateResearchLimit();
-
-            TimerManager.Instance.AddTimer(UpdateResearch, 1);
+        }
+        public void UpdateResearchWithoutPoints()
+        {
+            CalculateResearchGainMod();
+            CalculateResearchGain();
+            CalculateResearchLimitMod();
+            CalculateResearchLimit();
         }
 
         //TODO: look into this one.
         private void CalculateResearchPoints()
         {
-            foreach (Data currentData in data)
-            {
-                if (!currentData.isUsed)
-                {
-                    if(currentData.isResearched)
-                    {
-                        researchOffset += currentData.researchCost;
-                    }
-                    researchOffset += currentData.researchFixedGain * CurrentResearchGainMod;
-                    currentData.isUsed = !currentData.isUsed;
-                }
-            }
-            CurrentResearchPoints += CurrentResearchGain;
-            
-            CurrentResearchPoints += researchOffset;
+            ai.ResearchPoints += CurrentResearchGain;
         }
 
         private void CalculateResearchGainMod()
         {
+            CurrentResearchGainMod = 1;
+
             foreach (Data currentData in data)
             {
                 if (currentData.isResearched)
+                {
                     CurrentResearchGainMod += currentData.researchGainMod;
-                if (currentData.isActive)
-                    CurrentResearchGainMod += currentData.amount * currentData.researchGainMod;
+                }
+            }
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+            {
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    CurrentResearchGainMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchGainMod;
             }
         }
 
         private void CalculateResearchGain()
         {
+            CurrentResearchGain = 0;
+
             foreach (Data currentData in data)
-            {
                 if (currentData.isResearched)
-                    CurrentResearchGain += currentData.researchGain * CurrentResearchGainMod;
-                if (currentData.isActive)
-                    CurrentResearchGain += currentData.amount * currentData.researchGain * CurrentResearchGainMod;
-            }
+                    CurrentResearchGain += currentData.researchGain;
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    CurrentResearchGain += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchGain;
+            CurrentResearchGain *= CurrentResearchGainMod;
         }
 
         private void CalculateResearchLimit()
         {
+            CurrentResearchLimit = 0;
+            Debug.Log(CurrentResearchPoints);
             foreach (Data currentData in data)
-            {
                 if (currentData.isResearched)
                     CurrentResearchLimit += currentData.researchLimit;
-                if (currentData.isActive)
-                    CurrentResearchLimit += currentData.amount * currentData.researchLimit;
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    CurrentResearchLimit += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchLimit;
+            CurrentResearchLimit *= CurrentResearchLimitMod;
 
-                CurrentResearchLimit += startAmount + ai.MemoryPoints * 1000;
-            }
             if (researchPoints >= CurrentResearchLimit)
                 researchPoints = CurrentResearchLimit;
+
+            //ai.ResearchPoints = CurrentResearchPoints;
+            ai.ResearchLimit = System.Convert.ToInt32(CurrentResearchLimit);
+            ai.ResearchGain = CurrentResearchGain;
+            ai.CurrentResearchGainMod = CurrentResearchGainMod;
+        }
+
+        private void CalculateResearchLimitMod()
+        {
+            CurrentResearchLimitMod = 1;
+            
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    CurrentResearchLimitMod += currentData.researchLimitMod;
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    CurrentResearchLimitMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchLimitMod;
         }
     }
 }

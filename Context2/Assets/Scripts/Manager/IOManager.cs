@@ -21,6 +21,8 @@ namespace Context
         {
             if (textAsset != null)
                 data = JsonUtility.FromJson<InputData>(textAsset.ToString());
+            else
+                Debug.LogError("NO DATA GREAT AGAIN");
             
         }
     }

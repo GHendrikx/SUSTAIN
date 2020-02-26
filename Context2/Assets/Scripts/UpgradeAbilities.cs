@@ -44,17 +44,19 @@ namespace Context
 
         public Button PlusButton;
         public Button MinButton;
+        public int BasePoints;
+        public int Points;
 
 
         public void CalculateStatus(int amount)
         {
-            int basePoints = System.Convert.ToInt32(TEMPALLOCATIONPOOL);
-            int points = 0;
+            BasePoints = System.Convert.ToInt32(TEMPALLOCATIONPOOL);
+            Points = 0;
 
             try
             {
-                points = Convert.ToInt32(abilityPointText.text);
-                data.amount = points;
+                Points = Convert.ToInt32(abilityPointText.text);
+                data.amount = Points;
             } catch (Exception e)
             {
                 Debug.LogError("Contact Geoffrey Hendrikx when you get this error " +
@@ -63,15 +65,15 @@ namespace Context
                 Debug.Break();
             }
 
-            if ((basePoints + -amount) < 0 || (points + amount) < 0)
+            if ((BasePoints + -amount) < 0 || (Points + amount) < 0)
                 return;
 
-            basePoints = basePoints + -amount;
-            points = points + amount;
+            BasePoints = BasePoints + -amount;
+            Points = Points + amount;
 
 
-            abilityPointText.text = points.ToString();
-            TEMPALLOCATIONPOOL = basePoints;
+            abilityPointText.text = Points.ToString();
+            TEMPALLOCATIONPOOL = BasePoints;
         }
 
         /// <summary>
