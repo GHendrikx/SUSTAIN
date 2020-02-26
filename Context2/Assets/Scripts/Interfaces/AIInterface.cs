@@ -22,7 +22,10 @@ namespace Context
            
             processing.text = UpgradeAbilities.TEMPALLOCATIONPOOL + "/"+ UpgradeAbilities.ALLOCATIONPOOL.ToString();
             //processing.text = processingAmount.ToString() + " / " + MemoryPoints.ToString();
-            memory.text = MemoryPoints.ToString();
+            //TODO: remove currentgainmod for prototype.
+            memory.text = ResearchPoints.ToString() + "/" 
+                + ResearchLimit.ToString() + " ( +" 
+                + ResearchGain.ToString() + ")" + "(" + CurrentResearchGainMod + ")";
         }
         
     }

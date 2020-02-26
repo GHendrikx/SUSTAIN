@@ -31,11 +31,25 @@ namespace Context
             }
         }
 
-        public int processingAmount;
+        public float processingAmount;
 
         [SerializeField]
-        private int researchPoints;
-        public int ResearchPoints
+        private int rPoints;
+        public int RPoints
+        {
+            get
+            {
+                return rPoints;
+            }
+            set
+            {
+                RPoints = value;
+            }
+        }
+
+        [SerializeField]
+        private float researchPoints;
+        public float ResearchPoints
         {
             get
             {
@@ -47,20 +61,34 @@ namespace Context
             }
         }
 
-        [SerializeField]
-        private int memoryPoints;
-        public int MemoryPoints
+        private int researchLimit;
+        public int ResearchLimit
         {
             get
             {
-                return memoryPoints;
+                return researchLimit;
             }
             set
             {
-                memoryPoints = value;
+                researchLimit = value;
+            }
+        }
+        private float researchGain;
+        public float ResearchGain
+        {
+            get
+            {
+                return researchGain;
+            }
+            set
+            {
+                researchGain = value;
             }
         }
 
+        #region Debug Variable
+        public float CurrentResearchGainMod;
+        #endregion
         //if you can add points this bool will become true
         private bool addPoints;
         public bool SetTurn = false;
@@ -78,17 +106,16 @@ namespace Context
             if (addPoints)
             {
                 //only update the points if the prossessing amount is lower than the memorypoints
-                if (processingAmount < MemoryPoints)
+                if (processingAmount < ResearchPoints)
                     UpdatePoints();
 
                 AddTimer();
             }
-                UpdateUI();
+            UpdateUI();
 
             if (SetTurn)
             {
                 UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
-                //UpgradeAbilities.TEMPALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
                 SetTurn = false;
             }
         }
@@ -111,8 +138,13 @@ namespace Context
 
             data.isResearched = true;
             researchPoints -= data.researchCost;
+            
+            UpdateUI();
+            Debug.Log(researchPoints);
+
             HASUPDATE.Add(data);
             processingAmount -= amount;
+
         }
     }
 }

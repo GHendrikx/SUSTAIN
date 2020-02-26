@@ -51,7 +51,9 @@ namespace Context
                     + UpgradeAbilities.upgradeAbilities[i].data.doneDesc;
                 }
             }
+            
             TimerManager.Instance.AddTimer(GoToNextTurn,1);
+            TimerManager.Instance.AddTimer(GameManager.Instance.AI.researchData.UpdateResearch,1);
         }
 
         public void GoToNextTurn()

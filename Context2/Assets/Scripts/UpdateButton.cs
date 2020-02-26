@@ -20,6 +20,8 @@ namespace Context
                 return;
             if (Ai.ResearchPoints >= Data.researchCost)
                 myButton.interactable = true;
+            
+
             else
                 myButton.interactable = false;
         }
