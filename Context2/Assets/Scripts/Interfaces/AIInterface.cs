@@ -25,7 +25,7 @@ namespace Context
             //TODO: remove currentgainmod for prototype.
             memory.text = ResearchPoints.ToString() + "/" 
                 + ResearchLimit.ToString() + " ( +" 
-                + ResearchGain.ToString() + ")" + "(" + CurrentResearchGainMod + ")";
+                + ResearchGain.ToString() + ")" + "(" + CurrentResearchGainMod + ")" + "\n " + creativityPoints + "(" + creativityGain + ")" + "(" + creativityGainMod + ")";
         }
         
     }

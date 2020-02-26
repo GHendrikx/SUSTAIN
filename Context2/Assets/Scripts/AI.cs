@@ -15,6 +15,7 @@ namespace Context
 
         #region data calculationObjects
         public ResearchData researchData;
+        public CreativityData creativityData;
         #endregion
 
         [SerializeField]
@@ -32,20 +33,6 @@ namespace Context
         }
 
         public float processingAmount;
-
-        [SerializeField]
-        private int rPoints;
-        public int RPoints
-        {
-            get
-            {
-                return rPoints;
-            }
-            set
-            {
-                RPoints = value;
-            }
-        }
 
         [SerializeField]
         private float researchPoints;
@@ -83,6 +70,45 @@ namespace Context
             set
             {
                 researchGain = value;
+            }
+        }
+
+        private float creativityPoints;
+        public float CreativityPoints
+        {
+            get
+            {
+                return creativityPoints;
+            }
+            set
+            {
+                creativityPoints = value;
+            }
+        }
+
+        private float creativityGain;
+        public float CreativityGain
+        {
+            get
+            {
+                return creativityGain;
+            }
+            set
+            {
+                creativityGain = value;
+            }
+        }
+
+        private float creativityGainMod;
+        public float CreativityGainMod
+        {
+            get
+            {
+                return creativityGainMod;
+            }
+            set
+            {
+                creativityGainMod = value;
             }
         }
 
