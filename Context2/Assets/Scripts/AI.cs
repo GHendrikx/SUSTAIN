@@ -13,6 +13,10 @@ namespace Context
         //Has update list
         public static List<Data> HASUPDATE = new List<Data>();
 
+        #region data calculationObjects
+        public ResearchData researchData;
+        #endregion
+
         [SerializeField]
         private int processingPoints;
         public int ProcessingPoints
@@ -84,7 +88,7 @@ namespace Context
             if (SetTurn)
             {
                 UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
-                UpgradeAbilities.TEMPALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
+                //UpgradeAbilities.TEMPALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
                 SetTurn = false;
             }
         }

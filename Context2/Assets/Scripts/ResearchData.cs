@@ -9,6 +9,7 @@ namespace Context
     public class ResearchData : MonoBehaviour
     {
         private Data[] data;
+        [SerializeField]
         private IOManager ioManager;
         private float researchPoints;
         private float startAmount;
@@ -16,26 +17,24 @@ namespace Context
         public float CurrentResearchPoints;
         public float CurrentResearchGain;
         public float CurrentResearchGainMod = 1;
+        [SerializeField]
         private AI ai;
         private float researchOffset = 0;
 
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             data = ioManager.data.Data;
-            TimerManager.Instance.AddTimer(UpdateResearch, 1);
         }
 
         // Update is called once per frame
-        void UpdateResearch()
+        public void UpdateResearch()
         {
             CalculateResearchGainMod();
             CalculateResearchGain();
             CalculateResearchPoints();
             CalculateResearchLimit();
-
-            TimerManager.Instance.AddTimer(UpdateResearch, 1);
         }
 
         //TODO: look into this one.
@@ -43,9 +42,9 @@ namespace Context
         {
             foreach (Data currentData in data)
             {
-                if (!currentData.isUsed)
+                if (currentData.isPrototype)
                 {
-                    if(currentData.isResearched)
+                    if (currentData.isResearched)
                     {
                         researchOffset += currentData.researchCost;
                     }
@@ -54,18 +53,28 @@ namespace Context
                 }
             }
             CurrentResearchPoints += CurrentResearchGain;
-            
+
             CurrentResearchPoints += researchOffset;
         }
 
         private void CalculateResearchGainMod()
         {
+            CurrentResearchGainMod = 1;
+
             foreach (Data currentData in data)
             {
                 if (currentData.isResearched)
+                {
                     CurrentResearchGainMod += currentData.researchGainMod;
-                if (currentData.isActive)
-                    CurrentResearchGainMod += currentData.amount * currentData.researchGainMod;
+                }
+            }
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+            {
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                {
+                    CurrentResearchGainMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchGainMod;
+                    Debug.Log(UpgradeAbilities.upgradeAbilities[i].Points);
+                }
             }
         }
 

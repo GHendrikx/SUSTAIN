@@ -29,6 +29,7 @@ namespace Context
             button.gameObject.SetActive(true);
             button.GetComponentInChildren<Text>(true).text = data.name;
             amountOfUpgrades++;
+            button.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearch());
         }
 
         public void InitializeNewSlider(Data data, AI ai)
@@ -40,7 +41,10 @@ namespace Context
             initializedData.Add(data);
             UpgradeAbilities upgrade = GameObject.Instantiate(upgradeAbilities, transform);
             upgrade.MinButton.onClick.AddListener(() => upgrade.CalculateStatus(-data.allocatieCost));
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearch());
             upgrade.PlusButton.onClick.AddListener(() => upgrade.CalculateStatus(data.allocatieCost));
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearch());
+
             upgrade.UpdateInformation(data);
         }
     }

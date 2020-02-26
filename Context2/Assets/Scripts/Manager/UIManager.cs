@@ -85,13 +85,15 @@ namespace Context
 
         }
 
-        public float CalculateAllocationMod()
+        public float CalculateAllocationMod(int temp = 0)
         {
             float CurrentAllocatieMod = 1;
 
             foreach (Data currentData in IOFile.data.Data)
                 if (currentData.isResearched)
                     CurrentAllocatieMod += currentData.allocatieCostMod;
+
+            CurrentAllocatieMod -= temp;
 
             return (CurrentAllocatieMod * CalculateFixedGainAllocation());
         }
