@@ -365,3 +365,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+Context2/Library/ScriptAssemblies/Assembly-CSharp.dll
+Context2/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+Context2/Library/StateCache/Hierarchy/b827bc-mainStage.json
