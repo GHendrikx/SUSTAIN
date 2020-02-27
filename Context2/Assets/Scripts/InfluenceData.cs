@@ -11,8 +11,11 @@ namespace Context
         private Data[] data;
         [SerializeField]
         private IOManager ioManager;
+        [HideInInspector]
         public float CurrentInfluencePoints;
+        [HideInInspector]
         public float CurrentInfluenceGain;
+        [HideInInspector]
         public float CurrentInfluenceGainMod = 1;
         [SerializeField]
         private AI ai;
