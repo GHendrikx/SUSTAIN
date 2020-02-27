@@ -24,10 +24,15 @@ namespace Context
             }
         }
         private float startAmount;
+        [HideInInspector]
         public float CurrentResearchLimit;
+        [HideInInspector]
         public float CurrentResearchLimitMod;
+        [HideInInspector]
         public float CurrentResearchPoints;
+        [HideInInspector]
         public float CurrentResearchGain;
+        [HideInInspector]
         public float CurrentResearchGainMod = 1;
         [SerializeField]
         private AI ai;
