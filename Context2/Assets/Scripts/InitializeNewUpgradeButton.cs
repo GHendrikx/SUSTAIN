@@ -19,7 +19,6 @@ namespace Context
 
         public void InitializeNewButton(Data data,AI ai)
         {
-
             initializedData.Add(data);
             Button button = GameObject.Instantiate(buttonPrefab, transform);
             UpdateButton update = button.gameObject.AddComponent<UpdateButton>();
@@ -36,12 +35,13 @@ namespace Context
             amountOfUpgrades++;
             button.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
             button.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            button.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+
         }
 
         private string SetTextToButton(Data data)
         {
             string text = data.name;
-
             if (data.researchCost != 0 || (data.researchCost != null && data.researchCost != 0))
                 text += " R (" + data.researchCost + ")";
             if(data.creativityCost != 0 || (data.creativityCost != null && data.creativityCost != 0))
@@ -63,9 +63,12 @@ namespace Context
             upgrade.MinButton.onClick.AddListener(() => upgrade.CalculateStatus(-data.allocatieCost));
             upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
             upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+
             upgrade.PlusButton.onClick.AddListener(() => upgrade.CalculateStatus(data.allocatieCost));
             upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
             upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
 
             upgrade.UpdateInformation(data);
         }

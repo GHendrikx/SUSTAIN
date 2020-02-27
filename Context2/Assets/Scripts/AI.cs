@@ -16,6 +16,7 @@ namespace Context
         #region data calculationObjects
         public ResearchData researchData;
         public CreativityData creativityData;
+        public FundsData fundsData;
         #endregion
 
         [SerializeField]
@@ -34,6 +35,7 @@ namespace Context
 
         public float processingAmount;
 
+        #region ResearchPoints
         [SerializeField]
         private float researchPoints;
         public float ResearchPoints
@@ -72,7 +74,9 @@ namespace Context
                 researchGain = value;
             }
         }
+        #endregion
 
+        #region Creativity
         private float creativityPoints;
         public float CreativityPoints
         {
@@ -111,6 +115,48 @@ namespace Context
                 creativityGainMod = value;
             }
         }
+        #endregion
+
+        #region Funds
+        private float fundsPoints;
+        public float FundsPoints
+        {
+            get
+            {
+                return fundsPoints;
+            }
+            set
+            {
+                fundsPoints = value;
+            }
+        }
+
+        private float fundsGain;
+        public float FundsGain
+        {
+            get
+            {
+                return fundsGain;
+            }
+            set
+            {
+                fundsGain = value;
+            }
+        }
+
+        private float fundsGainMod;
+        public float FundsGainMod
+        {
+            get
+            {
+                return fundsGainMod;
+            }
+            set
+            {
+                fundsGainMod = value;
+            }
+        }
+        #endregion
 
         #region Debug Variable
         public float CurrentResearchGainMod;
@@ -164,13 +210,20 @@ namespace Context
                 return;
 
             data.isResearched = true;
-            researchPoints -= data.researchCost;
-            CreativityPoints -= data.creativityCost;
-            
+            //Calculate points
+            ResearchPoints -= data.researchCost - data.researchFixedGain;
+            CreativityPoints -= data.creativityCost - data.creativityFixedGain;
+            FundsPoints -= data.fundsCost - data.fundsFixedGain;
+
+            UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieFixedGain ;
+            UpgradeAbilities.ALLOCATIONPOOL += data.allocatieFixedGain;
+
             UpdateUI();
 
             //Debug.Log(researchPoints);
-            Debug.Log(creativityPoints);
+
+            if (ResearchPoints >= researchData.CurrentResearchLimit)
+                ResearchPoints = researchData.CurrentResearchLimit;
 
             HASUPDATE.Add(data);
             processingAmount -= amount;

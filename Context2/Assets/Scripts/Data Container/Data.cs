@@ -11,6 +11,7 @@
         public int typeOfData;
         public int neededPhase;
         public int[] techPrereq;
+        public string effectDesc;
         public int locks;
         public bool isResearched;
         public bool hasTarget;
@@ -63,7 +64,7 @@
         public float creativityFixedGain;
         public float creativityGainMod;
         public float researchGain;
-        public float researchFixedGain;
+        public int researchFixedGain;
         public float researchGainMod;
         public int researchLimit;
         public int researchLimitMod;

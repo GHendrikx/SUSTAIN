@@ -19,7 +19,9 @@ namespace Context
             if (Ai == null)
                 return;
 
-            if (Ai.ResearchPoints >= Data.researchCost && Ai.CreativityPoints >= Data.creativityCost)
+            if (Ai.ResearchPoints >= Data.researchCost && 
+                Ai.CreativityPoints >= Data.creativityCost && 
+                Ai.FundsPoints >= Data.fundsCost)
                 myButton.interactable = true;
 
 

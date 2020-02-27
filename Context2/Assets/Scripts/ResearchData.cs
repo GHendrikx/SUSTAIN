@@ -12,6 +12,17 @@ namespace Context
         [SerializeField]
         private IOManager ioManager;
         private float researchPoints;
+        public float ResearchPoints
+        {
+            get
+            {
+                return researchPoints;
+            }
+            set
+            {
+                researchPoints = value;
+            }
+        }
         private float startAmount;
         public float CurrentResearchLimit;
         public float CurrentResearchLimitMod;
@@ -94,10 +105,9 @@ namespace Context
                     CurrentResearchLimit += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchLimit;
             CurrentResearchLimit *= CurrentResearchLimitMod;
 
-            if (researchPoints >= CurrentResearchLimit)
-                researchPoints = CurrentResearchLimit;
+            if (ai.ResearchPoints >= CurrentResearchLimit)
+                ai.ResearchPoints = CurrentResearchLimit;
 
-            //ai.ResearchPoints = CurrentResearchPoints;
             ai.ResearchLimit = System.Convert.ToInt32(CurrentResearchLimit);
             ai.ResearchGain = CurrentResearchGain;
             ai.CurrentResearchGainMod = CurrentResearchGainMod;
