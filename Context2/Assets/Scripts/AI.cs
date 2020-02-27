@@ -115,8 +115,9 @@ namespace Context
         #region Debug Variable
         public float CurrentResearchGainMod;
         #endregion
-        //if you can add points this bool will become true
         private bool addPoints;
+
+        [HideInInspector]
         public bool SetTurn = false;
 
         private void Start()
@@ -164,6 +165,7 @@ namespace Context
 
             data.isResearched = true;
             researchPoints -= data.researchCost;
+            CreativityPoints -= data.creativityCost;
             
             UpdateUI();
 

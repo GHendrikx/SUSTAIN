@@ -86,7 +86,6 @@ namespace Context
         private void CalculateResearchLimit()
         {
             CurrentResearchLimit = 0;
-            Debug.Log(CurrentResearchPoints);
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentResearchLimit += currentData.researchLimit;

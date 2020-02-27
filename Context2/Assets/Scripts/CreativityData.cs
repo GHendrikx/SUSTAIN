@@ -24,20 +24,19 @@ namespace Context
             data = ioManager.data.Data;
         }
 
-        // Update is called once per frame
         public void UpdateCreativity()
         {
             CalculateCreativityGainMod();
             CalculateCreativityGain();
             CalculateCreativityPoints();
         }
+
         public void UpdateCreativityWithoutPoints()
         {
             CalculateCreativityGainMod();
             CalculateCreativityGain();
         }
 
-        //TODO: look into this one.
         private void CalculateCreativityPoints()
         {
             ai.CreativityPoints += CurrentCreativityGain;

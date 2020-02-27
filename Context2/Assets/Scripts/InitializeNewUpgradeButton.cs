@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,10 +28,28 @@ namespace Context
             button.transform.GetSiblingIndex();
             rectTransform.position = new Vector2(rectTransform.position.x, 0 + (transform.childCount * 110));
             button.gameObject.SetActive(true);
-            button.GetComponentInChildren<Text>(true).text = data.name +  " (" + data.researchCost + ")";
+            gameObject.SetActive(true);
+            
+            button.GetComponentInChildren<Text>(true).text = SetTextToButton(data); //data.name +  "R (" + data.researchCost + ")" + "C (" + data.creativityCost + ")";
+            
+
             amountOfUpgrades++;
             button.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
             button.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+        }
+
+        private string SetTextToButton(Data data)
+        {
+            string text = data.name;
+
+            if (data.researchCost != 0 || (data.researchCost != null && data.researchCost != 0))
+                text += " R (" + data.researchCost + ")";
+            if(data.creativityCost != 0 || (data.creativityCost != null && data.creativityCost != 0))
+                text += " C (" + data.creativityCost + ")";
+            if(data.fundsCost != 0 || (data.fundsCost != null && data.fundsCost != 0))
+                text += " F (" + data.fundsCost + ")";
+
+            return text;
         }
 
         public void InitializeNewSlider(Data data, AI ai)
@@ -38,6 +57,7 @@ namespace Context
             
             if (!data.isPrototype)
                 return;
+
             initializedData.Add(data);
             UpgradeAbilities upgrade = GameObject.Instantiate(upgradeAbilities, transform);
             upgrade.MinButton.onClick.AddListener(() => upgrade.CalculateStatus(-data.allocatieCost));

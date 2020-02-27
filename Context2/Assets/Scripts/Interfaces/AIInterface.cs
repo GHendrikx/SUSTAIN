@@ -13,20 +13,21 @@ namespace Context
         private Text memory;
         [SerializeField]
         private UpdateButton[] updateButton;
-        
+
         /// <summary>
         /// Update processing points
         /// </summary>
         private void UpdateUI()
         {
-           
-            processing.text = UpgradeAbilities.TEMPALLOCATIONPOOL + "/"+ UpgradeAbilities.ALLOCATIONPOOL.ToString();
+
+            processing.text = UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
             //processing.text = processingAmount.ToString() + " / " + MemoryPoints.ToString();
             //TODO: remove currentgainmod for prototype.
-            memory.text = ResearchPoints.ToString() + "/" 
-                + ResearchLimit.ToString() + " ( +" 
-                + ResearchGain.ToString() + ")" + "(" + CurrentResearchGainMod + ")" + "\n " + creativityPoints + "(" + creativityGain + ")" + "(" + creativityGainMod + ")";
+
+            memory.text = ResearchPoints.ToString("0.0") + "/"
+                + ResearchLimit.ToString() + " ( +"
+                + ResearchGain.ToString("0.0") + ")" + "(" + CurrentResearchGainMod + ")" + "\n " + creativityPoints + "(" + creativityGain + ")" + "(" + creativityGainMod + ")";
         }
-        
+
     }
 }

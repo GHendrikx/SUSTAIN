@@ -18,14 +18,17 @@ namespace Context
         {
             if (Ai == null)
                 return;
-            if (Ai.ResearchPoints >= Data.researchCost)
+
+            if (Ai.ResearchPoints >= Data.researchCost && Ai.CreativityPoints >= Data.creativityCost)
                 myButton.interactable = true;
-            
+
 
             else
                 myButton.interactable = false;
         }
         public void OnEnable() =>
+            myButton = GetComponent<Button>();
+        public void OnDisable() =>
             myButton = GetComponent<Button>();
 
         /// <summary>
@@ -41,6 +44,9 @@ namespace Context
             Data = data;
 
             BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
+            bool status = gameObject.transform.root.gameObject.activeInHierarchy;
+            if (myButton != null)
+                myButton = GetComponent<Button>();
 
             myButton.onClick.AddListener(() => ai.GetUpdate(CostOfUpdate, data));
             myButton.onClick.AddListener(() => data.isResearched = true);
@@ -54,8 +60,10 @@ namespace Context
             float currentAllocationMod = GameManager.Instance.UIManager.CalculateAllocationMod();
             float temp = UpgradeAbilities.ALLOCATIONPOOL;
             float calculation = currentAllocationMod - temp;
+
             if (currentAllocationMod > BackupAllocationPoints)
                 UpgradeAbilities.TEMPALLOCATIONPOOL += calculation;
+
             UpgradeAbilities.ALLOCATIONPOOL = currentAllocationMod;
         }
 

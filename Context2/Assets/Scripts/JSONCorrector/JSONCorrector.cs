@@ -9,6 +9,7 @@ public class JSONCorrector : MonoBehaviour
     [SerializeField]
     private TextAsset textAsset;
 
+    #if UNITY_EDITOR
     [ContextMenu("Make Data Great Again")]
     private void ConvertData()
     {
@@ -24,9 +25,9 @@ public class JSONCorrector : MonoBehaviour
             sr.Flush();
             sr.Close();
         }
-     
+
         File.Delete(Path.Combine(Directory.GetCurrentDirectory() + "\\Assets\\Resources\\JsonData\\", "Blad1.txt"));
-        
         AssetDatabase.Refresh();
     }
+    #endif
 }
