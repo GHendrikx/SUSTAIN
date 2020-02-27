@@ -61,8 +61,11 @@
         public int amount;
 
         public float creativityGain;
-        public float creativityFixedGain;
+        public int creativityFixedGain;
         public float creativityGainMod;
+        public float influenceGain;
+        public int influenceFixedGain;
+        public float influenceGainMod;
         public float researchGain;
         public int researchFixedGain;
         public float researchGainMod;

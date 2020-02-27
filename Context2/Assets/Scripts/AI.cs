@@ -35,7 +35,7 @@ namespace Context
 
         public float processingAmount;
 
-        #region ResearchPoints
+        #region Research
         [SerializeField]
         private float researchPoints;
         public float ResearchPoints
@@ -157,6 +157,48 @@ namespace Context
             }
         }
         #endregion
+
+        #region Influence
+        private float influencePoints;
+        public float InfluencePoints
+        {
+            get
+            {
+                return influencePoints;
+            }
+            set
+            {
+                influencePoints = value;
+            }
+        }
+
+        private float influenceGain;
+        public float InfluenceGain
+        {
+            get
+            {
+                return influenceGain;
+            }
+            set
+            {
+                influenceGain = value;
+            }
+        }
+
+        private float influenceGainMod;
+        public float InfluenceGainMod
+        {
+            get
+            {
+                return influenceGainMod;
+            }
+            set
+            {
+                influenceGainMod = value;
+            }
+        }
+        #endregion
+
 
         #region Debug Variable
         public float CurrentResearchGainMod;

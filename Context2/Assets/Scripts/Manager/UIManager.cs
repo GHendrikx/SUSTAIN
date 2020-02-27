@@ -46,7 +46,7 @@ namespace Context
                 Data d = IOFile.data.Data[i];
                 if (data.techPrereq.Length < 1)
                     continue;
-
+                if(data.techPrereq != null)
                 for (int j = 0; j < data.techPrereq.Length; j++)
                 {
                     if (data.techPrereq[j] == d.ID)
