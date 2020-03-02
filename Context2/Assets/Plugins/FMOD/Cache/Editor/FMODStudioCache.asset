@@ -15,7 +15,8 @@ MonoBehaviour:
   Path: event:/Team 17
   guid: e70a7eda9522ab479e48e5f297a28572
   Banks:
-  - {fileID: -1501164925477765892}
+  - {fileID: -5142983851122593039}
+  - {fileID: -7764154633230596759}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -23,6 +24,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 61518
+--- !u!114 &-7764154633230596759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Bank/Master Bank.bank
+  SubDir: 
+  lastModified: 637182275110495662
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7487242952150697216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +78,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5142983851122593039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Bank/Master Bank.bank
+  SubDir: 
+  lastModified: 637182275110495662
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-3269914232357562748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +151,7 @@ MonoBehaviour:
   lastModified: 637184884286599041
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-417980314924038842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Bank/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637184884286608791
+  lastModified: 637182275110505312
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -167,15 +204,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -261389658792575712}
-  - {fileID: -1501164925477765892}
+  - {fileID: -7764154633230596759}
   EditorEvents:
   - {fileID: -7934944351309695071}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -1501164925477765892}
+  - {fileID: -7764154633230596759}
   StringsBanks:
   - {fileID: -261389658792575712}
-  stringsBankWriteTime: 637184884286608791
+  stringsBankWriteTime: 637182275110505312
   cacheVersion: 3
 --- !u!114 &495659830424573398
 MonoBehaviour:
