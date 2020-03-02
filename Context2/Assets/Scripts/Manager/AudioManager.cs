@@ -15,14 +15,19 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(SFXFragments audio)
     {
+        if (audio == SFXFragments.none)
+            return;
 
-        sfxSource.clip = sfx[(int)audio];
+        sfxSource.clip = sfx[(int)audio-1];
         sfxSource.Play();
     }
 
     public void PlayBackground(BackgroundFragments backgroundIndex)
     {
-        backgroundSource.clip = backgroundSound[(int)backgroundIndex];
+        if (backgroundIndex == BackgroundFragments.none)
+            return;
+
+        backgroundSource.clip = backgroundSound[(int)backgroundIndex-1];
         backgroundSource.Play();
 
     }

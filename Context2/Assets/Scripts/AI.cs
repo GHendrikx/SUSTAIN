@@ -12,6 +12,8 @@ namespace Context
     {
         //Has update list
         public static List<Data> HASUPDATE = new List<Data>();
+        [SerializeField]
+        private AudioManager audioManager;
 
         #region data calculationObjects
         public ResearchData researchData;
@@ -289,6 +291,7 @@ namespace Context
         public float CurrentResearchGainMod;
         public float CurrentDroneGainMod;
         #endregion
+
         private bool addPoints;
 
         [HideInInspector]
@@ -354,7 +357,11 @@ namespace Context
 
             UpdateUI();
 
-            //Debug.Log(researchPoints);
+
+            #region PlayMusic of the upgrade
+            audioManager.PlaySFX((SFXFragments)data.SFX);
+            audioManager.PlayBackground((BackgroundFragments)data.backgroundMusic);
+            #endregion
 
             if (ResearchCost >= researchData.CurrentResearchLimit)
                 ResearchCost = researchData.CurrentResearchLimit;

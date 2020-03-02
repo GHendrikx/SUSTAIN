@@ -142,5 +142,8 @@
         public float natDislikesControlled;
         public float natNeutralControlled;
         public float natLikesControlled;
+
+        public int SFX;
+        public int backgroundMusic;
     }
 }

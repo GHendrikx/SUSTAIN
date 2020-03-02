@@ -8,7 +8,7 @@ public class GenerateAudioEnum : MonoBehaviour
 {
 #if UNITY_EDITOR
     // Generate the audio clips in Unity
-    [ContextMenu("Generate enum")]
+    [ContextMenu("Generate Enum")]
     private void Generate()
     {
         AudioClip[] audioClips = Resources.LoadAll<AudioClip>("SFX\\");
@@ -19,6 +19,7 @@ public class GenerateAudioEnum : MonoBehaviour
         {
             sw.WriteLine("/// <summary>");
             sw.WriteLine("/// this enum is automaticly generated.");
+            sw.WriteLine("/// Made by Geoffrey Hendrikx.");
             sw.WriteLine("/// </summary>");
             if (audioClips.Length > 0)
             {
