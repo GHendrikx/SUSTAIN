@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -50,7 +49,7 @@ namespace Context
 
         public void CalculateStatus(int amount)
         {
-            BasePoints = System.Convert.ToInt32(TEMPALLOCATIONPOOL);
+            BasePoints = Convert.ToInt32(TEMPALLOCATIONPOOL);
             Points = 0;
 
             try

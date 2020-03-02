@@ -54,9 +54,11 @@ namespace Context
             }
             
             TimerManager.Instance.AddTimer(GoToNextTurn,1);
+
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.researchData.UpdateResearch,1);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.creativityData.UpdateCreativity, 1);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.fundsData.UpdateFunds, 1);
+            TimerManager.Instance.AddTimer(GameManager.Instance.AI.influenceData.UpdateInfluence, 1);
         }
 
         public void GoToNextTurn()

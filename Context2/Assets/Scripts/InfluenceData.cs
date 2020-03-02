@@ -42,7 +42,7 @@ namespace Context
 
         private void CalculateInfluencePoints()
         {
-            ai.InfluencePoints += CurrentInfluenceGain;
+            ai.InfluenceCost += CurrentInfluenceGain;
         }
 
         private void CalculateInfluenceGainMod()

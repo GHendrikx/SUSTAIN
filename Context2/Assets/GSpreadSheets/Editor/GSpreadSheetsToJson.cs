@@ -32,7 +32,6 @@ using Google.Apis.Services;
 using Google.Apis.Util.Store;
 
 using Newtonsoft.Json;
-
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System;
