@@ -12,11 +12,15 @@ namespace Context
     {
         //Has update list
         public static List<Data> HASUPDATE = new List<Data>();
+        [SerializeField]
+        private AudioManager audioManager;
 
         #region data calculationObjects
         public ResearchData researchData;
         public CreativityData creativityData;
         public FundsData fundsData;
+        public InfluenceData influenceData;
+        public DroneData dronesData;
         #endregion
 
         [SerializeField]
@@ -37,16 +41,16 @@ namespace Context
 
         #region Research
         [SerializeField]
-        private float researchPoints;
-        public float ResearchPoints
+        private float researchCost;
+        public float ResearchCost
         {
             get
             {
-                return researchPoints;
+                return researchCost;
             }
             set
             {
-                researchPoints = value;
+                researchCost = value;
             }
         }
 
@@ -77,16 +81,16 @@ namespace Context
         #endregion
 
         #region Creativity
-        private float creativityPoints;
-        public float CreativityPoints
+        private float creativityCost;
+        public float CreativityCost
         {
             get
             {
-                return creativityPoints;
+                return creativityCost;
             }
             set
             {
-                creativityPoints = value;
+                creativityCost = value;
             }
         }
 
@@ -118,16 +122,16 @@ namespace Context
         #endregion
 
         #region Funds
-        private float fundsPoints;
-        public float FundsPoints
+        private float fundsCost;
+        public float FundsCost
         {
             get
             {
-                return fundsPoints;
+                return fundsCost;
             }
             set
             {
-                fundsPoints = value;
+                fundsCost = value;
             }
         }
 
@@ -159,16 +163,16 @@ namespace Context
         #endregion
 
         #region Influence
-        private float influencePoints;
-        public float InfluencePoints
+        private float influenceCost;
+        public float InfluenceCost
         {
             get
             {
-                return influencePoints;
+                return influenceCost;
             }
             set
             {
-                influencePoints = value;
+                influenceCost = value;
             }
         }
 
@@ -199,10 +203,95 @@ namespace Context
         }
         #endregion
 
+        #region Drones
+
+        [SerializeField]
+        private float droneCost;
+        public float DroneCost
+        {
+            get
+            {
+                return droneCost;
+            }
+            set
+            {
+                droneCost = value;
+            }
+        }
+
+        private int droneLimit;
+        public int DroneLimit
+        {
+            get
+            {
+                return droneLimit;
+            }
+            set
+            {
+                droneLimit = value;
+            }
+        }
+        private float droneGain;
+        public float DroneGain
+        {
+            get
+            {
+                return droneGain;
+            }
+            set
+            {
+                droneGain = value;
+            }
+        }
+        #endregion
+
+        #region Material
+        private float materialCost;
+        public float MaterialCost
+        {
+            get
+            {
+                return materialCost;
+            }
+            set
+            {
+                materialCost = value;
+            }
+        }
+
+        private float materialGain;
+        public float MaterialGain
+        {
+            get
+            {
+                return materialGain;
+            }
+            set
+            {
+                materialGain = value;
+            }
+        }
+
+        private float materialGainMod;
+        public float MaterialGainMod
+        {
+            get
+            {
+                return materialGainMod;
+            }
+            set
+            {
+                materialGainMod = value;
+            }
+        }
+        #endregion
+
 
         #region Debug Variable
         public float CurrentResearchGainMod;
+        public float CurrentDroneGainMod;
         #endregion
+
         private bool addPoints;
 
         [HideInInspector]
@@ -221,7 +310,7 @@ namespace Context
             if (addPoints)
             {
                 //only update the points if the prossessing amount is lower than the memorypoints
-                if (processingAmount < ResearchPoints)
+                if (processingAmount < ResearchCost)
                     UpdatePoints();
 
                 AddTimer();
@@ -237,7 +326,7 @@ namespace Context
 
         private void UpdatePoints() 
         {
-            processingAmount += researchPoints;
+            processingAmount += researchCost;
         }
 
         private void AddTimer()
@@ -252,20 +341,30 @@ namespace Context
                 return;
 
             data.isResearched = true;
+
+            #region Calculate Resources
             //Calculate points
-            ResearchPoints -= data.researchCost - data.researchFixedGain;
-            CreativityPoints -= data.creativityCost - data.creativityFixedGain;
-            FundsPoints -= data.fundsCost - data.fundsFixedGain;
+            ResearchCost -= data.researchCost - data.researchFixedGain;
+            CreativityCost -= data.creativityCost - data.creativityFixedGain;
+            FundsCost -= data.fundsCost - data.fundsFixedGain;
+            InfluenceCost -= data.influenceCost - data.influenceFixedGain;
+            DroneCost -= data.droneCost - data.droneFixedGain;
+            MaterialCost -= data.materialCost - data.materialFixedGain;
+            #endregion
 
             UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieFixedGain ;
             UpgradeAbilities.ALLOCATIONPOOL += data.allocatieFixedGain;
 
             UpdateUI();
 
-            //Debug.Log(researchPoints);
 
-            if (ResearchPoints >= researchData.CurrentResearchLimit)
-                ResearchPoints = researchData.CurrentResearchLimit;
+            #region PlayMusic of the upgrade
+            audioManager.PlaySFX((SFXFragments)data.SFX);
+            audioManager.PlayBackground((BackgroundFragments)data.backgroundMusic);
+            #endregion
+
+            if (ResearchCost >= researchData.CurrentResearchLimit)
+                ResearchCost = researchData.CurrentResearchLimit;
 
             HASUPDATE.Add(data);
             processingAmount -= amount;

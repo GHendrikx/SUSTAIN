@@ -48,6 +48,8 @@ namespace Context
                 text += " C (" + data.creativityCost + ")";
             if(data.fundsCost != 0 || (data.fundsCost != null && data.fundsCost != 0))
                 text += " F (" + data.fundsCost + ")";
+            if (data.influenceCost != 0 || (data.influenceCost != null && data.influenceCost != 0))
+                text += " I (" + data.influenceCost + ")";
 
             return text;
         }
@@ -59,17 +61,20 @@ namespace Context
                 return;
 
             initializedData.Add(data);
+            
+            //Allocatie buttons adding and minus.
             UpgradeAbilities upgrade = GameObject.Instantiate(upgradeAbilities, transform);
             upgrade.MinButton.onClick.AddListener(() => upgrade.CalculateStatus(-data.allocatieCost));
             upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
             upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
             upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
 
             upgrade.PlusButton.onClick.AddListener(() => upgrade.CalculateStatus(data.allocatieCost));
             upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
             upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
             upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
-
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
             upgrade.UpdateInformation(data);
         }
     }

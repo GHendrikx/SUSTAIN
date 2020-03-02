@@ -14,17 +14,17 @@ namespace Context
         private AI Ai;
         private Data Data;
         private float BackupAllocationPoints;
+
         private void Update()
         {
             if (Ai == null)
                 return;
 
-            if (Ai.ResearchPoints >= Data.researchCost && 
-                Ai.CreativityPoints >= Data.creativityCost && 
-                Ai.FundsPoints >= Data.fundsCost)
+            if (Ai.ResearchCost >= Data.researchCost && 
+                Ai.CreativityCost >= Data.creativityCost && 
+                Ai.FundsCost >= Data.fundsCost &&
+                Ai.InfluenceCost >= Data.influenceCost)
                 myButton.interactable = true;
-
-
             else
                 myButton.interactable = false;
         }

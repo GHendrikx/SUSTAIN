@@ -24,6 +24,7 @@
         public int researchCost;
         public int allocatieCost;
         public int fundsCost;
+        public int influenceCost;
         public int materialCost;
         public int droneCost;
         public int powerCost;
@@ -40,6 +41,7 @@
         public float neededGlobalTrust;
         public float neededNationalTrust;
 
+        public float sdgChange00;
         public float sdgChange01;
         public float sdgChange02;
         public float sdgChange03;
@@ -78,8 +80,12 @@
         public int fundsFixedGain;
         public float fundsGainMod;
         public int droneGain;
+        public int droneFixedGain;
         public float droneGainMod;
         public int droneLimit;
+        public int materialGain;
+        public int materialFixedGain;
+        public float materialGainMod;
         public float localRebelliousAngry;
         public float localAngryDislkes;
         public float localDislikesNeutral;
@@ -136,5 +142,8 @@
         public float natDislikesControlled;
         public float natNeutralControlled;
         public float natLikesControlled;
+
+        public int SFX;
+        public int backgroundMusic;
     }
 }
