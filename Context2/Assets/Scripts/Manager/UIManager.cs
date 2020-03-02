@@ -46,22 +46,18 @@ namespace Context
                 Data d = IOFile.data.Data[i];
                 if (data.techPrereq.Length < 1)
                     continue;
-
+                if(data.techPrereq != null)
                 for (int j = 0; j < data.techPrereq.Length; j++)
                 {
                     if (data.techPrereq[j] == d.ID)
                     {
                         if (!d.isResearched)
-                            break;
-                        else
-                        {
-                            data.isAvailable = true;
-                            
-                            break;
-                        }
+                            return;
+
                     }
                 }
             }
+            data.isAvailable = true;
 
         }
 
@@ -70,7 +66,7 @@ namespace Context
             if (data.isResearched)
                 return;
             data.isShownInGUI = true;
-            
+
             if (data.typeOfData == 5)
                 return;
 
@@ -82,11 +78,35 @@ namespace Context
 
         public void UpdateUI(Data data, int tab)
         {
-            if(data.typeOfData == 1 || data.typeOfData == 2)
+            if (data.typeOfData == 1 || data.typeOfData == 2)
                 upgradesTabs[data.typeOfData].InitializeNewButton(data, AI);
             else
                 upgradesTabs[data.typeOfData].InitializeNewSlider(data, AI);
 
+        }
+
+        public float CalculateAllocationMod(int temp = 0)
+        {
+            float CurrentAllocatieMod = 1;
+
+            foreach (Data currentData in IOFile.data.Data)
+                if (currentData.isResearched)
+                    CurrentAllocatieMod += currentData.allocatieCostMod;
+
+            CurrentAllocatieMod -= temp;
+
+            return (CurrentAllocatieMod * CalculateFixedGainAllocation());
+        }
+
+        private float CalculateFixedGainAllocation()
+        {
+            float CurrentFixedGain = 0;
+
+            foreach (Data currentData in IOFile.data.Data)
+                if (currentData.isResearched)
+                    CurrentFixedGain += currentData.allocatieFixedGain;
+
+            return CurrentFixedGain;
         }
     }
 

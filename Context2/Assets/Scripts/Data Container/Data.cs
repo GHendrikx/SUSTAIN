@@ -11,8 +11,10 @@
         public int typeOfData;
         public int neededPhase;
         public int[] techPrereq;
+        public string effectDesc;
         public int locks;
         public bool isResearched;
+        public bool hasTarget;
         public bool isUsed;
         public bool isAvailable;
         public bool isShownInGUI;
@@ -25,6 +27,13 @@
         public int materialCost;
         public int droneCost;
         public int powerCost;
+
+        public int doneTimes;
+        public int doneGain;
+        public string doneDesc;
+        public int doneAmount;
+        public int doneLevel;
+        public int doneTarget;
 
         public float neededSupervisorTrust;
         public float neededLocalTrust;
@@ -52,10 +61,13 @@
         public int amount;
 
         public float creativityGain;
-        public float creativityFixedGain;
+        public int creativityFixedGain;
         public float creativityGainMod;
+        public float influenceGain;
+        public int influenceFixedGain;
+        public float influenceGainMod;
         public float researchGain;
-        public float researchFixedGain;
+        public int researchFixedGain;
         public float researchGainMod;
         public int researchLimit;
         public int researchLimitMod;

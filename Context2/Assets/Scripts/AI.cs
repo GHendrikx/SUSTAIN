@@ -13,6 +13,12 @@ namespace Context
         //Has update list
         public static List<Data> HASUPDATE = new List<Data>();
 
+        #region data calculationObjects
+        public ResearchData researchData;
+        public CreativityData creativityData;
+        public FundsData fundsData;
+        #endregion
+
         [SerializeField]
         private int processingPoints;
         public int ProcessingPoints
@@ -27,11 +33,12 @@ namespace Context
             }
         }
 
-        public int processingAmount;
+        public float processingAmount;
 
+        #region Research
         [SerializeField]
-        private int researchPoints;
-        public int ResearchPoints
+        private float researchPoints;
+        public float ResearchPoints
         {
             get
             {
@@ -43,26 +50,168 @@ namespace Context
             }
         }
 
-        [SerializeField]
-        private int memoryPoints;
-        public int MemoryPoints
+        private int researchLimit;
+        public int ResearchLimit
         {
             get
             {
-                return memoryPoints;
+                return researchLimit;
             }
             set
             {
-                memoryPoints = value;
+                researchLimit = value;
+            }
+        }
+        private float researchGain;
+        public float ResearchGain
+        {
+            get
+            {
+                return researchGain;
+            }
+            set
+            {
+                researchGain = value;
+            }
+        }
+        #endregion
+
+        #region Creativity
+        private float creativityPoints;
+        public float CreativityPoints
+        {
+            get
+            {
+                return creativityPoints;
+            }
+            set
+            {
+                creativityPoints = value;
             }
         }
 
-        //if you can add points this bool will become true
+        private float creativityGain;
+        public float CreativityGain
+        {
+            get
+            {
+                return creativityGain;
+            }
+            set
+            {
+                creativityGain = value;
+            }
+        }
+
+        private float creativityGainMod;
+        public float CreativityGainMod
+        {
+            get
+            {
+                return creativityGainMod;
+            }
+            set
+            {
+                creativityGainMod = value;
+            }
+        }
+        #endregion
+
+        #region Funds
+        private float fundsPoints;
+        public float FundsPoints
+        {
+            get
+            {
+                return fundsPoints;
+            }
+            set
+            {
+                fundsPoints = value;
+            }
+        }
+
+        private float fundsGain;
+        public float FundsGain
+        {
+            get
+            {
+                return fundsGain;
+            }
+            set
+            {
+                fundsGain = value;
+            }
+        }
+
+        private float fundsGainMod;
+        public float FundsGainMod
+        {
+            get
+            {
+                return fundsGainMod;
+            }
+            set
+            {
+                fundsGainMod = value;
+            }
+        }
+        #endregion
+
+        #region Influence
+        private float influencePoints;
+        public float InfluencePoints
+        {
+            get
+            {
+                return influencePoints;
+            }
+            set
+            {
+                influencePoints = value;
+            }
+        }
+
+        private float influenceGain;
+        public float InfluenceGain
+        {
+            get
+            {
+                return influenceGain;
+            }
+            set
+            {
+                influenceGain = value;
+            }
+        }
+
+        private float influenceGainMod;
+        public float InfluenceGainMod
+        {
+            get
+            {
+                return influenceGainMod;
+            }
+            set
+            {
+                influenceGainMod = value;
+            }
+        }
+        #endregion
+
+
+        #region Debug Variable
+        public float CurrentResearchGainMod;
+        #endregion
         private bool addPoints;
 
+        [HideInInspector]
+        public bool SetTurn = false;
 
         private void Start()
         {
+            UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
+            UpgradeAbilities.TEMPALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
             AddTimer();
             UpdateUI();
         }
@@ -72,11 +221,17 @@ namespace Context
             if (addPoints)
             {
                 //only update the points if the prossessing amount is lower than the memorypoints
-                if (processingAmount < MemoryPoints)
+                if (processingAmount < ResearchPoints)
                     UpdatePoints();
 
                 AddTimer();
-                UpdateUI();
+            }
+            UpdateUI();
+
+            if (SetTurn)
+            {
+                UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
+                SetTurn = false;
             }
         }
 
@@ -97,9 +252,24 @@ namespace Context
                 return;
 
             data.isResearched = true;
-            researchPoints -= data.researchCost;
+            //Calculate points
+            ResearchPoints -= data.researchCost - data.researchFixedGain;
+            CreativityPoints -= data.creativityCost - data.creativityFixedGain;
+            FundsPoints -= data.fundsCost - data.fundsFixedGain;
+
+            UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieFixedGain ;
+            UpgradeAbilities.ALLOCATIONPOOL += data.allocatieFixedGain;
+
+            UpdateUI();
+
+            //Debug.Log(researchPoints);
+
+            if (ResearchPoints >= researchData.CurrentResearchLimit)
+                ResearchPoints = researchData.CurrentResearchLimit;
+
             HASUPDATE.Add(data);
             processingAmount -= amount;
+
         }
     }
 }

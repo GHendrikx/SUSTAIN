@@ -9,7 +9,9 @@ public class JSONCorrector : MonoBehaviour
     [SerializeField]
     private TextAsset textAsset;
 
+    #if UNITY_EDITOR
     [ContextMenu("Make Data Great Again")]
+    [System.Obsolete("This function is obsolete and isn't used anymore. for more information check the GSpreadSheetToJson.cs or contact Geoffrey Hendrikx")]
     private void ConvertData()
     {
         string text = textAsset.ToString();
@@ -24,9 +26,8 @@ public class JSONCorrector : MonoBehaviour
             sr.Flush();
             sr.Close();
         }
-     
         File.Delete(Path.Combine(Directory.GetCurrentDirectory() + "\\Assets\\Resources\\JsonData\\", "Blad1.txt"));
-        
         AssetDatabase.Refresh();
     }
+    #endif // UNITY_EDITOR
 }

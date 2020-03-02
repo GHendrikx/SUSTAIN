@@ -13,16 +13,24 @@ namespace Context
         public Button myButton;
         private AI Ai;
         private Data Data;
+        private float BackupAllocationPoints;
         private void Update()
         {
             if (Ai == null)
                 return;
-            if (Ai.ResearchPoints >= Data.researchCost)
+
+            if (Ai.ResearchPoints >= Data.researchCost && 
+                Ai.CreativityPoints >= Data.creativityCost && 
+                Ai.FundsPoints >= Data.fundsCost)
                 myButton.interactable = true;
+
+
             else
                 myButton.interactable = false;
         }
         public void OnEnable() =>
+            myButton = GetComponent<Button>();
+        public void OnDisable() =>
             myButton = GetComponent<Button>();
 
         /// <summary>
@@ -36,11 +44,31 @@ namespace Context
             this.CostOfUpdate = data.researchCost;
             Ai = ai;
             Data = data;
-            Debug.Log(this.Ai);
 
-            myButton.onClick.AddListener(()=> ai.GetUpdate(CostOfUpdate,data));
+            BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
+            bool status = gameObject.transform.root.gameObject.activeInHierarchy;
+            if (myButton != null)
+                myButton = GetComponent<Button>();
+
+            myButton.onClick.AddListener(() => ai.GetUpdate(CostOfUpdate, data));
             myButton.onClick.AddListener(() => data.isResearched = true);
+            myButton.onClick.AddListener(() => AllocationUpdate());
             myButton.onClick.AddListener(() => Destroy(this.gameObject));
         }
+
+        private void AllocationUpdate()
+        {
+
+            float currentAllocationMod = GameManager.Instance.UIManager.CalculateAllocationMod();
+            float temp = UpgradeAbilities.ALLOCATIONPOOL;
+            float calculation = currentAllocationMod - temp;
+
+            if (currentAllocationMod > BackupAllocationPoints)
+                UpgradeAbilities.TEMPALLOCATIONPOOL += calculation;
+
+            UpgradeAbilities.ALLOCATIONPOOL = currentAllocationMod;
+        }
+
+
     }
 }

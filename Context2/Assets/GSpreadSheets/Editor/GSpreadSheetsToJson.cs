@@ -147,7 +147,7 @@ public class GSpreadSheetsToJson : EditorWindow {
 			}
 			GUILayout.Label("");
 			GUI.backgroundColor = UnityEngine.Color.green;
-			if(GUILayout.Button("Download data \nthen convert to Json files"))
+			if(GUILayout.Button("Make Data Great Again\n___________________"))
 			{
 				progress = 0;
 				DownloadToJson();
@@ -481,9 +481,13 @@ public class GSpreadSheetsToJson : EditorWindow {
 		if(!outputDirectory.EndsWith("/"))
 			outputDirectory += "/";
 		Directory.CreateDirectory(outputDirectory);
-		StreamWriter strmWriter = new StreamWriter(outputDirectory + fileName + ".txt", false, System.Text.Encoding.UTF8);
-		strmWriter.Write(jsonText);
-		strmWriter.Close();
+		StreamWriter strmWriter = new StreamWriter(outputDirectory + fileName + ".json", false, System.Text.Encoding.UTF8);
+        strmWriter.Write("{");
+        strmWriter.Write("\"Data\":");
+        jsonText = jsonText.Replace("\\n", "");
+        strmWriter.Write(jsonText);
+        strmWriter.Write("}");
+        strmWriter.Close();
 
 		Debug.Log ("Created: " + fileName + ".txt");
 	}
