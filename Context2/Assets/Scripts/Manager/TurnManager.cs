@@ -83,11 +83,10 @@ namespace Context
 
                 if (UpgradeAbilities.upgradeAbilities[i].data.hasTarget)
                 {
-                    UpgradeAbilities.upgradeAbilities[i].InformationText.text =
-                    UpgradeAbilities.upgradeAbilities[i].data.name + "(" + UpgradeAbilities.upgradeAbilities[i].data.allocatieCost + ")" + "\n" +
-                    UpgradeAbilities.upgradeAbilities[i].data.doneTimes + "/"
-                    + UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget + " "
-                    + UpgradeAbilities.upgradeAbilities[i].data.doneDesc;
+                    UpgradeAbilities.upgradeAbilities[i].InformationText.text = UpgradeAbilities.upgradeAbilities[i].data.name;
+                    UpgradeAbilities.upgradeAbilities[i].TargetText.text = UpgradeAbilities.upgradeAbilities[i].data.doneTimes + "/" + 
+                    UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget + " " + UpgradeAbilities.upgradeAbilities[i].data.doneDesc;
+
                 }
             }
 

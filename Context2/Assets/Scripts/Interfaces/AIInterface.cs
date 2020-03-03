@@ -14,7 +14,8 @@ namespace Context
         private TextMeshProUGUI Research;
         [SerializeField]
         private TextMeshProUGUI Creativity;
-
+        [SerializeField]
+        private TextMeshProUGUI Funds;
         [SerializeField]
         private UpdateButton[] updateButton;
 
@@ -26,7 +27,8 @@ namespace Context
             processing.text = "Processing Power: " + UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
             Research.text = "Research: " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + " (+" + ResearchGain.ToString("0.0") + ")";
             Creativity.text = "Creativity: " + CreativityPoints.ToString("0.0") + " (+" + CreativityGain + ")";
-
+            Funds.text = "Funds: $" + fundsPoints + "(+" + fundsGain +")";
+            
             #region Old Code
             //TODO: remove currentgainmod for prototype.
             //memory.text = "R " + ResearchCost.ToString("0.0") + "/"

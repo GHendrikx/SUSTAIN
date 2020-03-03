@@ -29,6 +29,19 @@ namespace Context
             }
         }
         [SerializeField]
+        private TextMeshProUGUI targetText;
+        public TextMeshProUGUI TargetText
+        {
+            get
+            {
+                return targetText;
+            }
+            set
+            {
+                targetText = value;
+            }
+        }
+        [SerializeField]
         private TextMeshProUGUI informationText;
         public TextMeshProUGUI InformationText
         {
@@ -93,16 +106,16 @@ namespace Context
 
             if (informationText != null)
             {
-                informationText.text = data.name + "(" + data.allocatieCost + ")";
+                //informationText.text = data.name + "(" + data.allocatieCost + ")";
                 if (data.hasTarget)
                 {
                     for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                     {
                         if (data.ID == UpgradeAbilities.upgradeAbilities[i].data.ID)
                         {
-                            informationText.text += "\n" + UpgradeAbilities.upgradeAbilities[i].data.doneTimes + "/"
-                                + UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget + " "
-                                + UpgradeAbilities.upgradeAbilities[i].data.doneDesc;
+                            informationText.text = string.Empty;
+                            informationText.text +=  UpgradeAbilities.upgradeAbilities[i].data.name;
+                            targetText.text = UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget + "/" + UpgradeAbilities.upgradeAbilities[i].data.doneDesc ;
                         }
                     }
                 }

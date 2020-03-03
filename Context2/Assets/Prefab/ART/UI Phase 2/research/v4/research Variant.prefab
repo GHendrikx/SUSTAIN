@@ -18,7 +18,7 @@ MonoBehaviour:
   title: {fileID: 4998124655322556749}
   description: {fileID: 4493746319745118043}
   researchUnlocks: {fileID: 7446723978198156153}
-  cost: {fileID: 0}
+  cost: {fileID: 3611498060773904754}
   icon: {fileID: 273056702610470226}
   SDGColor: {fileID: 727632262366288417}
   researchNummer: {fileID: 6388063589017128407}
@@ -235,6 +235,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3611498060773904754 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7968024740965128925, guid: fab4ca20892f4814ea607fde3f6be4ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 6668285216889555887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4998124655322556749 stripped

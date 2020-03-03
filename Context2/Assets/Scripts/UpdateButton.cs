@@ -70,8 +70,10 @@ namespace Context
 
         private void SetTextToUpdateButton()
         {
-            title.text = data.name;
-            description.text = data.desc;
+            if(title != null)
+                title.text = data.name;
+            if(description != null)
+                description.text = data.desc;
         }
 
         private void AllocationUpdate()

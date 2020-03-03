@@ -122,16 +122,16 @@ namespace Context
         #endregion
 
         #region Funds
-        private float fundsCost;
+        private float fundsPoints;
         public float FundsPoints
         {
             get
             {
-                return fundsCost;
+                return fundsPoints;
             }
             set
             {
-                fundsCost = value;
+                fundsPoints = value;
             }
         }
 
