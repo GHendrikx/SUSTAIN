@@ -61,7 +61,7 @@ namespace Context
         //TODO: look into this one.
         private void CalculateDronesPoints()
         {
-            ai.ResearchCost += CurrentDronesGain;
+            ai.ResearchPoints += CurrentDronesGain;
         }
 
         private void CalculateDronesGainMod()
@@ -100,7 +100,7 @@ namespace Context
                     CurrentDronesLimit += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.droneLimit;
             CurrentDronesLimit *= CurrentDronesLimitMod;
 
-            if (ai.ResearchCost >= CurrentDronesLimit)
+            if (ai.ResearchPoints >= CurrentDronesLimit)
                 ai.DroneCost = CurrentDronesLimit;
 
             ai.DroneLimit = System.Convert.ToInt32(CurrentDronesLimit);

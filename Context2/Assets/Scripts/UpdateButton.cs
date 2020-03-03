@@ -1,37 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Context
 {
     public class UpdateButton : MonoBehaviour
     {
-        [SerializeField]
         public int CostOfUpdate = 0;
         public string UpdateName = "";
         public Button myButton;
         private AI Ai;
-        private Data Data;
+        private Data data;
         private float BackupAllocationPoints;
+
+        #region information
+        [SerializeField]
+        private TextMeshProUGUI title;
+        [SerializeField]
+        private TextMeshProUGUI description;
+        [SerializeField]
+        private TextMeshProUGUI researchUnlocks;
+        [SerializeField]
+        private TextMeshProUGUI cost;
+        [SerializeField]
+        private Image icon;
+        [SerializeField]
+        private Image SDGColor;
+        [SerializeField]
+        private TextMeshProUGUI researchNummer;
+        #endregion
 
         private void Update()
         {
             if (Ai == null)
                 return;
 
-            if (Ai.ResearchCost >= Data.researchCost && 
-                Ai.CreativityCost >= Data.creativityCost && 
-                Ai.FundsCost >= Data.fundsCost &&
-                Ai.InfluenceCost >= Data.influenceCost)
+            if (Ai.ResearchPoints >= data.researchCost && 
+                Ai.CreativityPoints >= data.creativityCost && 
+                Ai.FundsPoints >= data.fundsCost &&
+                Ai.InfluencePoints >= data.influenceCost)
                 myButton.interactable = true;
             else
                 myButton.interactable = false;
         }
-        public void OnEnable() =>
-            myButton = GetComponent<Button>();
-        public void OnDisable() =>
-            myButton = GetComponent<Button>();
 
         /// <summary>
         /// Setting new update
@@ -43,8 +54,8 @@ namespace Context
             this.UpdateName = data.name + data.desc;
             this.CostOfUpdate = data.researchCost;
             Ai = ai;
-            Data = data;
-
+            this.data = data;
+            SetTextToUpdateButton();
             BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
             bool status = gameObject.transform.root.gameObject.activeInHierarchy;
             if (myButton != null)
@@ -54,6 +65,13 @@ namespace Context
             myButton.onClick.AddListener(() => data.isResearched = true);
             myButton.onClick.AddListener(() => AllocationUpdate());
             myButton.onClick.AddListener(() => Destroy(this.gameObject));
+        
+        }
+
+        private void SetTextToUpdateButton()
+        {
+            title.text = data.name;
+            description.text = data.desc;
         }
 
         private void AllocationUpdate()

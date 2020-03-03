@@ -42,7 +42,7 @@ namespace Context
 
         private void CalculateFundsPoints()
         {
-            ai.FundsCost += CurrentFundsGain;
+            ai.FundsPoints += CurrentFundsGain;
         }
 
         private void CalculateFundsGainMod()

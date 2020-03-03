@@ -42,7 +42,7 @@ namespace Context
 
         private void CalculateCreativityPoints()
         {
-            ai.CreativityCost += CurrentCreativityGain;
+            ai.CreativityPoints += CurrentCreativityGain;
         }
 
         private void CalculateCreativityGainMod()

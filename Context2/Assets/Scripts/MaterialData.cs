@@ -37,7 +37,7 @@ namespace Context
 
         private void CalculateMaterialPoints()
         {
-            ai.CreativityCost += CurrentMaterialGain;
+            ai.CreativityPoints += CurrentMaterialGain;
         }
 
         private void CalculateMaterialGainMod()

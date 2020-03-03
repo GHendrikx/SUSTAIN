@@ -72,7 +72,7 @@
         public int researchFixedGain;
         public float researchGainMod;
         public int researchLimit;
-        public int researchLimitMod;
+        public float researchLimitMod;
         public int allocatieFixedGain;
         public int allocatieLimit;
         public int allocatieCostMod;

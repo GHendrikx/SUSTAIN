@@ -41,16 +41,16 @@ namespace Context
 
         #region Research
         [SerializeField]
-        private float researchCost;
-        public float ResearchCost
+        private float researchPoints;
+        public float ResearchPoints
         {
             get
             {
-                return researchCost;
+                return researchPoints;
             }
             set
             {
-                researchCost = value;
+                researchPoints = value;
             }
         }
 
@@ -82,7 +82,7 @@ namespace Context
 
         #region Creativity
         private float creativityCost;
-        public float CreativityCost
+        public float CreativityPoints
         {
             get
             {
@@ -123,7 +123,7 @@ namespace Context
 
         #region Funds
         private float fundsCost;
-        public float FundsCost
+        public float FundsPoints
         {
             get
             {
@@ -164,7 +164,7 @@ namespace Context
 
         #region Influence
         private float influenceCost;
-        public float InfluenceCost
+        public float InfluencePoints
         {
             get
             {
@@ -310,7 +310,7 @@ namespace Context
             if (addPoints)
             {
                 //only update the points if the prossessing amount is lower than the memorypoints
-                if (processingAmount < ResearchCost)
+                if (processingAmount < ResearchPoints)
                     UpdatePoints();
 
                 AddTimer();
@@ -326,7 +326,7 @@ namespace Context
 
         private void UpdatePoints() 
         {
-            processingAmount += researchCost;
+            processingAmount += researchPoints;
         }
 
         private void AddTimer()
@@ -344,10 +344,10 @@ namespace Context
 
             #region Calculate Resources
             //Calculate points
-            ResearchCost -= data.researchCost - data.researchFixedGain;
-            CreativityCost -= data.creativityCost - data.creativityFixedGain;
-            FundsCost -= data.fundsCost - data.fundsFixedGain;
-            InfluenceCost -= data.influenceCost - data.influenceFixedGain;
+            ResearchPoints -= data.researchCost - data.researchFixedGain;
+            CreativityPoints -= data.creativityCost - data.creativityFixedGain;
+            FundsPoints -= data.fundsCost - data.fundsFixedGain;
+            InfluencePoints -= data.influenceCost - data.influenceFixedGain;
             DroneCost -= data.droneCost - data.droneFixedGain;
             MaterialCost -= data.materialCost - data.materialFixedGain;
             #endregion
@@ -363,8 +363,8 @@ namespace Context
             audioManager.PlayBackground((BackgroundFragments)data.backgroundMusic);
             #endregion
 
-            if (ResearchCost >= researchData.CurrentResearchLimit)
-                ResearchCost = researchData.CurrentResearchLimit;
+            if (ResearchPoints >= researchData.CurrentResearchLimit)
+                ResearchPoints = researchData.CurrentResearchLimit;
 
             HASUPDATE.Add(data);
             processingAmount -= amount;

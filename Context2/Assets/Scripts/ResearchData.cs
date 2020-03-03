@@ -65,7 +65,8 @@ namespace Context
         //TODO: look into this one.
         private void CalculateResearchPoints()
         {
-            ai.ResearchCost += CurrentResearchGain;
+            ai.ResearchPoints += CurrentResearchGain;
+            Debug.Log(ai.ResearchPoints);
         }
 
         private void CalculateResearchGainMod()
@@ -110,8 +111,8 @@ namespace Context
                     CurrentResearchLimit += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchLimit;
             CurrentResearchLimit *= CurrentResearchLimitMod;
 
-            if (ai.ResearchCost >= CurrentResearchLimit)
-                ai.ResearchCost = CurrentResearchLimit;
+            if (ai.ResearchPoints >= CurrentResearchLimit)
+                ai.ResearchPoints = CurrentResearchLimit;
 
             ai.ResearchLimit = System.Convert.ToInt32(CurrentResearchLimit);
             ai.ResearchGain = CurrentResearchGain;

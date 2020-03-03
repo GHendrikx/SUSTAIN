@@ -51,7 +51,7 @@ public class GSpreadSheetsToJson : EditorWindow {
 	/// Key of the spreadsheet. Get from url of the spreadsheet.
 	/// </summary>
 	[SerializeField]
-	private string spreadSheetKey = "";
+	private string spreadSheetKey = "12IBTeyswsJgT5W8FpOqi4idmUpVdZ9genYdbu2j10mc";
 
 	/// <summary>
 	/// List of sheet names which want to download and convert to json file
