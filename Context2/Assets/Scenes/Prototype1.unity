@@ -259,8 +259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 3229601531938620148, guid: 286fc11852f7b5b4c9e42edf9e660522,
     type: 3}
-  upgradeAbilities: {fileID: 8447454157988369180, guid: ac03b5c248305f4409dd0d7526c8e83a,
-    type: 3}
+  upgradeAbilities: {fileID: 0}
+  costs: []
+  image: []
   tab: 2
   amountOfUpgrades: 0
   initializedData: []
@@ -536,7 +537,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1259,7 +1260,7 @@ MonoBehaviour:
   influenceData: {fileID: 1534975946}
   processingPoints: 0
   processingAmount: 1
-  researchCost: 0
+  researchPoints: 0
   droneCost: 0
   CurrentResearchGainMod: 0
   CurrentDroneGainMod: 0
@@ -1811,7 +1812,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1975,7 +1976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.024626173, y: 0.9057414}
   m_AnchorMax: {x: 0.1983738, y: 0.93667823}
-  m_AnchoredPosition: {x: 1.480011, y: 1.9300537}
+  m_AnchoredPosition: {x: 1.480011, y: 1.9299316}
   m_SizeDelta: {x: -1.6799927, y: 0.35998535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137333942
@@ -1990,8 +1991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd63b7605e7202458244ecaf1bab8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  tab: {fileID: 0}
+  button: {fileID: 323329960}
+  tab: {fileID: 623153669}
 --- !u!114 &137333943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3484,7 +3485,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -5489,8 +5490,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 3988172189011904762, guid: 170f7fae9bd9e7542826d5933137a37b,
     type: 3}
-  upgradeAbilities: {fileID: 8447454157988369180, guid: ac03b5c248305f4409dd0d7526c8e83a,
-    type: 3}
+  upgradeAbilities: {fileID: 0}
+  costs: []
+  image: []
   tab: 3
   amountOfUpgrades: 0
   initializedData: []
@@ -6438,8 +6440,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 3229601531938620148, guid: 286fc11852f7b5b4c9e42edf9e660522,
     type: 3}
-  upgradeAbilities: {fileID: 8447454157988369180, guid: ac03b5c248305f4409dd0d7526c8e83a,
+  upgradeAbilities: {fileID: 8497393281660433312, guid: 51aee97bbc5ec4f48b4d18026d94a0dc,
     type: 3}
+  costs: []
+  image: []
   tab: 1
   amountOfUpgrades: 0
   initializedData: []
@@ -7413,7 +7417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.081, y: 0.024}
   m_AnchorMax: {x: 0.46455616, y: 0.0504432}
-  m_AnchoredPosition: {x: -3.637848, y: -44.548096}
+  m_AnchoredPosition: {x: -3.6376953, y: -44.548096}
   m_SizeDelta: {x: 9.49575, y: 7.064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951253522
@@ -7480,7 +7484,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -8118,7 +8122,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -10015,7 +10019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.45900002, y: 0.109000005}
   m_AnchorMax: {x: 0.99700004, y: 0.827}
-  m_AnchoredPosition: {x: -9.900024, y: -0.0000038146973}
+  m_AnchoredPosition: {x: -9.900024, y: -0.0000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1399666230
@@ -10948,7 +10952,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -11038,7 +11042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.039072018, y: 0.588095}
   m_AnchorMax: {x: 0.94564974, y: 0.615095}
-  m_AnchoredPosition: {x: 0.15411377, y: -0.1065979}
+  m_AnchoredPosition: {x: 0.15411377, y: -0.10656738}
   m_SizeDelta: {x: -0.2000122, y: -0.31700134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1531760902
@@ -12791,6 +12795,61 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1534975949}
+        m_MethodName: UpdateResearch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1534975948}
+        m_MethodName: UpdateCreativity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1534975947}
+        m_MethodName: UpdateFunds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1534975946}
+        m_MethodName: UpdateInfluence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1534975951}
+        m_MethodName: UpdateSDGS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 90794119}
         m_MethodName: NextDate
         m_Mode: 1
@@ -13325,7 +13384,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -13435,7 +13494,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: partnerships
+  m_text: Partnerships
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e47f7a80781aad499c10d8272e6a431, type: 2}
   m_sharedMaterial: {fileID: -2558156018943872908, guid: 9e47f7a80781aad499c10d8272e6a431,
@@ -14388,7 +14447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21087542, y: 0.9057414}
   m_AnchorMax: {x: 0.43275082, y: 0.93667823}
-  m_AnchoredPosition: {x: -0.19999695, y: 1.9300537}
+  m_AnchoredPosition: {x: -0.19999695, y: 1.9299316}
   m_SizeDelta: {x: 1.6000061, y: 0.35998535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2147258310
@@ -14403,8 +14462,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd63b7605e7202458244ecaf1bab8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  tab: {fileID: 0}
+  button: {fileID: 1280053263}
+  tab: {fileID: 623153669}
 --- !u!114 &2147258311
 MonoBehaviour:
   m_ObjectHideFlags: 0
