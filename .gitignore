@@ -368,3 +368,7 @@ __pycache__/
 Context2/Library/ScriptAssemblies/Assembly-CSharp.dll
 Context2/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
 Context2/Library/StateCache/Hierarchy/b827bc-mainStage.json
+Context2/Library/shadercompiler-UnityShaderCompiler.exe0.log
+Context2/Library/shadercompiler-UnityShaderCompiler.exe1.log
+*.log
+Context2/Library

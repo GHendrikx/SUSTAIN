@@ -11,6 +11,9 @@ public class TabSystem : MonoBehaviour
     /// Set the tab as last sibling
     /// </summary>
     /// <param name="tab"></param>
-    public void SetNewTab(Transform tab) =>
+    public void SetNewTab(Transform tab)
+    {
+        Debug.Log(tab);
         tab.SetAsLastSibling();
+    }
 }
