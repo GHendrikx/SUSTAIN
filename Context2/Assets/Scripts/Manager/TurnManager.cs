@@ -11,9 +11,6 @@ namespace Context
         public delegate void NextTurn();
         public event NextTurn nextTurn;
 
-        [SerializeField]
-        private Text guiText;
-
         private int turn = 0;
         private const string turnText = "Turn: ";
 
@@ -24,7 +21,7 @@ namespace Context
         /// </summary>
         private void Start()
         {
-            guiText.text = turnText + turn;
+            //guiText.text = turnText + turn;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
             {
@@ -92,7 +89,6 @@ namespace Context
             }
 
             turn++;
-            guiText.text = turnText + turn;
             GameManager.Instance.AI.SetTurn = true;
         }
 
