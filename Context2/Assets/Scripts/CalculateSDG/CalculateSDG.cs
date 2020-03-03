@@ -15,7 +15,7 @@ namespace Context
                 sdgChange.Add(0);
         }
 
-        void UpdateSDGS()
+        public void UpdateSDGS()
         {
             List<UpgradeAbilities> upgradeAbilities = UpgradeAbilities.upgradeAbilities;
             foreach (UpgradeAbilities abilities in upgradeAbilities)

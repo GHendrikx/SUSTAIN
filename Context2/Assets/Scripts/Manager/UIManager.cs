@@ -81,7 +81,7 @@ namespace Context
             if (data.typeOfData == 1 || data.typeOfData == 2)
                 upgradesTabs[data.typeOfData].InitializeNewButton(data, AI);
             else
-                upgradesTabs[data.typeOfData].InitializeNewSlider(data, AI);
+                upgradesTabs[data.typeOfData].InitializeNewAllocation(data, AI);
 
         }
 

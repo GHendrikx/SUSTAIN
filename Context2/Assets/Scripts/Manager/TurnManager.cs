@@ -64,11 +64,12 @@ namespace Context
             {
                 float currentDoneTarget = UpgradeAbilities.upgradeAbilities[i].data.doneTarget *
                     Mathf.Pow(2, UpgradeAbilities.upgradeAbilities[i].data.doneLevel);
+
                 UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget = currentDoneTarget;
 
                 int points = System.Convert.ToInt32(UpgradeAbilities.upgradeAbilities[i].AbilityPointText.text);
                 UpgradeAbilities.upgradeAbilities[i].data.doneTimes += UpgradeAbilities.upgradeAbilities[i].data.doneGain * points;
-                
+
                 if (UpgradeAbilities.upgradeAbilities[i].data.doneTimes >= currentDoneTarget && UpgradeAbilities.upgradeAbilities[i].data.hasTarget)
                 {
                     UpgradeAbilities.upgradeAbilities[i].data.doneLevel += 1;
@@ -81,11 +82,13 @@ namespace Context
                 }
 
                 if (UpgradeAbilities.upgradeAbilities[i].data.hasTarget)
+                {
                     UpgradeAbilities.upgradeAbilities[i].InformationText.text =
                     UpgradeAbilities.upgradeAbilities[i].data.name + "(" + UpgradeAbilities.upgradeAbilities[i].data.allocatieCost + ")" + "\n" +
                     UpgradeAbilities.upgradeAbilities[i].data.doneTimes + "/"
                     + UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget + " "
                     + UpgradeAbilities.upgradeAbilities[i].data.doneDesc;
+                }
             }
 
             turn++;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,8 +16,8 @@ namespace Context
         public static float ALLOCATIONPOOL = 0;
         public float CurrentDoneTarget;
         [SerializeField]
-        private Text abilityPointText;
-        public Text AbilityPointText
+        private TextMeshProUGUI abilityPointText;
+        public TextMeshProUGUI AbilityPointText
         {
             get
             {
@@ -28,8 +29,8 @@ namespace Context
             }
         }
         [SerializeField]
-        private Text informationText;
-        public Text InformationText
+        private TextMeshProUGUI informationText;
+        public TextMeshProUGUI InformationText
         {
             get
             {
@@ -40,6 +41,8 @@ namespace Context
                 informationText = value;
             }
         }
+
+        private TextMeshProUGUI descriptionText;
 
         public Button PlusButton;
         public Button MinButton;
@@ -83,6 +86,8 @@ namespace Context
         {
             this.Instance = gameObject;
             this.data = data;
+            if (data.desc == null)
+                descriptionText.text = string.Empty;
             upgradeAbilities.Add(this);
             LockCheck();
 
@@ -102,11 +107,11 @@ namespace Context
                     }
                 }
             }
-            else
-            {
-                informationText = GetComponentInChildren<Text>(true);
-                informationText.text = data.name + "(" + data.allocatieCost + ")";
-            }
+            //else
+            //{
+            //    informationText = GetComponentInChildren<TextMeshProUGUI>(true);
+            //    informationText.text = data.name + "(" + data.allocatieCost + ")";
+            //}
         }
 
 
