@@ -25,9 +25,8 @@ namespace Context
         {
             if (sdgBar[(int)sdgType].LockImage.gameObject.activeInHierarchy)
                 return;
-            //sdgBar[(int)sdgType].RectTransform.anchorMax = new Vector2(percentage,)sdgBar[(int)sdgType].RectTransform.anchorMax.y);
-            //sdgBar[(int)sdgType].RectTransform.anchorMax.x = percentage;
-            //sdgBar[(int)sdgType]
+
+            sdgBar[(int)sdgType].RectTransform.anchorMax = new Vector2(percentage,sdgBar[(int)sdgType].RectTransform.anchorMax.y);
         }
     }
 

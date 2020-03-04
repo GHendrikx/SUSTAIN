@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 namespace Context
 {
@@ -23,7 +24,8 @@ namespace Context
         [SerializeField]
         private GameObject upgradeBlock;
         [SerializeField]
-        private UpdateBlockInformation upgradeBlockInformation;
+        private GameObject upgradeCost;
+
         [SerializeField]
         private Image SDGColor;
         [SerializeField]
@@ -74,6 +76,38 @@ namespace Context
                 title.text = data.name;
             if (description != null)
                 description.text = data.desc;
+
+            SetUpdateCost();
+        }
+
+        private void SetUpdateCost()
+        {
+            if (data.allocatieCost > 0)
+                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+            if (data.creativityCost > 0)
+                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+            if (data.droneCost > 0)
+                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+            if (data.fundsCost > 0)
+                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+            if (data.influenceCost > 0)
+                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+            if (data.materialCost > 0)
+                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+            if (data.powerCost > 0)
+                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+            if (data.researchCost > 0)
+                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+        }
+
+        private void SetUpdateCost(string text, Image image)
+        {
+            GameObject upgrade = GameObject.Instantiate<GameObject>(upgradeCost);
+            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
+
+            //upgrade.GetComponentInChildren<Image>().sprite = image.sprite;
+            upgrade.transform.parent = upgradeBlock.transform;
+            upgrade.transform.position = new Vector2(0, 0);
         }
 
         private void AllocationUpdate()
@@ -91,35 +125,37 @@ namespace Context
 
 
     }
-    [System.Serializable]
-    public struct UpdateBlockInformation
-    {
-        [SerializeField]
-        private TextMeshProUGUI text;
-        public TextMeshProUGUI Text
-        {
-            get
-            {
-                return text;
-            }
-            set
-            {
-                text = value;
-            }
-        }
+    #region struct
+    //[System.Serializable]
+    //public struct UpdateBlockInformation
+    //{
+    //    [SerializeField]
+    //    private TextMeshProUGUI text;
+    //    public TextMeshProUGUI Text
+    //    {
+    //        get
+    //        {
+    //            return text;
+    //        }
+    //        set
+    //        {
+    //            text = value;
+    //        }
+    //    }
 
-        [SerializeField]
-        private Image upgradeIcon;
-        public Image UpgradeIcon
-        {
-            get
-            {
-                return upgradeIcon;
-            }
-            set
-            {
-                upgradeIcon = value;
-            }
-        }
-    }
+    //    [SerializeField]
+    //    private Image upgradeIcon;
+    //    public Image UpgradeIcon
+    //    {
+    //        get
+    //        {
+    //            return upgradeIcon;
+    //        }
+    //        set
+    //        {
+    //            upgradeIcon = value;
+    //        }
+    //    }
+    //}
+    #endregion
 }
