@@ -88,11 +88,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 384951623018488606, guid: fab4ca20892f4814ea607fde3f6be4ef,
-        type: 3}
-      propertyPath: m_Name
-      value: research Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 6170093080389558310, guid: fab4ca20892f4814ea607fde3f6be4ef,
         type: 3}
       propertyPath: m_Color.r
@@ -112,6 +107,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 300747140224370296, guid: fab4ca20892f4814ea607fde3f6be4ef,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 300747140224370296, guid: fab4ca20892f4814ea607fde3f6be4ef,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 300747140224370296, guid: fab4ca20892f4814ea607fde3f6be4ef,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 300747140224370296, guid: fab4ca20892f4814ea607fde3f6be4ef,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 384951623018488606, guid: fab4ca20892f4814ea607fde3f6be4ef,
+        type: 3}
+      propertyPath: m_Name
+      value: research Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3386379839574032647, guid: fab4ca20892f4814ea607fde3f6be4ef,
         type: 3}
@@ -217,26 +237,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 300747140224370296, guid: fab4ca20892f4814ea607fde3f6be4ef,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 300747140224370296, guid: fab4ca20892f4814ea607fde3f6be4ef,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 300747140224370296, guid: fab4ca20892f4814ea607fde3f6be4ef,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 300747140224370296, guid: fab4ca20892f4814ea607fde3f6be4ef,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fab4ca20892f4814ea607fde3f6be4ef, type: 3}
