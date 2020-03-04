@@ -21,9 +21,9 @@ namespace Context
         [SerializeField]
         private TextMeshProUGUI researchUnlocks;
         [SerializeField]
-        private TextMeshProUGUI cost;
+        private GameObject upgradeBlock;
         [SerializeField]
-        private Image icon;
+        private UpdateBlockInformation upgradeBlockInformation;
         [SerializeField]
         private Image SDGColor;
         [SerializeField]
@@ -35,8 +35,8 @@ namespace Context
             if (Ai == null)
                 return;
 
-            if (Ai.ResearchPoints >= data.researchCost && 
-                Ai.CreativityPoints >= data.creativityCost && 
+            if (Ai.ResearchPoints >= data.researchCost &&
+                Ai.CreativityPoints >= data.creativityCost &&
                 Ai.FundsPoints >= data.fundsCost &&
                 Ai.InfluencePoints >= data.influenceCost)
                 myButton.interactable = true;
@@ -65,14 +65,14 @@ namespace Context
             myButton.onClick.AddListener(() => data.isResearched = true);
             myButton.onClick.AddListener(() => AllocationUpdate());
             myButton.onClick.AddListener(() => Destroy(this.gameObject));
-        
+
         }
 
         private void SetTextToUpdateButton()
         {
-            if(title != null)
+            if (title != null)
                 title.text = data.name;
-            if(description != null)
+            if (description != null)
                 description.text = data.desc;
         }
 
@@ -90,5 +90,36 @@ namespace Context
         }
 
 
+    }
+    [System.Serializable]
+    public struct UpdateBlockInformation
+    {
+        [SerializeField]
+        private TextMeshProUGUI text;
+        public TextMeshProUGUI Text
+        {
+            get
+            {
+                return text;
+            }
+            set
+            {
+                text = value;
+            }
+        }
+
+        [SerializeField]
+        private Image upgradeIcon;
+        public Image UpgradeIcon
+        {
+            get
+            {
+                return upgradeIcon;
+            }
+            set
+            {
+                upgradeIcon = value;
+            }
+        }
     }
 }

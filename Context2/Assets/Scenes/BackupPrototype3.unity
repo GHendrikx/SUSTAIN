@@ -1235,6 +1235,7 @@ GameObject:
   - component: {fileID: 90794114}
   - component: {fileID: 90794112}
   - component: {fileID: 90794119}
+  - component: {fileID: 90794120}
   m_Layer: 0
   m_Name: '{MANAGER}'
   m_TagString: Untagged
@@ -1408,6 +1409,70 @@ MonoBehaviour:
     beginMonth: 1
     endYear: 2030
     endMonth: 12
+--- !u!114 &90794120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90794110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eba94cd4f544d948b1bbabf9d5ada83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sdgBar:
+  - lockImage: {fileID: 197734483}
+    processBar: {fileID: 1498481433}
+    rectTransform: {fileID: 1498481432}
+  - lockImage: {fileID: 148195072}
+    processBar: {fileID: 921026285}
+    rectTransform: {fileID: 921026284}
+  - lockImage: {fileID: 2029173655}
+    processBar: {fileID: 24495445}
+    rectTransform: {fileID: 24495444}
+  - lockImage: {fileID: 1674407332}
+    processBar: {fileID: 371033536}
+    rectTransform: {fileID: 371033535}
+  - lockImage: {fileID: 1008585604}
+    processBar: {fileID: 728546102}
+    rectTransform: {fileID: 728546101}
+  - lockImage: {fileID: 2079801984}
+    processBar: {fileID: 319666560}
+    rectTransform: {fileID: 319666559}
+  - lockImage: {fileID: 1747056185}
+    processBar: {fileID: 87827258}
+    rectTransform: {fileID: 87827257}
+  - lockImage: {fileID: 1043059547}
+    processBar: {fileID: 1936300354}
+    rectTransform: {fileID: 1936300353}
+  - lockImage: {fileID: 1368037443}
+    processBar: {fileID: 1977928724}
+    rectTransform: {fileID: 1977928723}
+  - lockImage: {fileID: 350790200}
+    processBar: {fileID: 981139425}
+    rectTransform: {fileID: 981139424}
+  - lockImage: {fileID: 395172427}
+    processBar: {fileID: 148070334}
+    rectTransform: {fileID: 148070333}
+  - lockImage: {fileID: 1823648791}
+    processBar: {fileID: 1284792331}
+    rectTransform: {fileID: 1284792330}
+  - lockImage: {fileID: 1685830988}
+    processBar: {fileID: 134440154}
+    rectTransform: {fileID: 134440153}
+  - lockImage: {fileID: 768462633}
+    processBar: {fileID: 442955314}
+    rectTransform: {fileID: 442955313}
+  - lockImage: {fileID: 1736915471}
+    processBar: {fileID: 1381045183}
+    rectTransform: {fileID: 1381045182}
+  - lockImage: {fileID: 1436288623}
+    processBar: {fileID: 1978436732}
+    rectTransform: {fileID: 1978436731}
+  - lockImage: {fileID: 2033431632}
+    processBar: {fileID: 1177290182}
+    rectTransform: {fileID: 1177290181}
 --- !u!1 &94763653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,8 +2484,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.96300006}
-  m_AnchoredPosition: {x: 0, y: 267.1}
-  m_SizeDelta: {x: 0, y: -534.2}
+  m_AnchoredPosition: {x: 0, y: 222.1201}
+  m_SizeDelta: {x: 0, y: -444.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &197001591
 MonoBehaviour:
@@ -6899,7 +6964,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -7487,7 +7552,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -7963,7 +8028,7 @@ GameObject:
   - component: {fileID: 1008585605}
   - component: {fileID: 1008585604}
   m_Layer: 5
-  m_Name: 4 lock (1)
+  m_Name: 5 lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8125,7 +8190,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

@@ -89,6 +89,7 @@ namespace Context
 
         public void QuitGame() =>
             Application.Quit();
+
         public void SwitchScene(int index) =>
             SceneManager.LoadScene(index);
     }
