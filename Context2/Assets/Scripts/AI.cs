@@ -332,14 +332,17 @@ namespace Context
         #endregion
 
         #region TrustData
-        public float GlobalRebelliosAngry;
+        public float CurrentGlobalRebelliosAngry;
         public float CurrentGlobalAngryDislikes;
-        public float CurrentDislikesNeutral;
-        public float CurrentNeutralLikes;
-        public float CurrentLikesLove;
-
-
-
+        public float CurrentGlobalDislikesNeutral;
+        public float CurrentGlobalNeutralLikes;
+        public float CurrentGlobalLikesLove;
+        public float CurrentGlobalRebelliosControlled;
+        public float CurrentGlobalAngryControlled;
+        public float CurrentGlobalDislikesControlled;
+        public float CurrentGlobalLovesControlled;
+        public float CurrentGloballikesControlled;
+        public float CurrentGlobalNeutralControlled;
         #endregion
 
         #region Debug Variable
