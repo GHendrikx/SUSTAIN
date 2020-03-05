@@ -37,7 +37,8 @@ namespace Context
         public float CurrentSDGChange17;
         #endregion
 
-        public static float SDGBASELOG = 1.34f;
+        public static float SDGBASELOG = 1.5f;
+        public static float SDGDECAY = 0.002f;
 
         // Start is called before the first frame update
         private void Start()
@@ -52,48 +53,52 @@ namespace Context
             CalculateSDGProgress();
         }
 
+        public void UpdateSDGWithoutPoints()
+        {
+            CalculateSDGGain();
+            CalculateSDGProgress();
+        }
+
         private void CalculateSDGProgress()
         {
-            ai.SDGProgress01 = Mathf.Log(ai.SDGPoints01, SDGBASELOG) / 10;
-            ai.SDGProgress02 = Mathf.Log(ai.SDGPoints02, SDGBASELOG) / 10;
-            ai.SDGProgress03 = Mathf.Log(ai.SDGPoints03, SDGBASELOG) / 10;
-            ai.SDGProgress04 = Mathf.Log(ai.SDGPoints04, SDGBASELOG) / 10;
-            ai.SDGProgress05 = Mathf.Log(ai.SDGPoints05, SDGBASELOG) / 10;
-            ai.SDGProgress06 = Mathf.Log(ai.SDGPoints06, SDGBASELOG) / 10;
-            ai.SDGProgress07 = Mathf.Log(ai.SDGPoints07, SDGBASELOG) / 10;
-            ai.SDGProgress08 = Mathf.Log(ai.SDGPoints08, SDGBASELOG) / 10;
-            ai.SDGProgress09 = Mathf.Log(ai.SDGPoints09, SDGBASELOG) / 10;
-            ai.SDGProgress10 = Mathf.Log(ai.SDGPoints10, SDGBASELOG) / 10;
-            ai.SDGProgress11 = Mathf.Log(ai.SDGPoints11, SDGBASELOG) / 10;
-            ai.SDGProgress12 = Mathf.Log(ai.SDGPoints12, SDGBASELOG) / 10;
-            ai.SDGProgress13 = Mathf.Log(ai.SDGPoints13, SDGBASELOG) / 10;
-            ai.SDGProgress14 = Mathf.Log(ai.SDGPoints14, SDGBASELOG) / 10;
-            ai.SDGProgress15 = Mathf.Log(ai.SDGPoints15, SDGBASELOG) / 10;
-            ai.SDGProgress16 = Mathf.Log(ai.SDGPoints16, SDGBASELOG) / 10;
-            ai.SDGProgress17 = Mathf.Log(ai.SDGPoints17, SDGBASELOG) / 10;
+            ai.SDGProgress01 = Mathf.Clamp((Mathf.Log(ai.SDGPoints01, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress02 = Mathf.Clamp((Mathf.Log(ai.SDGPoints02, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress03 = Mathf.Clamp((Mathf.Log(ai.SDGPoints03, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress04 = Mathf.Clamp((Mathf.Log(ai.SDGPoints04, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress05 = Mathf.Clamp((Mathf.Log(ai.SDGPoints05, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress06 = Mathf.Clamp((Mathf.Log(ai.SDGPoints06, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress07 = Mathf.Clamp((Mathf.Log(ai.SDGPoints07, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress08 = Mathf.Clamp((Mathf.Log(ai.SDGPoints08, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress09 = Mathf.Clamp((Mathf.Log(ai.SDGPoints09, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress10 = Mathf.Clamp((Mathf.Log(ai.SDGPoints10, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress11 = Mathf.Clamp((Mathf.Log(ai.SDGPoints11, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress12 = Mathf.Clamp((Mathf.Log(ai.SDGPoints12, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress13 = Mathf.Clamp((Mathf.Log(ai.SDGPoints13, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress14 = Mathf.Clamp((Mathf.Log(ai.SDGPoints14, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress15 = Mathf.Clamp((Mathf.Log(ai.SDGPoints15, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress16 = Mathf.Clamp((Mathf.Log(ai.SDGPoints16, SDGBASELOG) / 10),0,1);
+            ai.SDGProgress17 = Mathf.Clamp((Mathf.Log(ai.SDGPoints17, SDGBASELOG) / 10),0,1);
         }
 
         public void CalculateSDGPoints()
         {
-            ai.SDGPoints01 += CurrentSDGChange01;
-            ai.SDGPoints02 += CurrentSDGChange02;
-            ai.SDGPoints03 += CurrentSDGChange03;
-            ai.SDGPoints04 += CurrentSDGChange04;
-            ai.SDGPoints05 += CurrentSDGChange05;
-            ai.SDGPoints06 += CurrentSDGChange06;
-            ai.SDGPoints07 += CurrentSDGChange07;
-            ai.SDGPoints08 += CurrentSDGChange08;
-            ai.SDGPoints09 += CurrentSDGChange09;
-            ai.SDGPoints10 += CurrentSDGChange10;
-            ai.SDGPoints11 += CurrentSDGChange11;
-            ai.SDGPoints12 += CurrentSDGChange12;
-            ai.SDGPoints13 += CurrentSDGChange13;
-            ai.SDGPoints14 += CurrentSDGChange14;
-            ai.SDGPoints15 += CurrentSDGChange15;
-            ai.SDGPoints16 += CurrentSDGChange16;
-            ai.SDGPoints17 += CurrentSDGChange17;
-            
-
+            ai.SDGPoints01 += CurrentSDGChange01 - (SDGDECAY * ai.SDGPoints01);
+            ai.SDGPoints02 += CurrentSDGChange02 - (SDGDECAY * ai.SDGPoints02);
+            ai.SDGPoints03 += CurrentSDGChange03 - (SDGDECAY * ai.SDGPoints03);
+            ai.SDGPoints04 += CurrentSDGChange04 - (SDGDECAY * ai.SDGPoints04);
+            ai.SDGPoints05 += CurrentSDGChange05 - (SDGDECAY * ai.SDGPoints05);
+            ai.SDGPoints06 += CurrentSDGChange06 - (SDGDECAY * ai.SDGPoints06);
+            ai.SDGPoints07 += CurrentSDGChange07 - (SDGDECAY * ai.SDGPoints07);
+            ai.SDGPoints08 += CurrentSDGChange08 - (SDGDECAY * ai.SDGPoints08);
+            ai.SDGPoints09 += CurrentSDGChange09 - (SDGDECAY * ai.SDGPoints09);
+            ai.SDGPoints10 += CurrentSDGChange10 - (SDGDECAY * ai.SDGPoints10);
+            ai.SDGPoints11 += CurrentSDGChange11 - (SDGDECAY * ai.SDGPoints11);
+            ai.SDGPoints12 += CurrentSDGChange12 - (SDGDECAY * ai.SDGPoints12);
+            ai.SDGPoints13 += CurrentSDGChange13 - (SDGDECAY * ai.SDGPoints13);
+            ai.SDGPoints14 += CurrentSDGChange14 - (SDGDECAY * ai.SDGPoints14);
+            ai.SDGPoints15 += CurrentSDGChange15 - (SDGDECAY * ai.SDGPoints15);
+            ai.SDGPoints16 += CurrentSDGChange16 - (SDGDECAY * ai.SDGPoints16);
+            ai.SDGPoints17 += CurrentSDGChange17 - (SDGDECAY * ai.SDGPoints17);
         }
 
         public void ResetSDGGain()

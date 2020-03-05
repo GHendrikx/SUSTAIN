@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Timers;
 
 namespace Context
@@ -8,7 +9,8 @@ namespace Context
         private Data[] data;
         [SerializeField]
         private IOManager iOManager;
-
+        [SerializeField]
+        private AI ai;
         #region all Variables
         private float currentRebelliousAngry;
         private float currentAngryDislikes;
@@ -23,6 +25,8 @@ namespace Context
         private float currentLikesControlled;
         #endregion
 
+        public float CurrentGlobalTrustGain;
+
         private void Start()
         {
             data = iOManager.data.Data;
@@ -34,69 +38,184 @@ namespace Context
         /// </summary>
         private void UpdateTrust()
         {
-            CalculateGlobalTrust();
+            CalculateRebelliosTrust();
+            CalculateAngryDislikes();
+            CalculateDislikesNeutral();
+            CalculateNeutralLikes();
+            CalculateLikesLoves();
+            CalculateLovesControlled();
+            CalculateRebelliosControlled();
+            CalculateAngryControlled();
+            CalculateDislikesControlled();
+            CalculateNeutralControlled();
+            CalculateLikesControlled();
+
             TimerManager.Instance.AddTimer(UpdateTrust, 1);
         }
 
-        private void CalculateGlobalTrust()
+        private void CalculateLikesControlled()
         {
+            currentLikesControlled = 0;
+
             foreach (Data currentData in data)
-            {
-                if (currentData.isResearched)
-                    currentRebelliousAngry += currentData.globalRebelliousAngry;
-                if (currentData.isActive)
-                    currentRebelliousAngry += currentData.amount * currentData.globalRebelliousAngry;
-
-                if (currentData.isResearched)
-                    currentAngryDislikes += currentData.globalAngryDislikes;
-                if (currentData.isActive)
-                    currentAngryDislikes += currentData.amount * currentData.globalAngryDislikes;
-
-                if (currentData.isResearched)
-                    currentDislikesNeutral += currentData.globalDislikesNeutral;
-                if (currentData.isActive)
-                    currentDislikesNeutral += currentData.amount * currentData.globalDislikesNeutral;
-
-                if (currentData.isResearched)
-                    currentNeutralLikes += currentData.globalNeutralLikes;
-                if (currentData.isActive)
-                    currentNeutralLikes += currentData.amount * currentData.globalNeutralLikes;
-
-                if (currentData.isResearched)
-                    currentLikesLoves += currentData.globalLikesLoves;
-                if (currentData.isActive)
-                    currentLikesLoves += currentData.amount * currentData.globalLikesLoves;
-
-                if (currentData.isResearched)
-                    currentLovesControlled += currentData.globalLovesControlled;
-                if (currentData.isActive)
-                    currentLovesControlled += currentData.amount * currentData.globalLovesControlled;
-
-                if (currentData.isResearched)
-                    currentRebelliosControlled += currentData.globalRebelliousControlled;
-                if (currentData.isActive)
-                    currentRebelliosControlled += currentData.amount * currentData.globalRebelliousControlled;
-
-                if (currentData.isResearched)
-                    currentAngryControlled += currentData.globalAngryControlled;
-                if (currentData.isActive)
-                    currentAngryControlled += currentData.amount * currentData.globalAngryControlled;
-
-                if (currentData.isResearched)
-                    currentDislikesControlled += currentData.globalDislikesControlled;
-                if (currentData.isActive)
-                    currentDislikesControlled += currentData.amount * currentData.globalDislikesControlled;
-
-                if (currentData.isResearched)
-                    currentNeutralControlled += currentData.globalNeutralControlled;
-                if (currentData.isActive)
-                    currentNeutralControlled += currentData.amount * currentData.globalNeutralControlled;
-
                 if (currentData.isResearched)
                     currentLikesControlled += currentData.globalLikesControlled;
-                if (currentData.isActive)
-                    currentLikesControlled += currentData.amount * currentData.globalLikesControlled;
-            }
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentLikesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalLikesControlled;
+
+            ai.CurrentGloballikesControlled = currentLikesControlled;
+        }
+
+        private void CalculateNeutralControlled()
+        {
+            currentNeutralControlled = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentNeutralControlled += currentData.globalNeutralControlled;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentNeutralControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalNeutralControlled;
+
+            ai.CurrentGlobalNeutralControlled = currentNeutralControlled;
+        }
+
+        private void CalculateDislikesControlled()
+        {
+            currentDislikesControlled = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentDislikesControlled += currentData.globalDislikesControlled;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentDislikesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalDislikesControlled;
+
+            ai.CurrentGlobalDislikesControlled = currentDislikesControlled;
+        }
+
+        private void CalculateAngryControlled()
+        {
+            currentAngryControlled = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentAngryControlled += currentData.globalAngryControlled;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentAngryControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalAngryControlled;
+
+            ai.CurrentGlobalAngryControlled = currentAngryControlled;
+        }
+
+        private void CalculateRebelliosControlled()
+        {
+            currentRebelliosControlled = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentRebelliosControlled += currentData.globalRebelliousControlled;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentRebelliosControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalRebelliousControlled;
+
+            ai.CurrentGlobalRebelliosControlled = currentRebelliosControlled;
+        }
+
+        private void CalculateLovesControlled()
+        {
+            currentLovesControlled = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentLovesControlled += currentData.globalLikesControlled;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentLovesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalLikesControlled;
+
+            ai.CurrentGlobalLovesControlled = currentLovesControlled;
+        }
+
+        private void CalculateLikesLoves()
+        {
+            currentLikesLoves = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentLikesLoves += currentData.globalLikesLoves;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentLikesLoves += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalLikesLoves;
+
+            ai.CurrentGlobalLikesLove = currentLikesLoves;
+        }
+
+        private void CalculateNeutralLikes()
+        {
+            currentNeutralLikes = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentNeutralLikes += currentData.globalNeutralLikes;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentNeutralLikes += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalNeutralLikes;
+
+            ai.CurrentGlobalNeutralLikes = currentNeutralLikes;
+        }
+
+        private void CalculateDislikesNeutral()
+        {
+            currentDislikesNeutral = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentDislikesNeutral += currentData.globalDislikesNeutral;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentDislikesNeutral += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalDislikesNeutral;
+
+            ai.CurrentGlobalDislikesNeutral = currentDislikesNeutral;
+        }
+
+        private void CalculateAngryDislikes()
+        {
+            currentAngryDislikes = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentAngryDislikes += currentData.globalAngryDislikes;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentAngryDislikes += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalAngryDislikes;
+
+            ai.CurrentGlobalAngryDislikes = currentAngryDislikes;
+        }
+
+        private void CalculateRebelliosTrust()
+        {
+            currentRebelliousAngry = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentRebelliousAngry += currentData.globalRebelliousAngry;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentRebelliousAngry += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalRebelliousAngry;
+
+            ai.CurrentGlobalRebelliosAngry = currentRebelliousAngry;
         }
     }
 
