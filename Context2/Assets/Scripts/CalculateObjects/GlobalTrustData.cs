@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Timers;
 
 namespace Context
@@ -12,20 +11,18 @@ namespace Context
         [SerializeField]
         private AI ai;
         #region all Variables
-        private float currentRebelliousAngry;
-        private float currentAngryDislikes;
-        private float currentDislikesNeutral;
-        private float currentNeutralLikes;
-        private float currentLikesLoves;
-        private float currentLovesControlled;
-        private float currentRebelliosControlled;
-        private float currentAngryControlled;
-        private float currentDislikesControlled;
-        private float currentNeutralControlled;
-        private float currentLikesControlled;
+        public float currentRebelliousAngry;
+        public float currentAngryDislikes;
+        public float currentDislikesNeutral;
+        public float currentNeutralLikes;
+        public float currentLikesLoves;
+        public float currentLovesControlled;
+        public float currentRebelliosControlled;
+        public float currentAngryControlled;
+        public float currentDislikesControlled;
+        public float currentNeutralControlled;
+        public float currentLikesControlled;
         #endregion
-
-        public float CurrentGlobalTrustGain;
 
         private void Start()
         {
@@ -36,7 +33,7 @@ namespace Context
         /// <summary>
         /// Updating once a second
         /// </summary>
-        private void UpdateTrust()
+        public void UpdateTrust()
         {
             CalculateRebelliosTrust();
             CalculateAngryDislikes();
@@ -134,11 +131,12 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentLovesControlled += currentData.globalLikesControlled;
-
+                    currentLovesControlled += currentData.globalLovesControlled;
+            Debug.Log(currentLovesControlled);
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentLovesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalLikesControlled;
+                    currentLovesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalLovesControlled;
+            Debug.Log(currentLovesControlled);
 
             ai.CurrentGlobalLovesControlled = currentLovesControlled;
         }
@@ -150,11 +148,11 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     currentLikesLoves += currentData.globalLikesLoves;
-
+            
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
                     currentLikesLoves += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalLikesLoves;
-
+            
             ai.CurrentGlobalLikesLove = currentLikesLoves;
         }
 

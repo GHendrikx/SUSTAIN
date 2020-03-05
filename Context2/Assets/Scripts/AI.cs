@@ -327,22 +327,197 @@ namespace Context
         public float SDGProgress15;
         public float SDGProgress16;
         public float SDGProgress17;
+        [Space(10)]
         #endregion
 
         #endregion
 
+        #region TrustData
+        [Space(20)]
         #region GlobalTrustData
-        public float CurrentGlobalRebelliosAngry;
-        public float CurrentGlobalAngryDislikes;
-        public float CurrentGlobalDislikesNeutral;
-        public float CurrentGlobalNeutralLikes;
-        public float CurrentGlobalLikesLove;
-        public float CurrentGlobalRebelliosControlled;
-        public float CurrentGlobalAngryControlled;
-        public float CurrentGlobalDislikesControlled;
-        public float CurrentGlobalLovesControlled;
-        public float CurrentGloballikesControlled;
-        public float CurrentGlobalNeutralControlled;
+        private float currentGlobalRebelliosAngry;
+        public float CurrentGlobalRebelliosAngry
+        {
+            get
+            {
+                return currentGlobalRebelliosAngry;
+            }
+            set
+            {
+                currentGlobalRebelliosAngry = value;
+            }
+        }
+        public float currentGlobalAngryDislikes;
+        public float CurrentGlobalAngryDislikes
+        {
+            get
+            {
+                return currentGlobalAngryDislikes;
+            }
+            set
+            {
+                currentGlobalAngryDislikes = value;
+            }
+        }
+        public float currentGlobalDislikesNeutral;
+        public float CurrentGlobalDislikesNeutral
+        {
+            get
+            {
+                return currentGlobalDislikesNeutral;
+            }
+            set
+            {
+                currentGlobalDislikesNeutral = value;
+            }
+
+        }
+        public float currentGlobalNeutralLikes;
+        public float CurrentGlobalNeutralLikes
+        {
+            get
+            {
+                return currentGlobalNeutralLikes;
+            }
+            set
+            {
+                currentGlobalNeutralLikes = value;
+            }
+        }
+        public float currentGlobalLikesLove;
+        public float CurrentGlobalLikesLove
+        {
+            get
+            {
+                return currentGlobalLikesLove;
+            }
+            set
+            {
+                currentGlobalLikesLove = value;
+            }
+        }
+        public float currentGlobalRebelliosControlled;
+        public float CurrentGlobalRebelliosControlled
+        {
+            get
+            {
+                return currentGlobalRebelliosControlled;
+            }
+            set
+            {
+                currentGlobalRebelliosControlled = value;
+            }
+        }
+        public float currentGlobalAngryControlled;
+        public float CurrentGlobalAngryControlled
+        {
+            get
+            {
+                return currentGlobalAngryControlled;
+            }
+            set
+            {
+                currentGlobalAngryControlled = value;
+            }
+        }
+        public float currentGlobalDislikesControlled;
+        public float CurrentGlobalDislikesControlled
+        {
+            get
+            {
+                return currentGlobalDislikesControlled;
+            }
+            set
+            {
+                currentGlobalDislikesControlled = value;
+            }
+        }
+        public float currentGlobalLovesControlled;
+        public float CurrentGlobalLovesControlled
+        {
+            get
+            {
+                return currentGlobalLovesControlled;
+            }
+            set
+            {
+                currentGlobalLovesControlled = value;
+            }
+        }
+        public float currentGloballikesControlled;
+        public float CurrentGloballikesControlled
+        {
+            get
+            {
+                return currentGloballikesControlled;
+            }
+            set
+            {
+                currentGloballikesControlled = value;
+            }
+        }
+        public float currentGlobalNeutralControlled;
+        public float CurrentGlobalNeutralControlled
+        {
+            get
+            {
+                return currentGlobalNeutralControlled;
+            }
+            set
+            {
+                currentGlobalNeutralControlled = value;
+            }
+        }
+            #endregion
+        
+        [Space(10)]
+
+        #region SvTrustData
+        public float CurrentSvRebelliosAngry;
+        public float CurrentSvAngryDislikes;
+        public float CurrentSvDislikesNeutral;
+        public float CurrentSvNeutralLikes;
+        public float CurrentSvLikesLove;
+        public float CurrentSvRebelliosControlled;
+        public float CurrentSvAngryControlled;
+        public float CurrentSvDislikesControlled;
+        public float CurrentSvLovesControlled;
+        public float CurrentSvlikesControlled;
+        public float CurrentSvNeutralControlled;
+        #endregion
+        
+        [Space(10)]
+
+        #region NatTrustData
+        public float CurrentNatRebelliosAngry;
+        public float CurrentNatAngryDislikes;
+        public float CurrentNatDislikesNeutral;
+        public float CurrentNatNeutralLikes;
+        public float CurrentNatLikesLove;
+        public float CurrentNatRebelliosControlled;
+        public float CurrentNatAngryControlled;
+        public float CurrentNatDislikesControlled;
+        public float CurrentNatLovesControlled;
+        public float CurrentNatlikesControlled;
+        public float CurrentNatNeutralControlled;
+            #endregion
+    
+        [Space(10)]
+
+        #region LocalTrustData
+        public float CurrentLocalRebelliosAngry;
+        public float CurrentLocalAngryDislikes;
+        public float CurrentLocalDislikesNeutral;
+        public float CurrentLocalNeutralLikes;
+        public float CurrentLocalLikesLove;
+        public float CurrentLocalRebelliosControlled;
+        public float CurrentLocalAngryControlled;
+        public float CurrentLocalDislikesControlled;
+        public float CurrentLocalLovesControlled;
+        public float CurrentLocallikesControlled;
+        public float CurrentLocalNeutralControlled;
+        #endregion
+        [Space(10)]
         #endregion
 
         #region Debug Variable

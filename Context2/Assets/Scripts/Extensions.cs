@@ -10,7 +10,6 @@ namespace Context
         //Because Marnix love lerps
         public static IEnumerator UpdateSlider(RectTransform rectTransform, float targetValue, float overtime)
         {
-            Debug.Log(targetValue);
             float startTime = Time.time;
             float currentValue = rectTransform.anchorMax.x;
 
@@ -29,7 +28,8 @@ namespace Context
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
 
             //upgrade.GetComponentInChildren<Image>().sprite = image.sprite;
-            upgrade.transform.parent = upgradeBlock.transform;
+            upgrade.transform.SetParent(upgradeBlock.transform);
+            //upgrade.transform.parent = upgradeBlock.transform;
         }
 
         //public static void SetUpdateCost(Data data, GameObject upgradeCost, GameObject upgradeBlock)

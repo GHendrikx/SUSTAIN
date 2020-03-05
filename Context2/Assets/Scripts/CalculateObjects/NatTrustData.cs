@@ -1,10 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Timers;
 
 namespace Context
 {
-    public class LocalTrustData : MonoBehaviour
+    public class NatTrustData : MonoBehaviour
     {
         private Data[] data;
         [SerializeField]
@@ -57,13 +56,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentLikesControlled += currentData.localLikesControlled;
+                    currentLikesControlled += currentData.natLikesControlled;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentLikesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localLikesControlled;
+                    currentLikesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natLikesControlled;
 
-            ai.CurrentLocallikesControlled = currentLikesControlled;
+            ai.CurrentNatlikesControlled = currentLikesControlled;
         }
 
         private void CalculateNeutralControlled()
@@ -72,13 +71,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentNeutralControlled += currentData.localNeutralControlled;
+                    currentNeutralControlled += currentData.natNeutralControlled;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentNeutralControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localNeutralControlled;
+                    currentNeutralControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natNeutralControlled;
 
-            ai.CurrentLocalNeutralControlled = currentNeutralControlled;
+            ai.CurrentNatNeutralControlled = currentNeutralControlled;
         }
 
         private void CalculateDislikesControlled()
@@ -87,13 +86,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentDislikesControlled += currentData.localDislikesControlled;
+                    currentDislikesControlled += currentData.natDislikesControlled;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentDislikesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localDislikesControlled;
+                    currentDislikesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natDislikesControlled;
 
-            ai.CurrentLocalDislikesControlled = currentDislikesControlled;
+            ai.CurrentNatDislikesControlled = currentDislikesControlled;
         }
 
         private void CalculateAngryControlled()
@@ -102,13 +101,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentAngryControlled += currentData.localAngryControlled;
+                    currentAngryControlled += currentData.natAngryControlled;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentAngryControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localAngryControlled;
+                    currentAngryControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natAngryControlled;
 
-            ai.CurrentLocalAngryControlled = currentAngryControlled;
+            ai.CurrentNatAngryControlled = currentAngryControlled;
         }
 
         private void CalculateRebelliosControlled()
@@ -117,13 +116,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentRebelliosControlled += currentData.localRebelliousControlled;
+                    currentRebelliosControlled += currentData.natRebelliousControlled;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentRebelliosControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localRebelliousControlled;
+                    currentRebelliosControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natRebelliousControlled;
 
-            ai.CurrentLocalRebelliosControlled = currentRebelliosControlled;
+            ai.CurrentNatRebelliosControlled = currentRebelliosControlled;
         }
 
         private void CalculateLovesControlled()
@@ -132,13 +131,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentLovesControlled += currentData.localLovesControlled;
+                    currentLovesControlled += currentData.natLovesControlled;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentLovesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localLovesControlled;
+                    currentLovesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natLovesControlled;
 
-            ai.CurrentLocalLovesControlled = currentLovesControlled;
+            ai.CurrentNatLovesControlled = currentLovesControlled;
         }
 
         private void CalculateLikesLoves()
@@ -147,13 +146,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentLikesLoves += currentData.localLikesLoves;
+                    currentLikesLoves += currentData.natLikesLoves;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentLikesLoves += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localLikesLoves;
+                    currentLikesLoves += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natLikesLoves;
 
-            ai.CurrentLocalLikesLove = currentLikesLoves;
+            ai.CurrentNatLikesLove = currentLikesLoves;
         }
 
         private void CalculateNeutralLikes()
@@ -162,13 +161,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentNeutralLikes += currentData.localNeutralLikes;
+                    currentNeutralLikes += currentData.natNeutralLikes;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentNeutralLikes += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localNeutralLikes;
+                    currentNeutralLikes += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natNeutralLikes;
 
-            ai.CurrentLocalNeutralLikes = currentNeutralLikes;
+            ai.CurrentNatNeutralLikes = currentNeutralLikes;
         }
 
         private void CalculateDislikesNeutral()
@@ -177,13 +176,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentDislikesNeutral += currentData.localDislikesNeutral;
+                    currentDislikesNeutral += currentData.natDislikesNeutral;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentDislikesNeutral += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localDislikesNeutral;
+                    currentDislikesNeutral += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natDislikesNeutral;
 
-            ai.CurrentLocalDislikesNeutral = currentDislikesNeutral;
+            ai.CurrentNatDislikesNeutral = currentDislikesNeutral;
         }
 
         private void CalculateAngryDislikes()
@@ -192,13 +191,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentAngryDislikes += currentData.localAngryDislikes;
+                    currentAngryDislikes += currentData.natAngryDislikes;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentAngryDislikes += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localAngryDislikes;
+                    currentAngryDislikes += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natAngryDislikes;
 
-            ai.CurrentLocalAngryDislikes = currentAngryDislikes;
+            ai.CurrentNatAngryDislikes = currentAngryDislikes;
         }
 
         private void CalculateRebelliosTrust()
@@ -207,13 +206,13 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    currentRebelliousAngry += currentData.localRebelliousAngry;
+                    currentRebelliousAngry += currentData.natRebelliousAngry;
 
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    currentRebelliousAngry += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.localRebelliousAngry;
+                    currentRebelliousAngry += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.natRebelliousAngry;
 
-            ai.CurrentLocalRebelliosAngry = currentRebelliousAngry;
+            ai.CurrentNatRebelliosAngry = currentRebelliousAngry;
         }
     }
 }

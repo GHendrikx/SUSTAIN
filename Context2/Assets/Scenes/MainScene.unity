@@ -1300,17 +1300,49 @@ MonoBehaviour:
   SDGProgress15: 0
   SDGProgress16: 0
   SDGProgress17: 0
-  CurrentGlobalRebelliosAngry: 0
-  CurrentGlobalAngryDislikes: 0
-  CurrentGlobalDislikesNeutral: 0
-  CurrentGlobalNeutralLikes: 0
-  CurrentGlobalLikesLove: 0
-  CurrentGlobalRebelliosControlled: 0
-  CurrentGlobalAngryControlled: 0
-  CurrentGlobalDislikesControlled: 0
-  CurrentGlobalLovesControlled: 0
-  CurrentGloballikesControlled: 0
-  CurrentGlobalNeutralControlled: 0
+  currentGlobalAngryDislikes: 0
+  currentGlobalDislikesNeutral: 0
+  currentGlobalNeutralLikes: 0
+  currentGlobalLikesLove: 0
+  currentGlobalRebelliosControlled: 0
+  currentGlobalAngryControlled: 0
+  currentGlobalDislikesControlled: 0
+  currentGlobalLovesControlled: 0
+  currentGloballikesControlled: 0
+  currentGlobalNeutralControlled: 0
+  CurrentSvRebelliosAngry: 0
+  CurrentSvAngryDislikes: 0
+  CurrentSvDislikesNeutral: 0
+  CurrentSvNeutralLikes: 0
+  CurrentSvLikesLove: 0
+  CurrentSvRebelliosControlled: 0
+  CurrentSvAngryControlled: 0
+  CurrentSvDislikesControlled: 0
+  CurrentSvLovesControlled: 0
+  CurrentSvlikesControlled: 0
+  CurrentSvNeutralControlled: 0
+  CurrentNatRebelliosAngry: 0
+  CurrentNatAngryDislikes: 0
+  CurrentNatDislikesNeutral: 0
+  CurrentNatNeutralLikes: 0
+  CurrentNatLikesLove: 0
+  CurrentNatRebelliosControlled: 0
+  CurrentNatAngryControlled: 0
+  CurrentNatDislikesControlled: 0
+  CurrentNatLovesControlled: 0
+  CurrentNatlikesControlled: 0
+  CurrentNatNeutralControlled: 0
+  CurrentLocalRebelliosAngry: 0
+  CurrentLocalAngryDislikes: 0
+  CurrentLocalDislikesNeutral: 0
+  CurrentLocalNeutralLikes: 0
+  CurrentLocalLikesLove: 0
+  CurrentLocalRebelliosControlled: 0
+  CurrentLocalAngryControlled: 0
+  CurrentLocalDislikesControlled: 0
+  CurrentLocalLovesControlled: 0
+  CurrentLocallikesControlled: 0
+  CurrentLocalNeutralControlled: 0
   CurrentResearchGainMod: 0
   CurrentDroneGainMod: 0
   SetTurn: 0
@@ -5331,7 +5363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.047872208, y: 0.0844223}
   m_AnchorMax: {x: 0.9534009, y: 0.31428888}
-  m_AnchoredPosition: {x: -0.5061035, y: 0.28997803}
+  m_AnchoredPosition: {x: -0.5061035, y: 0.289917}
   m_SizeDelta: {x: -1.0120001, y: -0.5799999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &661381882
@@ -11212,6 +11244,10 @@ GameObject:
   - component: {fileID: 1534975947}
   - component: {fileID: 1534975946}
   - component: {fileID: 1534975951}
+  - component: {fileID: 1534975952}
+  - component: {fileID: 1534975955}
+  - component: {fileID: 1534975954}
+  - component: {fileID: 1534975953}
   m_Layer: 0
   m_Name: CalculateObject
   m_TagString: Untagged
@@ -11335,6 +11371,96 @@ MonoBehaviour:
   CurrentSDGChange15: 0
   CurrentSDGChange16: 0
   CurrentSDGChange17: 0
+--- !u!114 &1534975952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534975945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0157789750b504947a78b6ce6b7289a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iOManager: {fileID: 90794113}
+  ai: {fileID: 90794111}
+  currentRebelliousAngry: 0
+  currentAngryDislikes: 0
+  currentDislikesNeutral: 0
+  currentNeutralLikes: 0
+  currentLikesLoves: 0
+  currentLovesControlled: 0
+  currentRebelliosControlled: 0
+  currentAngryControlled: 0
+  currentDislikesControlled: 0
+  currentNeutralControlled: 0
+  currentLikesControlled: 0
+--- !u!114 &1534975953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534975945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad70d63620857dc4aa2ca31045518f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iOManager: {fileID: 90794113}
+  ai: {fileID: 90794111}
+  CurrentGlobalTrustGain: 0
+--- !u!114 &1534975954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534975945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805fbddf29fc3a94aa517d2c30f59ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iOManager: {fileID: 90794113}
+  ai: {fileID: 90794111}
+  currentRebelliousAngry: 0
+  currentAngryDislikes: 0
+  currentDislikesNeutral: 0
+  currentNeutralLikes: 0
+  currentLikesLoves: 0
+  currentLovesControlled: 0
+  currentRebelliosControlled: 0
+  currentAngryControlled: 0
+  currentDislikesControlled: 0
+  currentNeutralControlled: 0
+  currentLikesControlled: 0
+--- !u!114 &1534975955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534975945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26863f458d9899f46bb2808c50aa92fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iOManager: {fileID: 90794113}
+  ai: {fileID: 90794111}
+  currentRebelliousAngry: 0
+  currentAngryDislikes: 0
+  currentDislikesNeutral: 0
+  currentNeutralLikes: 0
+  currentLikesLoves: 0
+  currentLovesControlled: 0
+  currentRebelliosControlled: 0
+  currentAngryControlled: 0
+  currentDislikesControlled: 0
+  currentNeutralControlled: 0
+  currentLikesControlled: 0
 --- !u!1 &1537108865
 GameObject:
   m_ObjectHideFlags: 0
@@ -13040,6 +13166,50 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1534975951}
         m_MethodName: UpdateSDGWithoutPoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1534975952}
+        m_MethodName: UpdateTrust
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1534975955}
+        m_MethodName: UpdateTrust
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1534975954}
+        m_MethodName: UpdateTrust
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1534975953}
+        m_MethodName: UpdateTrust
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

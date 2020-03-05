@@ -90,7 +90,7 @@
         public int materialFixedGain;
         public float materialGainMod;
         public float localRebelliousAngry;
-        public float localAngryDislkes;
+        public float localAngryDislikes;
         public float localDislikesNeutral;
         public float localNeutralLikes;
         public float localLikesLoves;
@@ -118,7 +118,7 @@
         public float globalLikesControlled;
 
         public float svRebelliousAngry;
-        public float svAngryDislike;
+        public float svAngryDislikes;
         public float svDislikesNeutral;
         public float svNeutralLikes;
         public float svLikesLoves;
@@ -135,7 +135,7 @@
         public float housingEfficiency;
 
         public float natRebelliousAngry;
-        public float natAngryDislike;
+        public float natAngryDislikes;
         public float natDislikesNeutral;
         public float natNeutralLikes;
         public float natLikesLoves;
