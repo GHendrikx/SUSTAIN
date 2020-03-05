@@ -13,7 +13,6 @@ namespace Context
         private AI Ai;
         private Data data;
         private float BackupAllocationPoints;
-
         #region information
         [SerializeField]
         private TextMeshProUGUI title;

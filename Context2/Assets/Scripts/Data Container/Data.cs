@@ -11,6 +11,9 @@
         public int typeOfData;
         public int neededPhase;
         public int[] techPrereq;
+        public int musicStage;
+        public int musicSoundSFX;
+        public int musicAdvancement;
         public string effectDesc;
         public int locks;
         public bool isResearched;

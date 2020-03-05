@@ -349,6 +349,7 @@ public class GSpreadSheetsToJson : EditorWindow {
 						{
 							try
 							{
+
 								val = float.Parse(strVal);
 							}
 							catch(System.Exception e)

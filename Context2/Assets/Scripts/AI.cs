@@ -14,13 +14,14 @@ namespace Context
         public static List<Data> HASUPDATE = new List<Data>();
         [SerializeField]
         private AudioManager audioManager;
-
+        public SDGManager SDGManager;
         #region data calculationObjects
         public ResearchData researchData;
         public CreativityData creativityData;
         public FundsData fundsData;
         public InfluenceData influenceData;
         public DroneData dronesData;
+        public CalculateSDG SDGCalculate;
         #endregion
 
         [SerializeField]
@@ -286,6 +287,49 @@ namespace Context
         }
         #endregion
 
+        #region SDG
+
+        #region SDGPoint
+        private float SDGBeginValue = 4;
+        public float SDGPoints01;
+        public float SDGPoints02;
+        public float SDGPoints03;
+        public float SDGPoints04;
+        public float SDGPoints05;
+        public float SDGPoints06;
+        public float SDGPoints07;
+        public float SDGPoints08;
+        public float SDGPoints09;
+        public float SDGPoints10;
+        public float SDGPoints11;
+        public float SDGPoints12;
+        public float SDGPoints13;
+        public float SDGPoints14;
+        public float SDGPoints15;
+        public float SDGPoints16;
+        public float SDGPoints17;
+        #endregion
+        #region SDGProgress
+        public float SDGProgress01;
+        public float SDGProgress02;
+        public float SDGProgress03;
+        public float SDGProgress04;
+        public float SDGProgress05;
+        public float SDGProgress06;
+        public float SDGProgress07;
+        public float SDGProgress08;
+        public float SDGProgress09;
+        public float SDGProgress10;
+        public float SDGProgress11;
+        public float SDGProgress12;
+        public float SDGProgress13;
+        public float SDGProgress14;
+        public float SDGProgress15;
+        public float SDGProgress16;
+        public float SDGProgress17;
+        #endregion
+        
+        #endregion
 
         #region Debug Variable
         public float CurrentResearchGainMod;
@@ -296,7 +340,26 @@ namespace Context
 
         [HideInInspector]
         public bool SetTurn = false;
-
+        private void Awake()
+        {
+            SDGPoints01 = SDGBeginValue;
+            SDGPoints02 = SDGBeginValue;
+            SDGPoints03 = SDGBeginValue;
+            SDGPoints04 = SDGBeginValue;
+            SDGPoints05 = SDGBeginValue;
+            SDGPoints06 = SDGBeginValue;
+            SDGPoints07 = SDGBeginValue;
+            SDGPoints08 = SDGBeginValue;
+            SDGPoints09 = SDGBeginValue;
+            SDGPoints10 = SDGBeginValue;
+            SDGPoints11 = SDGBeginValue;
+            SDGPoints12 = SDGBeginValue;
+            SDGPoints13 = SDGBeginValue;
+            SDGPoints14 = SDGBeginValue;
+            SDGPoints15 = SDGBeginValue;
+            SDGPoints16 = SDGBeginValue;
+            SDGPoints17 = SDGBeginValue;
+        }
         private void Start()
         {
             UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();

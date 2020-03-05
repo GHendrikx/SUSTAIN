@@ -56,6 +56,8 @@ namespace Context
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.creativityData.UpdateCreativity, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.fundsData.UpdateFunds, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.influenceData.UpdateInfluence, 0.1f);
+            TimerManager.Instance.AddTimer(GameManager.Instance.AI.SDGManager.UpdateSDGValues, 0.1f);
+            TimerManager.Instance.AddTimer(GameManager.Instance.AI.SDGCalculate.UpdateSDG, 0.1f);
         }
 
         public void GoToNextTurn()
