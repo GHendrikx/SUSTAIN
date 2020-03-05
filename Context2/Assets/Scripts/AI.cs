@@ -328,7 +328,15 @@ namespace Context
         public float SDGProgress16;
         public float SDGProgress17;
         #endregion
-        
+
+        #endregion
+
+        #region TrustData
+        public float GlobalRebelliosAngry;
+        public float CurrentGlobalAngryDislikes;
+        public float CurrentDislikesNeutral;
+
+
         #endregion
 
         #region Debug Variable

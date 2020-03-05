@@ -10,11 +10,9 @@ namespace Context
         //Because Marnix love lerps
         public static IEnumerator UpdateSlider(RectTransform rectTransform, float targetValue, float overtime)
         {
-            Debug.Log("Doet die het?");
             Debug.Log(targetValue);
             float startTime = Time.time;
             float currentValue = rectTransform.anchorMax.x;
-            Debug.Log(currentValue);
 
             while (Time.time < (startTime + overtime))
             {
