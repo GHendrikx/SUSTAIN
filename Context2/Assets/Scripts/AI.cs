@@ -331,7 +331,7 @@ namespace Context
 
         #endregion
 
-        #region TrustData
+        #region GlobalTrustData
         public float CurrentGlobalRebelliosAngry;
         public float CurrentGlobalAngryDislikes;
         public float CurrentGlobalDislikesNeutral;
