@@ -335,6 +335,9 @@ namespace Context
         public float GlobalRebelliosAngry;
         public float CurrentGlobalAngryDislikes;
         public float CurrentDislikesNeutral;
+        public float CurrentNeutralLikes;
+        public float CurrentLikesLove;
+
 
 
         #endregion

@@ -80,17 +80,47 @@ namespace Context
 
         private void CalculateLovesControlled()
         {
-            throw new NotImplementedException();
+            currentLikesControlled = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentLikesControlled += currentData.globalLikesControlled;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentLikesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalLikesControlled;
+
+            ai.CurrentLikesLove = currentLikesControlled;
         }
 
         private void CalculateLikesLoves()
         {
-            throw new NotImplementedException();
+            currentLikesLoves = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentLikesLoves += currentData.globalLikesLoves;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentLikesLoves += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalLikesLoves;
+
+            ai.CurrentLikesLove = currentLikesLoves;
         }
 
         private void CalculateNeutralLikes()
         {
-            throw new NotImplementedException();
+            currentNeutralLikes = 0;
+
+            foreach (Data currentData in data)
+                if (currentData.isResearched)
+                    currentNeutralLikes += currentData.globalNeutralLikes;
+
+            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
+                    currentNeutralLikes += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalNeutralLikes;
+
+            ai.CurrentNeutralLikes = currentNeutralLikes;
         }
 
         private void CalculateDislikesNeutral()
