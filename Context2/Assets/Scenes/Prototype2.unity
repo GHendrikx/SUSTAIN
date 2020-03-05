@@ -5539,7 +5539,7 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -5555,7 +5555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354700c323f6f20449c140b095545b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefab: {fileID: 4812545126144073641, guid: 0d65061f9c8ba4547befcae6bce952ae,
+  buttonPrefab: {fileID: 4842718128640277062, guid: 0d65061f9c8ba4547befcae6bce952ae,
     type: 3}
   upgradeAbilities: {fileID: 8545958010719793359, guid: 0d65061f9c8ba4547befcae6bce952ae,
     type: 3}
@@ -10618,7 +10618,7 @@ RectTransform:
   m_AnchorMin: {x: 0.035303, y: 0.01374112}
   m_AnchorMax: {x: 0.97323453, y: 0.94013965}
   m_AnchoredPosition: {x: 0, y: 258.6}
-  m_SizeDelta: {x: 0, y: -517.1}
+  m_SizeDelta: {x: 10.175963, y: -517.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460519342
 MonoBehaviour:
@@ -11268,6 +11268,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sdgChange: []
+  ai: {fileID: 90794111}
+  ioManager: {fileID: 90794113}
+  CurrentSDGGain: 0
 --- !u!1 &1537108865
 GameObject:
   m_ObjectHideFlags: 0

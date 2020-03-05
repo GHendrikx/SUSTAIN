@@ -61,7 +61,10 @@ namespace Context
         public Button MinButton;
         public int BasePoints;
         public int Points;
-
+        [SerializeField]
+        private GameObject effectBlock;
+        [SerializeField]
+        private GameObject costBlock;
 
         public void CalculateStatus(int amount)
         {
@@ -120,13 +123,12 @@ namespace Context
                     }
                 }
             }
-            //else
-            //{
-            //    informationText = GetComponentInChildren<TextMeshProUGUI>(true);
-            //    informationText.text = data.name + "(" + data.allocatieCost + ")";
-            //}
         }
 
+        private void SetEffect()
+        {
+            
+        }
 
         private void LockCheck()
         {

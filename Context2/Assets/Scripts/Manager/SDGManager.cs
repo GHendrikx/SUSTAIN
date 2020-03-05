@@ -25,8 +25,9 @@ namespace Context
         {
             if (sdgBar[(int)sdgType].LockImage.gameObject.activeInHierarchy)
                 return;
+            Extensions.UpdateSlider(sdgBar[(int)sdgType].RectTransform, percentage, 0.5f);
 
-            sdgBar[(int)sdgType].RectTransform.anchorMax = new Vector2(percentage,sdgBar[(int)sdgType].RectTransform.anchorMax.y);
+            //sdgBar[(int)sdgType].RectTransform.anchorMax = new Vector2(percentage,sdgBar[(int)sdgType].RectTransform.anchorMax.y);
         }
     }
 

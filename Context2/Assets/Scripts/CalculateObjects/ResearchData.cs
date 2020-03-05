@@ -66,7 +66,6 @@ namespace Context
         private void CalculateResearchPoints()
         {
             ai.ResearchPoints += CurrentResearchGain;
-            Debug.Log(ai.ResearchPoints);
         }
 
         private void CalculateResearchGainMod()

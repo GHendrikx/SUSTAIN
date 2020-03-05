@@ -13,7 +13,6 @@ public class TabSystem : MonoBehaviour
     /// <param name="tab"></param>
     public void SetNewTab(Transform tab)
     {
-        Debug.Log(tab);
         tab.SetAsLastSibling();
     }
 }

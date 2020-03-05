@@ -80,39 +80,40 @@ namespace Context
             SetUpdateCost();
         }
 
+        
         private void SetUpdateCost()
         {
             if (data.allocatieCost > 0)
-                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+                Extensions.SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
             if (data.creativityCost > 0)
-                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+                Extensions.SetUpdateCost(data.creativityCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
             if (data.droneCost > 0)
-                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+                Extensions.SetUpdateCost(data.droneCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
             if (data.fundsCost > 0)
-                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+                Extensions.SetUpdateCost(data.droneCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
             if (data.influenceCost > 0)
-                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+                Extensions.SetUpdateCost(data.influenceCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
             if (data.materialCost > 0)
-                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+                Extensions.SetUpdateCost(data.materialCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
             if (data.powerCost > 0)
-                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+                Extensions.SetUpdateCost(data.powerCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
             if (data.researchCost > 0)
-                SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+                Extensions.SetUpdateCost(data.researchCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
         }
 
+        [System.Obsolete]
         private void SetUpdateCost(string text, Image image)
         {
+            Debug.Log(text);
             GameObject upgrade = GameObject.Instantiate<GameObject>(upgradeCost);
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
 
             //upgrade.GetComponentInChildren<Image>().sprite = image.sprite;
             upgrade.transform.parent = upgradeBlock.transform;
-            upgrade.transform.position = new Vector2(0, 0);
         }
 
         private void AllocationUpdate()
         {
-
             float currentAllocationMod = GameManager.Instance.UIManager.CalculateAllocationMod();
             float temp = UpgradeAbilities.ALLOCATIONPOOL;
             float calculation = currentAllocationMod - temp;
@@ -122,40 +123,5 @@ namespace Context
 
             UpgradeAbilities.ALLOCATIONPOOL = currentAllocationMod;
         }
-
-
     }
-    #region struct
-    //[System.Serializable]
-    //public struct UpdateBlockInformation
-    //{
-    //    [SerializeField]
-    //    private TextMeshProUGUI text;
-    //    public TextMeshProUGUI Text
-    //    {
-    //        get
-    //        {
-    //            return text;
-    //        }
-    //        set
-    //        {
-    //            text = value;
-    //        }
-    //    }
-
-    //    [SerializeField]
-    //    private Image upgradeIcon;
-    //    public Image UpgradeIcon
-    //    {
-    //        get
-    //        {
-    //            return upgradeIcon;
-    //        }
-    //        set
-    //        {
-    //            upgradeIcon = value;
-    //        }
-    //    }
-    //}
-    #endregion
 }

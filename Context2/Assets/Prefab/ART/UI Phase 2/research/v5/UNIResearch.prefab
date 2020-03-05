@@ -1020,6 +1020,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8545958010719793358}
   - component: {fileID: 8545958010719793357}
+  - component: {fileID: 4842718128640277062}
+  - component: {fileID: 4068873759487302526}
+  - component: {fileID: 2775528838908049033}
   m_Layer: 5
   m_Name: UNIResearch
   m_TagString: Untagged
@@ -1055,6 +1058,100 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8545958010719793359}
   m_CullTransparentMesh: 0
+--- !u!114 &4842718128640277062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545958010719793359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7960386560333422581}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4068873759487302526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545958010719793359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2775528838908049033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545958010719793359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7276f165c981d49a6897c31f514b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CostOfUpdate: 0
+  UpdateName: 
+  myButton: {fileID: 4842718128640277062}
+  title: {fileID: 7960386560065250276}
+  description: {fileID: 6213089470019765036}
+  researchUnlocks: {fileID: 0}
+  upgradeBlock: {fileID: 1820963462948804727}
+  upgradeCost: {fileID: 3244583349398632403, guid: f7f910836fe234d4790fd63757124e99,
+    type: 3}
+  SDGColor: {fileID: 4542617172045485651}
+  researchNummer: {fileID: 4746060138945463765}
 --- !u!1001 &6184993074066798199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1174,6 +1271,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ed39edc733c92469039d5d235999ed, type: 3}
+--- !u!1 &1820963462948804727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 6184993074066798199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8378688938820431089 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,

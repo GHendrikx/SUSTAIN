@@ -1730,6 +1730,9 @@ MonoBehaviour:
   MinButton: {fileID: 7858043327311342650}
   BasePoints: 0
   Points: 0
+  effectBlock: {fileID: 1021898007862532230}
+  costBlock: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
+    type: 3}
 --- !u!1 &8439050694795109587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,7 +1900,7 @@ GameObject:
   - component: {fileID: 8497393281660433313}
   - component: {fileID: 8497393281660433314}
   m_Layer: 5
-  m_Name: 3Allocation
+  m_Name: UNIAllocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1938,6 +1941,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7858043326471982466}
     m_Modifications:
+    - target: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_Name
+      value: Cost_EffectBlock
+      objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2043,16 +2051,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
-        type: 3}
-      propertyPath: m_Name
-      value: Cost_EffectBlock
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ed39edc733c92469039d5d235999ed, type: 3}
 --- !u!224 &7146310456472693760 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 4809382760212117126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1021898007862532230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
     type: 3}
   m_PrefabInstance: {fileID: 4809382760212117126}
   m_PrefabAsset: {fileID: 0}
