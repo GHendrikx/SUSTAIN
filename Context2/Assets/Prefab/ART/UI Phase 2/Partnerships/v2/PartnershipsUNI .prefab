@@ -264,8 +264,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 306.44922, y: -31.139116}
-  m_SizeDelta: {x: 612.8983, y: 62.2782}
+  m_AnchoredPosition: {x: 305.52, y: -49.02}
+  m_SizeDelta: {x: 611.05, y: 98.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &90756116089087003
 CanvasRenderer:
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1093,6 +1093,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 795670516660701736}
     m_Modifications:
+    - target: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_Name
+      value: Cost/EFFectBlock
+      objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1156,7 +1161,7 @@ PrefabInstance:
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 12.98
+      value: 0.002506256
       objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
@@ -1166,7 +1171,7 @@ PrefabInstance:
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -25.95
+      value: 0.0050278
       objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
@@ -1197,11 +1202,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
-        type: 3}
-      propertyPath: m_Name
-      value: Cost/EFFectBlock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ed39edc733c92469039d5d235999ed, type: 3}
