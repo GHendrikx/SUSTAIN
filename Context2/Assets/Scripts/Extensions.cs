@@ -31,25 +31,5 @@ namespace Context
             upgrade.transform.SetParent(upgradeBlock.transform);
             //upgrade.transform.parent = upgradeBlock.transform;
         }
-
-        //public static void SetUpdateCost(Data data, GameObject upgradeCost, GameObject upgradeBlock)
-        //{
-        //    if (data.allocatieCost > 0)
-        //        Extensions.SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
-        //    if (data.creativityCost > 0)
-        //        Extensions.SetUpdateCost(data.creativityCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
-        //    if (data.droneCost > 0)
-        //        Extensions.SetUpdateCost(data.droneCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
-        //    if (data.fundsCost > 0)
-        //        Extensions.SetUpdateCost(data.droneCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
-        //    if (data.influenceCost > 0)
-        //        Extensions.SetUpdateCost(data.influenceCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
-        //    if (data.materialCost > 0)
-        //        Extensions.SetUpdateCost(data.materialCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
-        //    if (data.powerCost > 0)
-        //        Extensions.SetUpdateCost(data.powerCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
-        //    if (data.researchCost > 0)
-        //        Extensions.SetUpdateCost(data.researchCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
-        //}
     }
 }
