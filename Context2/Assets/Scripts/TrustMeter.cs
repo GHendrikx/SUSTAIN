@@ -7,8 +7,9 @@ namespace Context
 {
     public class TrustMeter : MonoBehaviour
     {
-        private Image[] images;
+        private Slider[] slider;
         private AI ai;
+
         private void UpdateTrustMeter()
         {
             ai.GlobalScoreTotal = ai.GlobalRebelliousScore + ai.GlobalHatesScore + ai.GlobalLikesScore + ai.GlobalControlledScore + ai.GlobalLoveScore + ai.GlobalDisLikesScore;
