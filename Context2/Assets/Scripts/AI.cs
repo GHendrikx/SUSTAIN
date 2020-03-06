@@ -522,11 +522,18 @@ namespace Context
         //Gecombineerd met rebelious hates dialikes neutral likes loves controlled
         #region Score
         public float GlobalRebelliousScore, GlobalHatesScore, GlobalDisLikesScore,GlobalNeutralScore,GlobalLikesScore, GlobalLoveScore, GlobalControlledScore;
-        public float LocalRebelliousScore, LocalHatesScore, LocalDisLikesScore,LocalNeutralScore,LocalLikesScore, LocalLoveScore, LocalControlledScore;
+        public float LocalRebelliousScore, LocalHatesScore, LocalDisLikesScore,LocalNeutralScore,LocalLikesScore, LocalLovesScore, LocalControlledScore;
         public float NationalRebelliousScore, NationalHatesScore, NationalDisLikesScore, NationalNeutralScore, NationalLikesScore, NationalLoveScore, NationalControlledScore;
         public float SvRebelliousScore, SvHatesScore, SvDisLikesScore, SvNeutralScore, SvLikesScore, SvLoveScore, SvControlledScore;
         public float GlobalScoreTotal, LocalScoreTotal, NationalScoreTotal, SvScoreTotal;
-        public float GlobalRebeliousPercentage, LocalRebeliousPercentage, SvRebelliousPercentage, NationalRebelliousPercentage;
+        public float GlobalRebeliousPercentage, GlobalHatesPercentage, GlobalDislikesPercentage, GlobalNeutralPercentage, GlobalLikesPercentage, GlobalLovesPercentage, GlobalControlledPercentage;
+        public float LocalRebeliousPercentage, LocalHatesPercentage, LocalDislikesPercentage, LocalNeutralPercentage, LocalLikesPercentage, LocalLovesPercentage, LocalControlledPercentage;
+        public float NationalRebeliousPercentage, NationalHatesPercentage, NationalDislikesPercentage, NationalNeutralPercentage, NationalLikesPercentage, NationalLovesPercentage, NationalControlledPercentage;
+        public float SvRebeliousPercentage, SvHatesPercentage, SvDislikesPercentage, SvNeutralPercentage, SvLikesPercentage, SvLovesPercentage, SvControlledPercentage;
+        public float GlobalApprovesPercentage, GlobalDisapprovesPercentage;
+        public float LocalApprovesPercentage, LocalDisapprovesPercentage;
+        public float NationalApprovesPercentage, NationalDisapprovesPercentage;
+        public float SvApprovesPercentage, SvDisapprovesPercentage;
         #endregion
         #endregion
 
