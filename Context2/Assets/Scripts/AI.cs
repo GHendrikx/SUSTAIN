@@ -518,6 +518,16 @@ namespace Context
         public float CurrentLocalNeutralControlled;
         #endregion
         [Space(10)]
+
+        //Gecombineerd met rebelious hates dialikes neutral likes loves controlled
+        #region Score
+        public float GlobalRebelliousScore, GlobalHatesScore, GlobalDisLikesScore,GlobalNeutralScore,GlobalLikesScore, GlobalLoveScore, GlobalControlledScore;
+        public float LocalRebelliousScore, LocalHatesScore, LocalDisLikesScore,LocalNeutralScore,LocalLikesScore, LocalLoveScore, LocalControlledScore;
+        public float NationalRebelliousScore, NationalHatesScore, NationalDisLikesScore, NationalNeutralScore, NationalLikesScore, NationalLoveScore, NationalControlledScore;
+        public float SvRebelliousScore, SvHatesScore, SvDisLikesScore, SvNeutralScore, SvLikesScore, SvLoveScore, SvControlledScore;
+        public float GlobalScoreTotal, LocalScoreTotal, NationalScoreTotal, SvScoreTotal;
+        public float GlobalRebeliousPercentage, LocalRebeliousPercentage, SvRebelliousPercentage, NationalRebelliousPercentage;
+        #endregion
         #endregion
 
         #region Debug Variable
