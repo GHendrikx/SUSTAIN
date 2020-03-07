@@ -340,7 +340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7395541, y: 0.070759624}
   m_AnchorMax: {x: 0.78300005, y: 0.3745419}
-  m_AnchoredPosition: {x: 0, y: 0.0007300079}
+  m_AnchoredPosition: {x: 0, y: 0.0007286072}
   m_SizeDelta: {x: 0, y: 0.0014600158}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4864827287816947258
@@ -1146,7 +1146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.049000002, y: 0.62600005}
   m_AnchorMax: {x: 0.8212348, y: 0.9392568}
-  m_AnchoredPosition: {x: 0, y: 0.000002861}
+  m_AnchoredPosition: {x: 0, y: 0.0000019073486}
   m_SizeDelta: {x: 0, y: -0.0000019073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7858043327865282692
@@ -1672,7 +1672,7 @@ MonoBehaviour:
     materialFixedGain: 0
     materialGainMod: 0
     localRebelliousAngry: 0
-    localAngryDislkes: 0
+    localAngryDislikes: 0
     localDislikesNeutral: 0
     localNeutralLikes: 0
     localLikesLoves: 0
@@ -1697,7 +1697,7 @@ MonoBehaviour:
     globalNeutralControlled: 0
     globalLikesControlled: 0
     svRebelliousAngry: 0
-    svAngryDislike: 0
+    svAngryDislikes: 0
     svDislikesNeutral: 0
     svNeutralLikes: 0
     svLikesLoves: 0
@@ -1712,7 +1712,7 @@ MonoBehaviour:
     housingAmount: 0
     housingEfficiency: 0
     natRebelliousAngry: 0
-    natAngryDislike: 0
+    natAngryDislikes: 0
     natDislikesNeutral: 0
     natNeutralLikes: 0
     natLikesLoves: 0
@@ -1926,7 +1926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.91, y: -15.41}
+  m_AnchoredPosition: {x: -0.91000366, y: -15.410004}
   m_SizeDelta: {x: 611.19, y: 92.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8497393281660433314
@@ -1948,6 +1948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cost_EffectBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6380180266340859538, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_ChildAlignment
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}

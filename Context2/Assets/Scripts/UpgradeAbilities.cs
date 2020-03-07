@@ -141,7 +141,7 @@ namespace Context
                         for (int j = 0; j < points; j++)
                             upgradeAbilities[i].CalculateStatus(-1);
 
-                    Destroy(upgradeAbilities[i].Instance);
+                    Destroy(upgradeAbilities[i].Instance.transform.parent.gameObject);
                 }
             }
         }

@@ -20,7 +20,7 @@ public class ParticleScript : MonoBehaviour
         }
 
         //let the system do it's thing for a bit
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.1f);
 
         //stop emission
         emmiter.emissionRate = 0f;
