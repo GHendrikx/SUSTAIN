@@ -24,6 +24,10 @@ namespace Context
         private float previousFundsPoints;
         private bool lerping;
 
+        private float GUIResearchPoints;
+        private float GUICreativityPoints;
+        private float GUIFundsPoints;
+
         /// <summary>
         /// Update processing points
         /// </summary>
