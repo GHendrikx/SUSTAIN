@@ -59,6 +59,9 @@ namespace Context
                     ai.SvLikesPercentage = ai.SvLikesScore / ai.SvScoreTotal;
                     ai.SvLovesPercentage = ai.SvLoveScore / ai.SvScoreTotal;
                     ai.SvControlledPercentage = ai.SvControlledScore / ai.SvScoreTotal;
+
+                    ai.SvDisapprovesPercentage = ai.SvRebeliousPercentage + ai.SvHatesPercentage + ai.SvDislikesPercentage;
+                    ai.SvApprovesPercentage = ai.SvLikesPercentage + ai.SvLovesPercentage + ai.SvControlledPercentage;
                     for (int i = 0; i < slider.Length; i++)
                         slider[i].value = ai.SvRebeliousPercentage;
                     break;

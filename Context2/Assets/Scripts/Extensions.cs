@@ -28,8 +28,8 @@ namespace Context
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
 
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
-            Image i = upgrade.GetComponentInChildren<Image>();
-            Debug.Log(i.name);
+            Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
+            Debug.Log(image);
             upgrade.SetParent(upgradeBlock.transform);
 
             
