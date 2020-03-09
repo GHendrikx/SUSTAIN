@@ -21,11 +21,6 @@ namespace Context
         public int amountOfUpgrades;
         public List<Data> initializedData = new List<Data>();
 
-        private void Start()
-        {
-            Debug.Log(this.gameObject.name);
-        }
-
         public void InitializeNewButton(Data data,AI ai)
         {
             initializedData.Add(data);

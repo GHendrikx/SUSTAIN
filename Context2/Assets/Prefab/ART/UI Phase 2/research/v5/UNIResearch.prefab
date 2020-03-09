@@ -964,7 +964,7 @@ RectTransform:
   - {fileID: 1452654196676837677}
   - {fileID: 2942171417649256963}
   - {fileID: 8958225951815984039}
-  - {fileID: 5552915716010036646}
+  - {fileID: 5359736528390838}
   m_Father: {fileID: 7960386560333422582}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1148,9 +1148,8 @@ MonoBehaviour:
   title: {fileID: 7960386560065250276}
   description: {fileID: 6213089470019765036}
   researchUnlocks: {fileID: 0}
-  upgradeBlock: {fileID: 1728549648415054262, guid: b0c13215e8b9278478cfdb7caa884419,
-    type: 3}
-  upgradeCost: {fileID: 3244583349398632403, guid: f7f910836fe234d4790fd63757124e99,
+  upgradeBlock: {fileID: 7585385165033511462}
+  upgradeCost: {fileID: 2831580446549795828, guid: 00129a1726dce554291ace78fc1cb6b4,
     type: 3}
   SDGColor: {fileID: 4542617172045485651}
   researchNummer: {fileID: 4746060138945463765}
@@ -1279,7 +1278,7 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2576458151110813097}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3721478437116560512
+--- !u!1001 &9131533272670585744
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1289,7 +1288,7 @@ PrefabInstance:
     - target: {fileID: 1728549648415054262, guid: b0c13215e8b9278478cfdb7caa884419,
         type: 3}
       propertyPath: m_Name
-      value: Cost_EffectBlock 1
+      value: Cost_EffectBlockv2
       objectReference: {fileID: 0}
     - target: {fileID: 9127304989569288486, guid: b0c13215e8b9278478cfdb7caa884419,
         type: 3}
@@ -1398,9 +1397,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c13215e8b9278478cfdb7caa884419, type: 3}
---- !u!224 &5552915716010036646 stripped
+--- !u!1 &7585385165033511462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1728549648415054262, guid: b0c13215e8b9278478cfdb7caa884419,
+    type: 3}
+  m_PrefabInstance: {fileID: 9131533272670585744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &5359736528390838 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9127304989569288486, guid: b0c13215e8b9278478cfdb7caa884419,
     type: 3}
-  m_PrefabInstance: {fileID: 3721478437116560512}
+  m_PrefabInstance: {fileID: 9131533272670585744}
   m_PrefabAsset: {fileID: 0}

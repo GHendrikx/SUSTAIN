@@ -24,10 +24,11 @@ namespace Context
         public static void SetUpdateCost(string text, Image image, GameObject upgradeCost, GameObject upgradeBlock)
         {
 
-            GameObject upgrade = GameObject.Instantiate<GameObject>(upgradeCost);
+            Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
-
-            upgrade.transform.SetParent(upgradeBlock.transform);
+            upgrade.SetParent(upgradeBlock.transform);
+            Debug.Log(upgrade.GetChild(0).name);
         }
+
     }
 }
