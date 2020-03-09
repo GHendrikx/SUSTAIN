@@ -16,11 +16,17 @@ namespace Context
         private AudioManager audioManager;
         public SDGManager SDGManager;
         #region data calculationObjects
+        [HideInInspector]
         public ResearchData researchData;
+        [HideInInspector]
         public CreativityData creativityData;
+        [HideInInspector]
         public FundsData fundsData;
+        [HideInInspector]
         public InfluenceData influenceData;
+        [HideInInspector]
         public DroneData dronesData;
+        [HideInInspector]
         public CalculateSDG SDGCalculate;
         #endregion
 
@@ -291,41 +297,75 @@ namespace Context
 
         #region SDGPoint
         private float SDGBeginValue = 4;
+        [HideInInspector]
         public float SDGPoints01;
+        [HideInInspector]
         public float SDGPoints02;
+        [HideInInspector]
         public float SDGPoints03;
+        [HideInInspector]
         public float SDGPoints04;
+        [HideInInspector]
         public float SDGPoints05;
+        [HideInInspector]
         public float SDGPoints06;
+        [HideInInspector]
         public float SDGPoints07;
+        [HideInInspector]
         public float SDGPoints08;
+        [HideInInspector]
         public float SDGPoints09;
+        [HideInInspector]
         public float SDGPoints10;
+        [HideInInspector]
         public float SDGPoints11;
+        [HideInInspector]
         public float SDGPoints12;
+        [HideInInspector]
         public float SDGPoints13;
+        [HideInInspector]
         public float SDGPoints14;
+        [HideInInspector]
         public float SDGPoints15;
+        [HideInInspector]
         public float SDGPoints16;
+        [HideInInspector]
         public float SDGPoints17;
         #endregion
         #region SDGProgress
+        [HideInInspector]
         public float SDGProgress01;
+        [HideInInspector]
         public float SDGProgress02;
+        [HideInInspector]
         public float SDGProgress03;
+        [HideInInspector]
         public float SDGProgress04;
+        [HideInInspector]
         public float SDGProgress05;
+        [HideInInspector]
         public float SDGProgress06;
+        [HideInInspector]
         public float SDGProgress07;
+        [HideInInspector]
         public float SDGProgress08;
+        [HideInInspector]
         public float SDGProgress09;
+        [HideInInspector]
         public float SDGProgress10;
+        [HideInInspector]
         public float SDGProgress11;
+        [HideInInspector]
         public float SDGProgress12;
+        [HideInInspector]
         public float SDGProgress13;
+        [HideInInspector]
         public float SDGProgress14;
+        [HideInInspector]
         public float SDGProgress15;
+        [HideInInspector]
         public float SDGProgress16;
+        [HideInInspector]
         public float SDGProgress17;
         [Space(10)]
         #endregion
@@ -613,12 +653,26 @@ namespace Context
 
             #region Calculate Resources
             //Calculate points
-            ResearchPoints -= data.researchCost - data.researchFixedGain;
-            CreativityPoints -= data.creativityCost - data.creativityFixedGain;
-            FundsPoints -= data.fundsCost - data.fundsFixedGain;
-            InfluencePoints -= data.influenceCost - data.influenceFixedGain;
-            DroneCost -= data.droneCost - data.droneFixedGain;
-            MaterialCost -= data.materialCost - data.materialFixedGain;
+            float temp1 = ResearchPoints - data.researchCost - data.researchFixedGain;
+            float temp2 = CreativityPoints - data.creativityCost - data.creativityFixedGain;
+            float temp3 = fundsPoints - data.fundsCost - data.fundsFixedGain;
+            float temp4 = InfluencePoints - data.influenceCost - data.influenceFixedGain;
+            float temp5 = DroneCost - data.droneCost - data.droneFixedGain;
+            float temp6 = materialCost - data.materialCost - data.materialFixedGain;
+
+            #region without lerp ugly as hell
+            //ResearchPoints -= data.researchCost - data.researchFixedGain;
+            //CreativityPoints -= data.creativityCost - data.creativityFixedGain;
+            //FundsPoints -= data.fundsCost - data.fundsFixedGain;
+            //InfluencePoints -= data.influenceCost - data.influenceFixedGain;
+            //DroneCost -= data.droneCost - data.droneFixedGain;
+            //MaterialCost -= data.materialCost - data.materialFixedGain;
+            #endregion
+
+            //time lerping = .5f
+            //(Time.time - startTime) / overtime 
+            StartCoroutine(LerpResources(0.5f, temp1, temp2, temp3,temp4,temp5,temp6));
+
             #endregion
 
             UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieFixedGain ;

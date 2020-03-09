@@ -27,9 +27,7 @@ namespace Context
             GameObject upgrade = GameObject.Instantiate<GameObject>(upgradeCost);
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
 
-            //upgrade.GetComponentInChildren<Image>().sprite = image.sprite;
             upgrade.transform.SetParent(upgradeBlock.transform);
-            //upgrade.transform.parent = upgradeBlock.transform;
         }
     }
 }

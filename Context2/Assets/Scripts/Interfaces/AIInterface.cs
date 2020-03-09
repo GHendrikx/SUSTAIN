@@ -19,9 +19,9 @@ namespace Context
         [SerializeField]
         private UpdateButton[] updateButton;
 
-        private float previousResearchPoints;
-        private float previousCreativityPoints;
-        private float previousFundsPoints;
+        [SerializeField]
+        private Image aiFitnessScore;
+
         private bool lerping;
 
         private float GUIResearchPoints;
@@ -33,51 +33,40 @@ namespace Context
         /// </summary>
         private void UpdateUI()
         {
-
-            if (previousResearchPoints != researchPoints || previousCreativityPoints != CreativityPoints || previousFundsPoints != FundsPoints)
-            {
-                //if (!lerping)
-                //    StartCoroutine(LerpValues(0.1f));
-            }
-
             processing.text = "Processing Power: " + UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
             Research.text = "Research: " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + " (+" + ResearchGain.ToString("0.0") + ")";
             Creativity.text = "Creativity: " + CreativityPoints.ToString("0.0") + " (+" + CreativityGain + ")";
             Funds.text = "Funds: $" + fundsPoints + "(+" + fundsGain +")";
 
-            previousCreativityPoints = CreativityPoints;
-            previousFundsPoints = FundsPoints;
-            previousResearchPoints = researchPoints;
+            #region AI Calculate Fitness Score
 
-            #region Old Code
-            //TODO: remove currentgainmod for prototype.
-            //memory.text = "R " + ResearchCost.ToString("0.0") + "/"
-            //    + ResearchLimit.ToString() + " (+"
-            //    + ResearchGain.ToString("0.0") + ")" +
-            //    "(" + CurrentResearchGainMod.ToString("0.0") + ")" + " \n" +
-            //    " C " + creativityCost.ToString("0.0") + " (+" + creativityGain.ToString("0.0") + ")" + "(" + creativityGainMod.ToString("0.0") + ") \n" +
-            //    "F "  + fundsCost.ToString("0.0") + " (+" + FundsGain.ToString("0.0") + ")" + "(" + fundsGainMod.ToString("0.0") + ") \n" +
-            //    "I " + InfluenceCost.ToString("0.0") + " (+" + InfluenceGain.ToString("0.0") + "(" + InfluenceGainMod.ToString("0.0") + ") \n";
+            //aiFitnessScore.fillAmount = .5f;
+
             #endregion
         }
 
-        private IEnumerator LerpValues(float overtime)
+        private IEnumerator LerpResources(float overtime, float newResearch,float newCreativity,float newFunds, float newInfluence, float newDrones,float newMaterials)
         {
             lerping = true;
             float startTime = Time.time;
+
             float temp1 = 0;
             float temp2 = 0;
             float temp3 = 0;
-            float previous = previousCreativityPoints;
-            float previous1 = previousFundsPoints;
-            float previous2 = previousResearchPoints;
+            float temp4 = 0;
+            float temp5 = 0;
+            float temp6 = 0;
+
 
             while (Time.time < (startTime + overtime))
             {
 
-                temp1 = Mathf.Lerp(previousCreativityPoints, CreativityPoints,(Time.time - startTime) / overtime);
-                temp2 = Mathf.Lerp(previousFundsPoints,fundsPoints, (Time.time - startTime) / overtime);
-                temp3 = Mathf.Lerp(previousResearchPoints,researchPoints, (Time.time - startTime) / overtime);
+                temp1 = Mathf.Lerp(CreativityPoints, newCreativity,(Time.time - startTime) / overtime);
+                temp2 = Mathf.Lerp(FundsPoints,newFunds, (Time.time - startTime) / overtime);
+                temp3 = Mathf.Lerp(ResearchPoints, newResearch, (Time.time - startTime) / overtime);
+                temp4 = Mathf.Lerp(InfluencePoints, newInfluence, (Time.time - startTime) / overtime);
+                temp5 = Mathf.Lerp(DroneCost, newDrones, (Time.time - startTime) / overtime);
+                temp6 = Mathf.Lerp(MaterialCost, newMaterials, (Time.time - startTime) / overtime);
 
                 CreativityPoints = temp1;
                 fundsPoints = temp2;
@@ -85,10 +74,11 @@ namespace Context
 
                 yield return null;
             }
+
+            lerping = false;
             yield return null;
 
 
-            lerping = false;
 
         }
 

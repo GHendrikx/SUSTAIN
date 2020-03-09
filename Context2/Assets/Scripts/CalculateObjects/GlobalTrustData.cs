@@ -132,11 +132,11 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     currentLovesControlled += currentData.globalLovesControlled;
-            Debug.Log(currentLovesControlled);
+
             for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
                     currentLovesControlled += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.globalLovesControlled;
-            Debug.Log(currentLovesControlled);
+            //Debug.Log(currentLovesControlled);
 
             ai.CurrentGlobalLovesControlled = currentLovesControlled;
         }

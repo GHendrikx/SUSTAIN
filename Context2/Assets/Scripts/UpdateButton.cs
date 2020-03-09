@@ -100,7 +100,7 @@ namespace Context
                 Extensions.SetUpdateCost(data.researchCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints16X16"), upgradeCost, upgradeBlock);
         }
 
-        [System.Obsolete]
+        [System.Obsolete("Use the Function in extensions called SetUpdateCost() Same thing better execution", true)]
         private void SetUpdateCost(string text, Image image)
         {
             Debug.Log(text);

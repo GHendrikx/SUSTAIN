@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Context
 {
@@ -58,7 +59,6 @@ namespace Context
             CalculateDronesLimit();
         }
 
-        //TODO: look into this one.
         private void CalculateDronesPoints()
         {
             ai.ResearchPoints += CurrentDronesGain;
@@ -119,5 +119,27 @@ namespace Context
                 if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
                     CurrentDronesLimitMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.droneLimit;
         }
+
+        //Ask Marnix
+        private IEnumerator UpdateDroneData(float overTime, float newDronePoints, float newDroneGain, float newDroneGainMod, float newDroneLimit, float newDroneLimitMod)
+        {
+            float startTime = Time.time;
+            float creativityPoints = ai.CreativityPoints;
+            float creativityGain = ai.CreativityGain;
+            float creativityGainMod = ai.CreativityGainMod;
+
+            while (Time.time < (startTime + overTime))
+            {
+                ai.DroneCost = Mathf.Lerp(creativityPoints, newDronePoints, (Time.time - startTime) / overTime);
+                ai.CreativityGain = Mathf.Lerp(creativityGain, newDroneGain, (Time.time - startTime) / overTime);
+                ai.CreativityGainMod = Mathf.Lerp(creativityGainMod, newDroneGainMod, (Time.time - startTime) / overTime);
+
+                yield return null;
+                //(Time.time - startTime) / overtime
+            }
+            yield return null;
+        }
+
+
     }
 }

@@ -74,5 +74,24 @@ namespace Context
 
             ai.CreativityGain = CurrentCreativityGain;
         }
+
+        private IEnumerator UpdateCreativityData(float overTime, float newCreativityPoints, float newCreativityGain, float newCreativityGainMod)
+        {
+            float startTime = Time.time;
+            float creativityPoints = ai.CreativityPoints;
+            float creativityGain = ai.CreativityGain;
+            float creativityGainMod = ai.CreativityGainMod;
+
+            while(Time.time < (startTime + overTime))
+            {
+                ai.CreativityPoints = Mathf.Lerp(creativityPoints, newCreativityPoints, (Time.time - startTime) / overTime);
+                ai.CreativityGain = Mathf.Lerp(creativityGain, newCreativityGain, (Time.time - startTime) / overTime);
+                ai.CreativityGainMod = Mathf.Lerp(creativityGainMod, newCreativityGainMod, (Time.time - startTime) / overTime);
+
+                yield return null;
+                //(Time.time - startTime) / overtime
+            }
+            yield return null;
+        }
     }
 }
