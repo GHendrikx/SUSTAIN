@@ -10,6 +10,8 @@ namespace Context
     {
         public delegate void NextTurn();
         public event NextTurn nextTurn;
+        [SerializeField]
+        private AI ai;
 
         private int turn = 0;
         private const string turnText = "Turn: ";
@@ -79,8 +81,17 @@ namespace Context
                     Mathf.Pow(2, UpgradeAbilities.upgradeAbilities[i].data.doneLevel);
 
                     UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget = currentDoneTarget;
-                    GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += 1;
-                    UpgradeAbilities.TEMPALLOCATIONPOOL += 1;
+
+                    GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.upgradeAbilities[i].data.allocatieFixedGain;
+                    ai.CreativityPoints += UpgradeAbilities.upgradeAbilities[i].data.creativityFixedGain;
+                    ai.DronePoints += UpgradeAbilities.upgradeAbilities[i].data.droneFixedGain;
+                    ai.FundsPoints += UpgradeAbilities.upgradeAbilities[i].data.fundsFixedGain;
+                    ai.InfluencePoints += UpgradeAbilities.upgradeAbilities[i].data.influenceFixedGain;
+                    ai.MaterialCost += UpgradeAbilities.upgradeAbilities[i].data.materialFixedGain;
+
+                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.upgradeAbilities[i].data.researchFixedGain;
+
+                    UpgradeAbilities.TEMPALLOCATIONPOOL += UpgradeAbilities.upgradeAbilities[i].data.allocatieFixedGain;
                 }
 
                 if (UpgradeAbilities.upgradeAbilities[i].data.hasTarget)

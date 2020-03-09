@@ -66,6 +66,12 @@ namespace Context
         [SerializeField]
         private GameObject costBlock;
 
+        
+        [SerializeField]
+        private Image rewardImage;
+        [SerializeField]
+        private TextMeshProUGUI rewardText;
+            
         public void CalculateStatus(int amount)
         {
             BasePoints = Convert.ToInt32(TEMPALLOCATIONPOOL);
@@ -102,6 +108,7 @@ namespace Context
         {
             this.Instance = gameObject;
             this.data = data;
+            SetRewardImage();
             if (data.desc == null)
                 descriptionText.text = string.Empty;
             upgradeAbilities.Add(this);
@@ -125,11 +132,29 @@ namespace Context
             }
         }
 
-        private void SetEffect()
+        private void SetRewardImage()
         {
-            
+            if (data.allocatieFixedGain > 0) 
+                Extensions.SetAllocatieCost(rewardText, data.allocatieFixedGain, rewardImage, Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+            else if (data.creativityFixedGain > 0) 
+                Extensions.SetAllocatieCost(rewardText, data.creativityFixedGain, rewardImage, Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"));
+            else if (data.researchFixedGain > 0) 
+                Extensions.SetAllocatieCost(rewardText, data.researchFixedGain, rewardImage, Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints16X16"));
+            else if (data.droneFixedGain > 0) 
+                Extensions.SetAllocatieCost(rewardText, data.droneFixedGain, rewardImage, Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Drone16X16"));
+            else if (data.fundsFixedGain > 0) 
+                Extensions.SetAllocatieCost(rewardText, data.droneFixedGain, rewardImage, Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"));
+            else if (data.influenceFixedGain > 0) 
+                Extensions.SetAllocatieCost(rewardText, data.droneFixedGain, rewardImage, Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"));
+            else if (data.materialFixedGain > 0)
+                Extensions.SetAllocatieCost(rewardText, data.droneFixedGain, rewardImage, Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"));
+            else
+            {
+                rewardText.gameObject.SetActive(false);
+                rewardImage.gameObject.SetActive(false);
+            }
         }
-
+        
         private void LockCheck()
         {
             for (int i = 0; i < upgradeAbilities.Count; i++)

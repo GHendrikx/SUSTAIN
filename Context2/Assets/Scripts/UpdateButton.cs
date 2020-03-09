@@ -55,6 +55,7 @@ namespace Context
         {
             this.UpdateName = data.name + data.desc;
             this.CostOfUpdate = data.researchCost;
+            //Debug.Break();
             Ai = ai;
             this.data = data;
             SetTextToUpdateButton();
@@ -78,27 +79,43 @@ namespace Context
                 description.text = data.desc;
 
             SetUpdateCost();
+            SetEffects();
         }
 
-        
-        private void SetUpdateCost()
+        private void SetEffects()
         {
-            if (data.allocatieCost > 0)
-                Extensions.SetUpdateCost(data.allocatieCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
-            if (data.creativityCost > 0)
-                Extensions.SetUpdateCost(data.creativityCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"), upgradeCost,upgradeBlock);
-            if (data.droneCost > 0)
-                Extensions.SetUpdateCost(data.droneCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/Iconen_Drone16X16"), upgradeCost,upgradeBlock);
-            if (data.fundsCost > 0)
-                Extensions.SetUpdateCost(data.droneCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"), upgradeCost,upgradeBlock);
-            if (data.influenceCost > 0)
-                Extensions.SetUpdateCost(data.influenceCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
-            if (data.materialCost > 0)
-                Extensions.SetUpdateCost(data.materialCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), upgradeCost,upgradeBlock);
-            if (data.powerCost > 0)
-                Extensions.SetUpdateCost(data.powerCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
-            if (data.researchCost > 0)
-                Extensions.SetUpdateCost(data.researchCost.ToString(), Resources.Load<Image>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints16X16"), upgradeCost, upgradeBlock);
+            if (data.creativityGain > 0 || data.creativityGain < 0)
+                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"), upgradeCost, upgradeBlock);
+            if (data.droneGain > 0 || data.droneGain < 0)
+                Extensions.SetEffectGain(data.droneGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.fundsGain > 0 || data.fundsGain < 0)
+                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iIconen_Fund16X16"), upgradeCost, upgradeBlock);
+            if (data.influenceGain > 0 || data.influenceGain < 0)
+                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
+            if(data.materialGain > 0 ||data.materialGain < 0)
+                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), upgradeCost, upgradeBlock);
+            if (data.researchGain > 0 || data.researchGain < 0)
+                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints16X16"), upgradeCost, upgradeBlock);
+        }
+
+         private void SetUpdateCost()
+        {
+            //if (data.allocatieCost > 0)
+            //    Extensions.SetEffectGain(data.allocatieCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
+            //if (data.creativityCost > 0)
+            //    Extensions.SetEffectGain(data.creativityCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"), upgradeCost,upgradeBlock);
+            //if (data.droneCost > 0)
+            //    Extensions.SetEffectGain(data.droneCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Drone16X16"), upgradeCost,upgradeBlock);
+            //if (data.fundsCost > 0)
+            //    Extensions.SetEffectGain(data.droneCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"), upgradeCost,upgradeBlock);
+            //if (data.influenceCost > 0)
+            //    Extensions.SetEffectGain(data.influenceCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost,upgradeBlock);
+            //if (data.materialCost > 0)
+            //    Extensions.SetEffectGain(data.materialCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), upgradeCost,upgradeBlock);
+            //if (data.powerCost > 0)
+            //    Extensions.SetEffectGain(data.powerCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
+            //if (data.researchCost > 0)
+            //    Extensions.SetEffectGain(data.researchCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints16X16"), upgradeCost, upgradeBlock);
         }
 
         [System.Obsolete("Use the Function in extensions called SetUpdateCost() Same thing better execution", true)]

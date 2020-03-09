@@ -16,6 +16,8 @@ namespace Context
         private TextMeshProUGUI[] costs;
         [SerializeField]
         private Image[] image;
+        
+
 
         public Tab tab;
         public int amountOfUpgrades;
@@ -23,9 +25,12 @@ namespace Context
 
         public void InitializeNewButton(Data data,AI ai)
         {
+            Debug.Log("InitializingButton");
+            //Debug.Log(data.name);
             initializedData.Add(data);
             Button button = GameObject.Instantiate(buttonPrefab, transform);
             UpdateButton update = button.gameObject.GetComponent<UpdateButton>();
+
             update.ButtonInformation(data, ai);
             RectTransform rectTransform = button.GetComponent<RectTransform>();
             rectTransform.position = new Vector2(rectTransform.position.x, 0 + (transform.childCount * 110));
