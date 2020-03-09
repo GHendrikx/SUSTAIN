@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 namespace Context
 {
     public static class Extensions
     {
-        //Because Marnix love lerps
         public static IEnumerator UpdateSlider(RectTransform rectTransform, float targetValue, float overtime)
         {
             float startTime = Time.time;
@@ -18,6 +18,7 @@ namespace Context
                 rectTransform.anchorMax = Vector2.Lerp(new Vector2(currentValue, rectTransform.anchorMax.y), new Vector2(targetValue, rectTransform.anchorMax.y), (Time.time - startTime) / overtime);
                 yield return null;
             }
+
             yield return null;
         }
 
@@ -25,9 +26,15 @@ namespace Context
         {
 
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
+
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
+            Image i = upgrade.GetComponentInChildren<Image>();
+            Debug.Log(i.name);
             upgrade.SetParent(upgradeBlock.transform);
-            Debug.Log(upgrade.GetChild(0).name);
+
+            
+            
+
         }
 
     }
