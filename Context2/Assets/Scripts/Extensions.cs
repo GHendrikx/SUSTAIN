@@ -23,11 +23,21 @@ namespace Context
             yield return null;
         }
 
+        public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock, Color color)
+        {
+            Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
+            upgrade.GetComponentInChildren<TextMeshProUGUI>().color = color;
+            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text + Environment.NewLine;
+
+            Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
+            i.sprite = sprite;
+            upgrade.SetParent(upgradeBlock.transform);
+        }
+
         public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock)
         {
 
-            Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
-
+            Transform upgrade = GameObject.Instantiate(upgradeCost.transform, upgradeBlock.transform);
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text + Environment.NewLine;
             Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
             i.sprite = sprite;
