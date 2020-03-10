@@ -33,11 +33,14 @@ namespace Context
             rectTransform.position = new Vector2(rectTransform.position.x, 0 + (transform.childCount * 110));
             button.gameObject.SetActive(true);
             gameObject.SetActive(true);
-
-            //button.gameObject.GetComponentInChildren<TextMeshProUGUI>(true).text = SetTextToButton(data); //data.name +  "R (" + data.researchCost + ")" + "C (" + data.creativityCost + ")";
-            
-
             amountOfUpgrades++;
+
+            for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
+                if (data.ID == GameManager.Instance.AI.SDGManager.SDGBar[i].SDGUnlockID)
+                {
+                    button.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SDGBar[i].LockImage.gameObject.SetActive(false));
+                    GameManager.Instance.AI.SDGManager.SetLockImage(GameManager.Instance.AI.SDGManager.SDGBar[i]);
+                }
             button.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
             button.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
             button.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());

@@ -8,7 +8,7 @@ namespace Context
     public class TrustMeter : MonoBehaviour
     {
         [SerializeField]
-        private Image[] amountMeter;
+        private Slider[] slider;
         [SerializeField]
         private AI ai;
         [SerializeField]
@@ -17,7 +17,7 @@ namespace Context
         private float populationGrowth = 1.00009f;
         private float naturalDecay = 0.01f;
 
-        public void UpdateTrustMeter()
+        private void UpdateTrustMeter()
         {
             float tempLocalRebeliousScore = ai.LocalRebelliousScore;
             float tempLocalHatesScore = ai.LocalHatesScore;
@@ -134,23 +134,23 @@ namespace Context
             switch (trustType)
             {
                 case TrustType.Local:
-                    for (int i = 0; i < amountMeter.Length; i++)
-                        amountMeter[i].fillAmount = ai.LocalDisapprovesPercentage;
+                    for (int i = 0; i < slider.Length; i++)
+                        slider[i].value = ai.LocalDisapprovesPercentage;
                     break;
 
                 case TrustType.Global:
-                    for (int i = 0; i < amountMeter.Length; i++)
-                        amountMeter[i].fillAmount = ai.GlobalDisapprovesPercentage;
+                    for (int i = 0; i < slider.Length; i++)
+                        slider[i].value = ai.GlobalDisapprovesPercentage;
                     break;
                 case TrustType.Supervisor:
 
-                    for (int i = 0; i < amountMeter.Length; i++)
-                        amountMeter[i].fillAmount = ai.SvDisapprovesPercentage;
+                    for (int i = 0; i < slider.Length; i++)
+                        slider[i].value = ai.SvDisapprovesPercentage;
                     break;
 
                 case TrustType.National:
-                    for (int i = 0; i < amountMeter.Length; i++)
-                        amountMeter[i].fillAmount = ai.NationalDisapprovesPercentage;
+                    for (int i = 0; i < slider.Length; i++)
+                        slider[i].value = ai.NationalDisapprovesPercentage;
                     break;
                 default:
                     break;

@@ -69,11 +69,32 @@ namespace Context
             return health;
         }
 
+        public void SetLockImage(SDGBar sdgBar)
+        {
+            sdgBar.LockImage.gameObject.SetActive(false);
+            Debug.Log("LockImage");
+        }
+
     }
 
     [System.Serializable]
     public struct SDGBar
     {
+        //SDG Unlocks
+        [SerializeField]
+        private int sdgUnlockID;
+        public int SDGUnlockID
+        {
+            get
+            {
+                return sdgUnlockID;
+            }
+            set
+            {
+                SDGUnlockID = value;
+            }
+        }
+
         //LockImage
         [SerializeField]
         private Image lockImage;
