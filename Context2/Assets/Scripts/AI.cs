@@ -16,7 +16,6 @@ namespace Context
         [SerializeField]
         private AudioManager audioManager;
         public SDGManager SDGManager;
-        public TrustMeter trustMeter;
 
         #region Data CalculationObjects
         [HideInInspector]
