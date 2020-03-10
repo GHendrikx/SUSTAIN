@@ -1242,7 +1242,7 @@ MonoBehaviour:
   BasePoints: 0
   Points: 0
   effectBlock: {fileID: 1021898007862532230}
-  costBlock: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
+  costBlock: {fileID: 2831580446549795828, guid: 00129a1726dce554291ace78fc1cb6b4,
     type: 3}
   rewardImage: {fileID: 8133664159457797590}
   rewardText: {fileID: 6274951442064326119}
