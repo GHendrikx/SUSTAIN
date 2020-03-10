@@ -7,6 +7,7 @@ namespace Context
 {
     /// <Information>
     /// This class is generated with the UML tool from Geoffrey Hendrikx.
+    /// Second class is made in the class AIInterface
     /// </Information>
     public partial class AI : MonoBehaviour
     {
@@ -15,7 +16,8 @@ namespace Context
         [SerializeField]
         private AudioManager audioManager;
         public SDGManager SDGManager;
-        #region data calculationObjects
+
+        #region Data CalculationObjects
         [HideInInspector]
         public ResearchData researchData;
         [HideInInspector]
@@ -211,6 +213,19 @@ namespace Context
         #endregion
 
         #region Drones
+        [SerializeField]
+        private float dronePoint;
+        public float DronePoints
+        {
+            get
+            {
+                return dronePoint;
+            }
+            set
+            {
+                dronePoint = value;
+            }
+        }
 
         [SerializeField]
         private float droneCost;
@@ -253,6 +268,19 @@ namespace Context
         #endregion
 
         #region Material
+        private float materialPoints;
+        public float MaterialPoints
+        {
+            get
+            {
+                return materialPoints;
+            }
+            set
+            {
+                materialPoints = value;
+            }
+        }
+
         private float materialCost;
         public float MaterialCost
         {
@@ -675,7 +703,7 @@ namespace Context
 
             #endregion
 
-            UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieFixedGain ;
+            UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieFixedGain;
             UpgradeAbilities.ALLOCATIONPOOL += data.allocatieFixedGain;
 
             UpdateUI();

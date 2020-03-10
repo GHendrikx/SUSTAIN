@@ -24,9 +24,6 @@ namespace Context
         [SerializeField]
         private AI ai;
 
-        public void Start()
-        {
-        }
 
         public void UpdateSDGValues()
         {
@@ -55,9 +52,23 @@ namespace Context
                 return;
 
             StartCoroutine(Extensions.UpdateSlider(sdgBar[(int)sdgType].RectTransform, percentage, 0.5f));
-
-            //sdgBar[(int)sdgType].RectTransform.anchorMax = new Vector2(percentage,sdgBar[(int)sdgType].RectTransform.anchorMax.y);
         }
+
+        public float CalculateHealth()
+        {
+            float health = 0;
+            for (int i = 0; i < sdgBar.Length; i++)
+            {
+                if (sdgBar[i].LockImage.gameObject.activeInHierarchy)
+                    continue;
+                health += sdgBar[i].RectTransform.anchorMax.x;
+            }
+            health -= 1;
+            Mathf.Clamp(health, 0, 1);
+
+            return health;
+        }
+
     }
 
     [System.Serializable]

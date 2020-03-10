@@ -40,7 +40,7 @@ namespace Context
 
             #region AI Calculate Fitness Score
 
-            //aiFitnessScore.fillAmount = .5f;
+            aiFitnessScore.fillAmount = SDGManager.CalculateHealth();
 
             #endregion
         }

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: f73eb01166922924dbf0b53f1245a11a
+guid: c6cd479fe001e994bac7ead177e1470a
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -4413912122657336084
     second: icon_Creativity16X16_0
-  - first:
-      213: 1347623521687679461
-    second: icon_Creativity16X16_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -112,7 +109,7 @@ TextureImporter:
         width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -120,27 +117,6 @@ TextureImporter:
       bones: []
       spriteID: f1fb8a6bee0f52240898dffaa774c0f8
       internalID: -4413912122657336084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icon_Creativity16X16_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa8fc159a7fdc514abb53033fd1a0188
-      internalID: 1347623521687679461
       vertices: []
       indices: 
       edges: []

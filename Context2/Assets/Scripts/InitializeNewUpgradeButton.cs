@@ -23,9 +23,11 @@ namespace Context
 
         public void InitializeNewButton(Data data,AI ai)
         {
+            //Debug.Log(data.name);
             initializedData.Add(data);
             Button button = GameObject.Instantiate(buttonPrefab, transform);
             UpdateButton update = button.gameObject.GetComponent<UpdateButton>();
+
             update.ButtonInformation(data, ai);
             RectTransform rectTransform = button.GetComponent<RectTransform>();
             rectTransform.position = new Vector2(rectTransform.position.x, 0 + (transform.childCount * 110));
@@ -42,7 +44,7 @@ namespace Context
 
         }
 
-        [System.Obsolete]
+        [System.Obsolete("This was the Test function of the project not in use anymore.")]
         private string SetTextToButton(Data data)
         {
             string text = data.name;
