@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 44513024}
   - component: {fileID: 44513023}
   m_Layer: 5
-  m_Name: AllocatieCost (2)
+  m_Name: AllocatieCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 32
-  m_textAlignment: 513
+  m_textAlignment: 514
   m_characterSpacing: 4.6
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -862,7 +862,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -0.000030517578, y: -9.969971}
-  m_SizeDelta: {x: 601.86, y: -225.4}
+  m_SizeDelta: {x: 601.9, y: -26.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &72544343
 MonoBehaviour:
@@ -11886,7 +11886,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.000030517578, y: 0}
-  m_SizeDelta: {x: 0, y: -141.5}
+  m_SizeDelta: {x: 0, y: 48.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1671703513
 MonoBehaviour:

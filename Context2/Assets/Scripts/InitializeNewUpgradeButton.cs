@@ -16,8 +16,6 @@ namespace Context
         private TextMeshProUGUI[] costs;
         [SerializeField]
         private Image[] image;
-        
-
 
         public Tab tab;
         public int amountOfUpgrades;
@@ -46,7 +44,7 @@ namespace Context
 
         }
 
-        [System.Obsolete]
+        [System.Obsolete("This was the Test function of the project not in use anymore.")]
         private string SetTextToButton(Data data)
         {
             string text = data.name;

@@ -1145,6 +1145,9 @@ MonoBehaviour:
   CostOfUpdate: 0
   UpdateName: 
   myButton: {fileID: 4842718128640277062}
+  costBlock: {fileID: 2639025427238935610}
+  costInformation: {fileID: 5504829431636078163, guid: 30cac3fe21b396345a71af6f7ce78276,
+    type: 3}
   title: {fileID: 7960386560065250276}
   description: {fileID: 6213089470019765036}
   researchUnlocks: {fileID: 0}
@@ -1160,11 +1163,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7960386561878494957}
     m_Modifications:
-    - target: {fileID: 3922337272375769801, guid: d758715ea461d024b87ee9e3daa4911a,
-        type: 3}
-      propertyPath: m_Name
-      value: horizontal Costblock Container
-      objectReference: {fileID: 0}
     - target: {fileID: 1486918769769677485, guid: d758715ea461d024b87ee9e3daa4911a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1270,6 +1268,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3922337272375769801, guid: d758715ea461d024b87ee9e3daa4911a,
+        type: 3}
+      propertyPath: m_Name
+      value: horizontal Costblock Container
+      objectReference: {fileID: 0}
     - target: {fileID: 5217795881384168495, guid: d758715ea461d024b87ee9e3daa4911a,
         type: 3}
       propertyPath: m_CellSize.x
@@ -1277,6 +1280,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d758715ea461d024b87ee9e3daa4911a, type: 3}
+--- !u!1 &2639025427238935610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3922337272375769801, guid: d758715ea461d024b87ee9e3daa4911a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1364946186216646387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &455949799037609054 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1486918769769677485, guid: d758715ea461d024b87ee9e3daa4911a,
@@ -1290,6 +1299,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7960386561878494957}
     m_Modifications:
+    - target: {fileID: 1728549648415054262, guid: b0c13215e8b9278478cfdb7caa884419,
+        type: 3}
+      propertyPath: m_Name
+      value: Cost_EffectBlockv2
+      objectReference: {fileID: 0}
     - target: {fileID: 9127304989569288486, guid: b0c13215e8b9278478cfdb7caa884419,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1394,11 +1408,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728549648415054262, guid: b0c13215e8b9278478cfdb7caa884419,
-        type: 3}
-      propertyPath: m_Name
-      value: Cost_EffectBlockv2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c13215e8b9278478cfdb7caa884419, type: 3}

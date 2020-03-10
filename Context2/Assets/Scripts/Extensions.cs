@@ -36,18 +36,44 @@ namespace Context
 
         public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock)
         {
-
+            int amount = System.Convert.ToInt32(text);
+                
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform, upgradeBlock.transform);
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text + Environment.NewLine;
+            upgrade.GetComponentInChildren<TextMeshProUGUI>().color = (amount > 0) ? Color.green: Color.red;
+
+
             Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
             i.sprite = sprite;
             upgrade.SetParent(upgradeBlock.transform);
         }
 
+        public static void SetCostBlock(string text, Sprite sprite, GameObject costInfo, GameObject costBlock, float amount)
+        {
+            string c = string.Empty;
+            Color textColor = Color.white;
+            Debug.Log(amount);
+
+            if (amount > 0)
+            {
+                textColor = Color.green;
+                c = "+";
+            }
+            else
+                textColor = Color.red;
+
+            Transform cost = GameObject.Instantiate(costInfo.transform, costBlock.transform);
+            costInfo.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
+            costInfo.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
+            Image i = costInfo.GetComponentInChildren<Image>();
+            i.sprite = sprite;
+        }
+
 
         public static void SetAllocatieCost(TextMeshProUGUI text, int fixedGain, Image image, Sprite sprite)
         {
-            text.text = "+ " + fixedGain;
+            text.text = "+" + fixedGain;
+            text.color = Color.black;
             image.sprite = sprite;
         }
 
