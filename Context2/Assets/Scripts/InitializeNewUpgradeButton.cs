@@ -25,7 +25,6 @@ namespace Context
 
         public void InitializeNewButton(Data data,AI ai)
         {
-            Debug.Log("InitializingButton");
             //Debug.Log(data.name);
             initializedData.Add(data);
             Button button = GameObject.Instantiate(buttonPrefab, transform);

@@ -861,7 +861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.000023365, y: -9.969971}
+  m_AnchoredPosition: {x: -0.000030517578, y: -9.969971}
   m_SizeDelta: {x: 601.86, y: -225.4}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &72544343
@@ -1265,6 +1265,7 @@ MonoBehaviour:
   processingPoints: 0
   processingAmount: 1
   researchPoints: 0
+  dronePoint: 0
   droneCost: 0
   SDGPoints01: 0
   SDGPoints02: 0
@@ -1522,6 +1523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2595e0d7459263042b358de6ee835f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ai: {fileID: 90794111}
 --- !u!4 &90794118
 Transform:
   m_ObjectHideFlags: 0
@@ -11883,7 +11885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030518, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 0, y: -141.5}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1671703513

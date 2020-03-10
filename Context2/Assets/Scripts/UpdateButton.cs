@@ -89,13 +89,13 @@ namespace Context
             if (data.droneGain > 0 || data.droneGain < 0)
                 Extensions.SetEffectGain(data.droneGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Drone16X16"), upgradeCost, upgradeBlock);
             if (data.fundsGain > 0 || data.fundsGain < 0)
-                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iIconen_Fund16X16"), upgradeCost, upgradeBlock);
+                Extensions.SetEffectGain(data.fundsGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"), upgradeCost, upgradeBlock);
             if (data.influenceGain > 0 || data.influenceGain < 0)
-                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
+                Extensions.SetEffectGain(data.influenceGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
             if(data.materialGain > 0 ||data.materialGain < 0)
-                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), upgradeCost, upgradeBlock);
+                Extensions.SetEffectGain(data.materialGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), upgradeCost, upgradeBlock);
             if (data.researchGain > 0 || data.researchGain < 0)
-                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints16X16"), upgradeCost, upgradeBlock);
+                Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints16X16"), upgradeCost, upgradeBlock);
         }
 
          private void SetUpdateCost()

@@ -107,10 +107,8 @@ namespace Context
             GameManager.Instance.AI.SetTurn = true;
         }
 
-        private void Turn()
-        {
+        private void Turn() =>
             nextTurn?.Invoke();
-        }
 
 
     }

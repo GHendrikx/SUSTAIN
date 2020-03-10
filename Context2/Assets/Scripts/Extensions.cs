@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -27,7 +28,7 @@ namespace Context
 
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
 
-            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
+            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text + Environment.NewLine;
             Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
             i.sprite = sprite;
             upgrade.SetParent(upgradeBlock.transform);

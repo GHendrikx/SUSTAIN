@@ -115,21 +115,28 @@ namespace Context
             LockCheck();
 
             if (informationText != null)
-            {
                 //informationText.text = data.name + "(" + data.allocatieCost + ")";
                 if (data.hasTarget)
-                {
                     for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                    {
                         if (data.ID == UpgradeAbilities.upgradeAbilities[i].data.ID)
                         {
                             informationText.text = string.Empty;
                             informationText.text +=  UpgradeAbilities.upgradeAbilities[i].data.name;
                             targetText.text = UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget + "/" + UpgradeAbilities.upgradeAbilities[i].data.doneDesc ;
                         }
-                    }
-                }
-            }
+
+            if (data.creativityGain > 0) 
+                Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"), costBlock, effectBlock);
+            if (data.droneGain > 0) 
+                Extensions.SetEffectGain(data.droneGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconen_Drone16X16"), costBlock, effectBlock);
+            if (data.fundsGain > 0)
+                Extensions.SetEffectGain(data.fundsGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"), costBlock, effectBlock);
+            if (data.influenceGain > 0)
+                Extensions.SetEffectGain(data.influenceGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Influence16X16"), costBlock, effectBlock);
+            if (data.materialGain > 0)
+                Extensions.SetEffectGain(data.materialGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), costBlock, effectBlock);
+            if (data.researchGain > 0)
+                Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints_3_16X16"), costBlock, effectBlock);
         }
 
         private void SetRewardImage()

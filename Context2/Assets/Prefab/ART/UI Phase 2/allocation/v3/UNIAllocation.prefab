@@ -1734,7 +1734,7 @@ MonoBehaviour:
   BasePoints: 0
   Points: 0
   effectBlock: {fileID: 1021898007862532230}
-  costBlock: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
+  costBlock: {fileID: 2831580446549795828, guid: 00129a1726dce554291ace78fc1cb6b4,
     type: 3}
   rewardImage: {fileID: 8133664159457797590}
   rewardText: {fileID: 6274951442064326119}
@@ -1928,7 +1928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.91000366, y: -15.410004}
+  m_AnchoredPosition: {x: -0.9100342, y: -15.410004}
   m_SizeDelta: {x: 611.19, y: 92.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8497393281660433314
