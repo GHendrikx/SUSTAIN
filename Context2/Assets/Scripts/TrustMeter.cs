@@ -51,39 +51,39 @@ namespace Context
             float tempNationalLovesScore = ai.NationalLoveScore;
             float tempNationalControlledScore = ai.NationalControlledScore;
 
-            TrustChangeCalculator(ai.LocalRebelliousScore, ai.CurrentLocalRebelliosAngry, 0, 0, tempLocalRebeliousScore, tempLocalHatesScore, populationGrowth, naturalDecay, true, false, true);
-            TrustChangeCalculator(ai.LocalHatesScore, ai.CurrentLocalAngryDislikes, ai.CurrentLocalRebelliosAngry, tempLocalRebeliousScore, tempLocalHatesScore, tempLocalDislikesScore, populationGrowth, naturalDecay, true, false, false);
-            TrustChangeCalculator(ai.LocalDisLikesScore, ai.CurrentLocalDislikesNeutral, ai.CurrentLocalAngryDislikes, tempLocalHatesScore, tempLocalDislikesScore, tempLocalNeutralScore, populationGrowth, naturalDecay, true, false, false);
-            TrustChangeCalculator(ai.LocalNeutralScore, ai.CurrentLocalNeutralLikes, ai.CurrentLocalDislikesNeutral, tempLocalDislikesScore, tempLocalNeutralScore, tempLocalLikesScore, populationGrowth, naturalDecay, false, true, false);
-            TrustChangeCalculator(ai.LocalLikesScore, ai.CurrentLocalLikesLove, ai.CurrentLocalNeutralLikes, tempLocalNeutralScore, tempLocalLikesScore, tempLocalLovesScore, populationGrowth, naturalDecay, false, false, false);
-            TrustChangeCalculator(ai.LocalLovesScore, ai.CurrentLocalLovesControlled, ai.CurrentLocalLikesLove, tempLocalLikesScore, tempLocalLovesScore, tempLocalControlledScore, populationGrowth, naturalDecay, false, false, false);
-            TrustChangeCalculator(ai.LocalControlledScore, 0, ai.CurrentLocalLikesLove, tempLocalLovesScore, tempLocalControlledScore, 0, populationGrowth, naturalDecay, false, false, true);
-
-            TrustChangeCalculator(ai.GlobalRebelliousScore, ai.CurrentGlobalRebelliosAngry, 0, 0, tempGlobalRebeliousScore, tempGlobalHatesScore, populationGrowth, naturalDecay, true, false, true);
-            TrustChangeCalculator(ai.GlobalHatesScore, ai.CurrentGlobalAngryDislikes, ai.CurrentGlobalRebelliosAngry, tempGlobalRebeliousScore, tempGlobalHatesScore, tempGlobalDislikesScore, populationGrowth, naturalDecay, true, false, false);
-            TrustChangeCalculator(ai.GlobalDisLikesScore, ai.CurrentGlobalDislikesNeutral, ai.CurrentGlobalAngryDislikes, tempGlobalHatesScore, tempGlobalDislikesScore, tempGlobalNeutralScore, populationGrowth, naturalDecay, true, false, false);
-            TrustChangeCalculator(ai.GlobalNeutralScore, ai.CurrentGlobalNeutralLikes, ai.CurrentGlobalDislikesNeutral, tempGlobalDislikesScore, tempGlobalNeutralScore, tempGlobalLikesScore, populationGrowth, naturalDecay, false, true, false);
-            TrustChangeCalculator(ai.GlobalLikesScore, ai.CurrentGlobalLikesLove, ai.CurrentGlobalNeutralLikes, tempGlobalNeutralScore, tempGlobalLikesScore, tempGlobalLovesScore, populationGrowth, naturalDecay, false, false, false);
-            TrustChangeCalculator(ai.GlobalLoveScore, ai.CurrentGlobalLovesControlled, ai.CurrentGlobalLikesLove, tempGlobalLikesScore, tempGlobalLovesScore, tempGlobalControlledScore, populationGrowth, naturalDecay, false, false, false);
-            TrustChangeCalculator(ai.GlobalControlledScore, 0, ai.CurrentGlobalLikesLove, tempGlobalLovesScore, tempGlobalControlledScore, 0, populationGrowth, naturalDecay, false, false, true);
-
-            TrustChangeCalculator(ai.SvRebelliousScore, ai.CurrentSvRebelliosAngry, 0, 0, tempSvRebeliousScore, tempSvHatesScore, populationGrowth, naturalDecay, true, false, true);
-            TrustChangeCalculator(ai.SvHatesScore, ai.CurrentSvAngryDislikes, ai.CurrentSvRebelliosAngry, tempSvRebeliousScore, tempSvHatesScore, tempSvDislikesScore, populationGrowth, naturalDecay, true, false, false);
-            TrustChangeCalculator(ai.SvDisLikesScore, ai.CurrentSvDislikesNeutral, ai.CurrentSvAngryDislikes, tempSvHatesScore, tempSvDislikesScore, tempSvNeutralScore, populationGrowth, naturalDecay, true, false, false);
-            TrustChangeCalculator(ai.SvNeutralScore, ai.CurrentSvNeutralLikes, ai.CurrentSvDislikesNeutral, tempSvDislikesScore, tempSvNeutralScore, tempSvLikesScore, populationGrowth, naturalDecay, false, true, false);
-            TrustChangeCalculator(ai.SvLikesScore, ai.CurrentSvLikesLove, ai.CurrentSvNeutralLikes, tempSvNeutralScore, tempSvLikesScore, tempSvLovesScore, populationGrowth, naturalDecay, false, false, false);
-            TrustChangeCalculator(ai.SvLoveScore, ai.CurrentSvLovesControlled, ai.CurrentSvLikesLove, tempSvLikesScore, tempSvLovesScore, tempSvControlledScore, populationGrowth, naturalDecay, false, false, false);
-            TrustChangeCalculator(ai.SvControlledScore, 0, ai.CurrentSvLikesLove, tempSvLovesScore, tempSvControlledScore, 0, populationGrowth, naturalDecay, false, false, true);
-
-            TrustChangeCalculator(ai.NationalRebelliousScore, ai.CurrentNatRebelliosAngry, 0, 0, tempNationalRebeliousScore, tempNationalHatesScore, populationGrowth, naturalDecay, true, false, true);
-            TrustChangeCalculator(ai.NationalHatesScore, ai.CurrentNatAngryDislikes, ai.CurrentNatRebelliosAngry, tempNationalRebeliousScore, tempNationalHatesScore, tempNationalDislikesScore, populationGrowth, naturalDecay, true, false, false);
-            TrustChangeCalculator(ai.NationalDisLikesScore, ai.CurrentNatDislikesNeutral, ai.CurrentNatAngryDislikes, tempNationalHatesScore, tempNationalDislikesScore, tempNationalNeutralScore, populationGrowth, naturalDecay, true, false, false);
-            TrustChangeCalculator(ai.NationalNeutralScore, ai.CurrentNatNeutralLikes, ai.CurrentNatDislikesNeutral, tempNationalDislikesScore, tempNationalNeutralScore, tempNationalLikesScore, populationGrowth, naturalDecay, false, true, false);
-            TrustChangeCalculator(ai.NationalLikesScore, ai.CurrentNatLikesLove, ai.CurrentNatNeutralLikes, tempNationalNeutralScore, tempNationalLikesScore, tempNationalLovesScore, populationGrowth, naturalDecay, false, false, false);
-            TrustChangeCalculator(ai.NationalLoveScore, ai.CurrentNatLovesControlled, ai.CurrentNatLikesLove, tempNationalLikesScore, tempNationalLovesScore, tempNationalControlledScore, populationGrowth, naturalDecay, false, false, false);
-            TrustChangeCalculator(ai.NationalControlledScore, 0, ai.CurrentNatLikesLove, tempNationalLovesScore, tempNationalControlledScore, 0, populationGrowth, naturalDecay, false, false, true);
-
-            ai.LocalScoreTotal = ai.LocalRebelliousScore + ai.LocalHatesScore + ai.LocalLikesScore + ai.LocalControlledScore + ai.LocalLovesScore + ai.LocalDisLikesScore;
+            TrustChangeCalculator(ref ai.LocalRebelliousScore, ai.CurrentLocalRebelliosAngry, 0, 0, tempLocalRebeliousScore, tempLocalHatesScore, populationGrowth, naturalDecay, true, false, true, false);
+            TrustChangeCalculator(ref ai.LocalHatesScore, ai.CurrentLocalAngryDislikes, ai.CurrentLocalRebelliosAngry, tempLocalRebeliousScore, tempLocalHatesScore, tempLocalDislikesScore, populationGrowth, naturalDecay, true, false, false, false);
+            TrustChangeCalculator(ref ai.LocalDisLikesScore, ai.CurrentLocalDislikesNeutral, ai.CurrentLocalAngryDislikes, tempLocalHatesScore, tempLocalDislikesScore, tempLocalNeutralScore, populationGrowth, naturalDecay, true, false, false, false);
+            TrustChangeCalculator(ref ai.LocalNeutralScore, ai.CurrentLocalNeutralLikes, ai.CurrentLocalDislikesNeutral, tempLocalDislikesScore, tempLocalNeutralScore, tempLocalLikesScore, populationGrowth, naturalDecay, false, true, false, false);
+            TrustChangeCalculator(ref ai.LocalLikesScore, ai.CurrentLocalLikesLove, ai.CurrentLocalNeutralLikes, tempLocalNeutralScore, tempLocalLikesScore, tempLocalLovesScore, populationGrowth, naturalDecay, false, false, false, false);
+            TrustChangeCalculator(ref ai.LocalLovesScore, ai.CurrentLocalLovesControlled, ai.CurrentLocalLikesLove, tempLocalLikesScore, tempLocalLovesScore, tempLocalControlledScore, populationGrowth, naturalDecay, false, false, false, false);
+            TrustChangeCalculator(ref ai.LocalControlledScore, 0, ai.CurrentLocalLikesLove, tempLocalLovesScore, tempLocalControlledScore, 0, populationGrowth, naturalDecay, false, false, true, false);
+                        
+            TrustChangeCalculator(ref ai.GlobalRebelliousScore, ai.CurrentGlobalRebelliosAngry, 0, 0, tempGlobalRebeliousScore, tempGlobalHatesScore, populationGrowth, naturalDecay, true, false, true, false);
+            TrustChangeCalculator(ref ai.GlobalHatesScore, ai.CurrentGlobalAngryDislikes, ai.CurrentGlobalRebelliosAngry, tempGlobalRebeliousScore, tempGlobalHatesScore, tempGlobalDislikesScore, populationGrowth, naturalDecay, true, false, false, false);
+            TrustChangeCalculator(ref ai.GlobalDisLikesScore, ai.CurrentGlobalDislikesNeutral, ai.CurrentGlobalAngryDislikes, tempGlobalHatesScore, tempGlobalDislikesScore, tempGlobalNeutralScore, populationGrowth, naturalDecay, true, false, false, false);
+            TrustChangeCalculator(ref ai.GlobalNeutralScore, ai.CurrentGlobalNeutralLikes, ai.CurrentGlobalDislikesNeutral, tempGlobalDislikesScore, tempGlobalNeutralScore, tempGlobalLikesScore, populationGrowth, naturalDecay, false, true, false, false);
+            TrustChangeCalculator(ref ai.GlobalLikesScore, ai.CurrentGlobalLikesLove, ai.CurrentGlobalNeutralLikes, tempGlobalNeutralScore, tempGlobalLikesScore, tempGlobalLovesScore, populationGrowth, naturalDecay, false, false, false, false);
+            TrustChangeCalculator(ref ai.GlobalLoveScore, ai.CurrentGlobalLovesControlled, ai.CurrentGlobalLikesLove, tempGlobalLikesScore, tempGlobalLovesScore, tempGlobalControlledScore, populationGrowth, naturalDecay, false, false, false, false);
+            TrustChangeCalculator(ref ai.GlobalControlledScore, 0, ai.CurrentGlobalLikesLove, tempGlobalLovesScore, tempGlobalControlledScore, 0, populationGrowth, naturalDecay, false, false, true, false);
+                             
+            TrustChangeCalculator(ref ai.SvRebelliousScore, ai.CurrentSvRebelliosAngry, 0, 0, tempSvRebeliousScore, tempSvHatesScore, populationGrowth, naturalDecay, true, false, true, false);
+            TrustChangeCalculator(ref ai.SvHatesScore, ai.CurrentSvAngryDislikes, ai.CurrentSvRebelliosAngry, tempSvRebeliousScore, tempSvHatesScore, tempSvDislikesScore, populationGrowth, naturalDecay, true, false, false, false);
+            TrustChangeCalculator(ref ai.SvDisLikesScore, ai.CurrentSvDislikesNeutral, ai.CurrentSvAngryDislikes, tempSvHatesScore, tempSvDislikesScore, tempSvNeutralScore, populationGrowth, naturalDecay, true, false, false, false);
+            TrustChangeCalculator(ref ai.SvNeutralScore, ai.CurrentSvNeutralLikes, ai.CurrentSvDislikesNeutral, tempSvDislikesScore, tempSvNeutralScore, tempSvLikesScore, populationGrowth, naturalDecay, false, true, false, true);
+            TrustChangeCalculator(ref ai.SvLikesScore, ai.CurrentSvLikesLove, ai.CurrentSvNeutralLikes, tempSvNeutralScore, tempSvLikesScore, tempSvLovesScore, populationGrowth, naturalDecay, false, false, false, false);
+            TrustChangeCalculator(ref ai.SvLoveScore, ai.CurrentSvLovesControlled, ai.CurrentSvLikesLove, tempSvLikesScore, tempSvLovesScore, tempSvControlledScore, populationGrowth, naturalDecay, false, false, false, false);
+            TrustChangeCalculator(ref ai.SvControlledScore, 0, ai.CurrentSvLikesLove, tempSvLovesScore, tempSvControlledScore, 0, populationGrowth, naturalDecay, false, false, true, false);
+                           
+            TrustChangeCalculator(ref ai.NationalRebelliousScore, ai.CurrentNatRebelliosAngry, 0, 0, tempNationalRebeliousScore, tempNationalHatesScore, populationGrowth, naturalDecay, true, false, true, false);
+            TrustChangeCalculator(ref ai.NationalHatesScore, ai.CurrentNatAngryDislikes, ai.CurrentNatRebelliosAngry, tempNationalRebeliousScore, tempNationalHatesScore, tempNationalDislikesScore, populationGrowth, naturalDecay, true, false, false, false);
+            TrustChangeCalculator(ref ai.NationalDisLikesScore, ai.CurrentNatDislikesNeutral, ai.CurrentNatAngryDislikes, tempNationalHatesScore, tempNationalDislikesScore, tempNationalNeutralScore, populationGrowth, naturalDecay, true, false, false, false);
+            TrustChangeCalculator(ref ai.NationalNeutralScore, ai.CurrentNatNeutralLikes, ai.CurrentNatDislikesNeutral, tempNationalDislikesScore, tempNationalNeutralScore, tempNationalLikesScore, populationGrowth, naturalDecay, false, true, false, false);
+            TrustChangeCalculator(ref ai.NationalLikesScore, ai.CurrentNatLikesLove, ai.CurrentNatNeutralLikes, tempNationalNeutralScore, tempNationalLikesScore, tempNationalLovesScore, populationGrowth, naturalDecay, false, false, false, false);
+            TrustChangeCalculator(ref ai.NationalLoveScore, ai.CurrentNatLovesControlled, ai.CurrentNatLikesLove, tempNationalLikesScore, tempNationalLovesScore, tempNationalControlledScore, populationGrowth, naturalDecay, false, false, false, false);
+            TrustChangeCalculator(ref ai.NationalControlledScore, 0, ai.CurrentNatLikesLove, tempNationalLovesScore, tempNationalControlledScore, 0, populationGrowth, naturalDecay, false, false, true, false);
+            
+            ai.LocalScoreTotal = ai.LocalRebelliousScore + ai.LocalHatesScore + ai.LocalLikesScore + ai.LocalControlledScore + ai.LocalLovesScore + ai.LocalDisLikesScore + ai.LocalNeutralScore;
             ai.LocalRebeliousPercentage = ai.LocalRebelliousScore / ai.LocalScoreTotal;
             ai.LocalHatesPercentage = ai.LocalHatesScore / ai.LocalScoreTotal;
             ai.LocalDislikesPercentage = ai.LocalDisLikesScore / ai.LocalScoreTotal;
@@ -95,7 +95,7 @@ namespace Context
             ai.LocalDisapprovesPercentage = ai.LocalRebeliousPercentage + ai.LocalHatesPercentage + ai.LocalDislikesPercentage;
             ai.LocalApprovesPercentage = ai.LocalLikesPercentage + ai.LocalLovesPercentage + ai.LocalControlledPercentage;
 
-            ai.GlobalScoreTotal = ai.GlobalRebelliousScore + ai.GlobalHatesScore + ai.GlobalLikesScore + ai.GlobalControlledScore + ai.GlobalLoveScore + ai.GlobalDisLikesScore;
+            ai.GlobalScoreTotal = ai.GlobalRebelliousScore + ai.GlobalHatesScore + ai.GlobalLikesScore + ai.GlobalControlledScore + ai.GlobalLoveScore + ai.GlobalDisLikesScore + ai.GlobalNeutralScore;
             ai.GlobalRebeliousPercentage = ai.GlobalRebelliousScore / ai.GlobalScoreTotal;
             ai.GlobalHatesPercentage = ai.GlobalHatesScore / ai.GlobalScoreTotal;
             ai.GlobalDislikesPercentage = ai.GlobalDisLikesScore / ai.GlobalScoreTotal;
@@ -107,7 +107,7 @@ namespace Context
             ai.GlobalDisapprovesPercentage = ai.GlobalRebeliousPercentage + ai.GlobalHatesPercentage + ai.GlobalDislikesPercentage;
             ai.GlobalApprovesPercentage = ai.GlobalLikesPercentage + ai.GlobalLovesPercentage + ai.GlobalControlledPercentage;
 
-            ai.SvScoreTotal = ai.SvRebelliousScore + ai.SvHatesScore + ai.SvLikesScore + ai.SvControlledScore + ai.SvLoveScore + ai.SvDisLikesScore;
+            ai.SvScoreTotal = ai.SvRebelliousScore + ai.SvHatesScore + ai.SvLikesScore + ai.SvControlledScore + ai.SvLoveScore + ai.SvDisLikesScore + ai.SvNeutralScore;
             ai.SvRebeliousPercentage = ai.SvRebelliousScore / ai.SvScoreTotal;
             ai.SvHatesPercentage = ai.SvHatesScore / ai.SvScoreTotal;
             ai.SvDislikesPercentage = ai.SvDisLikesScore / ai.SvScoreTotal;
@@ -119,7 +119,7 @@ namespace Context
             ai.SvDisapprovesPercentage = ai.SvRebeliousPercentage + ai.SvHatesPercentage + ai.SvDislikesPercentage;
             ai.SvApprovesPercentage = ai.SvLikesPercentage + ai.SvLovesPercentage + ai.SvControlledPercentage;
 
-            ai.NationalScoreTotal = ai.GlobalRebelliousScore + ai.GlobalHatesScore + ai.GlobalLikesScore + ai.GlobalControlledScore + ai.GlobalLoveScore + ai.GlobalDisLikesScore;
+            ai.NationalScoreTotal = ai.NationalRebelliousScore + ai.NationalHatesScore + ai.NationalLikesScore + ai.NationalControlledScore + ai.NationalLoveScore + ai.NationalDisLikesScore + ai.NationalNeutralScore; ;
             ai.NationalRebeliousPercentage = ai.NationalRebelliousScore / ai.NationalScoreTotal;
             ai.NationalHatesPercentage = ai.NationalHatesScore / ai.NationalScoreTotal;
             ai.NationalDislikesPercentage = ai.NationalDisLikesScore / ai.NationalScoreTotal;
@@ -159,10 +159,10 @@ namespace Context
             {
             }
 
-            Debug.Log(ai.CurrentSvNeutralLikes);
+
         }
 
-        private void TrustChangeCalculator(float scoreHuidig, float GrowthRechts, float GrowthLinks, float tempLinks, float tempHuidig, float tempRechts, float groeiFactor, float decay, bool isLeft, bool isCenter, bool isOuter)
+        private void TrustChangeCalculator(ref float scoreHuidig, float GrowthRechts, float GrowthLinks, float tempLinks, float tempHuidig, float tempRechts, float groeiFactor, float decay, bool isLeft, bool isCenter, bool isOuter, bool debug)
         {
             float temp1;
             float temp2;
@@ -172,7 +172,13 @@ namespace Context
             else temp2 = tempHuidig;
 
             if (isCenter)
+            {
                 scoreHuidig = (tempHuidig - GrowthRechts * temp1 + GrowthLinks * temp2 + tempLinks * decay + tempRechts * decay) * groeiFactor;
+                if (debug)
+                {
+                    Debug.Log(scoreHuidig);
+                }
+            }                        
             else
             {
                 if (isLeft)
@@ -192,9 +198,6 @@ namespace Context
                 }
 
             }
-
-
-
         }
 
 
