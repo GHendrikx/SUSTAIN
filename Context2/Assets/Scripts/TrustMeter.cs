@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Context
@@ -17,7 +15,7 @@ namespace Context
         private float populationGrowth = 1.00009f;
         private float naturalDecay = 0.01f;
 
-        private void UpdateTrustMeter()
+        public void UpdateTrustMeter()
         {
             float tempLocalRebeliousScore = ai.LocalRebelliousScore;
             float tempLocalHatesScore = ai.LocalHatesScore;
@@ -176,7 +174,7 @@ namespace Context
                 scoreHuidig = (tempHuidig - GrowthRechts * temp1 + GrowthLinks * temp2 + tempLinks * decay + tempRechts * decay) * groeiFactor;
                 if (debug)
                 {
-                    Debug.Log(scoreHuidig);
+                    //Debug.Log(scoreHuidig);
                 }
             }                        
             else

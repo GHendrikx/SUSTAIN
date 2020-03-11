@@ -22,6 +22,13 @@ namespace Context
         [SerializeField]
         private Image aiFitnessScore;
 
+        #region TrustSlider
+        [SerializeField]
+        private Slider svHateSlider;
+        [SerializeField]
+        private Slider svNeutralSlider;
+        #endregion
+
         private bool lerping;
 
         private float GUIResearchPoints;
@@ -36,16 +43,19 @@ namespace Context
             processing.text = "Processing Power: " + UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
             Research.text = "Research: " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + " (+" + ResearchGain.ToString("0.0") + ")";
             Creativity.text = "Creativity: " + CreativityPoints.ToString("0.0") + " (+" + CreativityGain + ")";
-            Funds.text = "Funds: $" + fundsPoints + "(+" + fundsGain +")";
+            Funds.text = "Funds: $" + fundsPoints.ToString("0.0") + "(+" + fundsGain + ")";
 
             #region AI Calculate Fitness Score
-
             aiFitnessScore.fillAmount = SDGManager.CalculateHealth();
+            #endregion
 
+            #region AI Trust
+            svHateSlider.value = SvDisapprovesPercentage;
+            svNeutralSlider.value = SvDisapprovesPercentage + SvNeutralPercentage;
             #endregion
         }
 
-        private IEnumerator LerpResources(float overtime, float newResearch,float newCreativity,float newFunds, float newInfluence, float newDrones,float newMaterials)
+        public IEnumerator LerpResources(float overtime, float newResearch, float newCreativity, float newFunds, float newInfluence, float newDrones, float newMaterials)
         {
             lerping = true;
             float startTime = Time.time;
@@ -56,21 +66,41 @@ namespace Context
             float temp4 = 0;
             float temp5 = 0;
             float temp6 = 0;
-
+            Debug.Log(fundsPoints + " " + newFunds);
 
             while (Time.time < (startTime + overtime))
             {
+                if (newCreativity != Mathf.Infinity)
+                {
+                    temp1 = Mathf.Lerp(CreativityPoints, newCreativity, (Time.time - startTime) / overtime);
+                    CreativityPoints = temp1;
+                }
+                if (newFunds != Mathf.Infinity)
+                {
+                    temp2 = Mathf.Lerp(FundsPoints, newFunds, (Time.time - startTime) / overtime);
+                    FundsPoints = temp2;
+                }
+                if (newResearch != Mathf.Infinity)
+                {
+                    temp3 = Mathf.Lerp(ResearchPoints, newResearch, (Time.time - startTime) / overtime);
+                    ResearchPoints = temp3;
+                }
+                if (InfluencePoints != Mathf.Infinity)
+                {
+                    temp4 = Mathf.Lerp(InfluencePoints, newInfluence, (Time.time - startTime) / overtime);
+                    InfluencePoints = temp4;
+                }
+                if (newDrones != Mathf.Infinity)
+                {
+                    temp5 = Mathf.Lerp(DroneCost, newDrones, (Time.time - startTime) / overtime);
+                    DroneCost = temp5;
+                }
+                if (newMaterials != Mathf.Infinity)
+                {
+                    temp6 = Mathf.Lerp(MaterialCost, newMaterials, (Time.time - startTime) / overtime);
+                    materialCost = temp6;
+                }
 
-                temp1 = Mathf.Lerp(CreativityPoints, newCreativity,(Time.time - startTime) / overtime);
-                temp2 = Mathf.Lerp(FundsPoints,newFunds, (Time.time - startTime) / overtime);
-                temp3 = Mathf.Lerp(ResearchPoints, newResearch, (Time.time - startTime) / overtime);
-                temp4 = Mathf.Lerp(InfluencePoints, newInfluence, (Time.time - startTime) / overtime);
-                temp5 = Mathf.Lerp(DroneCost, newDrones, (Time.time - startTime) / overtime);
-                temp6 = Mathf.Lerp(MaterialCost, newMaterials, (Time.time - startTime) / overtime);
-
-                CreativityPoints = temp1;
-                fundsPoints = temp2;
-                researchPoints = temp3;
 
                 yield return null;
             }

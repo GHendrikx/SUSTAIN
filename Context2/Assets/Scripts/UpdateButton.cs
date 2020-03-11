@@ -58,7 +58,6 @@ namespace Context
         {
             this.UpdateName = data.name + data.desc;
             this.CostOfUpdate = data.researchCost;
-            //Debug.Break();
             Ai = ai;
             this.data = data;
             SetTextToUpdateButton();

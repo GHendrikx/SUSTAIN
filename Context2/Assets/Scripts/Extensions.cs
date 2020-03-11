@@ -52,7 +52,6 @@ namespace Context
         {
             string c = string.Empty;
             Color textColor = Color.white;
-            Debug.Log(amount);
 
             if (amount > 0)
             {
