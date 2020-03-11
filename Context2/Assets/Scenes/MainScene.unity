@@ -157,7 +157,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -159.3}
+  m_SizeDelta: {x: 0, y: -0.000061035}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3373703
 MonoBehaviour:
@@ -1333,7 +1333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioManager: {fileID: 90794112}
   SDGManager: {fileID: 90794120}
-  trustMeter: {fileID: 1288015245}
   researchData: {fileID: 1534975949}
   creativityData: {fileID: 1534975948}
   fundsData: {fileID: 1534975947}
@@ -1649,55 +1648,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sdgBar:
-  - lockImage: {fileID: 197734483}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 197734483}
     processBar: {fileID: 1498481433}
     rectTransform: {fileID: 1498481432}
-  - lockImage: {fileID: 148195072}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 148195072}
     processBar: {fileID: 921026285}
     rectTransform: {fileID: 921026284}
-  - lockImage: {fileID: 2029173655}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 2029173655}
     processBar: {fileID: 24495445}
     rectTransform: {fileID: 24495444}
-  - lockImage: {fileID: 1674407332}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 1674407332}
     processBar: {fileID: 371033536}
     rectTransform: {fileID: 371033535}
-  - lockImage: {fileID: 1008585604}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 1008585604}
     processBar: {fileID: 728546102}
     rectTransform: {fileID: 728546101}
-  - lockImage: {fileID: 2079801984}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 2079801984}
     processBar: {fileID: 319666560}
     rectTransform: {fileID: 319666559}
-  - lockImage: {fileID: 1747056185}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 1747056185}
     processBar: {fileID: 87827258}
     rectTransform: {fileID: 87827257}
-  - lockImage: {fileID: 1043059547}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 1043059547}
     processBar: {fileID: 1936300354}
     rectTransform: {fileID: 1936300353}
-  - lockImage: {fileID: 1368037443}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 1368037443}
     processBar: {fileID: 1977928724}
     rectTransform: {fileID: 1977928723}
-  - lockImage: {fileID: 350790200}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 350790200}
     processBar: {fileID: 981139425}
     rectTransform: {fileID: 981139424}
-  - lockImage: {fileID: 395172427}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 395172427}
     processBar: {fileID: 148070334}
     rectTransform: {fileID: 148070333}
-  - lockImage: {fileID: 1823648791}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 1823648791}
     processBar: {fileID: 1284792331}
     rectTransform: {fileID: 1284792330}
-  - lockImage: {fileID: 1685830988}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 1685830988}
     processBar: {fileID: 134440154}
     rectTransform: {fileID: 134440153}
-  - lockImage: {fileID: 768462633}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 768462633}
     processBar: {fileID: 442955314}
     rectTransform: {fileID: 442955313}
-  - lockImage: {fileID: 1736915471}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 1736915471}
     processBar: {fileID: 1381045183}
     rectTransform: {fileID: 1381045182}
-  - lockImage: {fileID: 1436288623}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 1436288623}
     processBar: {fileID: 1978436732}
     rectTransform: {fileID: 1978436731}
-  - lockImage: {fileID: 2033431632}
+  - sdgUnlockID: 0
+    lockImage: {fileID: 2033431632}
     processBar: {fileID: 1177290182}
     rectTransform: {fileID: 1177290181}
   ai: {fileID: 90794111}
@@ -3301,7 +3317,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.0002915513, y: 0}
-  m_SizeDelta: {x: -33.5, y: 589.4}
+  m_SizeDelta: {x: -88.8, y: 589.4}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &270793641
 MonoBehaviour:
@@ -3816,7 +3832,7 @@ RectTransform:
   - {fileID: 548177288}
   - {fileID: 1583063395}
   m_Father: {fileID: 1106757582}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.021157287, y: 0.07139935}
   m_AnchorMax: {x: 0.97869104, y: 0.9402013}
@@ -4846,7 +4862,7 @@ RectTransform:
   - {fileID: 197001590}
   - {fileID: 323329957}
   m_Father: {fileID: 1106757582}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.021157287, y: 0.07139935}
   m_AnchorMax: {x: 0.97869104, y: 0.9402013}
@@ -9547,7 +9563,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -10242,8 +10258,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1078219880}
-  - {fileID: 460747387}
   - {fileID: 343368427}
+  - {fileID: 460747387}
   - {fileID: 623153670}
   m_Father: {fileID: 1007952637}
   m_RootOrder: 4
@@ -11559,7 +11575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4debed9cbb34005428c8ae5d7ab64206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountMeter: []
+  slider: []
   ai: {fileID: 90794111}
   trustType: 0
 --- !u!1 &1325006256
