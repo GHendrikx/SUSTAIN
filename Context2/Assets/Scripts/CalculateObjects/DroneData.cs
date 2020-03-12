@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Context
 {
-    public class DroneData
+    public class DroneData : MonoBehaviour
     {
         private Data[] data;
         [SerializeField]
@@ -43,7 +43,7 @@ namespace Context
         }
 
         // Update is called once per frame
-        public void UpdateResearch()
+        public void UpdateDrone()
         {
             CalculateDronesGainMod();
             CalculateDronesGain();
@@ -51,7 +51,7 @@ namespace Context
             CalculateDronesLimitMod();
             CalculateDronesLimit();
         }
-        public void UpdateResearchWithoutPoints()
+        public void UpdateDroneWithoutPoints()
         {
             CalculateDronesGainMod();
             CalculateDronesGain();
@@ -71,9 +71,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentDronesGainMod += currentData.droneGainMod;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentDronesGainMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.droneGainMod;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentDronesGainMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.droneGainMod;
         }
 
         private void CalculateDronesGain()
@@ -83,9 +83,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentDronesGain += currentData.droneGain;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentDronesGain += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.droneGain;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentDronesGain += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.droneGain;
             CurrentDronesGain *= CurrentDronesGainMod;
         }
 
@@ -95,9 +95,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentDronesLimit += currentData.droneLimit;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentDronesLimit += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.droneLimit;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentDronesLimit += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.droneLimit;
             CurrentDronesLimit *= CurrentDronesLimitMod;
 
             if (ai.ResearchPoints >= CurrentDronesLimit)
@@ -115,9 +115,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentDronesLimitMod += currentData.researchLimitMod;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentDronesLimitMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.droneLimit;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentDronesLimitMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.droneLimit;
         }
 
         //Ask Marnix

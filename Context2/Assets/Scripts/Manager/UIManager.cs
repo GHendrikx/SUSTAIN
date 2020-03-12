@@ -65,10 +65,9 @@ namespace Context
         {
             if (data.isResearched)
                 return;
-            data.isShownInGUI = true;
-
             if (data.typeOfData == 5)
                 return;
+            data.isShownInGUI = true;
 
             int tabNeeded = data.typeOfData;
             //Debug.Log(upgradesTabs[data.typeOfData] + " " + data.name);

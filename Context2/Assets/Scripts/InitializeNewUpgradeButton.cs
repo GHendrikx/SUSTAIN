@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,9 +20,8 @@ namespace Context
         public int amountOfUpgrades;
         public List<Data> initializedData = new List<Data>();
 
-        public void InitializeNewButton(Data data,AI ai)
+        public void InitializeNewButton(Data data, AI ai)
         {
-            //Debug.Log(data.name);
             initializedData.Add(data);
             Button button = GameObject.Instantiate(buttonPrefab, transform);
             UpdateButton update = button.gameObject.GetComponent<UpdateButton>();
@@ -36,14 +34,17 @@ namespace Context
             amountOfUpgrades++;
 
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
+            {
+                SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
                 if (data.ID == GameManager.Instance.AI.SDGManager.SDGBar[i].SDGUnlockID)
-                {
-                    button.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SDGBar[i].LockImage.gameObject.SetActive(false));
-                    GameManager.Instance.AI.SDGManager.SetLockImage(GameManager.Instance.AI.SDGManager.SDGBar[i]);
-                }
-            button.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
+                    button.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
+            }
             button.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            button.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
             button.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            button.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+            button.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+
 
         }
 
@@ -55,9 +56,9 @@ namespace Context
 
             if (data.researchCost != 0 || (data.researchCost != null && data.researchCost != 0))
                 text += " R (" + data.researchCost + ")";
-            if(data.creativityCost != 0 || (data.creativityCost != null && data.creativityCost != 0))
+            if (data.creativityCost != 0 || (data.creativityCost != null && data.creativityCost != 0))
                 text += " C (" + data.creativityCost + ")";
-            if(data.fundsCost != 0 || (data.fundsCost != null && data.fundsCost != 0))
+            if (data.fundsCost != 0 || (data.fundsCost != null && data.fundsCost != 0))
                 text += " F (" + data.fundsCost + ")";
             if (data.influenceCost != 0 || (data.influenceCost != null && data.influenceCost != 0))
                 text += " I (" + data.influenceCost + ")";
@@ -67,11 +68,12 @@ namespace Context
 
         public void InitializeNewAllocation(Data data, AI ai)
         {
-            
+
             if (!data.isPrototype)
                 return;
 
             initializedData.Add(data);
+
             //Allocatie buttons adding and minus. instantiate ALLOCATION
             GameObject go = GameObject.Instantiate(upgradeAbilities, transform);
             UpgradeAbilities upgrade = go.GetComponentInChildren<UpgradeAbilities>();

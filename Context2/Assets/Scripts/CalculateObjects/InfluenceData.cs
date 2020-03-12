@@ -52,9 +52,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentInfluenceGainMod += currentData.influenceGainMod;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentInfluenceGainMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.influenceGainMod;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentInfluenceGainMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.influenceGainMod;
 
             ai.InfluenceGainMod = CurrentInfluenceGainMod;
         }
@@ -67,9 +67,9 @@ namespace Context
                 if (currentData.isResearched)
                     CurrentInfluenceGain += currentData.influenceGain;
 
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentInfluenceGain += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.influenceGain;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentInfluenceGain += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.influenceGain;
             CurrentInfluenceGain *= CurrentInfluenceGainMod;
 
             ai.InfluenceGain = CurrentInfluenceGain;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace Context
 {
-    public class MaterialData
+    public class MaterialData : MonoBehaviour
     {
         private Data[] data;
         [SerializeField]
@@ -47,9 +47,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentMaterialGainMod += currentData.materialGainMod;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentMaterialGainMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.materialGainMod;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentMaterialGainMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.materialGainMod;
 
             ai.MaterialGainMod = CurrentMaterialGainMod;
         }
@@ -62,9 +62,9 @@ namespace Context
                 if (currentData.isResearched)
                     CurrentMaterialGain += currentData.materialGain;
 
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentMaterialGain += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.materialGain;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentMaterialGain += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.materialGain;
             CurrentMaterialGain *= CurrentMaterialGainMod;
 
             ai.MaterialGain = CurrentMaterialGain;

@@ -18,18 +18,14 @@ namespace Context
         public SDGManager SDGManager;
 
         #region Data CalculationObjects
-        [HideInInspector]
         public ResearchData researchData;
-        [HideInInspector]
         public CreativityData creativityData;
-        [HideInInspector]
         public FundsData fundsData;
-        [HideInInspector]
         public InfluenceData influenceData;
-        [HideInInspector]
         public DroneData dronesData;
-        [HideInInspector]
+        public MaterialData materialData;
         public CalculateSDG SDGCalculate;
+        public TrustMeter TrustMeter;
         #endregion
 
         [SerializeField]
@@ -317,6 +313,60 @@ namespace Context
             set
             {
                 materialGainMod = value;
+            }
+        }
+        #endregion
+
+        #region Power
+        private float powerPoints;
+        public float PowerPoints
+        {
+            get
+            {
+                return powerPoints;
+            }
+            set
+            {
+                powerPoints = value;
+            }
+        }
+
+        private float powerCost;
+        public float PowerCost
+        {
+            get
+            {
+                return powerCost;
+            }
+            set
+            {
+                powerCost = value;
+            }
+        }
+
+        private float powerGain;
+        public float PowerGain
+        {
+            get
+            {
+                return powerGain;
+            }
+            set
+            {
+                powerGain = value;
+            }
+        }
+
+        private float powerGainMod;
+        public float PowerGainMod
+        {
+            get
+            {
+                return powerGainMod;
+            }
+            set
+            {
+                powerGainMod = value;
             }
         }
         #endregion
@@ -680,14 +730,19 @@ namespace Context
             data.isResearched = true;
 
             #region Calculate Resources
-            //Calculate points
-            float temp1 = ResearchPoints - data.researchCost - data.researchFixedGain;
-            float temp2 = CreativityPoints - data.creativityCost - data.creativityFixedGain;
-            float temp3 = fundsPoints - data.fundsCost - data.fundsFixedGain;
-            float temp4 = InfluencePoints - data.influenceCost - data.influenceFixedGain;
-            float temp5 = DroneCost - data.droneCost - data.droneFixedGain;
-            float temp6 = materialCost - data.materialCost - data.materialFixedGain;
 
+            //Calculate points
+            float temp1 = ResearchPoints + data.researchCost/* - data.researchFixedGain*/;
+            float temp2 = CreativityPoints + data.creativityCost/* - data.creativityFixedGain*/;
+            float temp3 = fundsPoints + data.fundsCost /*- data.fundsFixedGain*/;
+            float temp4 = InfluencePoints + data.influenceCost /*- data.influenceFixedGain*/;
+            float temp5 = DroneCost + data.droneCost/* - data.droneFixedGain*/;
+            float temp6 = materialCost + data.materialCost /*- data.materialFixedGain*/;
+            float temp7 = powerCost + data.powerCost;
+
+            if (temp1 >= ResearchLimit)
+                temp1 = ResearchLimit;
+           
             #region without lerp ugly as hell
             //ResearchPoints -= data.researchCost - data.researchFixedGain;
             //CreativityPoints -= data.creativityCost - data.creativityFixedGain;
@@ -699,7 +754,7 @@ namespace Context
 
             //time lerping = .5f
             //(Time.time - startTime) / overtime 
-            StartCoroutine(LerpResources(0.5f, temp1, temp2, temp3,temp4,temp5,temp6));
+            StartCoroutine(LerpResources(1, temp1, temp2, temp3,temp4,temp5,temp6));
 
             #endregion
 
