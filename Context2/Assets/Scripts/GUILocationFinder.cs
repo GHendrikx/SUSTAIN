@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GUILocationFinder : MonoBehaviour
 {
-
     // Update is called once per frame
     void Update()
     {
-        //GetComponent<RectTransform>().
+
+
     }
 }
