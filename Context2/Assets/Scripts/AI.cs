@@ -323,6 +323,60 @@ namespace Context
         }
         #endregion
 
+        #region Power
+        private float powerPoints;
+        public float PowerPoints
+        {
+            get
+            {
+                return powerPoints;
+            }
+            set
+            {
+                powerPoints = value;
+            }
+        }
+
+        private float powerCost;
+        public float PowerCost
+        {
+            get
+            {
+                return powerCost;
+            }
+            set
+            {
+                powerCost = value;
+            }
+        }
+
+        private float powerGain;
+        public float PowerGain
+        {
+            get
+            {
+                return powerGain;
+            }
+            set
+            {
+                powerGain = value;
+            }
+        }
+
+        private float powerGainMod;
+        public float PowerGainMod
+        {
+            get
+            {
+                return powerGainMod;
+            }
+            set
+            {
+                powerGainMod = value;
+            }
+        }
+        #endregion
+
         #region SDG
 
         #region SDGPoint
@@ -682,13 +736,15 @@ namespace Context
             data.isResearched = true;
 
             #region Calculate Resources
+
             //Calculate points
-            float temp1 = ResearchPoints - data.researchCost - data.researchFixedGain;
-            float temp2 = CreativityPoints - data.creativityCost - data.creativityFixedGain;
-            float temp3 = fundsPoints - data.fundsCost - data.fundsFixedGain;
-            float temp4 = InfluencePoints - data.influenceCost - data.influenceFixedGain;
-            float temp5 = DroneCost - data.droneCost - data.droneFixedGain;
-            float temp6 = materialCost - data.materialCost - data.materialFixedGain;
+            float temp1 = ResearchPoints + data.researchCost/* - data.researchFixedGain*/;
+            float temp2 = CreativityPoints + data.creativityCost/* - data.creativityFixedGain*/;
+            float temp3 = fundsPoints + data.fundsCost /*- data.fundsFixedGain*/;
+            float temp4 = InfluencePoints + data.influenceCost /*- data.influenceFixedGain*/;
+            float temp5 = DroneCost + data.droneCost/* - data.droneFixedGain*/;
+            float temp6 = materialCost + data.materialCost /*- data.materialFixedGain*/;
+            float temp7 = powerCost + data.powerCost;
 
             if (temp1 >= ResearchLimit)
                 temp1 = ResearchLimit;

@@ -72,8 +72,8 @@ namespace Context
             float temp5 = ai.DronePoints;
             float temp6 = ai.MaterialPoints;
             
-            StartCoroutine(ai.LerpResources(1f, temp1,Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity));
-            //ai.ResearchPoints += CurrentResearchGain;
+            //StartCoroutine(ai.LerpResources(1f, temp1,Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity));
+            ai.ResearchPoints += CurrentResearchGain;
         }
 
         private void CalculateResearchGainMod()

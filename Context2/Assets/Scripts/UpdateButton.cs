@@ -40,10 +40,13 @@ namespace Context
             if (Ai == null)
                 return;
 
-            if (Ai.ResearchPoints >= data.researchCost &&
-                Ai.CreativityPoints >= data.creativityCost &&
-                Ai.FundsPoints >= data.fundsCost &&
-                Ai.InfluencePoints >= data.influenceCost)
+            if (Ai.ResearchPoints >= -data.researchCost &&
+                Ai.CreativityPoints >= -data.creativityCost &&
+                Ai.FundsPoints >= -data.fundsCost &&
+                Ai.InfluencePoints >= -data.influenceCost &&
+                Ai.DronePoints >= -data.droneCost &&
+                Ai.MaterialCost >= -data.materialCost &&
+                Ai.PowerCost >= -data.powerCost)
                 myButton.interactable = true;
             else
                 myButton.interactable = false;
@@ -56,7 +59,6 @@ namespace Context
         /// <param name="ai"></param>
         public void ButtonInformation(Data data, AI ai)
         {
-            Debug.Log(data.allocatieCost);
             this.UpdateName = data.name + data.desc;
             this.CostOfUpdate = data.researchCost;
 
