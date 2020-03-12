@@ -8,7 +8,7 @@ namespace Context
 {
     public class UpgradeAbilities : MonoBehaviour
     {
-        public static List<UpgradeAbilities> upgradeAbilities = new List<UpgradeAbilities>();
+        public static List<UpgradeAbilities> UPGRADEABILITIES = new List<UpgradeAbilities>();
         public Data data;
         public GameObject Instance;
         public static float TEMPALLOCATIONPOOL;
@@ -111,23 +111,23 @@ namespace Context
             SetRewardImage();
             if (data.desc == null)
                 descriptionText.text = string.Empty;
-            upgradeAbilities.Add(this);
+            UPGRADEABILITIES.Add(this);
             LockCheck();
 
             if (informationText != null)
                 //informationText.text = data.name + "(" + data.allocatieCost + ")";
                 if (data.hasTarget)
-                    for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                        if (data.ID == UpgradeAbilities.upgradeAbilities[i].data.ID)
+                    for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                        if (data.ID == UpgradeAbilities.UPGRADEABILITIES[i].data.ID)
                         {
                             informationText.text = string.Empty;
-                            informationText.text += UpgradeAbilities.upgradeAbilities[i].data.name;
-                            targetText.text = UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget + "/" + UpgradeAbilities.upgradeAbilities[i].data.doneDesc;
+                            informationText.text += UpgradeAbilities.UPGRADEABILITIES[i].data.name;
+                            targetText.text = UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + "/" + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
                         }
 
             if (data.creativityGain > 0 || data.creativityGain < 0)
             {
-                string c;
+                string c = "";
                 Color temp = Color.white;
                 if (data.creativityGain > 0)
                 {
@@ -135,16 +135,13 @@ namespace Context
                     c = "+";
                 }
                 else
-                {
                     temp = Color.red;
-                    c = "";
-                }
                 Extensions.SetEffectGain(c + data.creativityGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"), costBlock, effectBlock, temp);
             }
 
             if (data.droneGain > 0 || data.droneGain <0)
             {
-                string c;
+                string c = "";
 
                 Color temp = Color.white;
                 if (data.droneGain > 0)
@@ -152,16 +149,14 @@ namespace Context
                     temp = Color.green;
                     c = "+";
                 }
-                else {
+                else 
                     temp = Color.red;
-                    c = "";
-                }
                 Extensions.SetEffectGain(c + data.droneGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconen_Drone16X16"), costBlock, effectBlock, temp);
             }
 
             if (data.fundsGain > 0 || data.fundsGain<0)
             {
-                string c;
+                string c = "";
 
                 Color temp = Color.white;
                 if (data.fundsGain > 0)
@@ -170,10 +165,7 @@ namespace Context
                     c = "+";
                 }
                 else
-                {
                     temp = Color.red;
-                    c = "";
-                }
                 Extensions.SetEffectGain(c + data.fundsGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"), costBlock, effectBlock, temp);
             }
             
@@ -257,16 +249,16 @@ namespace Context
 
         private void LockCheck()
         {
-            for (int i = 0; i < upgradeAbilities.Count; i++)
+            for (int i = 0; i < UPGRADEABILITIES.Count; i++)
             {
-                if (data.locks == upgradeAbilities[i].data.ID)
+                if (data.locks == UPGRADEABILITIES[i].data.ID)
                 {
-                    int points = System.Convert.ToInt32(upgradeAbilities[i].abilityPointText.text);
+                    int points = System.Convert.ToInt32(UPGRADEABILITIES[i].abilityPointText.text);
                     if (points > 0)
                         for (int j = 0; j < points; j++)
-                            upgradeAbilities[i].CalculateStatus(-1);
+                            UPGRADEABILITIES[i].CalculateStatus(-1);
 
-                    Destroy(upgradeAbilities[i].Instance.transform.parent.gameObject);
+                    Destroy(UPGRADEABILITIES[i].Instance.transform.parent.gameObject);
                 }
             }
         }

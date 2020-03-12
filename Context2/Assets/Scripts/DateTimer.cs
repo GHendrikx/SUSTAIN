@@ -6,26 +6,25 @@ using System;
 public class DateTimer : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI month;
-    [SerializeField]
     private TextMeshProUGUI year;
-
-    public Date date;
+    [SerializeField]
+    private TextMeshProUGUI week;
+    [SerializeField]
+    private Date date;
     public void Start()
     {
-        month.text = string.Format("{0}",(Months)date.currentMonth);
-        year.text = date.currentYear.ToString();
+        week.text = "Week: " + date.beginWeek.ToString();
+        year.text = date.beginYear.ToString();
     }
     public void NextDate()
     {
-        date.currentMonth++;
-        if (date.currentMonth == 12)
+        week.text = "Week: " + date.currentWeek++.ToString();
+        if (date.currentWeek == 53)
         {
+            date.currentWeek = 1;
             date.currentYear++;
-            date.currentMonth = 0;
         }
-
-        month.text = string.Format("{0}", (Months)date.currentMonth);
+        week.text = string.Format("Week: {0}", date.currentWeek);
         year.text = string.Format("{0}", date.currentYear);
 
         CheckEndDate();
@@ -33,44 +32,21 @@ public class DateTimer : MonoBehaviour
 
     private void CheckEndDate()
     {
-        if(date.currentMonth == date.endMonth && date.currentYear == date.endYear)
+        if(date.currentYear == date.endYear && date.currentWeek == date.endWeek)
         {
-            //GAME FUCKING OVER
+            Application.Quit();
         }
     }
 }
 [System.Serializable]
 public class Date
 {
-    public int currentMonth;
+    public int beginYear = 2015;
+    public int beginWeek = 1;
+
+    public int currentWeek;
     public int currentYear;
 
-    public int beginYear = 2015;
-    public int beginMonth = 1;
-
     public int endYear = 2030;
-    public int endMonth = 12;
-
-    public Date()
-    {
-        currentYear = beginYear;
-        currentMonth = beginMonth;
-    }
-
-}
-
-public enum Months
-{
-    January,
-    February,
-    March,
-    April,
-    May,
-    June,
-    Juli,
-    August,
-    September,
-    October,
-    November,
-    December
+    public int endWeek = 3;
 }

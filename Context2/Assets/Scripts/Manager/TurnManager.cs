@@ -25,30 +25,30 @@ namespace Context
         {
             //guiText.text = turnText + turn;
 
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
             {
-                float currentDoneTarget = UpgradeAbilities.upgradeAbilities[i].data.doneTarget *
-                    Mathf.Pow(2, UpgradeAbilities.upgradeAbilities[i].data.doneLevel);
-                UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget = currentDoneTarget;
-                int points = System.Convert.ToInt32(UpgradeAbilities.upgradeAbilities[i].AbilityPointText);
-                UpgradeAbilities.upgradeAbilities[i].data.doneTimes += UpgradeAbilities.upgradeAbilities[i].data.doneGain * points;
-                Debug.Log(UpgradeAbilities.upgradeAbilities[i].data.doneTimes + "    " + currentDoneTarget);
+                float currentDoneTarget = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTarget *
+                    Mathf.Pow(2, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel);
+                UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget = currentDoneTarget;
+                int points = System.Convert.ToInt32(UpgradeAbilities.UPGRADEABILITIES[i].AbilityPointText);
+                UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes += UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * points;
+                Debug.Log(UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes + "    " + currentDoneTarget);
 
-                if (UpgradeAbilities.upgradeAbilities[i].data.doneTimes > currentDoneTarget)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes > currentDoneTarget)
                 {
-                    UpgradeAbilities.upgradeAbilities[i].data.doneLevel += 1;
-                    Debug.Log(UpgradeAbilities.upgradeAbilities[i].data.doneLevel);
+                    UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel += 1;
+                    Debug.Log(UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel);
                     GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += 1;
                 }
 
-                if (UpgradeAbilities.upgradeAbilities[i].data.hasTarget)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
                 {
-                    Debug.Log(UpgradeAbilities.upgradeAbilities[i].data.hasTarget);
-                    UpgradeAbilities.upgradeAbilities[i].InformationText.text =
-                    UpgradeAbilities.upgradeAbilities[i].data.name + "(" + UpgradeAbilities.upgradeAbilities[i].data.allocatieCost + ")" + "\n" +
-                    UpgradeAbilities.upgradeAbilities[i].data.doneTimes + "/"
-                    + UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget + " "
-                    + UpgradeAbilities.upgradeAbilities[i].data.doneDesc;
+                    Debug.Log(UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget);
+                    UpgradeAbilities.UPGRADEABILITIES[i].InformationText.text =
+                    UpgradeAbilities.UPGRADEABILITIES[i].data.name + "(" + UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieCost + ")" + "\n" +
+                    UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes + "/"
+                    + UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + " "
+                    + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
                 }
             }
             
@@ -65,41 +65,41 @@ namespace Context
 
         public void GoToNextTurn()
         {
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
             {
-                float currentDoneTarget = UpgradeAbilities.upgradeAbilities[i].data.doneTarget *
-                    Mathf.Pow(2, UpgradeAbilities.upgradeAbilities[i].data.doneLevel);
+                float currentDoneTarget = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTarget *
+                    Mathf.Pow(2, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel);
 
-                UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget = currentDoneTarget;
+                UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget = currentDoneTarget;
 
-                int points = System.Convert.ToInt32(UpgradeAbilities.upgradeAbilities[i].AbilityPointText.text);
-                UpgradeAbilities.upgradeAbilities[i].data.doneTimes += UpgradeAbilities.upgradeAbilities[i].data.doneGain * points;
+                int points = System.Convert.ToInt32(UpgradeAbilities.UPGRADEABILITIES[i].AbilityPointText.text);
+                UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes += UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * points;
 
-                if (UpgradeAbilities.upgradeAbilities[i].data.doneTimes >= currentDoneTarget && UpgradeAbilities.upgradeAbilities[i].data.hasTarget)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes >= currentDoneTarget && UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
                 {
-                    UpgradeAbilities.upgradeAbilities[i].data.doneLevel += 1;
-                    currentDoneTarget = UpgradeAbilities.upgradeAbilities[i].data.doneTarget *
-                    Mathf.Pow(2, UpgradeAbilities.upgradeAbilities[i].data.doneLevel);
+                    UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel += 1;
+                    currentDoneTarget = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTarget *
+                    Mathf.Pow(2, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel);
 
-                    UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget = currentDoneTarget;
+                    UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget = currentDoneTarget;
 
-                    GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.upgradeAbilities[i].data.allocatieFixedGain;
-                    ai.CreativityPoints += UpgradeAbilities.upgradeAbilities[i].data.creativityFixedGain;
-                    ai.DronePoints += UpgradeAbilities.upgradeAbilities[i].data.droneFixedGain;
-                    ai.FundsPoints += UpgradeAbilities.upgradeAbilities[i].data.fundsFixedGain;
-                    ai.InfluencePoints += UpgradeAbilities.upgradeAbilities[i].data.influenceFixedGain;
-                    ai.MaterialCost += UpgradeAbilities.upgradeAbilities[i].data.materialFixedGain;
+                    GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
+                    ai.CreativityPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.creativityFixedGain;
+                    ai.DronePoints += UpgradeAbilities.UPGRADEABILITIES[i].data.droneFixedGain;
+                    ai.FundsPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.fundsFixedGain;
+                    ai.InfluencePoints += UpgradeAbilities.UPGRADEABILITIES[i].data.influenceFixedGain;
+                    ai.MaterialCost += UpgradeAbilities.UPGRADEABILITIES[i].data.materialFixedGain;
 
-                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.upgradeAbilities[i].data.researchFixedGain;
+                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.researchFixedGain;
 
-                    UpgradeAbilities.TEMPALLOCATIONPOOL += UpgradeAbilities.upgradeAbilities[i].data.allocatieFixedGain;
+                    UpgradeAbilities.TEMPALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                 }
 
-                if (UpgradeAbilities.upgradeAbilities[i].data.hasTarget)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
                 {
-                    UpgradeAbilities.upgradeAbilities[i].InformationText.text = UpgradeAbilities.upgradeAbilities[i].data.name;
-                    UpgradeAbilities.upgradeAbilities[i].TargetText.text = UpgradeAbilities.upgradeAbilities[i].data.doneTimes + "/" + 
-                    UpgradeAbilities.upgradeAbilities[i].CurrentDoneTarget + " " + UpgradeAbilities.upgradeAbilities[i].data.doneDesc;
+                    UpgradeAbilities.UPGRADEABILITIES[i].InformationText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.name;
+                    UpgradeAbilities.UPGRADEABILITIES[i].TargetText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes + "/" + 
+                    UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
 
                 }
             }

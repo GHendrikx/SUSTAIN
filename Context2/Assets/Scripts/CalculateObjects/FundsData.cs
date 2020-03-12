@@ -52,9 +52,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentFundsGainMod += currentData.fundsGainMod;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentFundsGainMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.fundsGainMod;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentFundsGainMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.fundsGainMod;
 
             ai.FundsGainMod = CurrentFundsGainMod;
         }
@@ -67,9 +67,9 @@ namespace Context
                 if (currentData.isResearched)
                     CurrentFundsGain += currentData.fundsGain;
 
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentFundsGain += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.fundsGain;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentFundsGain += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.fundsGain;
             CurrentFundsGain *= CurrentFundsGainMod;
 
             ai.FundsGain = CurrentFundsGain;

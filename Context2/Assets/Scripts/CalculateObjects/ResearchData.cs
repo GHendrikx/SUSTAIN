@@ -87,10 +87,10 @@ namespace Context
                     CurrentResearchGainMod += currentData.researchGainMod;
                 }
             }
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
             {
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentResearchGainMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchGainMod;
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentResearchGainMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.researchGainMod;
             }
         }
 
@@ -101,9 +101,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentResearchGain += currentData.researchGain;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentResearchGain += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchGain;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentResearchGain += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.researchGain;
             CurrentResearchGain *= CurrentResearchGainMod;
         }
 
@@ -113,9 +113,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentResearchLimit += currentData.researchLimit;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentResearchLimit += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchLimit;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentResearchLimit += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.researchLimit;
             CurrentResearchLimit *= CurrentResearchLimitMod;
 
             if (ai.ResearchPoints >= CurrentResearchLimit)
@@ -133,9 +133,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentResearchLimitMod += currentData.researchLimitMod;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentResearchLimitMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.researchLimitMod;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentResearchLimitMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.researchLimitMod;
         }
     }
 }

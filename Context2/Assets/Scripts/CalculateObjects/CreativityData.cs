@@ -52,9 +52,9 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentCreativityGainMod += currentData.creativityGainMod;
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentCreativityGainMod += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.creativityGainMod;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentCreativityGainMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.creativityGainMod;
 
             ai.CreativityGainMod = CurrentCreativityGainMod;
         }
@@ -67,9 +67,9 @@ namespace Context
                 if (currentData.isResearched)
                     CurrentCreativityGain += currentData.creativityGain;
 
-            for (int i = 0; i < UpgradeAbilities.upgradeAbilities.Count; i++)
-                if (UpgradeAbilities.upgradeAbilities[i].data.typeOfData == 0)
-                    CurrentCreativityGain += UpgradeAbilities.upgradeAbilities[i].Points * UpgradeAbilities.upgradeAbilities[i].data.creativityGain;
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
+                    CurrentCreativityGain += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.creativityGain;
             CurrentCreativityGain *= CurrentCreativityGainMod;
 
             ai.CreativityGain = CurrentCreativityGain;

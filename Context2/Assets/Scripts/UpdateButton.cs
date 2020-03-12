@@ -56,8 +56,10 @@ namespace Context
         /// <param name="ai"></param>
         public void ButtonInformation(Data data, AI ai)
         {
+            Debug.Log(data.allocatieCost);
             this.UpdateName = data.name + data.desc;
             this.CostOfUpdate = data.researchCost;
+
             Ai = ai;
             this.data = data;
             SetTextToUpdateButton();
@@ -94,7 +96,7 @@ namespace Context
             if (data.fundsGain != 0)
                 Extensions.SetEffectGain(data.fundsGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"), upgradeCost, upgradeBlock);
             if (data.influenceGain != 0)
-                Extensions.SetEffectGain(data.influenceGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), upgradeCost, upgradeBlock);
+                Extensions.SetEffectGain(data.influenceGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Influence16X16"), upgradeCost, upgradeBlock);
             if(data.materialGain != 0)
                 Extensions.SetEffectGain(data.materialGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), upgradeCost, upgradeBlock);
             if (data.researchGain != 0)
