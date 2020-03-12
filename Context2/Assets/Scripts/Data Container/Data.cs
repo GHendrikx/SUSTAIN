@@ -86,9 +86,12 @@
         public int droneFixedGain;
         public float droneGainMod;
         public int droneLimit;
-        public int materialGain;
+        public float materialGain;
         public int materialFixedGain;
         public float materialGainMod;
+        public float powerGain;
+        public int powerFixedGain;
+        public float powerGainMod;
         public float localRebelliousAngry;
         public float localAngryDislikes;
         public float localDislikesNeutral;

@@ -220,6 +220,9 @@ namespace Context
                     temp = Color.red;
                     c = "";
                 }
+
+                //HERE is the thing
+
                 Extensions.SetEffectGain(c + data.researchGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints_3_16X16"), costBlock, effectBlock, temp);
             }
         }

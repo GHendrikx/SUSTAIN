@@ -70,8 +70,6 @@ namespace Context
         public void SetLockImage(SDGBar sdgBar)
         {
             sdgBar.LockImage.gameObject.SetActive(false);
-            Debug.Log("LockImage");
-
             UpdateSDGValues();
         }
 

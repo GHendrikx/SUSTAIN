@@ -7,8 +7,9 @@ using UnityEngine.UI;
 
 namespace Context
 {
-    public static class Extensions
+    public class Extensions
     {
+
         public static IEnumerator UpdateSlider(RectTransform rectTransform, float targetValue, float overtime)
         {
             float startTime = Time.time;
@@ -42,36 +43,10 @@ namespace Context
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text + Environment.NewLine;
             upgrade.GetComponentInChildren<TextMeshProUGUI>().color = (amount > 0) ? Color.green: Color.red;
 
-
             Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
             i.sprite = sprite;
             upgrade.SetParent(upgradeBlock.transform);
         }
-
-        public static void SetCostBlock(string text, Sprite sprite, GameObject costInfo, GameObject costBlock, float amount)
-        {
-            string c = string.Empty;
-            Color textColor = Color.white;
-
-            if (amount > 0)
-            {
-                textColor = Color.green;
-                c = "+";
-            }
-            else
-                textColor = Color.red;
-
-
-            Transform cost = GameObject.Instantiate(costInfo.transform, costBlock.transform);
-            
-            Debug.Log(costInfo.GetComponentInChildren<TextMeshProUGUI>().text);
-            costInfo.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
-            costInfo.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
-            costInfo.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
-            Image i = costInfo.GetComponentInChildren<Image>();
-            i.sprite = sprite;
-        }
-
 
         public static void SetAllocatieCost(TextMeshProUGUI text, int fixedGain, Image image, Sprite sprite)
         {

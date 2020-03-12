@@ -39,10 +39,12 @@ namespace Context
                 if (data.ID == GameManager.Instance.AI.SDGManager.SDGBar[i].SDGUnlockID)
                     button.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
             }
-
-            button.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
             button.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            button.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
             button.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            button.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+            button.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+
 
         }
 

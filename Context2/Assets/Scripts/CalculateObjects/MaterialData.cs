@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace Context
 {
-    public class MaterialData
+    public class MaterialData : MonoBehaviour
     {
         private Data[] data;
         [SerializeField]

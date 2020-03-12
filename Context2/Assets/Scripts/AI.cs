@@ -18,19 +18,13 @@ namespace Context
         public SDGManager SDGManager;
 
         #region Data CalculationObjects
-        [HideInInspector]
         public ResearchData researchData;
-        [HideInInspector]
         public CreativityData creativityData;
-        [HideInInspector]
         public FundsData fundsData;
-        [HideInInspector]
         public InfluenceData influenceData;
-        [HideInInspector]
         public DroneData dronesData;
-        [HideInInspector]
+        public MaterialData materialData;
         public CalculateSDG SDGCalculate;
-
         public TrustMeter TrustMeter;
         #endregion
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Context
 {
-    public class DroneData
+    public class DroneData : MonoBehaviour
     {
         private Data[] data;
         [SerializeField]
@@ -43,7 +43,7 @@ namespace Context
         }
 
         // Update is called once per frame
-        public void UpdateResearch()
+        public void UpdateDrone()
         {
             CalculateDronesGainMod();
             CalculateDronesGain();
@@ -51,7 +51,7 @@ namespace Context
             CalculateDronesLimitMod();
             CalculateDronesLimit();
         }
-        public void UpdateResearchWithoutPoints()
+        public void UpdateDroneWithoutPoints()
         {
             CalculateDronesGainMod();
             CalculateDronesGain();

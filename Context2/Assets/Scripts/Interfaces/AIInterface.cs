@@ -66,7 +66,6 @@ namespace Context
             float temp4 = 0;
             float temp5 = 0;
             float temp6 = 0;
-            Debug.Log(fundsPoints + " " + newFunds);
 
             while (Time.time < (startTime + overtime))
             {

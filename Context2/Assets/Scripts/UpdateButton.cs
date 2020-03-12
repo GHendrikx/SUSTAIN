@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.Timers;
 
 namespace Context
 {
@@ -99,7 +100,7 @@ namespace Context
                 Extensions.SetEffectGain(data.fundsGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"), upgradeCost, upgradeBlock);
             if (data.influenceGain != 0)
                 Extensions.SetEffectGain(data.influenceGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Influence16X16"), upgradeCost, upgradeBlock);
-            if(data.materialGain != 0)
+            if (data.materialGain != 0)
                 Extensions.SetEffectGain(data.materialGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), upgradeCost, upgradeBlock);
             if (data.researchGain != 0)
                 Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints16X16"), upgradeCost, upgradeBlock);
@@ -108,21 +109,21 @@ namespace Context
          private void SetUpdateCost()
         {
             if (data.allocatieCost != 0)
-                Extensions.SetCostBlock(data.allocatieCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), costInformation, costBlock, data.allocatieCost);
+                SetCostBlock(data.allocatieCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), costInformation, costBlock, data.allocatieCost);
             if (data.creativityCost != 0)
-                Extensions.SetCostBlock(data.creativityCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"), costInformation, costBlock, data.creativityCost);
+                SetCostBlock(data.creativityCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"), costInformation, costBlock, data.creativityCost);
             if (data.droneCost != 0)
-                Extensions.SetCostBlock(data.droneCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Drone16X16"), costInformation, costBlock, data.droneCost);
+                SetCostBlock(data.droneCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Drone16X16"), costInformation, costBlock, data.droneCost);
             if (data.fundsCost != 0)
-                Extensions.SetCostBlock(data.fundsCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"), costInformation, costBlock,data.fundsCost);
+                SetCostBlock(data.fundsCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Fund16X16"), costInformation, costBlock,data.fundsCost);
             if (data.influenceCost != 0)
-                Extensions.SetCostBlock(data.influenceCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), costInformation, costBlock, data.influenceCost);
+                SetCostBlock(data.influenceCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), costInformation, costBlock, data.influenceCost);
             if (data.materialCost != 0)
-                Extensions.SetCostBlock(data.materialCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), costInformation, costBlock, data.materialCost);
+                SetCostBlock(data.materialCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_Materials16X16"), costInformation, costBlock, data.materialCost);
             if (data.powerCost != 0)
-                Extensions.SetCostBlock(data.powerCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), costInformation, costBlock,data.powerCost);
+                SetCostBlock(data.powerCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), costInformation, costBlock,data.powerCost);
             if (data.researchCost != 0)
-                Extensions.SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints_3_16X16"), costInformation, costBlock,data.researchCost);
+                SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints_3_16X16"), costInformation, costBlock,data.researchCost);
         }
 
         [System.Obsolete("Use the Function in extensions called SetUpdateCost() Same thing better execution", true)]
@@ -131,7 +132,7 @@ namespace Context
             Debug.Log(text);
             GameObject upgrade = GameObject.Instantiate<GameObject>(upgradeCost);
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
-
+            Debug.Log("Here");
             //upgrade.GetComponentInChildren<Image>().sprite = image.sprite;
             upgrade.transform.parent = upgradeBlock.transform;
         }
@@ -146,6 +147,33 @@ namespace Context
                 UpgradeAbilities.TEMPALLOCATIONPOOL += calculation;
 
             UpgradeAbilities.ALLOCATIONPOOL = currentAllocationMod;
+        }
+
+
+        public void SetCostBlock(string text, Sprite sprite, GameObject costInfo, GameObject costBlock, float amount)
+        {
+            string c = string.Empty;
+
+            Color textColor = Color.white;
+
+            if (amount > 0)
+            {
+                textColor = Color.green;
+                c = "+";
+            }
+            else
+                textColor = Color.red;
+
+
+            Transform cost = GameObject.Instantiate(costInfo.transform, costBlock.transform);
+
+            costInfo.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
+            Debug.Log(text);
+            costInfo.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
+            costInfo.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
+
+            Image i = costInfo.GetComponentInChildren<Image>();
+            i.sprite = sprite;
         }
     }
 }
