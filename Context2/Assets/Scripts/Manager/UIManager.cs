@@ -70,7 +70,6 @@ namespace Context
             data.isShownInGUI = true;
 
             int tabNeeded = data.typeOfData;
-            //Debug.Log(upgradesTabs[data.typeOfData] + " " + data.name);
 
             UpdateUI(data, tabNeeded);
         }

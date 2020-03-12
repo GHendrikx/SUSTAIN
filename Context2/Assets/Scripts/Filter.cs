@@ -5,6 +5,7 @@ namespace Context
     public class Filter
     {
         private List<SDGType> filter = new List<SDGType>();
+
         public void StartFiltering()
         {
             for (int i = 1; i < 18; i++)

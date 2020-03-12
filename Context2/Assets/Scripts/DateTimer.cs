@@ -24,6 +24,7 @@ public class DateTimer : MonoBehaviour
             date.currentWeek = 1;
             date.currentYear++;
         }
+
         week.text = string.Format("Week: {0}", date.currentWeek);
         year.text = string.Format("{0}", date.currentYear);
 

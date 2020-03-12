@@ -15,6 +15,7 @@ namespace Context
         private Text title;
 
         private bool isAccepted;
+
         void InitializeNewPartenerShip(Data data)
         {
             title.text = data.name;
