@@ -30,6 +30,8 @@ namespace Context
         public DroneData dronesData;
         [HideInInspector]
         public CalculateSDG SDGCalculate;
+
+        public TrustMeter TrustMeter;
         #endregion
 
         [SerializeField]
@@ -688,6 +690,9 @@ namespace Context
             float temp5 = DroneCost - data.droneCost - data.droneFixedGain;
             float temp6 = materialCost - data.materialCost - data.materialFixedGain;
 
+            if (temp1 >= ResearchLimit)
+                temp1 = ResearchLimit;
+           
             #region without lerp ugly as hell
             //ResearchPoints -= data.researchCost - data.researchFixedGain;
             //CreativityPoints -= data.creativityCost - data.creativityFixedGain;
@@ -699,7 +704,7 @@ namespace Context
 
             //time lerping = .5f
             //(Time.time - startTime) / overtime 
-            StartCoroutine(LerpResources(0.5f, temp1, temp2, temp3,temp4,temp5,temp6));
+            StartCoroutine(LerpResources(1, temp1, temp2, temp3,temp4,temp5,temp6));
 
             #endregion
 

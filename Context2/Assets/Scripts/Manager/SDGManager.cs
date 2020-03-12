@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Context
@@ -73,12 +71,14 @@ namespace Context
         {
             sdgBar.LockImage.gameObject.SetActive(false);
             Debug.Log("LockImage");
+
+            UpdateSDGValues();
         }
 
     }
 
     [System.Serializable]
-    public struct SDGBar
+    public class SDGBar
     {
         //SDG Unlocks
         [SerializeField]
