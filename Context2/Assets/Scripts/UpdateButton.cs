@@ -155,7 +155,6 @@ namespace Context
             Transform cost = GameObject.Instantiate(costInfo.transform, costBlock.transform);
 
             cost.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
-            Debug.Log(text);
             cost.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
             cost.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
             Image i = costInfo.GetComponentInChildren<Image>();
