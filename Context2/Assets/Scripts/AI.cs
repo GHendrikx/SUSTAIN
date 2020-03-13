@@ -724,8 +724,7 @@ namespace Context
 
         public void GetUpdate(int amount, Data data)
         {
-            if (amount > processingAmount)
-                return;
+            Debug.Log(amount > processingAmount);
 
             data.isResearched = true;
 
@@ -739,7 +738,6 @@ namespace Context
             float temp5 = DroneCost + data.droneCost/* - data.droneFixedGain*/;
             float temp6 = materialCost + data.materialCost /*- data.materialFixedGain*/;
             float temp7 = powerCost + data.powerCost;
-
             if (temp1 >= ResearchLimit)
                 temp1 = ResearchLimit;
            

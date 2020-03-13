@@ -63,7 +63,6 @@ namespace Context
 
         public void GoToNextTurn()
         {
-            Debug.Log(UpgradeAbilities.UPGRADEABILITIES.Count);
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
             {
                 float currentDoneTarget = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTarget *
