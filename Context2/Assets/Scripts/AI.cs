@@ -724,8 +724,6 @@ namespace Context
 
         public void GetUpdate(int amount, Data data)
         {
-            Debug.Log(amount > processingAmount);
-
             data.isResearched = true;
 
             #region Calculate Resources

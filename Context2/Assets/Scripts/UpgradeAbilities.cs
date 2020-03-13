@@ -122,7 +122,8 @@ namespace Context
                         {
                             informationText.text = string.Empty;
                             informationText.text += UpgradeAbilities.UPGRADEABILITIES[i].data.name;
-                            targetText.text = UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + "/" + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
+                            Debug.Log(Points);
+                            targetText.text = UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + "/4"  + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
                         }
 
             if (data.creativityGain > 0 || data.creativityGain < 0)
