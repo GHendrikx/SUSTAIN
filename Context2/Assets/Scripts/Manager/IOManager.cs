@@ -19,8 +19,6 @@ namespace Context
 
         private void Awake()
         {
-            data.Data = null;
-
             if (textAsset != null)
                 data = JsonUtility.FromJson<InputData>(textAsset.ToString());
             else

@@ -24,7 +24,6 @@ namespace Context
         private void Start()
         {
             //guiText.text = turnText + turn;
-
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
             {
                 float currentDoneTarget = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTarget *
@@ -32,7 +31,6 @@ namespace Context
                 UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget = currentDoneTarget;
                 int points = System.Convert.ToInt32(UpgradeAbilities.UPGRADEABILITIES[i].AbilityPointText);
                 UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes += UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * points;
-                Debug.Log(UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes + "    " + currentDoneTarget);
 
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes > currentDoneTarget)
                 {

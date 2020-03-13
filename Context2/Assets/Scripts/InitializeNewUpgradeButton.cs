@@ -36,7 +36,7 @@ namespace Context
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
             {
                 SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
-                if (data.ID == GameManager.Instance.AI.SDGManager.SDGBar[i].SDGUnlockID)
+                if (data.ID == sdgBar.SDGUnlockID)
                     button.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
             }
             button.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());

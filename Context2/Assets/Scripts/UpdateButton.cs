@@ -108,8 +108,6 @@ namespace Context
 
          private void SetUpdateCost()
         {
-            if (data.allocatieCost != 0)
-                SetCostBlock(data.allocatieCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), costInformation, costBlock, data.allocatieCost);
             if (data.creativityCost != 0)
                 SetCostBlock(data.creativityCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"), costInformation, costBlock, data.creativityCost);
             if (data.droneCost != 0)
@@ -124,17 +122,6 @@ namespace Context
                 SetCostBlock(data.powerCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), costInformation, costBlock,data.powerCost);
             if (data.researchCost != 0)
                 SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints_3_16X16"), costInformation, costBlock,data.researchCost);
-        }
-
-        [System.Obsolete("Use the Function in extensions called SetUpdateCost() Same thing better execution", true)]
-        private void SetUpdateCost(string text, Image image)
-        {
-            Debug.Log(text);
-            GameObject upgrade = GameObject.Instantiate<GameObject>(upgradeCost);
-            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
-            Debug.Log("Here");
-            //upgrade.GetComponentInChildren<Image>().sprite = image.sprite;
-            upgrade.transform.parent = upgradeBlock.transform;
         }
 
         private void AllocationUpdate()
@@ -167,11 +154,9 @@ namespace Context
 
             Transform cost = GameObject.Instantiate(costInfo.transform, costBlock.transform);
 
-            costInfo.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
-            Debug.Log(text);
-            costInfo.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
-            costInfo.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
-
+            cost.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
+            cost.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
+            cost.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
             Image i = costInfo.GetComponentInChildren<Image>();
             i.sprite = sprite;
         }
