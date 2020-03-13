@@ -123,7 +123,8 @@ namespace Context
                             informationText.text = string.Empty;
                             informationText.text += UpgradeAbilities.UPGRADEABILITIES[i].data.name;
                             Debug.Log(Points);
-                            targetText.text = UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + "/4"  + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
+                            CalculateAllocatie();
+                            targetText.text = Points + "/" + UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget  + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
                         }
 
             if (data.creativityGain > 0 || data.creativityGain < 0)
@@ -248,6 +249,43 @@ namespace Context
             {
                 rewardText.gameObject.SetActive(false);
                 rewardImage.gameObject.SetActive(false);
+            }
+        }
+
+        public void CalculateAllocatie()
+        {
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+            {
+                float currentDoneTarget = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTarget *
+                    Mathf.Pow(2, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel);
+
+                UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget = currentDoneTarget;
+
+                int points = System.Convert.ToInt32(UpgradeAbilities.UPGRADEABILITIES[i].AbilityPointText.text);
+                UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes += UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * points;
+
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes >= currentDoneTarget && UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
+                {
+                    UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel += 1;
+                    currentDoneTarget = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTarget *
+                    Mathf.Pow(2, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel);
+
+                    UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget = currentDoneTarget;
+
+                    GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
+
+                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.researchFixedGain;
+
+                    UpgradeAbilities.TEMPALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
+                }
+
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
+                {
+                    UpgradeAbilities.UPGRADEABILITIES[i].InformationText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.name;
+                    UpgradeAbilities.UPGRADEABILITIES[i].TargetText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes + "/" +
+                    UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
+
+                }
             }
         }
 
