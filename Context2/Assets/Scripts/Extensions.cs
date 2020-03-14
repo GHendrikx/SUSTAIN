@@ -38,7 +38,7 @@ namespace Context
         public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock)
         {
             int amount = System.Convert.ToInt32(text);
-                
+            
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform, upgradeBlock.transform);
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text + Environment.NewLine;
             upgrade.GetComponentInChildren<TextMeshProUGUI>().color = (amount > 0) ? Color.green: Color.red;

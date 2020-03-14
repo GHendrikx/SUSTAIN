@@ -124,17 +124,6 @@ namespace Context
                 SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/Iconen_ResearchPoints_3_16X16"), costInformation, costBlock,data.researchCost);
         }
 
-        [System.Obsolete("Use the Function in extensions called SetUpdateCost() Same thing better execution", true)]
-        private void SetUpdateCost(string text, Image image)
-        {
-            Debug.Log(text);
-            GameObject upgrade = GameObject.Instantiate<GameObject>(upgradeCost);
-            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text;
-            Debug.Log("Here");
-            //upgrade.GetComponentInChildren<Image>().sprite = image.sprite;
-            upgrade.transform.parent = upgradeBlock.transform;
-        }
-
         private void AllocationUpdate()
         {
             float currentAllocationMod = GameManager.Instance.UIManager.CalculateAllocationMod();
@@ -168,7 +157,6 @@ namespace Context
             cost.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
             cost.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
             cost.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
-
             Image i = costInfo.GetComponentInChildren<Image>();
             i.sprite = sprite;
         }
