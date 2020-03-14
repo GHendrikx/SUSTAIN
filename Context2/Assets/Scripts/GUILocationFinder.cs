@@ -23,7 +23,7 @@ public class GUILocationFinder : MonoBehaviour
 
     void Start()
     {
-        BubbleManager = GameObject.FindGameObjectWithTag("BubbleManager").GetComponent<BubbleManager>();
+        BubbleManager = GameObject.FindObjectOfType<BubbleManager>();
         UICanvas = GameObject.FindWithTag("Canvas").transform;
         Bubble = gameObject;
         rt = GetComponent<RectTransform>();
