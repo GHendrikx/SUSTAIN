@@ -108,8 +108,6 @@ namespace Context
 
          private void SetUpdateCost()
         {
-            if (data.allocatieCost != 0)
-                SetCostBlock(data.allocatieCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/iconProcessingPower16X16"), costInformation, costBlock, data.allocatieCost);
             if (data.creativityCost != 0)
                 SetCostBlock(data.creativityCost.ToString(), Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/icon_Creativity16X16"), costInformation, costBlock, data.creativityCost);
             if (data.droneCost != 0)
@@ -167,10 +165,9 @@ namespace Context
 
             Transform cost = GameObject.Instantiate(costInfo.transform, costBlock.transform);
 
-            costInfo.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
-            Debug.Log(text);
-            costInfo.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
-            costInfo.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
+            cost.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
+            cost.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
+            cost.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
 
             Image i = costInfo.GetComponentInChildren<Image>();
             i.sprite = sprite;
