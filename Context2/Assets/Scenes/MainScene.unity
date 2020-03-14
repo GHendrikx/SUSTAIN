@@ -1309,6 +1309,7 @@ GameObject:
   - component: {fileID: 90794112}
   - component: {fileID: 90794119}
   - component: {fileID: 90794120}
+  - component: {fileID: 90794121}
   m_Layer: 0
   m_Name: '{MANAGER}'
   m_TagString: Untagged
@@ -1753,6 +1754,21 @@ MonoBehaviour:
     processBar: {fileID: 1177290182}
     rectTransform: {fileID: 1177290181}
   ai: {fileID: 90794111}
+--- !u!114 &90794121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90794110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92e60d7304207440b0827a287c6ea01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleList: []
+  bubbleSpeedList: []
+  bubbleAccList: []
 --- !u!1 &94763653
 GameObject:
   m_ObjectHideFlags: 0
