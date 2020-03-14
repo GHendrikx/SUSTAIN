@@ -62,7 +62,7 @@ namespace Context
                 health += sdgBar[i].RectTransform.anchorMax.x;
             }
             health -= 1;
-            Mathf.Clamp(health, 0, 1);
+            health = Mathf.Clamp(health, 0, 1);
 
             return health;
         }
