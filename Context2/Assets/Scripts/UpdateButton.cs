@@ -68,6 +68,7 @@ namespace Context
             SetTextToUpdateButton();
             BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
             bool status = gameObject.transform.root.gameObject.activeInHierarchy;
+            Debug.Log(myButton.name);
             if (myButton != null)
                 myButton = GetComponent<Button>();
 
@@ -75,13 +76,20 @@ namespace Context
 
             if (tab == Tab.PartnerShip)
                 return;
+            Debug.Log(tab);
+            myButton.gameObject.SetActive(false);
+            Debug.Log("Button + " + myButton.name.ToString());
 
-            myButton.onClick.AddListener(() => ai.GetUpdate(CostOfUpdate, data));
-            myButton.onClick.AddListener(() => data.isResearched = true);
-            myButton.onClick.AddListener(() => AllocationUpdate());
 
-            myButton.onClick.AddListener(() => Destroy(this.gameObject));
+        }
 
+        public void PressButton()
+        {
+            Ai.GetUpdate(CostOfUpdate, data);
+            data.isResearched = true;
+            AllocationUpdate();
+            Debug.Log("Test");
+            Destroy(this.gameObject);
         }
 
         private void SetTextToUpdateButton()

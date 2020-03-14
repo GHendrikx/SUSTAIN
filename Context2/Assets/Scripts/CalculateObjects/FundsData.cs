@@ -44,7 +44,7 @@ namespace Context
         {
             float temp1 = ai.FundsPoints + CurrentFundsGain;
             //research creativity funds influence drones materials
-            StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, temp1, Mathf.Infinity, ,Mathf.Infinity, Mathf.Infinity));
+            StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, temp1, Mathf.Infinity,Mathf.Infinity, Mathf.Infinity));
 
         }
 
