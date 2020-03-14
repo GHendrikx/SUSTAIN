@@ -18,7 +18,8 @@ namespace Context
         private GameObject costBlock;
         [SerializeField]
         private GameObject costInformation;
-        #region information
+
+        #region Information
         [SerializeField]
         private TextMeshProUGUI title;
         [SerializeField]
@@ -29,7 +30,6 @@ namespace Context
         private GameObject upgradeBlock;
         [SerializeField]
         private GameObject upgradeCost;
-
         [SerializeField]
         private Image SDGColor;
         [SerializeField]
@@ -58,7 +58,7 @@ namespace Context
         /// </summary>
         /// <param name="data"></param>
         /// <param name="ai"></param>
-        public void ButtonInformation(Data data, AI ai)
+        public void ButtonInformation(Data data, AI ai, Tab tab)
         {
             this.UpdateName = data.name + data.desc;
             this.CostOfUpdate = data.researchCost;
@@ -73,9 +73,13 @@ namespace Context
 
             SetUpdateCost();
 
+            if (tab == Tab.PartnerShip)
+                return;
+
             myButton.onClick.AddListener(() => ai.GetUpdate(CostOfUpdate, data));
             myButton.onClick.AddListener(() => data.isResearched = true);
             myButton.onClick.AddListener(() => AllocationUpdate());
+
             myButton.onClick.AddListener(() => Destroy(this.gameObject));
 
         }

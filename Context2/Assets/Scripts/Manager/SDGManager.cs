@@ -46,7 +46,7 @@ namespace Context
 
         private void SetSDGBar(SDGType sdgType, float percentage)
         {
-            if (sdgBar[(int)sdgType].LockImage.gameObject.activeInHierarchy)
+            if (sdgBar[(int)sdgType].LockImage[0].gameObject.activeInHierarchy)
                 return;
 
             StartCoroutine(Extensions.UpdateSlider(sdgBar[(int)sdgType].RectTransform, percentage, 0.5f));
@@ -57,7 +57,7 @@ namespace Context
             float health = 0;
             for (int i = 0; i < sdgBar.Length; i++)
             {
-                if (sdgBar[i].LockImage.gameObject.activeInHierarchy)
+                if (sdgBar[i].LockImage[0].gameObject.activeInHierarchy)
                     continue;
                 health += sdgBar[i].RectTransform.anchorMax.x;
             }
@@ -69,7 +69,8 @@ namespace Context
 
         public void SetLockImage(SDGBar sdgBar)
         {
-            sdgBar.LockImage.gameObject.SetActive(false);
+            for (int i = 0; i < sdgBar.LockImage.Length; i++)
+                sdgBar.LockImage[i].gameObject.SetActive(false);
             UpdateSDGValues();
         }
 
@@ -95,8 +96,8 @@ namespace Context
 
         //LockImage
         [SerializeField]
-        private Image lockImage;
-        public Image LockImage
+        private Image[] lockImage;
+        public Image[] LockImage
         {
             get
             {

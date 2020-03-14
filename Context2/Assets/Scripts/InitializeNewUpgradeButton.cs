@@ -24,9 +24,10 @@ namespace Context
         {
             initializedData.Add(data);
             Button button = GameObject.Instantiate(buttonPrefab, transform);
+
             UpdateButton update = button.gameObject.GetComponent<UpdateButton>();
 
-            update.ButtonInformation(data, ai);
+            update.ButtonInformation(data, ai, tab);
             RectTransform rectTransform = button.GetComponent<RectTransform>();
             rectTransform.position = new Vector2(rectTransform.position.x, 0 + (transform.childCount * 110));
             button.gameObject.SetActive(true);

@@ -115,7 +115,6 @@ namespace Context
         public IEnumerator LerpToNumber(int i,float overTime, int points, float beginNumber,float endNumber)
         {
             float startTime = Time.time;
-            Debug.Log(endNumber + "<>" + beginNumber);
 
             while (Time.time < (startTime + overTime))
             {
