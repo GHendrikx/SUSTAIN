@@ -16,7 +16,8 @@ public class ExecuteButton : MonoBehaviour
     public void Execute()
     {
         button.onClick.Invoke();
-        tab.transform.SetAsLastSibling();
+        if (tab != null)
+            tab.transform.SetAsLastSibling();
     }
 
 }

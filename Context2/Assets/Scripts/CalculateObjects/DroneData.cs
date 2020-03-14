@@ -61,7 +61,8 @@ namespace Context
 
         private void CalculateDronesPoints()
         {
-            ai.ResearchPoints += CurrentDronesGain;
+            float temp1 = ai.ResearchPoints + CurrentDronesGain;
+            StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, temp1, Mathf.Infinity));
         }
 
         private void CalculateDronesGainMod()

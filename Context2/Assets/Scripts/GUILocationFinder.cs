@@ -31,6 +31,7 @@ public class GUILocationFinder : MonoBehaviour
         GetChange();
         if (transform.parent.parent.parent.parent.parent.childCount > 1)
         {
+            return;
             allocatieBlock = transform.parent.parent.parent.parent.parent.GetChild(1).transform;
             allocatieBlock.GetChild(1).GetComponent<Button>().onClick.AddListener(GetMultiplier);
             allocatieBlock.GetChild(2).GetComponent<Button>().onClick.AddListener(GetMultiplier);
@@ -53,7 +54,6 @@ public class GUILocationFinder : MonoBehaviour
         rt.GetWorldCorners(v);
 
         location = (v[1] + v[2] + v[3] + v[0]) / 4;
-        Debug.Log("Position" + location);
     }
 
     void GetChange()
@@ -79,7 +79,7 @@ public class GUILocationFinder : MonoBehaviour
     void GetAmount()
     {
         amount = change * multiplier;
-        Debug.Log("allocatie multiplier = " + multiplier + " change: " + change + " amount " + amount);
+        //Debug.Log("allocatie multiplier = " + multiplier + " change: " + change + " amount " + amount);
     }
 
         IEnumerator Spawn()
