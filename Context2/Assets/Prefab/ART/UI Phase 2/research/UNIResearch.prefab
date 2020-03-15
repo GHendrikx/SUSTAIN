@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -120,7 +120,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3229859459685326789}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2775528838908049033}
+        m_MethodName: PressButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1923546819012451266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,7 +1279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CostOfUpdate: 0
   UpdateName: 
-  myButton: {fileID: 4842718128640277062}
+  myButton: {fileID: 6703802485083346025}
   costBlock: {fileID: 2639025427238935610}
   costInformation: {fileID: 5504829431636078163, guid: 30cac3fe21b396345a71af6f7ce78276,
     type: 3}
@@ -1448,11 +1459,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: horizontal Costblock Container
       objectReference: {fileID: 0}
-    - target: {fileID: 5217795881384168495, guid: d758715ea461d024b87ee9e3daa4911a,
-        type: 3}
-      propertyPath: m_CellSize.x
-      value: 86.3
-      objectReference: {fileID: 0}
     - target: {fileID: 1486918769769677485, guid: d758715ea461d024b87ee9e3daa4911a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1557,6 +1563,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217795881384168495, guid: d758715ea461d024b87ee9e3daa4911a,
+        type: 3}
+      propertyPath: m_CellSize.x
+      value: 86.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d758715ea461d024b87ee9e3daa4911a, type: 3}

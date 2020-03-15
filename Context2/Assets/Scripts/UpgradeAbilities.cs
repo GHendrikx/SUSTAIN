@@ -122,9 +122,8 @@ namespace Context
                         {
                             informationText.text = string.Empty;
                             informationText.text += UpgradeAbilities.UPGRADEABILITIES[i].data.name;
-                            Debug.Log(Points);
+                            //needed for the line under it
                             CalculateAllocatie();
-                            targetText.text = Points + "/" + UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget  + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
                         }
 
             if (data.creativityGain > 0 || data.creativityGain < 0)

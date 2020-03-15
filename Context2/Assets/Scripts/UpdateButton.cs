@@ -18,7 +18,8 @@ namespace Context
         private GameObject costBlock;
         [SerializeField]
         private GameObject costInformation;
-        #region information
+
+        #region Information
         [SerializeField]
         private TextMeshProUGUI title;
         [SerializeField]
@@ -29,7 +30,6 @@ namespace Context
         private GameObject upgradeBlock;
         [SerializeField]
         private GameObject upgradeCost;
-
         [SerializeField]
         private Image SDGColor;
         [SerializeField]
@@ -58,7 +58,7 @@ namespace Context
         /// </summary>
         /// <param name="data"></param>
         /// <param name="ai"></param>
-        public void ButtonInformation(Data data, AI ai)
+        public void ButtonInformation(Data data, AI ai, Tab tab)
         {
             this.UpdateName = data.name + data.desc;
             this.CostOfUpdate = data.researchCost;
@@ -68,16 +68,28 @@ namespace Context
             SetTextToUpdateButton();
             BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
             bool status = gameObject.transform.root.gameObject.activeInHierarchy;
+            Debug.Log(myButton.name);
             if (myButton != null)
                 myButton = GetComponent<Button>();
 
             SetUpdateCost();
 
-            myButton.onClick.AddListener(() => ai.GetUpdate(CostOfUpdate, data));
-            myButton.onClick.AddListener(() => data.isResearched = true);
-            myButton.onClick.AddListener(() => AllocationUpdate());
-            myButton.onClick.AddListener(() => Destroy(this.gameObject));
+            if (tab == Tab.PartnerShip)
+                return;
+            Debug.Log(tab);
+            myButton.gameObject.SetActive(false);
+            Debug.Log("Button + " + myButton.name.ToString());
 
+
+        }
+
+        public void PressButton()
+        {
+            Ai.GetUpdate(CostOfUpdate, data);
+            data.isResearched = true;
+            AllocationUpdate();
+            Debug.Log("Test");
+            Destroy(this.gameObject);
         }
 
         private void SetTextToUpdateButton()
