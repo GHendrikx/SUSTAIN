@@ -9,14 +9,12 @@ public class Tooltip : MonoBehaviour
 {
     private static Tooltip instance;
 
-    [SerializeField]
-    private string Text = "hoi";
-    private bool Hooverbool;
+    private string Text ;
     private Camera uiCamera;
     private TextMeshProUGUI tooltipText;
     private RectTransform backgroundRecTransform;
     private void Awake()
-    
+
     {
         backgroundRecTransform = transform.Find("background").GetComponent<RectTransform>();
         tooltipText = transform.Find("text").GetComponent<TextMeshProUGUI>();
@@ -38,30 +36,32 @@ public class Tooltip : MonoBehaviour
         {
             if (raycastResultList[i].gameObject.GetComponent<MouseUIClickthrough>() != null)
             {
+                Text = raycastResultList[i].gameObject.GetComponent<Transform>().name;
+                Debug.Log (raycastResultList[i].gameObject.GetComponent<Transform>().name);
                 raycastResultList.RemoveAt(i);
-                i--;
+
             }
-           
+
         }
         return raycastResultList.Count > 0;
     }
 
     private void Update()
     {
-        
 
-        if (IsMouseOverUIWithIgnores())
+
+        if (!IsMouseOverUIWithIgnores())
         {
+            tooltipText.text = Text;
+            float textpaddingSize = 4f;
+            Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textpaddingSize * 2f, tooltipText.preferredHeight + textpaddingSize * 2f);
+            backgroundRecTransform.sizeDelta = backgroundSize;
             //gameObject.SetActive(true);
             Vector2 localPoint;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), Input.mousePosition, uiCamera, out localPoint);
             transform.localPosition = localPoint;
             backgroundRecTransform.gameObject.SetActive(true);
             tooltipText.gameObject.SetActive(true);
-            tooltipText.text = Text;
-            float textpaddingSize = 4f;
-            Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textpaddingSize * 2f, tooltipText.preferredHeight + textpaddingSize * 2f);
-            backgroundRecTransform.sizeDelta = backgroundSize;
         }
         else
         {
