@@ -2359,7 +2359,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 272944441}
+      - m_Target: {fileID: 1169148387}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2901,8 +2901,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1613338286}
-  m_RootOrder: 0
+  m_Father: {fileID: 1655873224}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3012,7 +3012,7 @@ PrefabInstance:
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
@@ -3403,7 +3403,7 @@ PrefabInstance:
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
@@ -6698,8 +6698,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 734403941}
-  - {fileID: 1977190601}
   - {fileID: 1752683221}
   m_Father: {fileID: 1082471024}
   m_RootOrder: 17
@@ -6745,6 +6743,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1977190601}
+  - {fileID: 734403941}
   - {fileID: 1287048837}
   m_Father: {fileID: 1082471024}
   m_RootOrder: 15
@@ -7553,8 +7553,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1613338286}
-  m_RootOrder: 1
+  m_Father: {fileID: 1655873224}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -560.264}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7689,7 +7689,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1613338285}
+      - m_Target: {fileID: 1169148387}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
