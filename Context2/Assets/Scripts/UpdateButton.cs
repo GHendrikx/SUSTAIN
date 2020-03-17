@@ -36,6 +36,46 @@ namespace Context
         private TextMeshProUGUI researchNummer;
         #endregion
 
+
+        /// <summary>
+        /// Setting new update
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="ai"></param>
+        public void ButtonInformation(Data data, AI ai, Tab tab)
+        {
+            this.UpdateName = data.name + data.desc;
+            this.CostOfUpdate = data.researchCost;
+            Ai = ai;
+            this.data = data;
+            
+            SetTextToUpdateButton();
+            BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
+            
+            bool status = gameObject.transform.root.gameObject.activeInHierarchy;
+
+            SetUpdateCost();
+            
+            for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
+            {
+                SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
+                if (data.ID == sdgBar.SDGUnlockID)
+                    myButton.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
+            }
+
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+
+            if (tab == Tab.PartnerShip)
+            {
+                PartnerShips PartnerShips = this.gameObject.GetComponent<PartnerShips>();
+                PartnerShips.InitializeNewPartenerShip(data);
+            }
+        }
+     
         private void Update()
         {
             if (Ai == null)
@@ -53,42 +93,12 @@ namespace Context
                 myButton.interactable = false;
         }
 
-        /// <summary>
-        /// Setting new update
-        /// </summary>
-        /// <param name="data"></param>
-        /// <param name="ai"></param>
-        public void ButtonInformation(Data data, AI ai, Tab tab)
-        {
-            this.UpdateName = data.name + data.desc;
-            this.CostOfUpdate = data.researchCost;
-
-            Ai = ai;
-            this.data = data;
-            SetTextToUpdateButton();
-            BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
-            bool status = gameObject.transform.root.gameObject.activeInHierarchy;
-            Debug.Log(myButton.name);
-            if (myButton != null)
-                myButton = GetComponent<Button>();
-
-            SetUpdateCost();
-
-            if (tab == Tab.PartnerShip)
-                return;
-            Debug.Log(tab);
-            myButton.gameObject.SetActive(false);
-            Debug.Log("Button + " + myButton.name.ToString());
-
-
-        }
-
         public void PressButton()
         {
             Ai.GetUpdate(CostOfUpdate, data);
             data.isResearched = true;
             AllocationUpdate();
-            Debug.Log("Test");
+            
             Destroy(this.gameObject);
         }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4027043941786207973}
   - component: {fileID: 1831819600887382254}
   - component: {fileID: 4042315139067508857}
+  - component: {fileID: 187426631458740783}
   m_Layer: 5
   m_Name: 'PartnershipsUNI '
   m_TagString: Untagged
@@ -116,6 +117,22 @@ MonoBehaviour:
     type: 3}
   SDGColor: {fileID: 8338396501505333036}
   researchNummer: {fileID: 0}
+--- !u!114 &187426631458740783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749557429433547318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b200b232fe14f504e89f55b4475b82ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceptButton: {fileID: 3092554955029009656}
+  declineButton: {fileID: 3092554955217080837}
+  title: {fileID: 4177529935739788328}
+  description: {fileID: 3499355687964401741}
 --- !u!1 &1114564185457760436
 GameObject:
   m_ObjectHideFlags: 0
