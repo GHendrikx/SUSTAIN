@@ -16,7 +16,6 @@ namespace Context
         [SerializeField]
         private AudioManager audioManager;
         public SDGManager SDGManager;
-
         #region Data CalculationObjects
         public ResearchData researchData;
         public CreativityData creativityData;
@@ -43,7 +42,18 @@ namespace Context
         }
 
         public float processingAmount;
-
+        private float approvalReq;
+        public float ApprovalReq
+        {
+            get
+            {
+                return approvalReq;
+            }
+            set
+            {
+                approvalReq = value;
+            }
+        }
         #region Research
         [SerializeField]
         private float researchPoints;

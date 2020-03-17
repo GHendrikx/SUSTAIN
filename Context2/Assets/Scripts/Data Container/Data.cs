@@ -22,6 +22,8 @@
         public bool isAvailable;
         public bool isShownInGUI;
         public bool isActive;
+        public float approvalReq;
+        public int approvalType;
         public int creativityCost;
 
         public int researchCost;

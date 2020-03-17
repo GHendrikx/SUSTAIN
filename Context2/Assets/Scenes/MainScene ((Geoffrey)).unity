@@ -257,7 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354700c323f6f20449c140b095545b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefab: {fileID: 0}
+  buttonPrefab: {fileID: 1831819600887382254, guid: ee96f454a69e7ba448164aa024606bea,
+    type: 3}
   upgradeAbilities: {fileID: 749557429433547318, guid: ee96f454a69e7ba448164aa024606bea,
     type: 3}
   costs: []

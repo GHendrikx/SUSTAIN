@@ -25,7 +25,9 @@ namespace Context
             initializedData.Add(data);
             Button button = GameObject.Instantiate(buttonPrefab, transform);
 
+            Debug.Log((Tab)tab);
             UpdateButton update = button.gameObject.GetComponent<UpdateButton>();
+            Debug.Log(tab);
             update.ButtonInformation(data, ai, tab);
 
             RectTransform rectTransform = button.GetComponent<RectTransform>();

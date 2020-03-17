@@ -76,7 +76,7 @@ namespace Context
 
         public void UpdateUI(Data data, int tab)
         {
-            if (data.typeOfData == 1 || data.typeOfData == 2)
+            if (data.typeOfData == (int)Tab.Allocatie || data.typeOfData == (int)Tab.PartnerShip)
                 upgradesTabs[data.typeOfData].InitializeNewButton(data, AI);
             else
                 upgradesTabs[data.typeOfData].InitializeNewAllocation(data, AI);

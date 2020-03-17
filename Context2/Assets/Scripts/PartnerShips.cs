@@ -18,10 +18,13 @@ namespace Context
         private TextMeshProUGUI description;
         private Data data;
 
+        private TextMeshProUGUI RequirementText;
+        private int requirementPoints;
         private bool isAccepted;
 
         public void InitializeNewPartenerShip(Data data)
         {
+            Debug.Log("Initialize");
             title.text = data.name;
             this.data = data;
             acceptButton.onClick.AddListener(() => isAccepted = true);
@@ -31,6 +34,15 @@ namespace Context
         {
             if (data.isResearched != isAccepted)
                 data.isResearched = isAccepted;
+
+            if(GameManager.Instance.AI.ApprovalReq >= data.approvalReq)
+            {
+                acceptButton.interactable = true;
+            }
+            else
+            {
+
+            }
         }
 
 

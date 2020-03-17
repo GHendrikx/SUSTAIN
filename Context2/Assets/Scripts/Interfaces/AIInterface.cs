@@ -93,7 +93,6 @@ namespace Context
                 {
                     temp4 = Mathf.Lerp(InfluencePoints, newInfluence, (Time.time - startTime) / overtime);
                     influencePoints = temp4;
-                    Debug.Log(influencePoints);
                 }
                 
                 if (newDrones != Mathf.Infinity)

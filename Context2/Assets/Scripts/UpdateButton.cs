@@ -48,7 +48,8 @@ namespace Context
             this.CostOfUpdate = data.researchCost;
             Ai = ai;
             this.data = data;
-            
+            Debug.Log(tab);
+
             SetTextToUpdateButton();
             BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
             
@@ -62,12 +63,14 @@ namespace Context
                 if (data.ID == sdgBar.SDGUnlockID)
                     myButton.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
             }
-
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+            if (myButton != null)
+            {
+                myButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+                myButton.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
+                myButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+                myButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+                myButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+            }
 
             if (tab == Tab.PartnerShip)
             {
