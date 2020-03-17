@@ -25,14 +25,14 @@ namespace Context
             data = ioManager.data.Data;
         }
 
-        public void UpdateMaterial()
+        public void UpdatePower()
         {
             CalculatePowerGainMod();
             CalculatePowerGain();
             CalculatePowerPoints();
         }
 
-        public void UpdateMaterialWithoutPoints()
+        public void UpdatePowerWithoutPoints()
         {
             CalculatePowerGainMod();
             CalculatePowerGain();
@@ -40,7 +40,9 @@ namespace Context
 
         private void CalculatePowerPoints()
         {
-            ai.CreativityPoints += CurrentPowerGain;
+            float temp1 = ai.PowerPoints + CurrentPowerGain;
+            StartCoroutine(ai.LerpResources(Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, temp1, Mathf.Infinity));
+            ;
         }
 
         private void CalculatePowerGainMod()

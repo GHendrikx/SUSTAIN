@@ -26,25 +26,28 @@ namespace Context
             Button button = GameObject.Instantiate(buttonPrefab, transform);
 
             UpdateButton update = button.gameObject.GetComponent<UpdateButton>();
-
             update.ButtonInformation(data, ai, tab);
+
             RectTransform rectTransform = button.GetComponent<RectTransform>();
             rectTransform.position = new Vector2(rectTransform.position.x, 0 + (transform.childCount * 110));
             button.gameObject.SetActive(true);
             gameObject.SetActive(true);
             amountOfUpgrades++;
-
-            for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
-            {
-                SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
-                if (data.ID == sdgBar.SDGUnlockID)
-                    button.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
-            }
-            button.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
-            button.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
-            button.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
-            button.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
-            button.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+            #region button
+            //for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
+            //{
+            //    SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
+            //    if (data.ID == sdgBar.SDGUnlockID)
+            //    {
+            //        update.myButton.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
+            //    }
+            //}
+            //button.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            //button.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
+            //button.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            //button.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+            //button.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+            #endregion
 
 
         }
