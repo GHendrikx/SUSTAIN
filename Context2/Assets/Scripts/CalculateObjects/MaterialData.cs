@@ -38,7 +38,7 @@ namespace Context
         private void CalculateMaterialPoints()
         {
             float temp1 = ai.CreativityPoints + CurrentMaterialGain;
-            StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, temp1));
+            StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, temp1,Mathf.Infinity));
 
         }
 

@@ -43,7 +43,7 @@ namespace Context
         private void CalculateCreativityPoints()
         {
             float temp1 = ai.CreativityPoints + CurrentCreativityGain;
-            StartCoroutine(ai.LerpResources(1f,Mathf.Infinity,temp1,Mathf.Infinity,Mathf.Infinity,Mathf.Infinity,Mathf.Infinity));
+            StartCoroutine(ai.LerpResources(1f,Mathf.Infinity,temp1,Mathf.Infinity,Mathf.Infinity,Mathf.Infinity,Mathf.Infinity, Mathf.Infinity));
         }
 
         private void CalculateCreativityGainMod()

@@ -75,7 +75,7 @@ namespace Context
                 PartnerShips.InitializeNewPartenerShip(data);
             }
         }
-     
+
         private void Update()
         {
             if (Ai == null)

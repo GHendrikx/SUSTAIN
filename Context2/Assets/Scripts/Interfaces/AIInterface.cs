@@ -55,60 +55,69 @@ namespace Context
             #endregion
         }
 
-        public IEnumerator LerpResources(float overtime, float newResearch, float newCreativity, float newFunds, float newInfluence, float newDrones, float newMaterials)
+        public IEnumerator LerpResources(float overtime, float newResearch, float newCreativity, float newFunds, float newInfluence, float newDrones, float newMaterials, float newPower)
         {
             lerping = true;
             float startTime = Time.time;
 
-            float temp1 = 0;
-            float temp2 = 0;
-            float temp3 = 0;
-            float temp4 = 0;
-            float temp5 = 0;
-            float temp6 = 0;
+            float temp1 = CreativityPoints;
+            float temp2 = FundsPoints;
+            float temp3 = ResearchPoints;
+            float temp4 = InfluencePoints;
+            float temp5 = DroneCost;
+            float temp6 = MaterialCost;
+            float temp7 = powerCost;
 
             while (Time.time < (startTime + overtime))
             {
                 if (newCreativity != Mathf.Infinity)
                 {
+                    
                     temp1 = Mathf.Lerp(CreativityPoints, newCreativity, (Time.time - startTime) / overtime);
                     CreativityPoints = temp1;
                 }
+                
                 if (newFunds != Mathf.Infinity)
                 {
                     temp2 = Mathf.Lerp(FundsPoints, newFunds, (Time.time - startTime) / overtime);
                     FundsPoints = temp2;
                 }
+                
                 if (newResearch != Mathf.Infinity)
                 {
                     temp3 = Mathf.Lerp(ResearchPoints, newResearch, (Time.time - startTime) / overtime);
                     ResearchPoints = temp3;
                 }
-                if (InfluencePoints != Mathf.Infinity)
+
+                if (newInfluence != Mathf.Infinity)
                 {
                     temp4 = Mathf.Lerp(InfluencePoints, newInfluence, (Time.time - startTime) / overtime);
-                    InfluencePoints = temp4;
+                    influencePoints = temp4;
+                    Debug.Log(influencePoints);
                 }
+                
                 if (newDrones != Mathf.Infinity)
                 {
                     temp5 = Mathf.Lerp(DroneCost, newDrones, (Time.time - startTime) / overtime);
-                    DroneCost = temp5;
+                    dronePoint = temp5;
                 }
+                
                 if (newMaterials != Mathf.Infinity)
                 {
                     temp6 = Mathf.Lerp(MaterialCost, newMaterials, (Time.time - startTime) / overtime);
-                    materialCost = temp6;
+                    materialPoints = temp6;
                 }
 
-
+                if(newPower != Mathf.Infinity)
+                {
+                    temp7 = Mathf.Lerp(powerCost, newPower, (Time.time - startTime) / overtime);
+                    PowerPoints = temp7;
+                }
                 yield return null;
             }
 
             lerping = false;
             yield return null;
-
-
-
         }
 
     }

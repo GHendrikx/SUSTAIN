@@ -43,9 +43,9 @@ namespace Context
         private void CalculateInfluencePoints()
         {
             float temp1 = ai.InfluencePoints + CurrentInfluenceGain;
-            //research creativity funds influence drones materials
-            StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity , temp1, Mathf.Infinity , Mathf.Infinity));
 
+            //research creativity funds influence drones materials
+            StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity , temp1, Mathf.Infinity , Mathf.Infinity, Mathf.Infinity));
         }
 
         private void CalculateInfluenceGainMod()
@@ -65,17 +65,18 @@ namespace Context
         private void CalculateInfluenceGain()
         {
             CurrentInfluenceGain = 0;
-            //TODO: influence GAIN doesn't excist
+
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentInfluenceGain += currentData.influenceGain;
-
+            
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
                     CurrentInfluenceGain += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.influenceGain;
             CurrentInfluenceGain *= CurrentInfluenceGainMod;
 
             ai.InfluenceGain = CurrentInfluenceGain;
+        
         }
     }
 }

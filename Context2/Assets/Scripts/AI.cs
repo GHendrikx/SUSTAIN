@@ -168,16 +168,16 @@ namespace Context
         #endregion
 
         #region Influence
-        private float influenceCost;
+        private float influencePoints = 0;
         public float InfluencePoints
         {
             get
             {
-                return influenceCost;
+                return influencePoints;
             }
             set
             {
-                influenceCost = value;
+                influencePoints = value;
             }
         }
 
@@ -750,7 +750,7 @@ namespace Context
 
             //time lerping = .5f
             //(Time.time - startTime) / overtime 
-            StartCoroutine(LerpResources(1, temp1, temp2, temp3,temp4,temp5,temp6));
+            StartCoroutine(LerpResources(1, temp1, temp2, temp3,temp4,temp5,temp6,temp7));
 
             #endregion
 
