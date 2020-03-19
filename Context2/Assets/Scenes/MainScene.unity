@@ -1822,8 +1822,8 @@ MonoBehaviour:
   SDGCalculate: {fileID: 1534975951}
   TrustMeter: {fileID: 1288015245}
   processingPoints: 0
-  processingAmount: 1
-  researchPoints: 1
+  processingAmount: 0
+  researchPoints: 0
   dronePoint: 0
   droneCost: 0
   SDGPoints01: 0
@@ -14521,6 +14521,43 @@ PrefabInstance:
       propertyPath: m_margin.y
       value: -28.308094
       objectReference: {fileID: 0}
+    - target: {fileID: 3188026245798076729, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
+        type: 3}
+      propertyPath: m_text
+      value: '
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188026245798076729, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188026245798076729, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188026245798076729, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188026245798076729, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188026245798076729, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188026245798076729, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8353a7fee0d5d347b8f4d40c3736e4f, type: 3}
 --- !u!224 &756671856 stripped
@@ -16502,7 +16539,6 @@ GameObject:
   m_Component:
   - component: {fileID: 900910529}
   - component: {fileID: 900910530}
-  - component: {fileID: 900910531}
   m_Layer: 5
   m_Name: panel 14
   m_TagString: Untagged
@@ -16540,43 +16576,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900910528}
   m_CullTransparentMesh: 0
---- !u!114 &900910531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900910528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ec339d9104e5a6469c9fd26fbde0ff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 900910528}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1410651524}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &902536796
 GameObject:
   m_ObjectHideFlags: 0
@@ -30542,7 +30541,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580454461}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -30607,7 +30606,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580454461}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -35002,8 +35001,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 34128248}
-        m_MethodName: 
+      - m_Target: {fileID: 34128251}
+        m_MethodName: CheckPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
