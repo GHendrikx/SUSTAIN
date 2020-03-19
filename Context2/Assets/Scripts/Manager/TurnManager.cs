@@ -111,6 +111,7 @@ namespace Context
             }
 
             turn++;
+
             GameManager.Instance.AI.SetTurn = true;
         }
 

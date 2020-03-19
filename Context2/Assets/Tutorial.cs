@@ -8,12 +8,19 @@ namespace Context {
     {
         [SerializeField]
         private UnityEvent unityEvent;
+        
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (UpgradeAbilities.TEMPALLOCATIONPOOL == 0)
-                unityEvent.Invoke();
-       }
+                unityEvent?.Invoke();
+        }
+
+        public void CheckPanel()
+        {
+            if(this.gameObject.activeInHierarchy)
+                unityEvent?.Invoke();
+        }
     }
 }
