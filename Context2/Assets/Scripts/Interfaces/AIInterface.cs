@@ -16,6 +16,21 @@ namespace Context
         private TextMeshProUGUI Creativity;
         [SerializeField]
         private TextMeshProUGUI Funds;
+        
+        [SerializeField]
+        private TextMeshProUGUI name;
+        public TextMeshProUGUI Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+
         [SerializeField]
         private UpdateButton[] updateButton;
 
@@ -40,10 +55,12 @@ namespace Context
         /// </summary>
         private void UpdateUI()
         {
-            processing.text = "Processing Power: " + UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
-            Research.text = "Research: " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + " (+" + ResearchGain.ToString("0.0") + ")";
-            Creativity.text = "Creativity: " + CreativityPoints.ToString("0.0") + " (+" + CreativityGain + ")";
-            Funds.text = "Funds: $" + fundsPoints.ToString("0.0") + "(+" + fundsGain + ")";
+            if (name.text != string.Empty && PlayerPrefs.GetString("Name") != null)
+                name.text = PlayerPrefs.GetString("Name");
+            processing.text = UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
+            Research.text =ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + " (+" + ResearchGain.ToString("0.0") + ")";
+            Creativity.text =CreativityPoints.ToString("0.0") + " (+" + CreativityGain + ")";
+            Funds.text = "$" + fundsPoints.ToString("0.0") + "(+" + fundsGain + ")";
 
             #region AI Calculate Fitness Score
             aiFitnessScore.fillAmount = SDGManager.CalculateHealth();

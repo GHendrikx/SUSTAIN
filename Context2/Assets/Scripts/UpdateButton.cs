@@ -118,12 +118,12 @@ namespace Context
         {
 
             #region log of the gains
-            Debug.Log("CDFIMRC" + data.creativityGain + 
-                data.droneGain +
-                data.fundsGain +
-                data.influenceGain +
-                data.materialGain +
-                data.researchGain);
+            //Debug.Log("CDFIMRC" + data.creativityGain + 
+            //    data.droneGain +
+            //    data.fundsGain +
+            //    data.influenceGain +
+            //    data.materialGain +
+            //    data.researchGain);
             #endregion
             if (data.creativityGain != 0)
                 Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), upgradeCost, upgradeBlock);
@@ -132,7 +132,7 @@ namespace Context
             if (data.fundsGain != 0)
                 Extensions.SetEffectGain(data.fundsGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Fund16X16"), upgradeCost, upgradeBlock);
             if (data.influenceGain != 0)
-                Extensions.SetEffectGain(data.influenceGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Influence16X16"), upgradeCost, upgradeBlock);
+                Extensions.SetEffectGain(data.influenceGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Stat16X16"), upgradeCost, upgradeBlock);
             if (data.materialGain != 0)
                 Extensions.SetEffectGain(data.materialGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), upgradeCost, upgradeBlock);
             if (data.researchGain != 0)
@@ -148,7 +148,7 @@ namespace Context
             if (data.fundsCost != 0)
                 SetCostBlock(data.fundsCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Fund16X16"), costInformation, costBlock,data.fundsCost);
             if (data.influenceCost != 0)
-                SetCostBlock(data.influenceCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconProcessingPower16X16"), costInformation, costBlock, data.influenceCost);
+                SetCostBlock(data.influenceCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Stat16X16"), costInformation, costBlock, data.influenceCost);
             if (data.materialCost != 0)
                 SetCostBlock(data.materialCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), costInformation, costBlock, data.materialCost);
             if (data.powerCost != 0)

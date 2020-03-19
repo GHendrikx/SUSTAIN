@@ -696,6 +696,7 @@ namespace Context
         }
         private void Start()
         {
+            //name.text = PlayerPrefs.GetString("Name");
             UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
             UpgradeAbilities.TEMPALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
             AddTimer();

@@ -13,7 +13,8 @@ public class NameInput : MonoBehaviour
 
     public void StoreName()
     {
-        PlayerName = inputeField.GetComponent<Text>().text;
+        PlayerName = inputeField.GetComponent<Text>().text + "_v3_Final(2).exe";
+        PlayerPrefs.SetString("Name", PlayerName);
         //textDisplay.GetComponent<TextMeshProUGUI>().text = "well met " + PlayerName +  " \n That is an interesting name. \n" + PlayerName + " you will be tested by running the 3th SDG good health and well-being, \n if your programme runs smoothly you will be assigned to run additional SDG’s.";
     }
 }
