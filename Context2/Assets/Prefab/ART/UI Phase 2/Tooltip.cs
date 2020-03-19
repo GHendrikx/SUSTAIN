@@ -38,6 +38,8 @@ public class Tooltip : MonoBehaviour
             if (raycastResultList[i].gameObject.tag.Contains("tip"))
             {
                 Text = raycastResultList[i].gameObject.GetComponent<Transform>().name;
+                int textLength = Text.Length - 4;
+                Text = Text.Substring(0, textLength);
                 break;
             }
             counter++;
@@ -55,7 +57,6 @@ public class Tooltip : MonoBehaviour
         if (IsMouseOverUIWithIgnores())
         {
             tooltipText.text = Text;
-            Debug.Log(Text + " after check");
             float textpaddingSize = 4f;
 
             Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textpaddingSize * 2f, tooltipText.preferredHeight + textpaddingSize * 2f);
