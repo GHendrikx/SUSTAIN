@@ -16,8 +16,8 @@ public class Tooltip : MonoBehaviour
     private void Awake()
 
     {
-        backgroundRecTransform = transform.Find("background").GetComponent<RectTransform>();
-        tooltipText = transform.Find("text").GetComponent<TextMeshProUGUI>();
+        backgroundRecTransform = transform.GetChild(0).GetComponent<RectTransform>();
+        tooltipText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }
 
     private bool IsMouseOverUI()
@@ -32,12 +32,14 @@ public class Tooltip : MonoBehaviour
 
         List<RaycastResult> raycastResultList = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerEventData, raycastResultList);
+
         for (int i = 0; i < raycastResultList.Count; i++)
         {
             if (raycastResultList[i].gameObject.GetComponent<MouseUIClickthrough>() != null)
             {
                 Text = raycastResultList[i].gameObject.GetComponent<Transform>().name;
-                Debug.Log (raycastResultList[i].gameObject.GetComponent<Transform>().name);
+                Debug.Log(Text);
+                Debug.Log("Before text");
                 raycastResultList.RemoveAt(i);
 
             }
@@ -48,15 +50,14 @@ public class Tooltip : MonoBehaviour
 
     private void Update()
     {
-
-
         if (!IsMouseOverUIWithIgnores())
         {
             tooltipText.text = Text;
+            Debug.Log(Text + " after check");
             float textpaddingSize = 4f;
             Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textpaddingSize * 2f, tooltipText.preferredHeight + textpaddingSize * 2f);
             backgroundRecTransform.sizeDelta = backgroundSize;
-            //gameObject.SetActive(true);
+            gameObject.SetActive(true);
             Vector2 localPoint;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), Input.mousePosition, uiCamera, out localPoint);
             transform.localPosition = localPoint;
