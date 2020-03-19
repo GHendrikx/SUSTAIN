@@ -1978,6 +1978,10 @@ MonoBehaviour:
   Research: {fileID: 375766396}
   Creativity: {fileID: 1959091945}
   Funds: {fileID: 951253522}
+  Influence: {fileID: 486562778}
+  Power: {fileID: 1845802617}
+  Material: {fileID: 244543226}
+  Drone: {fileID: 1474166937}
   name: {fileID: 152658340}
   updateButton: []
   turnButton: {fileID: 1892329783}
@@ -2760,7 +2764,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3258,7 +3262,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3860,8 +3864,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Geoffrey (/0_0)/ * I_Final_v3.exe
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bb23f9743a0d14542abe3c4fb57e3720, type: 2}
-  m_sharedMaterial: {fileID: -2028178639343027772, guid: bb23f9743a0d14542abe3c4fb57e3720,
+  m_fontAsset: {fileID: 11400000, guid: 9e47f7a80781aad499c10d8272e6a431, type: 2}
+  m_sharedMaterial: {fileID: -2558156018943872908, guid: 9e47f7a80781aad499c10d8272e6a431,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3887,8 +3891,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24.7
-  m_fontSizeBase: 24.7
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4671,7 +4675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.072365955, y: 0.07566607}
   m_AnchorMax: {x: 0.19698863, y: 0.112134814}
-  m_AnchoredPosition: {x: -0.76999664, y: -0.3100586}
+  m_AnchoredPosition: {x: -0.769989, y: -0.31011963}
   m_SizeDelta: {x: -5.2, y: -5.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206833838
@@ -5364,7 +5368,7 @@ GameObject:
   - component: {fileID: 244543227}
   - component: {fileID: 244543226}
   m_Layer: 5
-  m_Name: Material
+  m_Name: Material TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5453,7 +5457,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -6409,7 +6413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07197301, y: 0.18500833}
   m_AnchorMax: {x: 0.1963636, y: 0.22147708}
-  m_AnchoredPosition: {x: -0.7700043, y: -0.30993652}
+  m_AnchoredPosition: {x: -0.7700043, y: -0.30981445}
   m_SizeDelta: {x: -5.2, y: -5.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &288477085
@@ -8168,8 +8172,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 253/260(+45)
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bb23f9743a0d14542abe3c4fb57e3720, type: 2}
-  m_sharedMaterial: {fileID: -2028178639343027772, guid: bb23f9743a0d14542abe3c4fb57e3720,
+  m_fontAsset: {fileID: 11400000, guid: 9e47f7a80781aad499c10d8272e6a431, type: 2}
+  m_sharedMaterial: {fileID: -2558156018943872908, guid: 9e47f7a80781aad499c10d8272e6a431,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10023,7 +10027,7 @@ GameObject:
   - component: {fileID: 486562779}
   - component: {fileID: 486562778}
   m_Layer: 5
-  m_Name: influence
+  m_Name: Influence TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10112,7 +10116,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -11306,7 +11310,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -17838,7 +17842,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -27779,7 +27783,7 @@ GameObject:
   - component: {fileID: 1474166938}
   - component: {fileID: 1474166937}
   m_Layer: 5
-  m_Name: Drone
+  m_Name: Drone TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27868,7 +27872,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -29989,7 +29993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18300001, y: 0.04880662}
   m_AnchorMax: {x: 0.34100002, y: 0.396984}
-  m_AnchoredPosition: {x: 87.3784, y: 0.11605072}
+  m_AnchoredPosition: {x: 87.3784, y: 0.11604309}
   m_SizeDelta: {x: 176.56624, y: 2.5671806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569403434
@@ -30531,7 +30535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36382696, y: 0.116237074}
   m_AnchorMax: {x: 0.6349876, y: 0.21323708}
-  m_AnchoredPosition: {x: 1.2000122, y: -0.57440186}
+  m_AnchoredPosition: {x: 1.2000122, y: -0.5743408}
   m_SizeDelta: {x: -3.619995, y: 1.0100021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580454463
@@ -32536,7 +32540,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -33920,7 +33924,7 @@ GameObject:
   - component: {fileID: 1845802618}
   - component: {fileID: 1845802617}
   m_Layer: 5
-  m_Name: Energy
+  m_Name: Power TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34009,7 +34013,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -38584,7 +38588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07246579, y: 0.29439983}
   m_AnchorMax: {x: 0.19708864, y: 0.33086857}
-  m_AnchoredPosition: {x: -0.769989, y: -0.30993652}
+  m_AnchoredPosition: {x: -0.769989, y: -0.30981445}
   m_SizeDelta: {x: -5.2, y: -5.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2110204963
