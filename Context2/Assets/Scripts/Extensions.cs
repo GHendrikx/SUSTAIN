@@ -32,6 +32,7 @@ namespace Context
 
             Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
             i.sprite = sprite;
+            Debug.Log(i.sprite);
             upgrade.SetParent(upgradeBlock.transform);
         }
 

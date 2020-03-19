@@ -11,7 +11,7 @@ namespace Context
     {
 
         public static int CURRENTPHASE = 5;
-
+        public static string SPRITEPATH = "ART/UI_PHASE_2/16X16/v2/";
         [SerializeField]
         private IOManager ioManager;
         public IOManager IOManager 

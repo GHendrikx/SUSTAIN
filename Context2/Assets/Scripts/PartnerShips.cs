@@ -24,7 +24,7 @@ namespace Context
 
         public void InitializeNewPartenerShip(Data data)
         {
-            Debug.Log("Initialize");
+            //Debug.Log("Initialize");
             title.text = data.name;
             this.data = data;
             acceptButton.onClick.AddListener(() => isAccepted = true);
