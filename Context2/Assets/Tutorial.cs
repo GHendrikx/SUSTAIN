@@ -19,6 +19,7 @@ namespace Context {
 
         public void CheckPanel()
         {
+            Debug.Log(gameObject.name);
             if(this.gameObject.activeInHierarchy)
                 unityEvent?.Invoke();
         }
