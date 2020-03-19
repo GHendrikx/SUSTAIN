@@ -19,7 +19,7 @@ public class Typwriter : MonoBehaviour
     void Start()
     {
         txtContents = "";
-        PlayerName = FindObjectOfType<NameInput>().PlayerName;
+        PlayerName = PlayerPrefs.GetString("Name");
         switch (dialog)
         {
             case 1:

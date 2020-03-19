@@ -87,6 +87,9 @@ namespace Context
             }
         }
 
+        private void Awake() =>
+            PlayerPrefs.SetString("Name", "");
+
         public void QuitGame() =>
             Application.Quit();
 

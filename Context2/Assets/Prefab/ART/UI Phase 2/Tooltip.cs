@@ -53,7 +53,6 @@ public class Tooltip : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(IsMouseOverUIWithIgnores());
         if (IsMouseOverUIWithIgnores())
         {
             tooltipText.text = Text;

@@ -35,6 +35,12 @@ namespace Context
         private UpdateButton[] updateButton;
 
         [SerializeField]
+        private Button turnButton;
+        [SerializeField]
+        private Image turnButtonImage;
+
+
+        [SerializeField]
         private Image aiFitnessScore;
 
         #region TrustSlider
@@ -65,6 +71,12 @@ namespace Context
             #region AI Calculate Fitness Score
             aiFitnessScore.fillAmount = SDGManager.CalculateHealth();
             #endregion
+
+            if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0)
+                turnButton.interactable = false;
+            else
+                turnButton.interactable = true;
+
 
             #region AI Trust
             svHateSlider.value = SvDisapprovesPercentage;
