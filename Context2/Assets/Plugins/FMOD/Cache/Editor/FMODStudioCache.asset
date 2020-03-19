@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: event:/Team 17
   guid: e70a7eda9522ab479e48e5f297a28572
   Banks:
-  - {fileID: 4397088298895806899}
+  - {fileID: 2051898972849657642}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -55,16 +55,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 2522582333618881205}
-  - {fileID: 4397088298895806899}
+  - {fileID: 2051898972849657642}
   EditorEvents:
   - {fileID: -5143477780639390692}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4397088298895806899}
+  - {fileID: 2051898972849657642}
   StringsBanks:
   - {fileID: 2522582333618881205}
-  stringsBankWriteTime: 637182275110505312
+  stringsBankWriteTime: 637164087920000000
   cacheVersion: 3
+--- !u!114 &2051898972849657642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Bank/Master Bank.bank
+  SubDir: 
+  lastModified: 637164087920000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2522582333618881205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Bank/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637182275110505312
+  lastModified: 637164087920000000
   LoadResult: 0
   FileSizes:
   - Name: 

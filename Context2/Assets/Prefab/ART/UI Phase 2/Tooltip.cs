@@ -32,22 +32,26 @@ public class Tooltip : MonoBehaviour
 
         List<RaycastResult> raycastResultList = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerEventData, raycastResultList);
-
+        int counter = 0;
         for (int i = 0; i < raycastResultList.Count; i++)
         {
             if (raycastResultList[i].gameObject.tag.Contains("tip"))
             {
                 Text = raycastResultList[i].gameObject.GetComponent<Transform>().name;
-                //Debug.Log(Text);
-                //Debug.Log("Before text");
                 break;
             }
+            counter++;
         }
-        return raycastResultList.Count > 0;
+
+        if (counter == 0)
+            return raycastResultList.Count > 0;
+        else
+            return false;
     }
 
     private void Update()
     {
+        Debug.Log(IsMouseOverUIWithIgnores());
         if (IsMouseOverUIWithIgnores())
         {
             tooltipText.text = Text;
