@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterLimit: 12
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -2968,7 +2968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36382696, y: 0.116237074}
   m_AnchorMax: {x: 0.6349876, y: 0.21323708}
-  m_AnchoredPosition: {x: 1.2000122, y: -0.5743332}
+  m_AnchoredPosition: {x: 1.2000122, y: -0.5743408}
   m_SizeDelta: {x: -3.619995, y: 1.0100021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118379366
@@ -8490,7 +8490,7 @@ GameObject:
   - component: {fileID: 398431819}
   - component: {fileID: 398431821}
   m_Layer: 5
-  m_Name: procesingPower Icon
+  m_Name: Procesing Power Icon
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12237,7 +12237,7 @@ GameObject:
   - component: {fileID: 659953080}
   - component: {fileID: 659953082}
   m_Layer: 5
-  m_Name: influenceIcon
+  m_Name: InfluenceIcon
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13435,7 +13435,7 @@ GameObject:
   - component: {fileID: 722631344}
   - component: {fileID: 722631346}
   m_Layer: 5
-  m_Name: creativityIcon
+  m_Name: CreativityIcon
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17801,7 +17801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14049074, y: 0.50873506}
   m_AnchorMax: {x: 0.48002604, y: 0.5267853}
-  m_AnchoredPosition: {x: 0.70738, y: -0.05242}
+  m_AnchoredPosition: {x: 0.7073822, y: -0.052419662}
   m_SizeDelta: {x: 1.41, y: -3.8951}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951253522
@@ -18801,7 +18801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &995632090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19951,7 +19951,7 @@ GameObject:
   - component: {fileID: 1057464978}
   - component: {fileID: 1057464981}
   m_Layer: 5
-  m_Name: researchIcon
+  m_Name: ResearchIcon
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
