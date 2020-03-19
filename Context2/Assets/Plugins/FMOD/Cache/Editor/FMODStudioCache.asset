@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6802864482319073131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Bank/Master Bank.bank
+  SubDir: 
+  lastModified: 637164087920000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-6672097776002814900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33,7 +51,7 @@ MonoBehaviour:
   Path: event:/Team 17
   guid: e70a7eda9522ab479e48e5f297a28572
   Banks:
-  - {fileID: -6672097776002814900}
+  - {fileID: -6802864482319073131}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -55,12 +73,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 2522582333618881205}
-  - {fileID: -6672097776002814900}
+  - {fileID: -6802864482319073131}
   EditorEvents:
   - {fileID: -5143477780639390692}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6672097776002814900}
+  - {fileID: -6802864482319073131}
   StringsBanks:
   - {fileID: 2522582333618881205}
   stringsBankWriteTime: 637164087920000000
@@ -85,3 +103,21 @@ MonoBehaviour:
   - Name: 
     Value: 718
   Exists: 1
+--- !u!114 &4397088298895806899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Bank/Master Bank.bank
+  SubDir: 
+  lastModified: 637182275110495662
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0

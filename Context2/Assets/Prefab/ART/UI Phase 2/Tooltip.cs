@@ -35,26 +35,25 @@ public class Tooltip : MonoBehaviour
 
         for (int i = 0; i < raycastResultList.Count; i++)
         {
-            if (raycastResultList[i].gameObject.GetComponent<MouseUIClickthrough>() != null)
+            if (raycastResultList[i].gameObject.tag.Contains("tip"))
             {
                 Text = raycastResultList[i].gameObject.GetComponent<Transform>().name;
-                Debug.Log(Text);
-                Debug.Log("Before text");
-                raycastResultList.RemoveAt(i);
-
+                //Debug.Log(Text);
+                //Debug.Log("Before text");
+                break;
             }
-
         }
         return raycastResultList.Count > 0;
     }
 
     private void Update()
     {
-        if (!IsMouseOverUIWithIgnores())
+        if (IsMouseOverUIWithIgnores())
         {
             tooltipText.text = Text;
             Debug.Log(Text + " after check");
             float textpaddingSize = 4f;
+
             Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textpaddingSize * 2f, tooltipText.preferredHeight + textpaddingSize * 2f);
             backgroundRecTransform.sizeDelta = backgroundSize;
             gameObject.SetActive(true);
