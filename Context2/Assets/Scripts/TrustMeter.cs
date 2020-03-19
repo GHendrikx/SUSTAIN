@@ -153,11 +153,6 @@ namespace Context
                 default:
                     break;
             }
-            switch (trustType)
-            {
-            }
-
-
         }
 
         private void TrustChangeCalculator(ref float scoreHuidig, float GrowthRechts, float GrowthLinks, float tempLinks, float tempHuidig, float tempRechts, float groeiFactor, float decay, bool isLeft, bool isCenter, bool isOuter, bool debug)
