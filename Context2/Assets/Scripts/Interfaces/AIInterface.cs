@@ -129,6 +129,10 @@ namespace Context
                 {
                     temp3 = Mathf.Lerp(ResearchPoints, newResearch, (Time.time - startTime) / overtime);
                     ResearchPoints = temp3;
+                    if (ResearchPoints > ResearchLimit)
+                    {
+                        ResearchPoints = ResearchLimit;
+                    }
                 }
 
                 if (newInfluence != Mathf.Infinity)
