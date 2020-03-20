@@ -41,7 +41,6 @@ namespace Context
             }
         }
 
-        public float processingAmount;
         private float approvalReq;
         public float ApprovalReq
         {
@@ -219,8 +218,7 @@ namespace Context
         #endregion
 
         #region Drones
-        [SerializeField]
-        private float dronePoint;
+        private float dronePoint = 0;
         public float DronePoints
         {
             get
@@ -230,20 +228,6 @@ namespace Context
             set
             {
                 dronePoint = value;
-            }
-        }
-
-        [SerializeField]
-        private float droneCost;
-        public float DroneCost
-        {
-            get
-            {
-                return droneCost;
-            }
-            set
-            {
-                droneCost = value;
             }
         }
 
@@ -259,6 +243,7 @@ namespace Context
                 droneLimit = value;
             }
         }
+
         private float droneGain;
         public float DroneGain
         {
@@ -269,6 +254,18 @@ namespace Context
             set
             {
                 droneGain = value;
+            }
+        }
+        private float droneGainMod;
+        public float DroneGainMod
+        {
+            get
+            {
+                return droneGainMod;
+            }
+            set
+            {
+                droneGainMod = value;
             }
         }
         #endregion
@@ -706,11 +703,7 @@ namespace Context
         private void Update()
         {
             if (addPoints)
-            {
-                //only update the points if the prossessing amount is lower than the memorypoints
-                if (processingAmount < ResearchPoints)
-                    UpdatePoints();
-
+            {    
                 AddTimer();
             }
             UpdateUI();
@@ -722,10 +715,7 @@ namespace Context
             }
         }
 
-        private void UpdatePoints() 
-        {
-            processingAmount += researchPoints;
-        }
+
 
         private void AddTimer()
         {
@@ -744,9 +734,9 @@ namespace Context
             float temp2 = CreativityPoints + data.creativityCost/* - data.creativityFixedGain*/;
             float temp3 = fundsPoints + data.fundsCost /*- data.fundsFixedGain*/;
             float temp4 = InfluencePoints + data.influenceCost /*- data.influenceFixedGain*/;
-            float temp5 = DroneCost + data.droneCost/* - data.droneFixedGain*/;
-            float temp6 = materialCost + data.materialCost /*- data.materialFixedGain*/;
-            float temp7 = powerCost + data.powerCost;
+            float temp5 = DronePoints + data.droneCost/* - data.droneFixedGain*/;
+            float temp6 = materialPoints + data.materialCost /*- data.materialFixedGain*/;
+            float temp7 = powerPoints + data.powerCost;
             if (temp1 >= ResearchLimit)
                 temp1 = ResearchLimit;
            
@@ -780,8 +770,6 @@ namespace Context
                 ResearchPoints = researchData.CurrentResearchLimit;
 
             HASUPDATE.Add(data);
-            processingAmount -= amount;
-
         }
     }
 }
