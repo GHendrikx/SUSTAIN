@@ -12,7 +12,19 @@ namespace Context
     {
 
         [SerializeField]
-        private StudioParameterTrigger s;
+        private StudioEventEmitter studioEventAllocatie;
+        public StudioEventEmitter StudioEventAllocatie
+        {
+            get
+            {
+                return studioEventAllocatie;
+            }
+            set
+            {
+                studioEventAllocatie = value;
+            }
+        }
+
 
         public static int CURRENTPHASE = 5;
         public static string SPRITEPATH = "ART/UI_PHASE_2/16X16/v2/";

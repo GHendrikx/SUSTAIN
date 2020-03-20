@@ -85,7 +85,6 @@ namespace Context
             {
                 Debug.LogError("Contact Geoffrey Hendrikx when you get this error " +
                     "Give him the following information: \n" + e);
-
                 Debug.Break();
             }
 
@@ -94,8 +93,12 @@ namespace Context
 
             BasePoints = BasePoints + -amount;
             Points = Points + amount;
-
-
+            int fmodPoints = Mathf.RoundToInt((Points / ALLOCATIONPOOL) * 26 - 13);
+            
+            //Set the FMod points. 
+            GameManager.Instance.StudioEventAllocatie.Params[0].Value = fmodPoints;
+            GameManager.Instance.StudioEventAllocatie.Play();
+            
             abilityPointText.text = Points.ToString();
             TEMPALLOCATIONPOOL = BasePoints;
         }

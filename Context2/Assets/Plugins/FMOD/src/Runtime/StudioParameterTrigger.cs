@@ -62,13 +62,15 @@ namespace FMODUnity
 
         public void TriggerParameters(AudioParameters parameter, float value)
         {
-
+            Debug.Log(Emitters.Length);
             for (int i = 0; i < Emitters.Length; i++)
             {
                 var emitterRef = Emitters[i];
                 if (emitterRef.Target != null && emitterRef.Target.EventInstance.isValid())
                     for (int j = 0; j < Emitters[i].Params.Length; j++)
                     {
+                        Debug.Log(Emitters[i].Params[j].Name == parameter.ToString() + " " + Emitters[i].Params[j].Value);
+
                         if (Emitters[i].Params[j].Name == parameter.ToString())
                         {
                             Emitters[i].Params[j].Value = value;
@@ -84,6 +86,7 @@ namespace FMODUnity
         Performance,
         GameClear,
         Corruption,
-        Progression
+        Progression,
+        AllocationHeight
     }
 }
