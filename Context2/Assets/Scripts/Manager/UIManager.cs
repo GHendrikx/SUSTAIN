@@ -44,6 +44,7 @@ namespace Context
             for (int i = 0; i < IOFile.data.Data.Length; i++)
             {
                 Data d = IOFile.data.Data[i];
+
                 if (data.techPrereq.Length < 1)
                     continue;
                 if(data.techPrereq != null)

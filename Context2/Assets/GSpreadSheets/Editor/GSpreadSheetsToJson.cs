@@ -32,6 +32,7 @@ using Google.Apis.Services;
 using Google.Apis.Util.Store;
 
 using Newtonsoft.Json;
+
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System;
@@ -51,7 +52,7 @@ public class GSpreadSheetsToJson : EditorWindow {
 	/// Key of the spreadsheet. Get from url of the spreadsheet.
 	/// </summary>
 	[SerializeField]
-	private string spreadSheetKey = "12IBTeyswsJgT5W8FpOqi4idmUpVdZ9genYdbu2j10mc";
+	private string spreadSheetKey = "";
 
 	/// <summary>
 	/// List of sheet names which want to download and convert to json file
@@ -146,7 +147,7 @@ public class GSpreadSheetsToJson : EditorWindow {
 			}
 			GUILayout.Label("");
 			GUI.backgroundColor = UnityEngine.Color.green;
-			if(GUILayout.Button("Make Data Great Again\n___________________"))
+			if(GUILayout.Button("Make Data \nGreat Again 2"))
 			{
 				progress = 0;
 				DownloadToJson();
@@ -349,7 +350,6 @@ public class GSpreadSheetsToJson : EditorWindow {
 						{
 							try
 							{
-
 								val = float.Parse(strVal);
 							}
 							catch(System.Exception e)
@@ -481,14 +481,18 @@ public class GSpreadSheetsToJson : EditorWindow {
 		if(!outputDirectory.EndsWith("/"))
 			outputDirectory += "/";
 		Directory.CreateDirectory(outputDirectory);
-		StreamWriter strmWriter = new StreamWriter(outputDirectory + fileName + ".json", false, System.Text.Encoding.UTF8);
-        strmWriter.Write("{");
-        strmWriter.Write("\"Data\":");
-        jsonText = jsonText.Replace("\\n", "");
-        strmWriter.Write(jsonText);
-        strmWriter.Write("}");
-        strmWriter.Close();
 
+        StreamWriter strmWriter = new StreamWriter(outputDirectory + fileName + ".json", false, System.Text.Encoding.UTF8);
+        using (strmWriter)
+        {
+            strmWriter.Write("{");
+            strmWriter.Write("\"Data\":");
+            jsonText = jsonText.Replace("\\n", "");
+            strmWriter.Write(jsonText);
+            strmWriter.Write("}");
+            strmWriter.Flush();
+            strmWriter.Close();
+        }
 		Debug.Log ("Created: " + fileName + ".txt");
 	}
 
