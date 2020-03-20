@@ -6,7 +6,7 @@ public class Beep : MonoBehaviour
 {
     public AudioPeer audioPeer;
     [Range(0, 7)] private int audioBand = 7;
-
+    public Animator animator;
     public bool Test;
 
     private void Start()
@@ -19,15 +19,17 @@ public class Beep : MonoBehaviour
     {
         if (audioPeer._audioBand[audioBand] > 0.01f)
         {
+            animator.Play(0);
             Test = true;
         }
         else
             Test = false;
+        
     }
 
     private IEnumerator MuteMic()
     {
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.001f);
         audioPeer._useMicrophone = true;
     }
 }
