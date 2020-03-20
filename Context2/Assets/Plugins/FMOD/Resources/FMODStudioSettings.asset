@@ -16,7 +16,11 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: Assets/Bank/Bank voor Geoffrey/Bank voor Geoffrey.fspro
+<<<<<<< HEAD
   sourceBankPath: Assets\Bank
+=======
+  sourceBankPath: Assets\Editor Default Resources\Banks
+>>>>>>> de4e1ea0c24c675addd7b2ba72e8392471856d6d
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -76,7 +80,15 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
+<<<<<<< HEAD
   MasterBanks: []
   Banks: []
+=======
+  MasterBanks:
+  - Master
+  Banks:
+  - Music
+  - SoundFX
+>>>>>>> de4e1ea0c24c675addd7b2ba72e8392471856d6d
   BanksToLoad: []
   LiveUpdatePort: 9264
