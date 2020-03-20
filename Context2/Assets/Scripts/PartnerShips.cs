@@ -17,8 +17,8 @@ namespace Context
         [SerializeField]
         private TextMeshProUGUI description;
         private Data data;
-
-        private TextMeshProUGUI RequirementText;
+        [SerializeField]
+        private TextMeshProUGUI approvalRequirementText;
         private int requirementPoints;
         private bool isAccepted;
 
@@ -29,6 +29,7 @@ namespace Context
             this.data = data;
             acceptButton.onClick.AddListener(() => isAccepted = true);
             declineButton.onClick.AddListener(() => isAccepted = false);
+            approvalRequirementText.text = System.Convert.ToInt32(data.approvalReq * 100).ToString() + "%";
         }
         private void Update()
         {

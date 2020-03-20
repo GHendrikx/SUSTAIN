@@ -659,6 +659,7 @@ namespace Context
         public float LocalApprovesPercentage, LocalDisapprovesPercentage;
         public float NationalApprovesPercentage, NationalDisapprovesPercentage;
         public float SvApprovesPercentage, SvDisapprovesPercentage;
+
         #endregion
         #endregion
 

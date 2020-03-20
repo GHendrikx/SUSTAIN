@@ -2028,6 +2028,9 @@ MonoBehaviour:
   CurrentResearchGainMod: 0
   CurrentDroneGainMod: 0
   SetTurn: 0
+  DisapproveSupervisorTrust: {fileID: 1569403434}
+  NeutralSupervisorTrust: {fileID: 2002395390}
+  ApproveSupervisorTrust: {fileID: 1148760317}
   processing: {fileID: 123585743}
   Research: {fileID: 375766396}
   Creativity: {fileID: 1959091945}
