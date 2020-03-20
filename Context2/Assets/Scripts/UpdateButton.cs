@@ -18,7 +18,7 @@ namespace Context
         private GameObject costBlock;
         [SerializeField]
         private GameObject costInformation;
-
+        private GameObject[] panels;
         #region Information
         [SerializeField]
         private TextMeshProUGUI title;
@@ -35,7 +35,18 @@ namespace Context
         [SerializeField]
         private TextMeshProUGUI researchNummer;
         #endregion
+        private static bool firstTime = true;
 
+        private void Awake()
+        {
+            if (firstTime)
+            {
+                panels = new GameObject[2] { GameObject.Find("panel 15"), GameObject.Find("panel 16") };
+                for (int i = 0; i < panels.Length; i++)
+                    panels[i].SetActive(false);
+                firstTime = false;
+            }
+        }
 
         /// <summary>
         /// Setting new update
@@ -48,7 +59,7 @@ namespace Context
             this.CostOfUpdate = data.researchCost;
             Ai = ai;
             this.data = data;
-            //Debug.Log(tab);
+
 
             BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
             
@@ -58,6 +69,12 @@ namespace Context
             SetEffects();
             SetUpdateCost();
             
+            if (data.ID == 301)
+            {
+                myButton.onClick.AddListener(() => panels[0].SetActive(false));
+                myButton.onClick.AddListener(() => panels[1].SetActive(true));
+            }
+
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
             {
                 SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
@@ -99,6 +116,7 @@ namespace Context
 
         public void PressButton()
         {
+
             Ai.GetUpdate(CostOfUpdate, data);
             data.isResearched = true;
             AllocationUpdate();
@@ -116,15 +134,6 @@ namespace Context
 
         private void SetEffects()
         {
-
-            #region log of the gains
-            //Debug.Log("CDFIMRC" + data.creativityGain + 
-            //    data.droneGain +
-            //    data.fundsGain +
-            //    data.influenceGain +
-            //    data.materialGain +
-            //    data.researchGain);
-            #endregion
             if (data.creativityGain != 0)
                 Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), upgradeCost, upgradeBlock);
             if (data.droneGain != 0)

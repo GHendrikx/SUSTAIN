@@ -61,7 +61,7 @@ namespace Context
 
         private void CalculateDronesPoints()
         {
-            float temp1 = ai.ResearchPoints + CurrentDronesGain;
+            float temp1 = ai.DronePoints + CurrentDronesGain;
             StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, temp1, Mathf.Infinity, Mathf.Infinity));
         }
 
@@ -101,39 +101,32 @@ namespace Context
                     CurrentDronesLimit += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.droneLimit;
             CurrentDronesLimit *= CurrentDronesLimitMod;
 
-            if (ai.ResearchPoints >= CurrentDronesLimit)
-                ai.DroneCost = CurrentDronesLimit;
+            if (ai.DronePoints >= CurrentDronesLimit)
+                ai.DronePoints = CurrentDronesLimit;
 
             ai.DroneLimit = System.Convert.ToInt32(CurrentDronesLimit);
             ai.DroneGain = CurrentDronesGain;
-            ai.CurrentDroneGainMod = CurrentDronesGainMod;
+            ai.DroneGainMod = CurrentDronesGainMod;
         }
 
         private void CalculateDronesLimitMod()
         {
             CurrentDronesLimitMod = 1;
-
-            foreach (Data currentData in data)
-                if (currentData.isResearched)
-                    CurrentDronesLimitMod += currentData.researchLimitMod;
-            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
-                if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
-                    CurrentDronesLimitMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.droneLimit;
         }
 
         //Ask Marnix
         private IEnumerator UpdateDroneData(float overTime, float newDronePoints, float newDroneGain, float newDroneGainMod, float newDroneLimit, float newDroneLimitMod)
         {
             float startTime = Time.time;
-            float creativityPoints = ai.CreativityPoints;
-            float creativityGain = ai.CreativityGain;
-            float creativityGainMod = ai.CreativityGainMod;
+            float dronesPoints = ai.DronePoints;
+            float dronesGain = ai.DroneGain;
+            float dronesGainMod = ai.DroneGainMod;
 
             while (Time.time < (startTime + overTime))
             {
-                ai.DroneCost = Mathf.Lerp(creativityPoints, newDronePoints, (Time.time - startTime) / overTime);
-                ai.CreativityGain = Mathf.Lerp(creativityGain, newDroneGain, (Time.time - startTime) / overTime);
-                ai.CreativityGainMod = Mathf.Lerp(creativityGainMod, newDroneGainMod, (Time.time - startTime) / overTime);
+                ai.DronePoints = Mathf.Lerp(dronesPoints, newDronePoints, (Time.time - startTime) / overTime);
+                ai.DroneGain = Mathf.Lerp(dronesGain, newDroneGain, (Time.time - startTime) / overTime);
+                ai.DroneGainMod = Mathf.Lerp(dronesGainMod, newDroneGainMod, (Time.time - startTime) / overTime);
 
                 yield return null;
                 //(Time.time - startTime) / overtime
