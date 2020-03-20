@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,9 @@ namespace Context
     /// </Information>
     public class GameManager : Singleton<GameManager>
     {
+
+        [SerializeField]
+        private StudioParameterTrigger s;
 
         public static int CURRENTPHASE = 5;
         public static string SPRITEPATH = "ART/UI_PHASE_2/16X16/v2/";
