@@ -51,12 +51,12 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    CurrentPowerGainMod += currentData.materialGainMod;
+                    CurrentPowerGainMod += currentData.powerGainMod;
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
-                    CurrentPowerGainMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.materialGainMod;
+                    CurrentPowerGainMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.powerGainMod;
 
-            ai.MaterialGainMod = CurrentPowerGainMod;
+            ai.PowerGainMod = CurrentPowerGainMod;
         }
 
         private void CalculatePowerGain()
@@ -65,7 +65,7 @@ namespace Context
 
             foreach (Data currentData in data)
                 if (currentData.isResearched)
-                    CurrentPowerGain += currentData.materialGain;
+                    CurrentPowerGain += currentData.powerGain;
 
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)

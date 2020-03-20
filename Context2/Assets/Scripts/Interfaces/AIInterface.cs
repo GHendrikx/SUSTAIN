@@ -106,9 +106,9 @@ namespace Context
             float temp2 = FundsPoints;
             float temp3 = ResearchPoints;
             float temp4 = InfluencePoints;
-            float temp5 = DroneCost;
-            float temp6 = MaterialCost;
-            float temp7 = powerCost;
+            float temp5 = DronePoints;
+            float temp6 = MaterialPoints;
+            float temp7 = PowerPoints;
 
             while (Time.time < (startTime + overtime))
             {
@@ -134,24 +134,24 @@ namespace Context
                 if (newInfluence != Mathf.Infinity)
                 {
                     temp4 = Mathf.Lerp(InfluencePoints, newInfluence, (Time.time - startTime) / overtime);
-                    influencePoints = temp4;
+                    InfluencePoints = temp4;
                 }
                 
                 if (newDrones != Mathf.Infinity)
                 {
-                    temp5 = Mathf.Lerp(DroneCost, newDrones, (Time.time - startTime) / overtime);
-                    dronePoint = temp5;
+                    temp5 = Mathf.Lerp(DronePoints, newDrones, (Time.time - startTime) / overtime);
+                    DronePoints = temp5;
                 }
                 
                 if (newMaterials != Mathf.Infinity)
                 {
-                    temp6 = Mathf.Lerp(MaterialCost, newMaterials, (Time.time - startTime) / overtime);
-                    materialPoints = temp6;
+                    temp6 = Mathf.Lerp(MaterialPoints, newMaterials, (Time.time - startTime) / overtime);
+                    MaterialPoints = temp6;
                 }
 
                 if(newPower != Mathf.Infinity)
                 {
-                    temp7 = Mathf.Lerp(powerCost, newPower, (Time.time - startTime) / overtime);
+                    temp7 = Mathf.Lerp(PowerPoints, newPower, (Time.time - startTime) / overtime);
                     PowerPoints = temp7;
                 }
                 yield return null;
