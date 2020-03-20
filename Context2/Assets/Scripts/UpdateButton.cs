@@ -39,7 +39,7 @@ namespace Context
 
         private void Awake()
         {
-            if (firstTime)
+            if (firstTime && GameManager.Instance.ShowTutorial)
             {
                 panels = new GameObject[2] { GameObject.Find("panel 15"), GameObject.Find("panel 16") };
                 for (int i = 0; i < panels.Length; i++)
@@ -69,7 +69,7 @@ namespace Context
             SetEffects();
             SetUpdateCost();
             
-            if (data.ID == 301)
+            if (data.ID == 301 && GameManager.Instance.ShowTutorial)
             {
                 myButton.onClick.AddListener(() => panels[0].SetActive(false));
                 myButton.onClick.AddListener(() => panels[1].SetActive(true));
@@ -107,11 +107,14 @@ namespace Context
                 Ai.FundsPoints >= -data.fundsCost &&
                 Ai.InfluencePoints >= -data.influenceCost &&
                 Ai.DronePoints >= -data.droneCost &&
-                Ai.MaterialCost >= -data.materialCost &&
-                Ai.PowerCost >= -data.powerCost)
+                Ai.MaterialPoints >= -data.materialCost &&
+                Ai.PowerPoints >= -data.powerCost)
                 myButton.interactable = true;
-            else
+            else 
                 myButton.interactable = false;
+
+            Debug.Log(myButton.interactable);
+            Debug.Log(myButton.name);
         }
 
         public void PressButton()

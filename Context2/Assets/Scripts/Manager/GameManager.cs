@@ -25,7 +25,8 @@ namespace Context
             }
         }
 
-
+        public bool ShowTutorial;
+        public GameObject TutorialPanel;
         public static int CURRENTPHASE = 5;
         public static string SPRITEPATH = "ART/UI_PHASE_2/16X16/v2/";
         [SerializeField]
@@ -103,6 +104,11 @@ namespace Context
             }
         }
 
+        protected override void Awake()
+        {
+            base.Awake();
+            TutorialPanel.SetActive(ShowTutorial);
+        }
         private void Start() =>
             PlayerPrefs.SetString("Name", "");
 

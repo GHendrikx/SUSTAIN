@@ -21,7 +21,6 @@ public class AddSoundEffectToButtons : MonoBehaviour
                 {
                     childButton.GetComponentInChildren<Button>().onClick.AddListener(() => selectOn.gameObject.SetActive(false));
                     childButton.GetComponentInChildren<Button>().onClick.AddListener(() => selectOn.gameObject.SetActive(true));
-                    childButton.GetComponentInChildren<Button>().onClick.AddListener(() => Debug.Log("dsadasds"));
                 }
 
             }

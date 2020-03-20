@@ -968,7 +968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07237738, y: 0.6217206}
   m_AnchorMax: {x: 0.19700006, y: 0.65818936}
-  m_AnchoredPosition: {x: -0.7700043, y: -0.30999756}
+  m_AnchoredPosition: {x: -0.76997375, y: -0.30999756}
   m_SizeDelta: {x: -5.2, y: -5.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &56294431
@@ -2131,6 +2131,8 @@ MonoBehaviour:
   dontDestroyOnLoad: 0
   ignoreErrorWhenDuplicatedInstance: 0
   studioEventAllocatie: {fileID: 77962506}
+  ShowTutorial: 0
+  TutorialPanel: {fileID: 822524587}
   ioManager: {fileID: 90794113}
   uiManager: {fileID: 90794114}
   ai: {fileID: 90794111}
@@ -18714,7 +18716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &995632090
 MonoBehaviour:
   m_ObjectHideFlags: 0
