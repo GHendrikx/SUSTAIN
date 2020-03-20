@@ -42,11 +42,8 @@ namespace Context
             if (firstTime)
             {
                 panels = new GameObject[2] { GameObject.Find("panel 15"), GameObject.Find("panel 16") };
-
                 for (int i = 0; i < panels.Length; i++)
-                {
                     panels[i].SetActive(false);
-                }
                 firstTime = false;
             }
         }
@@ -137,15 +134,6 @@ namespace Context
 
         private void SetEffects()
         {
-
-            #region log of the gains
-            //Debug.Log("CDFIMRC" + data.creativityGain + 
-            //    data.droneGain +
-            //    data.fundsGain +
-            //    data.influenceGain +
-            //    data.materialGain +
-            //    data.researchGain);
-            #endregion
             if (data.creativityGain != 0)
                 Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), upgradeCost, upgradeBlock);
             if (data.droneGain != 0)
