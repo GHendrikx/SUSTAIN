@@ -11,9 +11,12 @@
         public int typeOfData;
         public int neededPhase;
         public int[] techPrereq;
-        public int musicStage;
-        public int musicSoundSFX;
-        public int musicAdvancement;
+        
+        public int performance;
+        public int gameClear;
+        public int corruption;
+        public int progression;
+
         public string effectDesc;
         public int locks;
         public bool isResearched;
@@ -150,7 +153,5 @@
         public float natDislikesControlled;
         public float natNeutralControlled;
         public float natLikesControlled;
-        public int SFX;
-        public int backgroundMusic;
     }
 }

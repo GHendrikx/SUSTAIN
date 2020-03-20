@@ -762,8 +762,8 @@ namespace Context
 
 
             #region PlayMusic of the upgrade
-            audioManager.PlaySFX((SFXFragments)data.SFX);
-            audioManager.PlayBackground((BackgroundFragments)data.backgroundMusic);
+            //audioManager.PlaySFX((SFXFragments)data.SFX);
+            //audioManager.PlayBackground((BackgroundFragments)data.backgroundMusic);
             #endregion
 
             if (ResearchPoints >= researchData.CurrentResearchLimit)
