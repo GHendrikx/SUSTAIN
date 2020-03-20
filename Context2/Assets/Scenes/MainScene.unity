@@ -1822,10 +1822,7 @@ MonoBehaviour:
   SDGCalculate: {fileID: 1534975951}
   TrustMeter: {fileID: 1288015245}
   processingPoints: 0
-  processingAmount: 0
   researchPoints: 0
-  dronePoint: 0
-  droneCost: 0
   SDGPoints01: 0
   SDGPoints02: 0
   SDGPoints03: 0
@@ -3975,6 +3972,7 @@ GameObject:
   - component: {fileID: 154925885}
   - component: {fileID: 154925884}
   - component: {fileID: 154925883}
+  - component: {fileID: 154925886}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4047,6 +4045,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &154925886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154925882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!1001 &172338652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21726,21 +21737,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Music/BGM
+  Event: event:/SoundEffects/SystemBootup
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params:
-  - Name: Performance
-    Value: 5
-  - Name: Game clear
-    Value: 0
-  - Name: Corruption
-    Value: 0
-  - Name: Progression
-    Value: 0
+  Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
@@ -38637,17 +38640,6 @@ MonoBehaviour:
       - m_Target: {fileID: 815011334}
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1138160622}
-        m_MethodName: Play
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
