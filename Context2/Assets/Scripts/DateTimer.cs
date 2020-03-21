@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.Timers;
 
 public class DateTimer : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class DateTimer : MonoBehaviour
     {
         week.text = "Week: " + date.beginWeek.ToString();
         year.text = date.beginYear.ToString();
+        CheckEndDate();
     }
     public void NextDate()
     {
@@ -33,11 +35,19 @@ public class DateTimer : MonoBehaviour
 
     private void CheckEndDate()
     {
-        if(date.currentYear == date.endYear && date.currentWeek == date.endWeek)
-        {
-            Application.Quit();
-        }
+        //if(date.currentYear == date.endYear && date.currentWeek == date.endWeek)
+        //{
+            AudioManager.Instance.StopSound();
+            AudioManager.Instance.Lose.SetActive(true);
+            TimerManager.Instance.AddTimer(QuitGame, 3);
+        //}
     }
+
+    private void QuitGame() 
+    {
+        Application.Quit();
+    }
+
 }
 [System.Serializable]
 public class Date

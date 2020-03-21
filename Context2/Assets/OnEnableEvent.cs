@@ -8,5 +8,4 @@ public class OnEnableEvent : MonoBehaviour
 
     private void OnEnable() =>
         unityEvent.Invoke();
-
 }

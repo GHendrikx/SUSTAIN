@@ -240,8 +240,6 @@ namespace Context
                 }
 
                 //HERE is the thing
-                //Debug.Log(Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/v2/Iconen_ResearchPoints_3_16X16"));
-
                 Extensions.SetEffectGain(c + data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costBlock, effectBlock, temp);
             }
         }
@@ -277,7 +275,6 @@ namespace Context
                     Mathf.Pow(2, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel);
 
                 UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget = currentDoneTarget;
-
                 int points = System.Convert.ToInt32(UpgradeAbilities.UPGRADEABILITIES[i].AbilityPointText.text);
                 UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes += UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * points;
 
