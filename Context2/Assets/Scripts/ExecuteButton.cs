@@ -17,7 +17,11 @@ public class ExecuteButton : MonoBehaviour
     {
         button.onClick.Invoke();
         if (tab != null)
+        {
+            AudioManager.Instance.TabSound.SetActive(false);
+            AudioManager.Instance.TabSound.SetActive(true);
             tab.transform.SetAsLastSibling();
+        }
     }
 
 }

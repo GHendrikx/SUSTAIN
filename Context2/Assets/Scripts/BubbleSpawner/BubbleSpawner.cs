@@ -32,11 +32,18 @@ public class BubbleSpawner : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject spawnedBubble = Instantiate(Bubble, transform);
+            
             if (spawnedBubble.GetComponent<Rigidbody>() != null)
             {
+                SpawnAudio();
                 spawnedBubble.GetComponent<Rigidbody>().velocity = new Vector3(startspeed * Random.Range(-1, 1f), startspeed * Random.Range(-1f, 1f), 0f);
             }
             yield return new WaitForSeconds(spawninterval);
         }
+    }
+    void SpawnAudio()
+    {
+        AudioManager.Instance.SpawnBubble.SetActive(false);
+        AudioManager.Instance.SpawnBubble.SetActive(true);
     }
 }

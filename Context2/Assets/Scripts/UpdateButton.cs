@@ -60,7 +60,6 @@ namespace Context
             Ai = ai;
             this.data = data;
 
-
             BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
             
             bool status = gameObject.transform.root.gameObject.activeInHierarchy;
@@ -81,6 +80,7 @@ namespace Context
                 if (data.ID == sdgBar.SDGUnlockID)
                     myButton.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
             }
+
             if (myButton != null)
             {
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
@@ -88,6 +88,9 @@ namespace Context
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+                myButton.onClick.AddListener(() => AudioManager.Instance.ResearchObject.SetActive(false));
+                myButton.onClick.AddListener(() => AudioManager.Instance.ResearchObject.SetActive(true));
+
             }
 
             if (tab == Tab.PartnerShip)
@@ -113,12 +116,11 @@ namespace Context
             else 
                 myButton.interactable = false;
 
-            Debug.Log(myButton.interactable);
-            Debug.Log(myButton.name);
         }
 
         public void PressButton()
         {
+
 
             Ai.GetUpdate(CostOfUpdate, data);
             data.isResearched = true;

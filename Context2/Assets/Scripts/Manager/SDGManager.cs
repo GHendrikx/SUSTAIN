@@ -21,6 +21,8 @@ namespace Context
 
         [SerializeField]
         private AI ai;
+        [SerializeField]
+        private GameObject SDGUnlockSound;
 
 
         public void UpdateSDGValues()
@@ -69,6 +71,8 @@ namespace Context
 
         public void SetLockImage(SDGBar sdgBar)
         {
+            SDGUnlockSound.SetActive(false);
+            SDGUnlockSound.SetActive(true);
             for (int i = 0; i < sdgBar.LockImage.Length; i++)
                 sdgBar.LockImage[i].gameObject.SetActive(false);
             UpdateSDGValues();

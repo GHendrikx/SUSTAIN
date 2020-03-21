@@ -317,6 +317,7 @@ public class GSpreadSheetsToJson : EditorWindow {
 							}
 							catch(System.Exception e)
 							{
+                                Debug.Log(propertyNames[columnId]);
 								Debug.LogError(string.Format("There is exception when parse value of property {0} of {1} class.\nDetail: {2}",  propertyNames[columnId], fileName, e.ToString()));
 								thisRowHasError = true;
 								continue;
@@ -470,7 +471,7 @@ public class GSpreadSheetsToJson : EditorWindow {
 			}
 			else
 			{
-				Debug.LogError("There's error!");
+				Debug.LogError("There's error!" + rowId);
 			}
 		}
 

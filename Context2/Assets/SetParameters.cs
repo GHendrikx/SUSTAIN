@@ -15,10 +15,4 @@ public class SetParameters : MonoBehaviour
         studioParameterTrigger.TriggerParameters(AudioParameters.Progression, 5);
         eventEmitter.Play();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
