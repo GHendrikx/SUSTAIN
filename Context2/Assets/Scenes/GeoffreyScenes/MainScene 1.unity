@@ -1876,6 +1876,8 @@ MonoBehaviour:
   influenceData: {fileID: 1534975946}
   dronesData: {fileID: 1534975957}
   materialData: {fileID: 1534975956}
+  powerData: {fileID: 1534975958}
+  droneData: {fileID: 1534975957}
   SDGCalculate: {fileID: 1534975951}
   TrustMeter: {fileID: 1288015245}
   processingPoints: 0
@@ -2061,6 +2063,9 @@ MonoBehaviour:
   researchObject: {fileID: 2012633472}
   policyAccept: {fileID: 398911277}
   policyDecline: {fileID: 2045369263}
+  lose: {fileID: 1483494613}
+  spawnBubble: {fileID: 883013927}
+  destroyBubble: {fileID: 1349445366}
   Sounds:
   - {fileID: 1138160621}
   - {fileID: 1236360759}
@@ -2080,9 +2085,6 @@ MonoBehaviour:
   - {fileID: 1483494613}
   - {fileID: 883013927}
   - {fileID: 1349445366}
-  lose: {fileID: 1483494613}
-  spawnBubble: {fileID: 883013927}
-  destroyBubble: {fileID: 1349445366}
 --- !u!114 &90794113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11629,7 +11631,7 @@ GameObject:
   - component: {fileID: 537433847}
   - component: {fileID: 537433848}
   m_Layer: 0
-  m_Name: AllocationReward
+  m_Name: AllocationRewardTODO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23376,7 +23378,7 @@ GameObject:
   - component: {fileID: 1182446843}
   - component: {fileID: 1182446844}
   m_Layer: 0
-  m_Name: AllocationError
+  m_Name: AllocationErrorTODO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23971,6 +23973,8 @@ MonoBehaviour:
   - Name: Corruption
     Value: 0
   - Name: Progression
+    Value: 0
+  - Name: GameClear
     Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 0
@@ -26396,7 +26400,7 @@ GameObject:
   - component: {fileID: 1349445367}
   - component: {fileID: 1349445368}
   m_Layer: 0
-  m_Name: BubbleDestroy
+  m_Name: BubbleDestroyTODO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30101,6 +30105,7 @@ GameObject:
   - component: {fileID: 1534975953}
   - component: {fileID: 1534975957}
   - component: {fileID: 1534975956}
+  - component: {fileID: 1534975958}
   m_Layer: 0
   m_Name: CalculateObject
   m_TagString: Untagged
@@ -30349,6 +30354,23 @@ MonoBehaviour:
   CurrentDronesPoints: 0
   CurrentDronesGain: 0
   CurrentDronesGainMod: 1
+  ai: {fileID: 90794111}
+--- !u!114 &1534975958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534975945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a510cf023d0774abe8e4fc0eea3da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ioManager: {fileID: 90794113}
+  CurrentPowerPoints: 0
+  CurrentPowerGain: 0
+  CurrentPowerGainMod: 1
   ai: {fileID: 90794111}
 --- !u!1 &1537108865
 GameObject:

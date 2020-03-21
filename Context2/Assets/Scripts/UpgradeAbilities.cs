@@ -132,7 +132,6 @@ namespace Context
                             informationText.text += UpgradeAbilities.UPGRADEABILITIES[i].data.name;
                             //needed for the line under it
                             CalculateAllocatie();
-                            Debug.Log("hello");
                         }
 
             if (data.creativityGain > 0 || data.creativityGain < 0)
