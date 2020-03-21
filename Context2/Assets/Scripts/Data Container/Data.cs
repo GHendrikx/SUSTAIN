@@ -11,12 +11,10 @@
         public int typeOfData;
         public int neededPhase;
         public int[] techPrereq;
-        
         public int performance;
         public int gameClear;
         public int corruption;
         public int progression;
-
         public string effectDesc;
         public int locks;
         public bool isResearched;
@@ -28,7 +26,6 @@
         public float approvalReq;
         public int approvalType;
         public int creativityCost;
-
         public int researchCost;
         public int allocatieCost;
         public int fundsCost;
