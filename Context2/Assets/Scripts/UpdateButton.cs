@@ -113,8 +113,6 @@ namespace Context
             else 
                 myButton.interactable = false;
 
-            Debug.Log(myButton.interactable);
-            Debug.Log(myButton.name);
         }
 
         public void PressButton()
