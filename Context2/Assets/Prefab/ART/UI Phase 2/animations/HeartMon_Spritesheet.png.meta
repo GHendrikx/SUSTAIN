@@ -1,0 +1,718 @@
+fileFormatVersion: 2
+guid: f188d8b29c923544993042c86bb3a9df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6330711385302653780
+    second: HeartMon_Spritesheet_0
+  - first:
+      213: 1402737027317691518
+    second: HeartMon_Spritesheet_1
+  - first:
+      213: -7463611929271674736
+    second: HeartMon_Spritesheet_2
+  - first:
+      213: -8538893481727749105
+    second: HeartMon_Spritesheet_3
+  - first:
+      213: -2813304130923784468
+    second: HeartMon_Spritesheet_4
+  - first:
+      213: 4473397993525285121
+    second: HeartMon_Spritesheet_5
+  - first:
+      213: 8215099908750815231
+    second: HeartMon_Spritesheet_6
+  - first:
+      213: 5296585432984684721
+    second: HeartMon_Spritesheet_7
+  - first:
+      213: 5771527900070159454
+    second: HeartMon_Spritesheet_8
+  - first:
+      213: 8281256162184105086
+    second: HeartMon_Spritesheet_9
+  - first:
+      213: 5997495977804730073
+    second: HeartMon_Spritesheet_10
+  - first:
+      213: -4526681269534647793
+    second: HeartMon_Spritesheet_11
+  - first:
+      213: -2849280603712842977
+    second: HeartMon_Spritesheet_12
+  - first:
+      213: -7733504914230335722
+    second: HeartMon_Spritesheet_13
+  - first:
+      213: -5291334843716938842
+    second: HeartMon_Spritesheet_14
+  - first:
+      213: -5429982477739344224
+    second: HeartMon_Spritesheet_15
+  - first:
+      213: 3484267123772931633
+    second: HeartMon_Spritesheet_16
+  - first:
+      213: 1695325374070687573
+    second: HeartMon_Spritesheet_17
+  - first:
+      213: 1443747747238300401
+    second: HeartMon_Spritesheet_18
+  - first:
+      213: -1661332848790366084
+    second: HeartMon_Spritesheet_19
+  - first:
+      213: -8355153388309362799
+    second: HeartMon_Spritesheet_20
+  - first:
+      213: -7924997915010550989
+    second: HeartMon_Spritesheet_21
+  - first:
+      213: -8605112937405056169
+    second: HeartMon_Spritesheet_22
+  - first:
+      213: 5948235352786781073
+    second: HeartMon_Spritesheet_23
+  - first:
+      213: 1546551298835021557
+    second: HeartMon_Spritesheet_24
+  - first:
+      213: 3175379632718636546
+    second: HeartMon_Spritesheet_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 153
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9eb21209553be34b92abce0cf84bf53
+      internalID: -6330711385302653780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 153
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc79f1c6c01b9d45aaadecdc48240b1
+      internalID: 1402737027317691518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 153
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a1426bb43a4a7439ea79bc7cc8c03d
+      internalID: -7463611929271674736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 153
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c9c021cf352c54b853a2fed0bd74e9
+      internalID: -8538893481727749105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 116
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74af5c706d256645ab1df9b2dbec38f
+      internalID: -2813304130923784468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 116
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0155850de984e454a8e067ea87038c0e
+      internalID: 4473397993525285121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 116
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4982b11e8536f70429c4da44fa4f981e
+      internalID: 8215099908750815231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 116
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27cda46276786a4f8925bc42b779347
+      internalID: 5296585432984684721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 116
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5649b63789c3f4f4a878e055b1043ca5
+      internalID: 5771527900070159454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 79
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa3c725e42fee14982b0892a85f9792
+      internalID: 8281256162184105086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 79
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d51784b985b980f4b9c939994f863c35
+      internalID: 5997495977804730073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 79
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d188b716d0257cd4689561aa95162520
+      internalID: -4526681269534647793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 79
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5077329e4d82c7c459ae742b50810801
+      internalID: -2849280603712842977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 79
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e802b864ac7b39d468e2f2ca8e6de3c5
+      internalID: -7733504914230335722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 42
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec915544e6932c4394c34c7be6ae96a
+      internalID: -5291334843716938842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 42
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1eb155216c8b9f4eb5eb48559ec8887
+      internalID: -5429982477739344224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 42
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ec6d37a82b4964fab59a2e745c6ad5
+      internalID: 3484267123772931633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 42
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c30e52000777e499e5a4040a8132cc
+      internalID: 1695325374070687573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 42
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57173a2044766545a857afb836ea43c
+      internalID: 1443747747238300401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 5
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f8b4ef9fd4c3e47990a01411404b1a
+      internalID: -1661332848790366084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 5
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98219c470565c14490f68a46d025063
+      internalID: -8355153388309362799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 5
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01e07ca2747b8a4099cc2ef4dcfb82b
+      internalID: -7924997915010550989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 5
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229b6bbaa487bef4f94e7c952d64ec16
+      internalID: -8605112937405056169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 5
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d44d980188b5c499629b68f9059b79
+      internalID: 1546551298835021557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartMon_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 153
+        width: 135
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093abd0629017224b99937c3090314ff
+      internalID: 5948235352786781073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d0cdb1a90c8fa454c8177bf27c7ab956
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

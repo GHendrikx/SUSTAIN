@@ -7,6 +7,7 @@ public class Beep : MonoBehaviour
     public AudioPeer audioPeer;
     [Range(0, 7)] private int audioBand = 7;
     public Animator animator;
+    public Animator animator2;
     public bool Test;
 
     private void Start()
@@ -20,6 +21,7 @@ public class Beep : MonoBehaviour
         if (audioPeer._audioBand[audioBand] > 0.01f)
         {
             animator.Play(0);
+            animator2.Play(0);
             Test = true;
         }
         else

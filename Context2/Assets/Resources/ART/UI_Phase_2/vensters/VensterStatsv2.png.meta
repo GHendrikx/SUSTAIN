@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e618b82c22b62e546a980939a9cb2cec
+guid: 4f826244cd8ef2d45b59b6b028e47e6d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2710157693737551571
-    second: NextMonth_NotInteractable_0
+      213: -8121834417112691814
+    second: VensterStatsv2_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -86,18 +86,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -113,22 +101,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NextMonth_NotInteractable_0
+      name: VensterStatsv2_0
       rect:
         serializedVersion: 2
-        x: 1654
-        y: 53
-        width: 179
-        height: 38
+        x: 1599
+        y: 34
+        width: 321
+        height: 1046
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8f0e482299407943ae9d2531a8d0844
-      internalID: -2710157693737551571
+      spriteID: 562aaa0a114e2dd4aaf8119009600020
+      internalID: -8121834417112691814
       vertices: []
       indices: 
       edges: []
@@ -136,7 +124,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 041ff07c8b0d9d6478a1d3e112a7c667
+    spriteID: 1ce9683230d344542915f8527109ea6a
     internalID: 0
     vertices: []
     indices: 

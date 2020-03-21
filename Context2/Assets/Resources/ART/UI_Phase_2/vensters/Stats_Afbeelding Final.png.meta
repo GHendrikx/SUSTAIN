@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e618b82c22b62e546a980939a9cb2cec
+guid: ebc7ee56d2b98844c85bd58de9b83829
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2710157693737551571
-    second: NextMonth_NotInteractable_0
+      213: 1635550110270318614
+    second: Stats_Afbeelding Final_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -86,18 +86,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -113,22 +101,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NextMonth_NotInteractable_0
+      name: Stats_Afbeelding Final_0
       rect:
         serializedVersion: 2
-        x: 1654
-        y: 53
-        width: 179
-        height: 38
+        x: 1614
+        y: 772
+        width: 291
+        height: 199
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8f0e482299407943ae9d2531a8d0844
-      internalID: -2710157693737551571
+      spriteID: 1986d51605a014740a0a836741010a56
+      internalID: 1635550110270318614
       vertices: []
       indices: 
       edges: []
@@ -136,7 +124,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 041ff07c8b0d9d6478a1d3e112a7c667
+    spriteID: f4c18cc92b716cf4a9e9d4cc13522b1c
     internalID: 0
     vertices: []
     indices: 
