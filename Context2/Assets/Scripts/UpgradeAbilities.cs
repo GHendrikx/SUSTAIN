@@ -83,7 +83,7 @@ namespace Context
                 data.amount = Points;
             } catch (Exception e)
             {
-                Debug.LogError("Contact Geoffrey Hendrikx when you get this error " +
+                Debug.LogError("Contact Geoffrey Hendrikx when you get this error \n" +
                     "Give him the following information: \n" + e);
 
                 Debug.Break();
@@ -94,8 +94,16 @@ namespace Context
 
             BasePoints = BasePoints + -amount;
             Points = Points + amount;
+            int fmodPoints = 0;
+            if(ALLOCATIONPOOL >= 26)
+                fmodPoints = Mathf.RoundToInt((Points / ALLOCATIONPOOL) * 26 - 13);
+            else
+                fmodPoints = Mathf.RoundToInt((Points / ALLOCATIONPOOL) * ALLOCATIONPOOL * 2 - ALLOCATIONPOOL);
 
-
+            //Set the FMod points. 
+            GameManager.Instance.StudioEventAllocatie.Params[0].Value = fmodPoints;
+            GameManager.Instance.StudioEventAllocatie.Play();
+            
             abilityPointText.text = Points.ToString();
             TEMPALLOCATIONPOOL = BasePoints;
         }

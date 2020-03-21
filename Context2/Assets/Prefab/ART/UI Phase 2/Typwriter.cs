@@ -13,6 +13,8 @@ public class Typwriter : MonoBehaviour
     private string PlayerName = "";
     private string Underscore = "_";
     public GameObject Playername;
+    [SerializeField]
+    private GameObject randomSound; 
     public int dialog ;
 
     string txtContents;
@@ -121,6 +123,7 @@ break;
     }
     IEnumerator ShowText()
     {
+        randomSound.SetActive(true);
         for (int i = 0; i <= txtContents.Length; i++)
         {
             currentText = txtContents.Substring(0, i);
@@ -128,6 +131,7 @@ break;
             yield return new WaitForSeconds(delay);
 
         }
+        randomSound.SetActive(false);
     }
 }
 
