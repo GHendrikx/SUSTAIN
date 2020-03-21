@@ -23,6 +23,8 @@ namespace Context
         public InfluenceData influenceData;
         public DroneData dronesData;
         public MaterialData materialData;
+        public PowerData powerData;
+        public DroneData droneData;
         public CalculateSDG SDGCalculate;
         public TrustMeter TrustMeter;
         #endregion

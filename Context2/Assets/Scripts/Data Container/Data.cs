@@ -34,6 +34,7 @@
         public int droneCost;
         public int powerCost;
 
+        public float doneGrowth;
         public int doneTimes;
         public int doneGain;
         public string doneDesc;
