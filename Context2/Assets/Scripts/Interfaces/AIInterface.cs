@@ -8,12 +8,6 @@ namespace Context
 {
     public partial class AI : MonoBehaviour
     {
-        #region ScoreMeter
-        [SerializeField]
-        public TextMeshProUGUI DisapproveSupervisorTrust, NeutralSupervisorTrust, ApproveSupervisorTrust;
-        
-        #endregion
-
         [SerializeField]
         private TextMeshProUGUI processing;
         [SerializeField]
@@ -100,11 +94,6 @@ namespace Context
             #region AI Trust
             svHateSlider.value = SvDisapprovesPercentage;
             svNeutralSlider.value = SvDisapprovesPercentage + SvNeutralPercentage;
-            
-            DisapproveSupervisorTrust.text = (SvDisapprovesPercentage * 100.0f).ToString("0.0") + "%";
-            NeutralSupervisorTrust.text = (SvNeutralPercentage * 100.0f).ToString("0.0") + "%";
-            ApproveSupervisorTrust.text = (SvApprovesPercentage * 100.0f).ToString("0.0") + "%";
-
             #endregion
         }
 
