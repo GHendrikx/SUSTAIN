@@ -18,14 +18,13 @@ namespace Context
         private TextMeshProUGUI[] costs;
         [SerializeField]
         private Image[] image;
-
         public Tab tab;
         public int amountOfUpgrades;
         public List<Data> initializedData = new List<Data>();
 
         public void InitializeNewButton(Data data, AI ai)
         {
-            Debug.Log(data + " " + ai + " " + tab);
+            Debug.Log(data + " " + ai + " " + tab + " " + data.name);
             initializedData.Add(data);
             Button button = GameObject.Instantiate(buttonPrefab, transform);
             UpdateButton update = button.gameObject.GetComponent<UpdateButton>();
@@ -74,6 +73,38 @@ namespace Context
         }
 
         public void InitializeNewAllocation(Data data, AI ai)
+        {
+
+            if (!data.isPrototype)
+                return;
+
+            initializedData.Add(data);
+
+            //Allocatie buttons adding and minus. instantiate ALLOCATION
+            GameObject go = GameObject.Instantiate(upgradeAbilities, transform);
+            UpgradeAbilities upgrade = go.GetComponentInChildren<UpgradeAbilities>();
+
+            upgrade.MinButton.onClick.AddListener(() => upgrade.CalculateStatus(-data.allocatieCost));
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
+            upgrade.MinButton.onClick.AddListener(() => GameManager.Instance.AI.droneData.UpdateDroneWithoutPoints());
+
+            upgrade.PlusButton.onClick.AddListener(() => upgrade.CalculateStatus(data.allocatieCost));
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
+            upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.droneData.UpdateDroneWithoutPoints());
+            upgrade.UpdateInformation(data);
+        }
+
+        public void InitializeNewConstruction(Data data, AI ai)
         {
 
             if (!data.isPrototype)

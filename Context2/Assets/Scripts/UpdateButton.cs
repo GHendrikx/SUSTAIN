@@ -101,17 +101,17 @@ namespace Context
 
             }
 
-            if (tab == Tab.PartnerShip)
+            if (data.typeOfData == (int)Tab.PartnerShip)
             {
                 PartnerShips PartnerShips = this.gameObject.GetComponent<PartnerShips>();
                 PartnerShips.InitializeNewPartenerShip(data);
             }
 
-            if (tab == Tab.Policies)
+            if (data.typeOfData == (int)Tab.Policies)
             {
                 Policy Policies = this.gameObject.GetComponent<Policy>();
                 Policies.InitializeNewPolicy(data);
-            }
+            }  
         }
 
         private void Update()

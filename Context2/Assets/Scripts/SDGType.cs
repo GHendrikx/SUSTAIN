@@ -28,6 +28,5 @@
         Research = 2,
         Construction = 3,
         Policies = 4,
-        UI = 6
     }
 }

@@ -53,31 +53,31 @@ namespace Context
 
         #region TrustSlider
         [SerializeField]
-        private Slider svHateSlider;
+        private Slider svDisapproveSlider;
         [SerializeField]
         private Slider svNeutralSlider;
 
         [SerializeField]
-        private TextMeshProUGUI svHatePercentageTMP;
+        private TextMeshProUGUI svDisapprovePercentageTMP;
         [SerializeField]
         private TextMeshProUGUI svNeutralPercentageTMP;
         [SerializeField]
-        private TextMeshProUGUI svLikePercentageTMP;
+        private TextMeshProUGUI svApprovePercentageTMP;
 
 
         #endregion
         #region LocalSlider        
         [SerializeField]
-        private Slider localHateSlider;
+        private Slider localDisapprovelSlider;
         [SerializeField]
         private Slider localNeutralSlider;
 
         [SerializeField]
-        private TextMeshProUGUI localHatePercentageTMP;
+        private TextMeshProUGUI localDisapprovePercentageTMP;
         [SerializeField]
         private TextMeshProUGUI localNeutralPercentageTMP;
         [SerializeField]
-        private TextMeshProUGUI localLikePercentageTMP;
+        private TextMeshProUGUI localApprovesPercentageTMP;
         #endregion
 
         private bool lerping;
@@ -105,7 +105,6 @@ namespace Context
 
             #region AI Calculate Fitness Score
             float health = SDGManager.CalculateHealth();
-            Debug.Log(SDGManager);
             aiFitnessScore.fillAmount = health ;
             #endregion
 
@@ -116,16 +115,20 @@ namespace Context
 
 
             #region AI Trust
-            svHateSlider.value = SvDisapprovesPercentage;
+            svDisapproveSlider.value = SvDisapprovesPercentage;
             svNeutralSlider.value = SvDisapprovesPercentage + SvNeutralPercentage;
 
-            svHatePercentageTMP.text = SvDisapprovesPercentage.ToString();
+            svDisapprovePercentageTMP.text = SvDisapprovesPercentage.ToString();
             svNeutralPercentageTMP.text = SvNeutralPercentage.ToString();
-            //svLikePercentageTMP.text = 
+            svApprovePercentageTMP.text = SvApprovesPercentage.ToString();
 
 
-            localHateSlider.value = LocalHatesPercentage;
-            localNeutralSlider.value = LocalNeutralPercentage;
+            localDisapprovelSlider.value = LocalDisapprovesPercentage;
+            localNeutralSlider.value = LocalNeutralPercentage + LocalDisapprovesPercentage;
+
+            localDisapprovePercentageTMP.text = SvDisapprovesPercentage.ToString();
+            localNeutralPercentageTMP.text = LocalNeutralPercentage.ToString();
+            localApprovesPercentageTMP.text = LocalApprovesPercentage.ToString();
             #endregion
         }
 

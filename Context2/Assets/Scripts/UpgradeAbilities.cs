@@ -116,7 +116,16 @@ namespace Context
         {
             this.Instance = gameObject;
             this.data = data;
-            SetRewardImage();
+            if(data.typeOfData == (int)Tab.Allocatie)
+            {
+                SetRewardImage();
+            }
+            if (data.typeOfData == (int)Tab.Construction)
+            {
+                informationText.text = string.Empty;
+                informationText.text += data.name;
+            }
+
             if (data.desc == null)
                 descriptionText.text = string.Empty;
             UPGRADEABILITIES.Add(this);
@@ -239,7 +248,7 @@ namespace Context
                 //HERE is the thing
                 //Debug.Log(Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/v2/Iconen_ResearchPoints_3_16X16"));
 
-                //Extensions.SetEffectGain(c + data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costBlock, effectBlock, temp);
             }
         }
 
@@ -264,8 +273,9 @@ namespace Context
 
             else
             {
-                rewardText.gameObject.SetActive(false);
-                rewardImage.gameObject.SetActive(false);
+                 rewardText.gameObject.SetActive(false);
+                 rewardImage.gameObject.SetActive(false);
+
             }
         }
 

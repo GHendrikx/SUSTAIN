@@ -33,7 +33,6 @@ namespace Context
             declineButton.onClick.AddListener(() => ToggleGameObject(AudioManager.Instance.PolicyDecline));
 
             approvalRequirementText.text = System.Convert.ToInt32(data.approvalReq * 100).ToString() + "%";
-            Debug.Log("hello3");
         }
         private void Update()
         {

@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 4172844288618470907}
   - component: {fileID: 4803367383446980282}
   m_Layer: 5
-  m_Name: ConstructionNumber
+  m_Name: SDGNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,7 +951,8 @@ GameObject:
   - component: {fileID: 7858043328133455001}
   - component: {fileID: 7858043328133455003}
   - component: {fileID: 7858043328133455002}
-  - component: {fileID: 3414842812508303321}
+  - component: {fileID: 732059452323105051}
+  - component: {fileID: 2272005128703391199}
   m_Layer: 5
   m_Name: Construction
   m_TagString: Untagged
@@ -1017,7 +1018,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3414842812508303321
+--- !u!114 &732059452323105051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858043328133455000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c6d4a0c43a1e647919cd22cd40cab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 7858043327865282699}
+  description: {fileID: 6137691174161953933}
+  effectDescription: {fileID: 101941033026825196}
+  SDGNummer: {fileID: 4803367383446980282}
+  SDGColor: {fileID: 4359211637638305084}
+--- !u!114 &2272005128703391199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1038,9 +1056,10 @@ MonoBehaviour:
     typeOfData: 0
     neededPhase: 0
     techPrereq: 
-    musicStage: 0
-    musicSoundSFX: 0
-    musicAdvancement: 0
+    performance: 0
+    gameClear: 0
+    corruption: 0
+    progression: 0
     effectDesc: 
     locks: 0
     isResearched: 0
@@ -1049,6 +1068,8 @@ MonoBehaviour:
     isAvailable: 0
     isShownInGUI: 0
     isActive: 0
+    approvalReq: 0
+    approvalType: 0
     creativityCost: 0
     researchCost: 0
     allocatieCost: 0
@@ -1057,6 +1078,7 @@ MonoBehaviour:
     materialCost: 0
     droneCost: 0
     powerCost: 0
+    doneGrowth: 0
     doneTimes: 0
     doneGain: 0
     doneDesc: 
@@ -1164,9 +1186,7 @@ MonoBehaviour:
     natDislikesControlled: 0
     natNeutralControlled: 0
     natLikesControlled: 0
-    SFX: 0
-    backgroundMusic: 0
-  Instance: {fileID: 0}
+  Instance: {fileID: 8497393281660433312}
   CurrentDoneTarget: 0
   abilityPointText: {fileID: 8875995483492245532}
   targetText: {fileID: 0}
@@ -1176,7 +1196,7 @@ MonoBehaviour:
   BasePoints: 0
   Points: 0
   effectBlock: {fileID: 1021898007862532230}
-  costBlock: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
+  costBlock: {fileID: 2831580446549795828, guid: 00129a1726dce554291ace78fc1cb6b4,
     type: 3}
   rewardImage: {fileID: 0}
   rewardText: {fileID: 0}
@@ -1648,11 +1668,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: horizontal Costblock Container
       objectReference: {fileID: 0}
-    - target: {fileID: 5217795881384168495, guid: d758715ea461d024b87ee9e3daa4911a,
-        type: 3}
-      propertyPath: m_CellSize.x
-      value: 91.6
-      objectReference: {fileID: 0}
     - target: {fileID: 1486918769769677485, guid: d758715ea461d024b87ee9e3daa4911a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1757,6 +1772,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217795881384168495, guid: d758715ea461d024b87ee9e3daa4911a,
+        type: 3}
+      propertyPath: m_CellSize.x
+      value: 91.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d758715ea461d024b87ee9e3daa4911a, type: 3}
