@@ -23,11 +23,11 @@
 
     public enum Tab
     {
-        Allocatie = 1,
-        PartnerShip = 2,
-        Research = 3,
-        Construction = 4,
-        Policies = 5,
+        Allocatie = 0,
+        PartnerShip = 1,
+        Research = 2,
+        Construction = 3,
+        Policies = 4,
         UI = 6
     }
 }

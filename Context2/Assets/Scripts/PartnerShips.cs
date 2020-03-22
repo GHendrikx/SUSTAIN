@@ -39,12 +39,12 @@ namespace Context
             if (data.isResearched != isAccepted)
                 data.isResearched = isAccepted;
 
-            //if(GameManager.Instance.AI.ApprovalReq >= data.approvalReq)
-            //    acceptButton.interactable = true;
-            //else
-            //{
+            if (GameManager.Instance.AI.ApprovalReq >= data.approvalReq)
+                acceptButton.interactable = true;
+            else
+            {
 
-            //}
+            }
         }
 
         private void ToggleGameObject(GameObject gameObject)

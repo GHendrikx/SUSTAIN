@@ -77,10 +77,12 @@ namespace Context
 
         public void UpdateUI(Data data, int tab)
         {
-            if (data.typeOfData == (int)Tab.Allocatie || data.typeOfData == (int)Tab.PartnerShip)
-                upgradesTabs[data.typeOfData].InitializeNewButton(data, AI);
-            else
+            Debug.Log((Tab)data.typeOfData);
+            if(data.typeOfData == (int)Tab.Allocatie)
                 upgradesTabs[data.typeOfData].InitializeNewAllocation(data, AI);
+            else
+                upgradesTabs[data.typeOfData].InitializeNewButton(data, AI);
+
         }
 
         public float CalculateAllocationMod(int temp = 0)
