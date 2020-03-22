@@ -2147,119 +2147,119 @@ MonoBehaviour:
     - {fileID: 490636635}
     processBar: {fileID: 1498481433}
     rectTransform: {fileID: 1498481432}
-    color: {r: 0.91372555, g: 0.48235297, b: 0.82745105, a: 0}
+    color: {r: 0.91372555, g: 0.48235297, b: 0.82745105, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 41216400}
     - {fileID: 148195072}
     processBar: {fileID: 921026285}
     rectTransform: {fileID: 921026284}
-    color: {r: 0.76470596, g: 0.454902, b: 0.82745105, a: 0}
+    color: {r: 0.76470596, g: 0.454902, b: 0.82745105, a: 1}
   - sdgUnlockID: 301
     lockImage:
     - {fileID: 2029173655}
     - {fileID: 1511545317}
     processBar: {fileID: 24495445}
     rectTransform: {fileID: 24495444}
-    color: {r: 0.63529414, g: 0.37647063, b: 0.9490197, a: 0}
+    color: {r: 0.63529414, g: 0.37647063, b: 0.9490197, a: 1}
   - sdgUnlockID: 403
     lockImage:
     - {fileID: 1621268543}
     - {fileID: 1674407332}
     processBar: {fileID: 371033536}
     rectTransform: {fileID: 371033535}
-    color: {r: 0.30588236, g: 0.28627452, b: 0.68235296, a: 0}
+    color: {r: 0.30588236, g: 0.28627452, b: 0.68235296, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 1008585604}
     - {fileID: 1826672972}
     processBar: {fileID: 728546102}
     rectTransform: {fileID: 728546101}
-    color: {r: 0.37254903, g: 0.5372549, b: 0.94117653, a: 0}
+    color: {r: 0.37254903, g: 0.5372549, b: 0.94117653, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 56294431}
     - {fileID: 2079801984}
     processBar: {fileID: 319666560}
     rectTransform: {fileID: 319666559}
-    color: {r: 0.3647059, g: 0.69803923, b: 0.91372555, a: 0}
+    color: {r: 0.3647059, g: 0.69803923, b: 0.91372555, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 1747056185}
     - {fileID: 1120986085}
     processBar: {fileID: 87827258}
     rectTransform: {fileID: 87827257}
-    color: {r: 0.37647063, g: 0.94117653, b: 0.9490197, a: 0}
+    color: {r: 0.37647063, g: 0.94117653, b: 0.9490197, a: 1}
   - sdgUnlockID: 801
     lockImage:
     - {fileID: 1670886477}
     - {fileID: 1043059547}
     processBar: {fileID: 1936300354}
     rectTransform: {fileID: 1936300353}
-    color: {r: 0.37647063, g: 0.95294124, b: 0.6784314, a: 0}
+    color: {r: 0.37647063, g: 0.95294124, b: 0.6784314, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 1368037443}
     - {fileID: 1699973309}
     processBar: {fileID: 1977928724}
     rectTransform: {fileID: 1977928723}
-    color: {r: 0.25882354, g: 0.76470596, b: 0.5254902, a: 0}
+    color: {r: 0.25882354, g: 0.76470596, b: 0.5254902, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 1647336184}
     - {fileID: 350790200}
     processBar: {fileID: 981139425}
     rectTransform: {fileID: 981139424}
-    color: {r: 0.22352943, g: 0.7960785, b: 0.38823533, a: 0}
+    color: {r: 0.22352943, g: 0.7960785, b: 0.38823533, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 395172427}
     - {fileID: 340224335}
     processBar: {fileID: 148070334}
     rectTransform: {fileID: 148070333}
-    color: {r: 0.46274513, g: 0.9058824, b: 0.32156864, a: 0}
+    color: {r: 0.46274513, g: 0.9058824, b: 0.32156864, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 2110204963}
     - {fileID: 1823648791}
     processBar: {fileID: 1284792331}
     rectTransform: {fileID: 1284792330}
-    color: {r: 0.82745105, g: 0.9333334, b: 0.37254903, a: 0}
+    color: {r: 0.82745105, g: 0.9333334, b: 0.37254903, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 1685830988}
     - {fileID: 1395216966}
     processBar: {fileID: 134440154}
     rectTransform: {fileID: 134440153}
-    color: {r: 0.9490197, g: 0.9215687, b: 0.19215688, a: 0}
+    color: {r: 0.9490197, g: 0.9215687, b: 0.19215688, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 288477085}
     - {fileID: 768462633}
     processBar: {fileID: 442955314}
     rectTransform: {fileID: 442955313}
-    color: {r: 0.9490197, g: 0.76470596, b: 0.23529413, a: 0}
+    color: {r: 0.9490197, g: 0.76470596, b: 0.23529413, a: 1}
   - sdgUnlockID: 0
     lockImage:
     - {fileID: 1736915471}
     - {fileID: 1009425555}
     processBar: {fileID: 1381045183}
     rectTransform: {fileID: 1381045182}
-    color: {r: 0.8745099, g: 0.5921569, b: 0.34901962, a: 0}
+    color: {r: 0.8745099, g: 0.5921569, b: 0.34901962, a: 1}
   - sdgUnlockID: 1602
     lockImage:
     - {fileID: 206833838}
     - {fileID: 1436288623}
     processBar: {fileID: 1978436732}
     rectTransform: {fileID: 1978436731}
-    color: {r: 0.9490197, g: 0.49803925, b: 0.39607847, a: 0}
+    color: {r: 0.9490197, g: 0.49803925, b: 0.39607847, a: 1}
   - sdgUnlockID: 1701
     lockImage:
     - {fileID: 2033431632}
     - {fileID: 343844377}
     processBar: {fileID: 1177290182}
     rectTransform: {fileID: 1177290181}
-    color: {r: 0.9490197, g: 0.37647063, b: 0.37647063, a: 0}
+    color: {r: 0.9490197, g: 0.37647063, b: 0.37647063, a: 1}
   ai: {fileID: 90794111}
   SDGUnlockSound: {fileID: 9180473485313745702}
 --- !u!114 &90794121
