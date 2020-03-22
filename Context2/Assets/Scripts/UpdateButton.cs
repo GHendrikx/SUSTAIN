@@ -85,6 +85,8 @@ namespace Context
                 SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
                 if (data.ID == sdgBar.SDGUnlockID)
                     myButton.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
+                if(data.sdgType == (i - 1))
+                    SDGColor.color = sdgBar.Color;
             }
 
             if (myButton != null)
@@ -145,7 +147,7 @@ namespace Context
                 effectDescription.text = data.effectDesc;       
             }
             if (researchNummer != null)
-                researchNummer.text = data.sdgType[0].ToString();
+                researchNummer.text = data.sdgType.ToString();
 
         }
 

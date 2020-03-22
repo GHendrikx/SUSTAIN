@@ -7,7 +7,7 @@
         public string name;
         public string desc;
         public bool isPrototype;
-        public int[] sdgType;
+        public int sdgType;
         public int typeOfData;
         public int neededPhase;
         public int[] techPrereq;
