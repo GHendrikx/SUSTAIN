@@ -2075,8 +2075,8 @@ MonoBehaviour:
   dontDestroyOnLoad: 0
   ignoreErrorWhenDuplicatedInstance: 0
   studioEventAllocatie: {fileID: 9180473486018523929}
-  ShowTutorial: 1
-  TutorialPanel: {fileID: 822524587}
+  ShowTutorial: 0
+  TutorialPanel: {fileID: 995632089}
   ioManager: {fileID: 90794113}
   uiManager: {fileID: 90794114}
   ai: {fileID: 90794111}

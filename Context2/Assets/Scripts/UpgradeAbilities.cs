@@ -162,7 +162,6 @@ namespace Context
                 }
                 else 
                     temp = Color.red;
-                Debug.Log(Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconen_Drone16X16"));
 
                 Extensions.SetEffectGain(c + data.droneGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconen_Drone16X16"), costBlock, effectBlock, temp);
             }
@@ -218,7 +217,6 @@ namespace Context
                     temp = Color.red;
                     c = "";
                 }
-                Debug.Log(costBlock + " " + effectBlock);
 
                 Extensions.SetEffectGain(c + data.materialGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), costBlock, effectBlock, temp);
             }

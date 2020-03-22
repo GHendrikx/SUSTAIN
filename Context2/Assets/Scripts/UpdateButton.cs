@@ -141,38 +141,43 @@ namespace Context
 
         }
 
+        //Deze werkt
         private void SetEffects()
         {
+            if (data.researchGain != 0)
+                Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), upgradeCost, upgradeBlock);
             if (data.creativityGain != 0)
                 Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), upgradeCost, upgradeBlock);
-            if (data.droneGain != 0)
-                Extensions.SetEffectGain(data.droneGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
             if (data.fundsGain != 0)
                 Extensions.SetEffectGain(data.fundsGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Fund16X16"), upgradeCost, upgradeBlock);
             if (data.influenceGain != 0)
                 Extensions.SetEffectGain(data.influenceGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Stat16X16"), upgradeCost, upgradeBlock);
+            if (data.powerGain != 0)
+                Extensions.SetEffectGain(data.powerGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconen_Energy16X16"), upgradeCost, upgradeBlock);
             if (data.materialGain != 0)
                 Extensions.SetEffectGain(data.materialGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), upgradeCost, upgradeBlock);
-            if (data.researchGain != 0)
-                Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), upgradeCost, upgradeBlock);
+            if (data.droneGain != 0)
+                Extensions.SetEffectGain(data.droneGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
         }
 
          private void SetUpdateCost()
         {
+            if (data.researchCost != 0)
+                SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costInformation, costBlock, data.researchCost);
             if (data.creativityCost != 0)
                 SetCostBlock(data.creativityCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), costInformation, costBlock, data.creativityCost);
-            if (data.droneCost != 0)
-                SetCostBlock(data.droneCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), costInformation, costBlock, data.droneCost);
             if (data.fundsCost != 0)
-                SetCostBlock(data.fundsCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Fund16X16"), costInformation, costBlock,data.fundsCost);
+                SetCostBlock(data.fundsCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Fund16X16"), costInformation, costBlock, data.fundsCost);
             if (data.influenceCost != 0)
                 SetCostBlock(data.influenceCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Stat16X16"), costInformation, costBlock, data.influenceCost);
+            if (data.powerCost != 0)
+                SetCostBlock(data.powerCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Energy16X16"), costInformation, costBlock, data.powerCost);
             if (data.materialCost != 0)
                 SetCostBlock(data.materialCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), costInformation, costBlock, data.materialCost);
-            if (data.powerCost != 0)
-                SetCostBlock(data.powerCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconProcessingPower16X16"), costInformation, costBlock,data.powerCost);
-            if (data.researchCost != 0)
-                SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costInformation, costBlock,data.researchCost);
+            if (data.droneCost != 0)
+                SetCostBlock(data.droneCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), costInformation, costBlock, data.droneCost);
+
+
         }
 
         private void AllocationUpdate()
@@ -190,6 +195,7 @@ namespace Context
 
         public void SetCostBlock(string text, Sprite sprite, GameObject costInfo, GameObject costBlock, float amount)
         {
+            
             string c = string.Empty;
 
             Color textColor = Color.white;
@@ -210,6 +216,7 @@ namespace Context
             cost.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
             Image i = costInfo.GetComponentInChildren<Image>();
             i.sprite = sprite;
+            Debug.Log(data.ID + " " + i + " " + sprite + " " + amount);
         }
     }
 }
