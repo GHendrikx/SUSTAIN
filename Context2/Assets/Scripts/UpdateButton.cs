@@ -35,6 +35,8 @@ namespace Context
         private Image SDGColor;
         [SerializeField]
         private TextMeshProUGUI researchNummer;
+        [SerializeField]
+        private TextMeshProUGUI effectDescription;
         #endregion
         private static bool firstTime = true;
 
@@ -138,13 +140,18 @@ namespace Context
                 title.text = data.name;
             if (description != null)
                 description.text = data.desc;
+            if (effectDescription != null)
+            {
+                effectDescription.text = data.effectDesc;       
+            }
+            if (researchNummer != null)
+                researchNummer.text = data.sdgType[0].ToString();
 
         }
 
         //Deze werkt is de effectsgain van Research
         private void SetEffects()
         {
-            return;
             if (data.researchGain != 0)
                 Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), upgradeCost, upgradeBlock);
             if (data.creativityGain != 0)
