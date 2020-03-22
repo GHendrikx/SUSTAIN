@@ -145,7 +145,6 @@ namespace Context
                 }
                 else
                     temp = Color.red;
-                Debug.Log(costBlock + " " + effectBlock);
 
                 Extensions.SetEffectGain(c + data.creativityGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), costBlock, effectBlock, temp);
             }

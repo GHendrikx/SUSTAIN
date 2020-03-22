@@ -3198,7 +3198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13673991, y: 0.5972881}
   m_AnchorMax: {x: 0.48815128, y: 0.61786014}
-  m_AnchoredPosition: {x: -0.58999634, y: 0.7200012}
+  m_AnchoredPosition: {x: -0.58999634, y: 0.7199707}
   m_SizeDelta: {x: 1.18, y: 1.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123585743
@@ -4787,7 +4787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.17718506, y: -2.9837646}
+  m_AnchoredPosition: {x: -0.17718506, y: -2.9837494}
   m_SizeDelta: {x: -0.2880249, y: -134.83241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216779712
@@ -10234,7 +10234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.61342305, y: 0.5972881}
   m_AnchorMax: {x: 0.9651919, y: 0.61786014}
-  m_AnchoredPosition: {x: 0, y: 0.72006226}
+  m_AnchoredPosition: {x: 0, y: 0.7200928}
   m_SizeDelta: {x: 0, y: 1.4401}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486562778
@@ -12606,7 +12606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.52969414, y: 0.59904796}
   m_AnchorMax: {x: 0.5915206, y: 0.6174719}
-  m_AnchoredPosition: {x: 0, y: 0.0054016113}
+  m_AnchoredPosition: {x: 0, y: 0.0053710938}
   m_SizeDelta: {x: 0, y: 3.6792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &659953080
@@ -18950,7 +18950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &995632090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35700,6 +35700,7 @@ GameObject:
   - component: {fileID: 1892329785}
   - component: {fileID: 1892329784}
   - component: {fileID: 1892329783}
+  - component: {fileID: 1892329786}
   m_Layer: 5
   m_Name: TurnButton
   m_TagString: Untagged
@@ -35971,6 +35972,17 @@ MonoBehaviour:
           m_StringArgument: GO
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892329786}
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1892329784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36008,6 +36020,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892329781}
   m_CullTransparentMesh: 0
+--- !u!114 &1892329786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892329781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c8f91b66d5def49b7f0cf57fcba35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1892329783}
 --- !u!1 &1905160830
 GameObject:
   m_ObjectHideFlags: 0

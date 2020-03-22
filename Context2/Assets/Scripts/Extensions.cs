@@ -43,7 +43,8 @@ namespace Context
             upgrade.GetComponentInChildren<TextMeshProUGUI>().color = (amount > 0) ? Color.green: Color.red;
 
             Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
-            i.gameObject.AddComponent<GUILocationFinder>();
+            //TODO ENABLE IT
+            //i.gameObject.AddComponent<GUILocationFinder>();
             i.sprite = sprite;
             upgrade.SetParent(upgradeBlock.transform);
         }

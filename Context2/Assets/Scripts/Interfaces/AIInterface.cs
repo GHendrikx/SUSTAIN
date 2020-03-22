@@ -85,7 +85,7 @@ namespace Context
             aiFitnessScore.fillAmount = SDGManager.CalculateHealth();
             #endregion
 
-            if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0)
+            if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0 && !TimerToInteract.turnButtonTimer )
                 turnButton.interactable = false;
             else
                 turnButton.interactable = true;
