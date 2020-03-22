@@ -143,6 +143,19 @@ namespace Context
                 rectTransform = value;
             }
         }
+        [SerializeField]
+        private Color color;
+        public Color Color
+        {
+            get
+            {
+                return color;
+            }
+            set
+            {
+                color = value;
+            }
+        }
 
     }
 }
