@@ -83,10 +83,15 @@ namespace Context
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
             {
                 SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
+
                 if (data.ID == sdgBar.SDGUnlockID)
                     myButton.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
-                if(data.sdgType == (i - 1))
+
+                if (data.sdgType[0] == i)
+                {
                     SDGColor.color = sdgBar.Color;
+                    break;
+                }
             }
 
             if (myButton != null)
@@ -144,10 +149,10 @@ namespace Context
                 description.text = data.desc;
             if (effectDescription != null)
             {
-                effectDescription.text = data.effectDesc;       
+                effectDescription.text = data.effectDesc;
             }
             if (researchNummer != null)
-                researchNummer.text = data.sdgType.ToString();
+                researchNummer.text = data.sdgType[0].ToString();
 
         }
 
@@ -227,7 +232,6 @@ namespace Context
             cost.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
             Image i = cost.GetComponentInChildren<Image>();
             i.sprite = sprite;
-            Debug.Log(data.ID + " " + i + " " + sprite + " " + amount);
         }
     }
 }

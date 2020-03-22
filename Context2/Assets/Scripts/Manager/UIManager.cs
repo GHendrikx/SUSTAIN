@@ -81,7 +81,6 @@ namespace Context
                 upgradesTabs[data.typeOfData].InitializeNewButton(data, AI);
             else
                 upgradesTabs[data.typeOfData].InitializeNewAllocation(data, AI);
-
         }
 
         public float CalculateAllocationMod(int temp = 0)
