@@ -77,7 +77,6 @@ namespace Context
 
         public void UpdateUI(Data data, int tab)
         {
-            Debug.Log((Tab)data.typeOfData);
             if(data.typeOfData == (int)Tab.Allocatie)
                 upgradesTabs[data.typeOfData].InitializeNewAllocation(data, AI);
             else

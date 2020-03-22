@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9184470550134316839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Progression
+  m_EditorClassIdentifier: 
+  Name: Progression
+  Min: 0
+  Max: 5
+  Default: 0
+  Exists: 1
 --- !u!114 &-9107293351399312070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +68,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/TurnOffLose
   guid: f6d647c40530364fbbbc243310468348
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -91,7 +108,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/BuildingAdd
   guid: b5ce898974185b4a90a85c2a9ad08c87
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -99,6 +116,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 861
+--- !u!114 &-8234228811756717969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Allocation/AllocationHeight
+  m_EditorClassIdentifier: 
+  Name: AllocationHeight
+  Min: -13
+  Max: 14
+  Default: 0
+  Exists: 1
 --- !u!114 &-8179406373850867351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +148,23 @@ MonoBehaviour:
   Name: GameClear
   Min: 0
   Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &-8147532032408753710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Corruption
+  m_EditorClassIdentifier: 
+  Name: Corruption
+  Min: 0
+  Max: 7
   Default: 0
   Exists: 1
 --- !u!114 &-7817912264446256067
@@ -132,6 +183,23 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 5
+  Exists: 1
+--- !u!114 &-7700129164696331607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/GameClear
+  m_EditorClassIdentifier: 
+  Name: GameClear
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 1
 --- !u!114 &-7654839376339024724
 MonoBehaviour:
@@ -166,6 +234,24 @@ MonoBehaviour:
   Min: 0
   Max: 7
   Default: 0
+  Exists: 1
+--- !u!114 &-6887616684411508193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SoundFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Editor Default Resources/Banks/SoundFX.bank
+  SubDir: 
+  lastModified: 637203922372406686
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &-6327275178892402779
 MonoBehaviour:
@@ -218,7 +304,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/BubbleArrive
   guid: 9b5b259df39497469f13cb23a880aa41
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -276,7 +362,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/AllocationError
   guid: e3b09b3658f05f4dbec6583abd77340b
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -317,7 +403,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/PolicyAccept
   guid: 9487dfb14533e740b4e68156c73ff3cb
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -391,7 +477,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/ChangeTab
   guid: 890ee04e4ad9e04cb6180549b3142df2
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -431,12 +517,12 @@ MonoBehaviour:
   Path: event:/SoundEffects/Allocation
   guid: b8976275f63425409958b7e1a5fe3976
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 366760996938010366}
+  - {fileID: -8234228811756717969}
   MinDistance: 0
   MaxDistance: 0
   Length: 9000
@@ -455,7 +541,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/TechResearch
   guid: 344edce03681d24eb0feace729def87d
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -513,7 +599,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/BubbleSpawn
   guid: 3856d804fee71d4096c2ee09ff0013b4
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -535,9 +621,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 3581656752843881139}
-  - {fileID: 6419221252016138747}
-  - {fileID: 421219198268215135}
-  - {fileID: -8609301606087202583}
+  - {fileID: 7112610476660336471}
+  - {fileID: 3585566345974875678}
+  - {fileID: -6887616684411508193}
   EditorEvents:
   - {fileID: 4133948158905522307}
   - {fileID: 2651071447701070330}
@@ -559,10 +645,10 @@ MonoBehaviour:
   - {fileID: -8566986032998954176}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 6419221252016138747}
+  - {fileID: 7112610476660336471}
   StringsBanks:
   - {fileID: 3581656752843881139}
-  stringsBankWriteTime: 637203168514683083
+  stringsBankWriteTime: 637203922371142700
   cacheVersion: 3
 --- !u!114 &154641666388965700
 MonoBehaviour:
@@ -684,7 +770,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/SDGUnlock
   guid: aed5da06019d2649b11f12331f1c01c9
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -759,7 +845,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/EndOfWeek
   guid: 4fe6b1a1c9ae6741a5613079f50188b0
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -767,6 +853,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 861
+--- !u!114 &2119435329217867270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Performance
+  m_EditorClassIdentifier: 
+  Name: Performance
+  Min: 0
+  Max: 10
+  Default: 5
+  Exists: 1
 --- !u!114 &2651071447701070330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,7 +885,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/TutorialClick
   guid: 0442edf1de92bb4b9fe12d4f763b563d
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -821,11 +924,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Editor Default Resources/Banks/Master.strings.bank
   SubDir: 
-  lastModified: 637203168514683083
+  lastModified: 637203922371142700
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 2040
+  Exists: 1
+--- !u!114 &3585566345974875678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Editor Default Resources/Banks/Music.bank
+  SubDir: 
+  lastModified: 637203922372376581
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &4133948158905522307
 MonoBehaviour:
@@ -842,15 +963,15 @@ MonoBehaviour:
   Path: event:/Music/BGM
   guid: 631ff874584bfc43a1e6b079082087d9
   Banks:
-  - {fileID: 421219198268215135}
+  - {fileID: 3585566345974875678}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -8270824774424598796}
-  - {fileID: 4993698386263082725}
-  - {fileID: 643863211878831078}
-  - {fileID: 1709750529488745605}
+  - {fileID: 2119435329217867270}
+  - {fileID: -7700129164696331607}
+  - {fileID: -8147532032408753710}
+  - {fileID: -9184470550134316839}
   MinDistance: 0
   MaxDistance: 0
   Length: 352820
@@ -990,7 +1111,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/SystemBootup
   guid: 78d0d6b8b6d40649a228fdbdacad6946
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1013,6 +1134,24 @@ MonoBehaviour:
   Path: Assets/Editor Default Resources/Banks/Master.bank
   SubDir: 
   lastModified: 637203168514114665
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7112610476660336471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Editor Default Resources/Banks/Master.bank
+  SubDir: 
+  lastModified: 637203107940141952
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1083,7 +1222,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/BuildingDestroy
   guid: 7eb6c63e6de53644afdbb62bf8dd4af3
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1123,7 +1262,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/TutorialSpeech
   guid: 81133e11d1d2044396e811dc0471876c
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1146,7 +1285,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/Reward
   guid: 92ea27ac85647d4db8b57bb6e4401a70
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1169,7 +1308,7 @@ MonoBehaviour:
   Path: event:/SoundEffects/PolicyDecline
   guid: 3aa1a75fb5becb43997cb17a28857db7
   Banks:
-  - {fileID: -8609301606087202583}
+  - {fileID: -6887616684411508193}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

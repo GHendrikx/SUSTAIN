@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Context
 {
-    public class PartnerShips : MonoBehaviour
+    public class Policy : MonoBehaviour
     {
         [SerializeField]
         private Button acceptButton;
@@ -19,21 +19,44 @@ namespace Context
         private Data data;
         [SerializeField]
         private TextMeshProUGUI approvalRequirementText;
+        [SerializeField]
+        private TextMeshProUGUI effectDescription;
+        [SerializeField]
+        private TextMeshProUGUI SDGNummer;
+        [SerializeField]
+        private Image SDGColor;
         private int requirementPoints;
         private bool isAccepted = false;
 
-        public void InitializeNewPartenerShip(Data data)
+
+        public void InitializeNewPolicy(Data data)
         {
-            title.text = data.name;
-            this.data = data;
+            Debug.Log("help ik verdrink in code");
+            if (title != null)
+                title.text = data.name;
+            if (description != null)
+                description.text = data.desc;
+            if (effectDescription != null)
+            {
+                effectDescription.text = data.effectDesc;
+            }
+            if (SDGNummer != null)
+                SDGNummer.text = data.sdgType[0].ToString();
+            approvalRequirementText.text = System.Convert.ToInt32(data.approvalReq * 100).ToString() + "%";
 
             acceptButton.onClick.AddListener(() => isAccepted = true);
             acceptButton.onClick.AddListener(() => ToggleGameObject(AudioManager.Instance.PolicyAccept));
             declineButton.onClick.AddListener(() => isAccepted = false);
             declineButton.onClick.AddListener(() => ToggleGameObject(AudioManager.Instance.PolicyDecline));
 
-            approvalRequirementText.text = System.Convert.ToInt32(data.approvalReq * 100).ToString() + "%";
-            Debug.Log("hello3");
+
+
+            for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
+            {
+                SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
+                if (data.sdgType[0] == i)
+                    SDGColor.color = sdgBar.Color;
+            }
         }
         private void Update()
         {

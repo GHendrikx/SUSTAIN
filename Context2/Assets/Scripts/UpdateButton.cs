@@ -106,6 +106,12 @@ namespace Context
                 PartnerShips PartnerShips = this.gameObject.GetComponent<PartnerShips>();
                 PartnerShips.InitializeNewPartenerShip(data);
             }
+
+            if (tab == Tab.Policies)
+            {
+                Policy Policies = this.gameObject.GetComponent<Policy>();
+                Policies.InitializeNewPolicy(data);
+            }
         }
 
         private void Update()

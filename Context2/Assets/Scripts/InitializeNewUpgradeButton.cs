@@ -25,6 +25,7 @@ namespace Context
 
         public void InitializeNewButton(Data data, AI ai)
         {
+            Debug.Log(data + " " + ai + " " + tab);
             initializedData.Add(data);
             Button button = GameObject.Instantiate(buttonPrefab, transform);
             UpdateButton update = button.gameObject.GetComponent<UpdateButton>();
