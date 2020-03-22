@@ -25,7 +25,6 @@ namespace Context {
         {
             if(this.gameObject.activeInHierarchy)
             unityEvent?.Invoke();
-            Debug.Log("werkt dit");
         }
     }
 }
