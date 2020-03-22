@@ -38,7 +38,7 @@ public class DateTimer : MonoBehaviour
         //if(date.currentYear == date.endYear && date.currentWeek == date.endWeek)
         //{
             AudioManager.Instance.StopSound();
-            AudioManager.Instance.Lose.SetActive(true);
+            //AudioManager.Instance.Lose.SetActive(true);
             TimerManager.Instance.AddTimer(QuitGame, 3);
         //}
     }

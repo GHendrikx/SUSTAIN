@@ -19,6 +19,7 @@ namespace Context
         [SerializeField]
         private GameObject costInformation;
         private GameObject[] panels;
+
         #region Information
         [SerializeField]
         private TextMeshProUGUI title;
@@ -48,6 +49,7 @@ namespace Context
             }
         }
 
+
         /// <summary>
         /// Setting new update
         /// </summary>
@@ -72,6 +74,8 @@ namespace Context
             {
                 myButton.onClick.AddListener(() => panels[0].SetActive(false));
                 myButton.onClick.AddListener(() => panels[1].SetActive(true));
+                myButton.onClick.AddListener(() => panels[1].transform.GetChild(2).gameObject.SetActive(true));
+
             }
 
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
