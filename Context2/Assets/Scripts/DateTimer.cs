@@ -12,6 +12,9 @@ public class DateTimer : MonoBehaviour
     private TextMeshProUGUI week;
     [SerializeField]
     private Date date;
+    private int WeeksLeft = 779;
+    private string timeLeft = " Weeks left until the end of 2030";
+
     public void Start()
     {
         week.text = "Week: " + date.beginWeek.ToString();
@@ -30,17 +33,23 @@ public class DateTimer : MonoBehaviour
         week.text = string.Format("Week: {0}", date.currentWeek);
         year.text = string.Format("{0}", date.currentYear);
 
-        CheckEndDate();
     }
 
     private void CheckEndDate()
     {
-        //if(date.currentYear == date.endYear && date.currentWeek == date.endWeek)
-        //{
+        if(WeeksLeft == 0)
+        {
             AudioManager.Instance.StopSound();
-            //AudioManager.Instance.Lose.SetActive(true);
+            AudioManager.Instance.Lose.SetActive(true);
             TimerManager.Instance.AddTimer(QuitGame, 3);
-        //}
+        }
+    }
+
+    public void UpdateText(TextMeshProUGUI tmp)
+    {
+        WeeksLeft--;
+        tmp.text = WeeksLeft + timeLeft;
+        CheckEndDate();
     }
 
     private void QuitGame() 

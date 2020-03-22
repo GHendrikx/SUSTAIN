@@ -56,6 +56,28 @@ namespace Context
         private Slider svHateSlider;
         [SerializeField]
         private Slider svNeutralSlider;
+
+        [SerializeField]
+        private TextMeshProUGUI svHatePercentageTMP;
+        [SerializeField]
+        private TextMeshProUGUI svNeutralPercentageTMP;
+        [SerializeField]
+        private TextMeshProUGUI svLikePercentageTMP;
+
+
+        #endregion
+        #region LocalSlider        
+        [SerializeField]
+        private Slider localHateSlider;
+        [SerializeField]
+        private Slider localNeutralSlider;
+
+        [SerializeField]
+        private TextMeshProUGUI localHatePercentageTMP;
+        [SerializeField]
+        private TextMeshProUGUI localNeutralPercentageTMP;
+        [SerializeField]
+        private TextMeshProUGUI localLikePercentageTMP;
         #endregion
 
         private bool lerping;
@@ -82,7 +104,9 @@ namespace Context
 
 
             #region AI Calculate Fitness Score
-            aiFitnessScore.fillAmount = SDGManager.CalculateHealth();
+            float health = SDGManager.CalculateHealth();
+            Debug.Log(SDGManager);
+            aiFitnessScore.fillAmount = health ;
             #endregion
 
             if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0 && !TimerToInteract.turnButtonTimer )
@@ -94,6 +118,14 @@ namespace Context
             #region AI Trust
             svHateSlider.value = SvDisapprovesPercentage;
             svNeutralSlider.value = SvDisapprovesPercentage + SvNeutralPercentage;
+
+            svHatePercentageTMP.text = SvDisapprovesPercentage.ToString();
+            svNeutralPercentageTMP.text = SvNeutralPercentage.ToString();
+            //svLikePercentageTMP.text = 
+
+
+            localHateSlider.value = LocalHatesPercentage;
+            localNeutralSlider.value = LocalNeutralPercentage;
             #endregion
         }
 
