@@ -240,7 +240,7 @@ namespace Context
                 //HERE is the thing
                 //Debug.Log(Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/v2/Iconen_ResearchPoints_3_16X16"));
 
-                Extensions.SetEffectGain(c + data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costBlock, effectBlock, temp);
+                //Extensions.SetEffectGain(c + data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costBlock, effectBlock, temp);
             }
         }
 
@@ -248,18 +248,21 @@ namespace Context
         {
             if (data.allocatieFixedGain > 0)
                 Extensions.SetAllocatieCost(rewardText, data.allocatieFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconProcessingPower16X16"));
+            else if (data.researchFixedGain > 0)
+                Extensions.SetAllocatieCost(rewardText, data.researchFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"));
             else if (data.creativityFixedGain > 0)
                 Extensions.SetAllocatieCost(rewardText, data.creativityFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"));
-            else if (data.researchFixedGain > 0)
-                Extensions.SetAllocatieCost(rewardText, data.researchFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints16X16"));
-            else if (data.droneFixedGain > 0)
-                Extensions.SetAllocatieCost(rewardText, data.droneFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"));
             else if (data.fundsFixedGain > 0)
                 Extensions.SetAllocatieCost(rewardText, data.droneFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Fund16X16"));
             else if (data.influenceFixedGain > 0)
-                Extensions.SetAllocatieCost(rewardText, data.droneFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Stat16X16"));
+                Extensions.SetAllocatieCost(rewardText, data.influenceFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Stat16X16"));
+            else if (data.powerFixedGain > 0)
+                Extensions.SetAllocatieCost(rewardText, data.powerFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Energy16X16"));
             else if (data.materialFixedGain > 0)
-                Extensions.SetAllocatieCost(rewardText, data.droneFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"));
+                Extensions.SetAllocatieCost(rewardText, data.materialFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"));
+            else if (data.droneFixedGain > 0)
+                Extensions.SetAllocatieCost(rewardText, data.powerFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"));
+
             else
             {
                 rewardText.gameObject.SetActive(false);

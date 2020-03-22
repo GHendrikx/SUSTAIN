@@ -63,13 +63,13 @@ namespace Context
             this.data = data;
 
             BackupAllocationPoints = GameManager.Instance.UIManager.CalculateAllocationMod();
-            
+
             bool status = gameObject.transform.root.gameObject.activeInHierarchy;
 
             SetTextToUpdateButton();
             SetEffects();
             SetUpdateCost();
-            
+
             if (data.ID == 301 && GameManager.Instance.ShowTutorial)
             {
                 myButton.onClick.AddListener(() => panels[0].SetActive(false));
@@ -117,7 +117,7 @@ namespace Context
                 Ai.MaterialPoints >= -data.materialCost &&
                 Ai.PowerPoints >= -data.powerCost)
                 myButton.interactable = true;
-            else 
+            else
                 myButton.interactable = false;
 
         }
@@ -141,9 +141,10 @@ namespace Context
 
         }
 
-        //Deze werkt
+        //Deze werkt is de effectsgain van Research
         private void SetEffects()
         {
+            return;
             if (data.researchGain != 0)
                 Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), upgradeCost, upgradeBlock);
             if (data.creativityGain != 0)
@@ -160,7 +161,8 @@ namespace Context
                 Extensions.SetEffectGain(data.droneGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
         }
 
-         private void SetUpdateCost()
+
+        private void SetUpdateCost()
         {
             if (data.researchCost != 0)
                 SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costInformation, costBlock, data.researchCost);
@@ -195,7 +197,7 @@ namespace Context
 
         public void SetCostBlock(string text, Sprite sprite, GameObject costInfo, GameObject costBlock, float amount)
         {
-            
+
             string c = string.Empty;
 
             Color textColor = Color.white;
@@ -214,7 +216,7 @@ namespace Context
             cost.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
             cost.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
             cost.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
-            Image i = costInfo.GetComponentInChildren<Image>();
+            Image i = cost.GetComponentInChildren<Image>();
             i.sprite = sprite;
             Debug.Log(data.ID + " " + i + " " + sprite + " " + amount);
         }
