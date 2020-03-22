@@ -57,6 +57,12 @@ namespace Context
         [SerializeField]
         private Slider svNeutralSlider;
         #endregion
+        #region LocalSlider        
+        [SerializeField]
+        private Slider localHateSlider;
+        [SerializeField]
+        private Slider localNeutralSlider;
+        #endregion
 
         private bool lerping;
 
@@ -82,7 +88,9 @@ namespace Context
 
 
             #region AI Calculate Fitness Score
-            aiFitnessScore.fillAmount = SDGManager.CalculateHealth();
+            float health = SDGManager.CalculateHealth();
+            Debug.Log(SDGManager);
+            aiFitnessScore.fillAmount = health ;
             #endregion
 
             if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0 && !TimerToInteract.turnButtonTimer )
@@ -94,6 +102,9 @@ namespace Context
             #region AI Trust
             svHateSlider.value = SvDisapprovesPercentage;
             svNeutralSlider.value = SvDisapprovesPercentage + SvNeutralPercentage;
+
+            localHateSlider.value = LocalHatesPercentage;
+            localNeutralSlider.value = LocalNeutralPercentage;
             #endregion
         }
 
