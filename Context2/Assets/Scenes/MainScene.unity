@@ -1876,6 +1876,8 @@ MonoBehaviour:
   influenceData: {fileID: 1534975946}
   dronesData: {fileID: 1534975957}
   materialData: {fileID: 1534975956}
+  powerData: {fileID: 0}
+  droneData: {fileID: 0}
   SDGCalculate: {fileID: 1534975951}
   TrustMeter: {fileID: 1288015245}
   processingPoints: 0
@@ -2055,18 +2057,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc56d6321f05b9247a4706f4f68a43d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfx:
-  - {fileID: 8300000, guid: a3b7d4fce424ae54fbb6502d442741fc, type: 3}
-  - {fileID: 8300000, guid: 48f747da0bc6908498bd60f893560c40, type: 3}
-  - {fileID: 8300000, guid: cf81ade8b72ac2a418d9b29d6a244947, type: 3}
-  - {fileID: 8300000, guid: 5ce6baf53cadb834f9eac6bea0477ba2, type: 3}
-  - {fileID: 8300000, guid: 5084887e40fb88b48b081b4da92bbfc9, type: 3}
-  - {fileID: 8300000, guid: c396fffb28321594cac4e7558de3c14e, type: 3}
-  backgroundSound:
-  - {fileID: 8300000, guid: 33e82c12c5c8e504c8dc9aa8b63e6eb3, type: 3}
-  - {fileID: 8300000, guid: 7c3c92ddeee3b9e46bf0be29c6f82d06, type: 3}
-  sfxSource: {fileID: 0}
-  backgroundSource: {fileID: 0}
+  dontDestroyOnLoad: 0
+  ignoreErrorWhenDuplicatedInstance: 0
+  tabSound: {fileID: 0}
+  researchObject: {fileID: 0}
+  policyAccept: {fileID: 0}
+  policyDecline: {fileID: 0}
+  lose: {fileID: 0}
+  spawnBubble: {fileID: 0}
+  destroyBubble: {fileID: 0}
+  Sounds: []
 --- !u!114 &90794113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2300,6 +2300,7 @@ MonoBehaviour:
     processBar: {fileID: 1177290182}
     rectTransform: {fileID: 1177290181}
   ai: {fileID: 90794111}
+  SDGUnlockSound: {fileID: 0}
 --- !u!114 &90794121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11153,7 +11154,7 @@ PrefabInstance:
     - target: {fileID: 1947689448857443303, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7354609176289990784, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
@@ -16009,7 +16010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &822524588
 RectTransform:
   m_ObjectHideFlags: 0
