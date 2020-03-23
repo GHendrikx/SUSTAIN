@@ -78,14 +78,9 @@ namespace Context
         public void UpdateUI(Data data, int tab)
         {
             if(data.typeOfData == (int)Tab.Allocatie)
-            {
                 upgradesTabs[data.typeOfData].InitializeNewAllocation(data, AI);
-            }
             else if (data.typeOfData == (int)Tab.Construction)
-            {
-                Debug.Log("constructiontime");
                 upgradesTabs[data.typeOfData].InitializeNewConstruction(data, AI);
-            }
             else
                 upgradesTabs[data.typeOfData].InitializeNewButton(data, AI);
 

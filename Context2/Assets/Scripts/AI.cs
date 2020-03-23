@@ -55,8 +55,8 @@ namespace Context
                 approvalReq = value;
             }
         }
+
         #region Research
-        [SerializeField]
         private float researchPoints;
         public float ResearchPoints
         {
@@ -600,72 +600,120 @@ namespace Context
         [Space(10)]
 
         #region SvTrustData
+        [HideInInspector]
         public float CurrentSvRebelliosAngry;
+        [HideInInspector]
         public float CurrentSvAngryDislikes;
+        [HideInInspector]
         public float CurrentSvDislikesNeutral;
+        [HideInInspector]
         public float CurrentSvNeutralLikes;
+        [HideInInspector]
         public float CurrentSvLikesLove;
+        [HideInInspector]
         public float CurrentSvRebelliosControlled;
+        [HideInInspector]
         public float CurrentSvAngryControlled;
+        [HideInInspector]
         public float CurrentSvDislikesControlled;
+        [HideInInspector]
         public float CurrentSvLovesControlled;
+        [HideInInspector]
         public float CurrentSvlikesControlled;
+        [HideInInspector]
         public float CurrentSvNeutralControlled;
         #endregion
-        
+
         [Space(10)]
 
         #region NatTrustData
+        [HideInInspector]
         public float CurrentNatRebelliosAngry;
+        [HideInInspector]
         public float CurrentNatAngryDislikes;
+        [HideInInspector]
         public float CurrentNatDislikesNeutral;
+        [HideInInspector]
         public float CurrentNatNeutralLikes;
+        [HideInInspector]
         public float CurrentNatLikesLove;
+        [HideInInspector]
         public float CurrentNatRebelliosControlled;
+        [HideInInspector]
         public float CurrentNatAngryControlled;
+        [HideInInspector]
         public float CurrentNatDislikesControlled;
+        [HideInInspector]
         public float CurrentNatLovesControlled;
+        [HideInInspector]
         public float CurrentNatlikesControlled;
+        [HideInInspector]
         public float CurrentNatNeutralControlled;
-            #endregion
-    
+        #endregion
+
         [Space(10)]
 
         #region LocalTrustData
+        [HideInInspector]
         public float CurrentLocalRebelliosAngry;
+        [HideInInspector]
         public float CurrentLocalAngryDislikes;
+        [HideInInspector]
         public float CurrentLocalDislikesNeutral;
+        [HideInInspector]
         public float CurrentLocalNeutralLikes;
+        [HideInInspector]
         public float CurrentLocalLikesLove;
+        [HideInInspector]
         public float CurrentLocalRebelliosControlled;
+        [HideInInspector]
         public float CurrentLocalAngryControlled;
+        [HideInInspector]
         public float CurrentLocalDislikesControlled;
+        [HideInInspector]
         public float CurrentLocalLovesControlled;
+        [HideInInspector]
         public float CurrentLocallikesControlled;
+        [HideInInspector]
         public float CurrentLocalNeutralControlled;
         #endregion
         [Space(10)]
 
         //Gecombineerd met rebelious hates dialikes neutral likes loves controlled
         #region Score
+        [HideInInspector]
         public float GlobalRebelliousScore, GlobalHatesScore, GlobalDisLikesScore,GlobalNeutralScore,GlobalLikesScore, GlobalLoveScore, GlobalControlledScore;
+        [HideInInspector]
         public float LocalRebelliousScore, LocalHatesScore, LocalDisLikesScore,LocalNeutralScore,LocalLikesScore, LocalLovesScore, LocalControlledScore;
+        [HideInInspector]
         public float NationalRebelliousScore, NationalHatesScore, NationalDisLikesScore, NationalNeutralScore, NationalLikesScore, NationalLoveScore, NationalControlledScore;
+        [HideInInspector]
         public float SvRebelliousScore, SvHatesScore, SvDisLikesScore, SvNeutralScore, SvLikesScore, SvLoveScore, SvControlledScore;
+        [HideInInspector]
         public float GlobalScoreTotal, LocalScoreTotal, NationalScoreTotal, SvScoreTotal;
+        [HideInInspector]
         public float GlobalRebeliousPercentage, GlobalHatesPercentage, GlobalDislikesPercentage, GlobalNeutralPercentage, GlobalLikesPercentage, GlobalLovesPercentage, GlobalControlledPercentage;
+        [HideInInspector]
         public float LocalRebeliousPercentage, LocalHatesPercentage, LocalDislikesPercentage, LocalNeutralPercentage, LocalLikesPercentage, LocalLovesPercentage, LocalControlledPercentage;
+        [HideInInspector]
         public float NationalRebeliousPercentage, NationalHatesPercentage, NationalDislikesPercentage, NationalNeutralPercentage, NationalLikesPercentage, NationalLovesPercentage, NationalControlledPercentage;
+        [HideInInspector]
         public float SvRebeliousPercentage, SvHatesPercentage, SvDislikesPercentage, SvNeutralPercentage, SvLikesPercentage, SvLovesPercentage, SvControlledPercentage;
+        [HideInInspector]
         public float GlobalApprovesPercentage, GlobalDisapprovesPercentage;
+        [HideInInspector]
         public float LocalApprovesPercentage, LocalDisapprovesPercentage;
+        [HideInInspector]
         public float NationalApprovesPercentage, NationalDisapprovesPercentage;
+        [HideInInspector]
         public float SvApprovesPercentage, SvDisapprovesPercentage;
         #endregion
         #endregion
 
         #region Debug Variable
+        [HideInInspector]
         public float CurrentResearchGainMod;
+        [HideInInspector]
         public float CurrentDroneGainMod;
         #endregion
 

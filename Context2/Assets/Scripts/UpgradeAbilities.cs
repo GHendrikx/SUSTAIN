@@ -90,7 +90,11 @@ namespace Context
             }
 
             if ((BasePoints + -amount) < 0 || (Points + amount) < 0)
+            {
+                AudioManager.Instance.AllocatieError.SetActive(false);
+                AudioManager.Instance.AllocatieError.SetActive(true);
                 return;
+            }
 
             BasePoints = BasePoints + -amount;
             Points = Points + amount;
