@@ -78,7 +78,6 @@ namespace Context
                 myButton.onClick.AddListener(() => panels[1].transform.GetChild(2).gameObject.SetActive(true));
 
             }
-                Debug.Log(data);
 
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
             {
@@ -180,6 +179,7 @@ namespace Context
 
         private void SetUpdateCost()
         {
+
             if (data.researchCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costInformation, costBlock, data.researchCost);
             if (data.creativityCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))

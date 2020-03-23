@@ -67,6 +67,7 @@ namespace Context
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.SDGManager.UpdateSDGValues, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.SDGCalculate.UpdateSDG, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.TrustMeter.UpdateTrustMeter, 0.1f);
+            TimerManager.Instance.AddTimer(GameManager.Instance.AI.powerData.UpdatePower, 0.1f);
         }
 
         private void Awake()

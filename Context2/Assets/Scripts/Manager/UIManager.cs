@@ -86,7 +86,6 @@ namespace Context
                 upgradesTabs[data.typeOfData].InitializeNewConstruction(data, AI);
             else
             {
-                Debug.Log(upgradesTabs.Length + " " + data.typeOfData);
                 upgradesTabs[data.typeOfData].InitializeNewButton(data, AI);
             }
         }

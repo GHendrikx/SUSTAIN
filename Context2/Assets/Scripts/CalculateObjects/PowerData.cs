@@ -41,7 +41,7 @@ namespace Context
         private void CalculatePowerPoints()
         {
             float temp1 = ai.PowerPoints + CurrentPowerGain;
-            StartCoroutine(ai.LerpResources(Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, temp1, Mathf.Infinity));
+            StartCoroutine(ai.LerpResources(Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, temp1));
             ;
         }
 
