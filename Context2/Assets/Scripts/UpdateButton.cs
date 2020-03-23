@@ -78,12 +78,14 @@ namespace Context
                 myButton.onClick.AddListener(() => panels[1].transform.GetChild(2).gameObject.SetActive(true));
 
             }
+                Debug.Log(data);
 
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
             {
                 SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
                 if (data.ID == sdgBar.SDGUnlockID)
                     myButton.onClick.AddListener(() => GameManager.Instance.AI.SDGManager.SetLockImage(sdgBar));
+
                 if (data.sdgType[0] == i)
                     SDGColor.color = sdgBar.Color;
             }

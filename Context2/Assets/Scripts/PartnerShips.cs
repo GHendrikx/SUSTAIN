@@ -40,8 +40,8 @@ namespace Context
             acceptButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
             acceptButton.onClick.AddListener(() => GameManager.Instance.AI.droneData.UpdateDroneWithoutPoints());
             acceptButton.onClick.AddListener(() => GameManager.Instance.AI.GetUpdate(data));
-
             declineButton.onClick.AddListener(() => isAccepted = false);
+
             declineButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.PolicyDecline));
             declineButton.onClick.AddListener(() => data.isResearched = false);
 
@@ -59,6 +59,7 @@ namespace Context
         }
         private void Update()
         {
+            //Debug.Log(data.isResearched); 
             if (isAccepted)
                 declineButton.interactable = true;
             else
