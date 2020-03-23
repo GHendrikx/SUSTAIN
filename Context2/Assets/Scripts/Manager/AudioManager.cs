@@ -106,6 +106,11 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField]
     private GameObject[] Sounds;
 
+    [SerializeField]
+    private GameObject allocatieReward;
+    [SerializeField]
+    private GameObject allocatieError;
+
     public void StopSound()
     {
         for (int i = 0; i < Sounds.Length; i++)

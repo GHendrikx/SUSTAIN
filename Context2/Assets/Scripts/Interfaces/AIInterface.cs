@@ -118,17 +118,17 @@ namespace Context
             svDisapproveSlider.value = SvDisapprovesPercentage;
             svNeutralSlider.value = SvDisapprovesPercentage + SvNeutralPercentage;
 
-            svDisapprovePercentageTMP.text = SvDisapprovesPercentage.ToString();
-            svNeutralPercentageTMP.text = SvNeutralPercentage.ToString();
-            svApprovePercentageTMP.text = SvApprovesPercentage.ToString();
+            svDisapprovePercentageTMP.text = (SvDisapprovesPercentage * 100).ToString("0.0") + "%";
+            svNeutralPercentageTMP.text = (SvNeutralPercentage * 100).ToString("0.0") + "%";
+            svApprovePercentageTMP.text = (SvApprovesPercentage * 100).ToString("0.0") + "%";
 
 
             localDisapprovelSlider.value = LocalDisapprovesPercentage;
             localNeutralSlider.value = LocalNeutralPercentage + LocalDisapprovesPercentage;
 
-            localDisapprovePercentageTMP.text = SvDisapprovesPercentage.ToString();
-            localNeutralPercentageTMP.text = LocalNeutralPercentage.ToString();
-            localApprovesPercentageTMP.text = LocalApprovesPercentage.ToString();
+            localDisapprovePercentageTMP.text = (SvDisapprovesPercentage*100).ToString("0.0") + "%";
+            localNeutralPercentageTMP.text = (LocalNeutralPercentage*100).ToString("0.0") + "%";
+            localApprovesPercentageTMP.text = (LocalApprovesPercentage*100).ToString("0.0") + "%";
             #endregion
         }
 

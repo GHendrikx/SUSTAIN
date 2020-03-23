@@ -1837,7 +1837,6 @@ MonoBehaviour:
   SDGCalculate: {fileID: 1534975951}
   TrustMeter: {fileID: 1288015245}
   processingPoints: 0
-  researchPoints: 0
   SDGPoints01: 0
   SDGPoints02: 0
   SDGPoints03: 0
@@ -2031,6 +2030,8 @@ MonoBehaviour:
   spawnBubble: {fileID: 0}
   destroyBubble: {fileID: 0}
   Sounds: []
+  allocatieReward: {fileID: 9180473486499100901}
+  allocatieError: {fileID: 9180473484992158441}
 --- !u!114 &90794113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2806,7 +2807,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -11565,7 +11566,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -25860,6 +25861,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bgContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 9031952448940289421, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.41
+      objectReference: {fileID: 0}
     - target: {fileID: 8396432987365820147, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26034,11 +26040,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SVDisapproveSlider
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031952448940289421, guid: e4068a386d3d7044697fb0e71e734b3f,
-        type: 3}
-      propertyPath: m_Value
-      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 1340324945812561823, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
@@ -29422,7 +29423,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -33547,7 +33548,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -35659,6 +35660,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.000038146973
       objectReference: {fileID: 0}
+    - target: {fileID: 6445248995925161015, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445248995925161015, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 826180992652431893, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -35673,6 +35684,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LocalNeutralSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987392759184903990, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987392759184903990, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.00012207
       objectReference: {fileID: 0}
     - target: {fileID: 124211056434034004, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
@@ -35753,6 +35774,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.37647063
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087805293172919131, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087805293172919131, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4068a386d3d7044697fb0e71e734b3f, type: 3}
@@ -37142,7 +37173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13000412, y: 0.53847003}
   m_AnchorMax: {x: 0.4791882, y: 0.55871505}
-  m_AnchoredPosition: {x: -1.9999657, y: 1.75}
+  m_AnchoredPosition: {x: -1.9997826, y: 1.75}
   m_SizeDelta: {x: 4, y: 1.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959091945
@@ -40518,7 +40549,7 @@ GameObject:
   - component: {fileID: 9180473485076802473}
   - component: {fileID: 9180473485076802472}
   m_Layer: 0
-  m_Name: BuildingRemove
+  m_Name: BuildingRemoveTODO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40807,7 +40838,7 @@ GameObject:
   - component: {fileID: 9180473486309418459}
   - component: {fileID: 9180473486309418458}
   m_Layer: 0
-  m_Name: BuildingAdd
+  m_Name: BuildingAddTODO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
