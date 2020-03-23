@@ -25,6 +25,7 @@ namespace Context
         public void InitializeNewPartenerShip(Data data)
         {
             title.text = data.name;
+
             this.data = data;
 
             acceptButton.onClick.AddListener(() => isAccepted = true);
@@ -70,10 +71,5 @@ namespace Context
 
         }
 
-        private void ToggleGameObject(GameObject gameObject)
-        {
-            gameObject.SetActive(false);
-            gameObject.SetActive(true);
-        }
     }
 }
