@@ -9,6 +9,7 @@ namespace Context
     public class UpgradeAbilities : MonoBehaviour
     {
         public static List<UpgradeAbilities> UPGRADEABILITIES = new List<UpgradeAbilities>();
+        public static List<Construction> CONSTRUCTIONLIST = new List<Construction>();
         public Data data;
         public GameObject Instance;
         public static float TEMPALLOCATIONPOOL;
@@ -238,7 +239,7 @@ namespace Context
                 string c;
 
                 Color temp = Color.white;
-                if (data.materialGain > 0)
+                if (data.powerGain > 0)
                 {
                     temp = Color.green;
                     c = "+";
@@ -249,7 +250,7 @@ namespace Context
                     c = "";
                 }
 
-                Extensions.SetEffectGain(c + data.materialGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + data.powerGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Energy16X16"), costBlock, effectBlock, temp);
             }
 
             if (data.researchGain > 0 || data.researchGain < 0)

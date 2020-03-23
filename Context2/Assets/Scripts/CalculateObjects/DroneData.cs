@@ -74,6 +74,9 @@ namespace Context
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
                     CurrentDronesGainMod += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.droneGainMod;
+            for (int i = 0; i < UpgradeAbilities.CONSTRUCTIONLIST.Count; i++)
+                if (UpgradeAbilities.CONSTRUCTIONLIST[i].Data.typeOfData == 3)
+                    CurrentDronesLimit += UpgradeAbilities.CONSTRUCTIONLIST[i].Points * UpgradeAbilities.CONSTRUCTIONLIST[i].Data.droneGainMod;
         }
 
         private void CalculateDronesGain()
@@ -86,6 +89,10 @@ namespace Context
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
                     CurrentDronesGain += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.droneGain;
+            for (int i = 0; i < UpgradeAbilities.CONSTRUCTIONLIST.Count; i++)
+                if (UpgradeAbilities.CONSTRUCTIONLIST[i].Data.typeOfData == 3)
+                    CurrentDronesLimit += UpgradeAbilities.CONSTRUCTIONLIST[i].Points * UpgradeAbilities.CONSTRUCTIONLIST[i].Data.droneGain;
+
             CurrentDronesGain *= CurrentDronesGainMod;
         }
 
@@ -98,6 +105,9 @@ namespace Context
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.typeOfData == 0)
                     CurrentDronesLimit += UpgradeAbilities.UPGRADEABILITIES[i].Points * UpgradeAbilities.UPGRADEABILITIES[i].data.droneLimit;
+            for (int i = 0; i < UpgradeAbilities.CONSTRUCTIONLIST.Count; i++)
+                if (UpgradeAbilities.CONSTRUCTIONLIST[i].Data.typeOfData == 3)
+                    CurrentDronesLimit += UpgradeAbilities.CONSTRUCTIONLIST[i].Points * UpgradeAbilities.CONSTRUCTIONLIST[i].Data.droneLimit;
             CurrentDronesLimit *= CurrentDronesLimitMod;
 
             if (ai.DronePoints >= CurrentDronesLimit)

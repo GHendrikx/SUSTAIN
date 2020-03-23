@@ -1038,6 +1038,7 @@ MonoBehaviour:
   costBlock: {fileID: 7373439315183885711}
   costInformation: {fileID: 5504829431636078163, guid: 30cac3fe21b396345a71af6f7ce78276,
     type: 3}
+  constructionCount: {fileID: 8875995483492245532}
 --- !u!114 &2272005128703391199
 MonoBehaviour:
   m_ObjectHideFlags: 0

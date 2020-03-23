@@ -58,6 +58,7 @@ namespace Context
 
             TimerManager.Instance.AddTimer(SetFirstTurn, 0.1f);
             TimerManager.Instance.AddTimer(GoToNextTurn, 0.1f);
+
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.researchData.UpdateResearch, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.creativityData.UpdateCreativity, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.fundsData.UpdateFunds, 0.1f);

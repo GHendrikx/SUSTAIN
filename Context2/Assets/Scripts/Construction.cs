@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,17 @@ namespace Context
         [SerializeField]
         private TextMeshProUGUI description;
         private Data data;
+        public Data Data
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
+            }
+        }
         [SerializeField]
         private TextMeshProUGUI effectDescription;
         [SerializeField]
@@ -26,9 +38,12 @@ namespace Context
         [SerializeField]
         private GameObject costInformation;
         private Button myButton;
-
+        [SerializeField]
+        private TextMeshProUGUI constructionCount;
+        public int Points;
         public void InitializeNewConstruction(Data data, Button myButton)
         {
+            UpgradeAbilities.CONSTRUCTIONLIST.Add(this);
             if (title != null)
                 title.text = data.name;
             if (description != null)
@@ -49,7 +64,19 @@ namespace Context
                     SDGColor.color = sdgBar.Color;
             }
             SetUpdateCost();
+
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.GetUpdate(this.data));
+            myButton.onClick.AddListener(() => AddConstructionCount());
         }
+
+        private void AddConstructionCount()
+        {
+            int c = System.Convert.ToInt32(constructionCount.text);
+            c++;
+            Points = c;
+            constructionCount.text = c.ToString();
+        }
+
         private void Update()
         {
             if (GameManager.Instance.AI == null)
@@ -64,8 +91,9 @@ namespace Context
                 GameManager.Instance.AI.PowerPoints >= -data.powerCost)
                 myButton.interactable = true;
             else
+            {
                 myButton.interactable = false;
-
+            }
         }
 
         private void ToggleGameObject(GameObject gameObject)

@@ -145,7 +145,8 @@ namespace Context
             float temp5 = DronePoints;
             float temp6 = MaterialPoints;
             float temp7 = PowerPoints;
-                    Debug.Log(temp7);
+
+     
 
             while (Time.time < (startTime + overtime))
             {
@@ -164,6 +165,7 @@ namespace Context
                 
                 if (newResearch != Mathf.Infinity)
                 {
+                    Debug.Log(newPower);
                     temp3 = Mathf.Lerp(ResearchPoints, newResearch, (Time.time - startTime) / overtime);
                     ResearchPoints = temp3;
                     if (ResearchPoints > ResearchLimit)
@@ -192,6 +194,8 @@ namespace Context
                 {
                     temp7 = Mathf.Lerp(PowerPoints, newPower, (Time.time - startTime) / overtime);
                     PowerPoints = temp7;
+                    if(powerPoints != 0)
+                    Debug.Log(powerPoints);
                 }
                 yield return null;
             }
