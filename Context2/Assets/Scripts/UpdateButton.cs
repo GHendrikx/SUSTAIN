@@ -161,7 +161,7 @@ namespace Context
         private void SetEffects()
         {
             if (data.researchGain != 0)
-                Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), upgradeCost, upgradeBlock);
+                    Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), upgradeCost, upgradeBlock);
             if (data.creativityGain != 0)
                 Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), upgradeCost, upgradeBlock);
             if (data.fundsGain != 0)
@@ -179,22 +179,20 @@ namespace Context
 
         private void SetUpdateCost()
         {
-            if (data.researchCost != 0 && data.typeOfData == 2)
+            if (data.researchCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costInformation, costBlock, data.researchCost);
-            if (data.creativityCost != 0 && data.typeOfData == 2)
+            if (data.creativityCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.creativityCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), costInformation, costBlock, data.creativityCost);
-            if (data.fundsCost != 0 && data.typeOfData == 2)
+            if (data.fundsCost != 0 && (data.typeOfData >0 && data.typeOfData < 5))
                 SetCostBlock(data.fundsCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Fund16X16"), costInformation, costBlock, data.fundsCost);
-            if (data.influenceCost != 0 && data.typeOfData == 2)
+            if (data.influenceCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.influenceCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Stat16X16"), costInformation, costBlock, data.influenceCost);
-            if (data.powerCost != 0 && data.typeOfData == 2)
+            if (data.powerCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.powerCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Energy16X16"), costInformation, costBlock, data.powerCost);
-            if (data.materialCost != 0 && data.typeOfData == 2)
+            if (data.materialCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.materialCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), costInformation, costBlock, data.materialCost);
-            if (data.droneCost != 0 && data.typeOfData == 2)
+            if (data.droneCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.droneCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), costInformation, costBlock, data.droneCost);
-
-
         }
 
         private void AllocationUpdate()
