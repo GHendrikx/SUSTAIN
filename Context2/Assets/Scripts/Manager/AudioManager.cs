@@ -108,8 +108,30 @@ public class AudioManager : Singleton<AudioManager>
 
     [SerializeField]
     private GameObject allocatieReward;
+    public GameObject AllocatieReward
+    {
+        get
+        {
+            return allocatieReward;
+        }
+        set
+        {
+            allocatieReward = value;
+        }
+    }
     [SerializeField]
     private GameObject allocatieError;
+    public GameObject AllocatieError
+    {
+        get
+        {
+            return allocatieError;
+        }
+        set
+        {
+            allocatieError = value;
+        }
+    }
 
     public void StopSound()
     {
