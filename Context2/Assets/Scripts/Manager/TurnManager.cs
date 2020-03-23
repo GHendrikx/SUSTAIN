@@ -145,16 +145,10 @@ namespace Context
                     UpgradeAbilities.TEMPALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     UpgradeAbilities.ALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     //speel hier rewardsound
-                    ToggleGameObject();
+                    AudioManager.Instance.ToggleGameObject(AudioManager.Instance.AllocatieReward);
                 }
                 yield return null;
             }
-        }
-
-        private void ToggleGameObject()
-        {
-            AudioManager.Instance.AllocatieReward.SetActive(false);
-            AudioManager.Instance.AllocatieReward.SetActive(true);
         }
 
         private void Turn() =>
