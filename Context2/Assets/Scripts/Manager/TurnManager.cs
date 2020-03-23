@@ -133,7 +133,6 @@ namespace Context
                 {
                     UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel += 1;
                     UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget += Mathf.Round(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * Mathf.Pow(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGrowth, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel));
-                    Debug.Log("what");
                     GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.researchFixedGain;
                     GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.creativityFixedGain;
@@ -145,16 +144,10 @@ namespace Context
                     UpgradeAbilities.TEMPALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     UpgradeAbilities.ALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     //speel hier rewardsound
-                    ToggleGameObject();
+                    AudioManager.Instance.ToggleGameObject(AudioManager.Instance.AllocatieReward);
                 }
                 yield return null;
             }
-        }
-
-        private void ToggleGameObject()
-        {
-            AudioManager.Instance.AllocatieReward.SetActive(false);
-            AudioManager.Instance.AllocatieReward.SetActive(true);
         }
 
         private void Turn() =>

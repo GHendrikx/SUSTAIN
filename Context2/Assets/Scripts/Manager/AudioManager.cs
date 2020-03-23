@@ -139,4 +139,9 @@ public class AudioManager : Singleton<AudioManager>
             Sounds[i].SetActive(false);
     }
 
+    public void ToggleGameObject(GameObject go)
+    {
+        go.SetActive(false);
+        go.SetActive(true);
+    }
 }

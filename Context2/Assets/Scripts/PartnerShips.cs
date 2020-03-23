@@ -28,9 +28,9 @@ namespace Context
             this.data = data;
 
             acceptButton.onClick.AddListener(() => isAccepted = true);
-            acceptButton.onClick.AddListener(() => ToggleGameObject(AudioManager.Instance.PolicyAccept));
+            acceptButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.PolicyAccept));
             declineButton.onClick.AddListener(() => isAccepted = false);
-            declineButton.onClick.AddListener(() => ToggleGameObject(AudioManager.Instance.PolicyDecline));
+            declineButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.PolicyDecline));
 
             approvalRequirementText.text = System.Convert.ToInt32(data.approvalReq * 100).ToString() + "%";
         }
