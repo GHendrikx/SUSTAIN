@@ -233,6 +233,25 @@ namespace Context
                 Extensions.SetEffectGain(c + data.materialGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), costBlock, effectBlock, temp);
             }
 
+            if (data.powerGain > 0 || data.powerGain < 0)
+            {
+                string c;
+
+                Color temp = Color.white;
+                if (data.materialGain > 0)
+                {
+                    temp = Color.green;
+                    c = "+";
+                }
+                else
+                {
+                    temp = Color.red;
+                    c = "";
+                }
+
+                Extensions.SetEffectGain(c + data.materialGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), costBlock, effectBlock, temp);
+            }
+
             if (data.researchGain > 0 || data.researchGain < 0)
             {
                 string c;

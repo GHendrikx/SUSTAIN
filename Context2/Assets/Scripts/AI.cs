@@ -753,9 +753,7 @@ namespace Context
         private void Update()
         {
             if (addPoints)
-            {    
                 AddTimer();
-            }
             UpdateUI();
 
             if (SetTurn)
@@ -834,17 +832,6 @@ namespace Context
             if (temp1 >= ResearchLimit)
                 temp1 = ResearchLimit;
 
-            #region without lerp ugly as hell
-            //ResearchPoints -= data.researchCost - data.researchFixedGain;
-            //CreativityPoints -= data.creativityCost - data.creativityFixedGain;
-            //FundsPoints -= data.fundsCost - data.fundsFixedGain;
-            //InfluencePoints -= data.influenceCost - data.influenceFixedGain;
-            //DroneCost -= data.droneCost - data.droneFixedGain;
-            //MaterialCost -= data.materialCost - data.materialFixedGain;
-            #endregion
-
-            //time lerping = .5f
-            //(Time.time - startTime) / overtime 
             StartCoroutine(LerpResources(1, temp1, temp2, temp3, temp4, temp5, temp6, temp7));
 
             #endregion

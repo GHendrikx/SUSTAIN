@@ -42,7 +42,6 @@ namespace Context
         {
             float temp1 = ai.PowerPoints + CurrentPowerGain;
             StartCoroutine(ai.LerpResources(Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, temp1));
-            ;
         }
 
         private void CalculatePowerGainMod()

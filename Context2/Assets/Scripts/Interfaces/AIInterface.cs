@@ -24,6 +24,7 @@ namespace Context
         private TextMeshProUGUI Material;
         [SerializeField]
         private TextMeshProUGUI Drone;
+        
 
         [SerializeField]
         private TextMeshProUGUI name;
@@ -144,6 +145,7 @@ namespace Context
             float temp5 = DronePoints;
             float temp6 = MaterialPoints;
             float temp7 = PowerPoints;
+                    Debug.Log(temp7);
 
             while (Time.time < (startTime + overtime))
             {
@@ -165,9 +167,7 @@ namespace Context
                     temp3 = Mathf.Lerp(ResearchPoints, newResearch, (Time.time - startTime) / overtime);
                     ResearchPoints = temp3;
                     if (ResearchPoints > ResearchLimit)
-                    {
                         ResearchPoints = ResearchLimit;
-                    }
                 }
 
                 if (newInfluence != Mathf.Infinity)
