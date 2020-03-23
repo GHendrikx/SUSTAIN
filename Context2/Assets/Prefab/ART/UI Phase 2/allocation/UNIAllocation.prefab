@@ -1107,9 +1107,10 @@ MonoBehaviour:
     typeOfData: 0
     neededPhase: 0
     techPrereq: 
-    musicStage: 0
-    musicSoundSFX: 0
-    musicAdvancement: 0
+    performance: 0
+    gameClear: 0
+    corruption: 0
+    progression: 0
     effectDesc: 
     locks: 0
     isResearched: 0
@@ -1118,6 +1119,8 @@ MonoBehaviour:
     isAvailable: 0
     isShownInGUI: 0
     isActive: 0
+    approvalReq: 0
+    approvalType: 0
     creativityCost: 0
     researchCost: 0
     allocatieCost: 0
@@ -1126,6 +1129,7 @@ MonoBehaviour:
     materialCost: 0
     droneCost: 0
     powerCost: 0
+    doneGrowth: 0
     doneTimes: 0
     doneGain: 0
     doneDesc: 
@@ -1233,8 +1237,6 @@ MonoBehaviour:
     natDislikesControlled: 0
     natNeutralControlled: 0
     natLikesControlled: 0
-    SFX: 0
-    backgroundMusic: 0
   Instance: {fileID: 0}
   CurrentDoneTarget: 0
   abilityPointText: {fileID: 8875995483492245532}
@@ -1411,6 +1413,18 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3433041468434954722, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49,
+        type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: -2009881658825172230, guid: 95d2586b53e1a4c4586614e73cf3e49e,
+        type: 3}
+    - target: {fileID: 3433041468241379103, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49,
+        type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 5735268969898723681, guid: 3ebc43d211686cb44b1096e7b344ad09,
+        type: 3}
     - target: {fileID: 4144476168880780089, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49,
         type: 3}
       propertyPath: m_text
