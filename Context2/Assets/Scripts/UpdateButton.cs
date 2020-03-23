@@ -51,7 +51,6 @@ namespace Context
             }
         }
 
-
         /// <summary>
         /// Setting new update
         /// </summary>
@@ -136,7 +135,7 @@ namespace Context
         {
 
 
-            Ai.GetUpdate(CostOfUpdate, data);
+            Ai.GetUpdate(data);
             data.isResearched = true;
             AllocationUpdate();
             Destroy(this.gameObject);

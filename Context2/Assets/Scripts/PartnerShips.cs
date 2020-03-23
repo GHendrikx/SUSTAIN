@@ -29,22 +29,45 @@ namespace Context
 
             acceptButton.onClick.AddListener(() => isAccepted = true);
             acceptButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.PolicyAccept));
+            acceptButton.onClick.AddListener(() => data.isResearched = true);
+
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.droneData.UpdateDroneWithoutPoints());
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.GetUpdate(data));
+
             declineButton.onClick.AddListener(() => isAccepted = false);
             declineButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.PolicyDecline));
+            declineButton.onClick.AddListener(() => data.isResearched = false);
 
-            approvalRequirementText.text = System.Convert.ToInt32(data.approvalReq * 100).ToString() + "%";
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.droneData.UpdateDroneWithoutPoints());
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.RemoveUpdate(data));
+
+
+            approvalRequirementText.text = System.Convert.ToInt32(data.neededSupervisorTrust * 100).ToString() + "%";
         }
         private void Update()
         {
-            //if (data.isResearched != isAccepted)
-            //    data.isResearched = isAccepted;
+            if (isAccepted)
+                declineButton.interactable = true;
+            else
+                declineButton.interactable = false;
+            
+            if (GameManager.Instance.AI.SvApprovesPercentage >= data.neededSupervisorTrust)
+                acceptButton.interactable = true;
+            else
+                acceptButton.interactable = false;
 
-            //if (GameManager.Instance.AI.ApprovalReq >= data.approvalReq)
-            //    acceptButton.interactable = true;
-            //else
-            //{
-
-            //}
         }
 
         private void ToggleGameObject(GameObject gameObject)

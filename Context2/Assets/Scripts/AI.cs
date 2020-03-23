@@ -773,7 +773,7 @@ namespace Context
             TimerManager.Instance.AddTimer(() => { addPoints = !addPoints; }, 1);
         }
 
-        public void GetUpdate(int amount, Data data)
+        public void GetUpdate(Data data)
         {
             data.isResearched = true;
 
@@ -810,11 +810,49 @@ namespace Context
 
             UpdateUI();
 
+            if (ResearchPoints >= researchData.CurrentResearchLimit)
+                ResearchPoints = researchData.CurrentResearchLimit;
 
-            #region PlayMusic of the upgrade
-            //audioManager.PlaySFX((SFXFragments)data.SFX);
-            //audioManager.PlayBackground((BackgroundFragments)data.backgroundMusic);
+            HASUPDATE.Add(data);
+        }
+
+        public void RemoveUpdate(Data data)
+        {
+            data.isResearched = false;
+
+            #region Calculate Resources
+
+            //Calculate points
+            float temp1 = ResearchPoints - data.researchCost/* - data.researchFixedGain*/;
+            float temp2 = CreativityPoints - data.creativityCost/* - data.creativityFixedGain*/;
+            float temp3 = fundsPoints - data.fundsCost /*- data.fundsFixedGain*/;
+            float temp4 = InfluencePoints - data.influenceCost /*- data.influenceFixedGain*/;
+            float temp5 = DronePoints - data.droneCost/* - data.droneFixedGain*/;
+            float temp6 = materialPoints - data.materialCost /*- data.materialFixedGain*/;
+            float temp7 = powerPoints - data.powerCost;
+
+            if (temp1 >= ResearchLimit)
+                temp1 = ResearchLimit;
+
+            #region without lerp ugly as hell
+            //ResearchPoints -= data.researchCost - data.researchFixedGain;
+            //CreativityPoints -= data.creativityCost - data.creativityFixedGain;
+            //FundsPoints -= data.fundsCost - data.fundsFixedGain;
+            //InfluencePoints -= data.influenceCost - data.influenceFixedGain;
+            //DroneCost -= data.droneCost - data.droneFixedGain;
+            //MaterialCost -= data.materialCost - data.materialFixedGain;
             #endregion
+
+            //time lerping = .5f
+            //(Time.time - startTime) / overtime 
+            StartCoroutine(LerpResources(1, temp1, temp2, temp3, temp4, temp5, temp6, temp7));
+
+            #endregion
+
+            UpgradeAbilities.TEMPALLOCATIONPOOL -= data.allocatieFixedGain;
+            UpgradeAbilities.ALLOCATIONPOOL -= data.allocatieFixedGain;
+
+            UpdateUI();
 
             if (ResearchPoints >= researchData.CurrentResearchLimit)
                 ResearchPoints = researchData.CurrentResearchLimit;

@@ -53,24 +53,6 @@ namespace Context
 
         }
 
-        [System.Obsolete("This was the Test function of the project not in use anymore.")]
-        private string SetTextToButton(Data data)
-        {
-            string text = data.name;
-            Debug.Log(data.name);
-
-            if (data.researchCost != 0 || (data.researchCost != null && data.researchCost != 0))
-                text += " R (" + data.researchCost + ")";
-            if (data.creativityCost != 0 || (data.creativityCost != null && data.creativityCost != 0))
-                text += " C (" + data.creativityCost + ")";
-            if (data.fundsCost != 0 || (data.fundsCost != null && data.fundsCost != 0))
-                text += " F (" + data.fundsCost + ")";
-            if (data.influenceCost != 0 || (data.influenceCost != null && data.influenceCost != 0))
-                text += " I (" + data.influenceCost + ")";
-
-            return text;
-        }
-
         public void InitializeNewAllocation(Data data, AI ai)
         {
 
