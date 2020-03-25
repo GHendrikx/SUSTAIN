@@ -41,7 +41,7 @@ namespace Context {
             AudioManager.Instance.StopSound();
             AudioManager.Instance.Lose.SetActive(true);
             gameClear.SetGameClear();
-            TimerManager.Instance.AddTimer(QuitGame, 3);
+            TimerManager.Instance.AddTimer(QuitGame, 5);
         }
 
         public void UpdateText(TextMeshProUGUI tmp)

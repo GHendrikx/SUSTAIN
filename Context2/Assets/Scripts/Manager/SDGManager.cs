@@ -23,7 +23,7 @@ namespace Context
         private AI ai;
         [SerializeField]
         private GameObject SDGUnlockSound;
-
+        public float offset = 0.5f;
 
         public void UpdateSDGValues()
         {
@@ -57,12 +57,17 @@ namespace Context
         public float CalculateHealth()
         {
             float health = 0;
+
             for (int i = 0; i < sdgBar.Length; i++)
             {
                 if (sdgBar[i].LockImage[0].gameObject.activeInHierarchy)
                     continue;
+
                 health += sdgBar[i].RectTransform.anchorMax.x;
             }
+
+            if (!sdgBar[2].LockImage[0].gameObject.activeInHierarchy)
+                health += offset;
 
             health = Mathf.Clamp(health, 0, 1);
 

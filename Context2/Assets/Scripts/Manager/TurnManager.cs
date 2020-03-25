@@ -107,6 +107,7 @@ namespace Context
                 AudioManager.Instance.ToggleGameObject(AudioManager.Instance.NextWeek);
                 ISINTERACTABLE = false;
                 TimerManager.Instance.AddTimer(() => { ISINTERACTABLE = !ISINTERACTABLE; }, 3);
+                GameManager.Instance.AI.SDGManager.offset -= 0.016f;
             }
             virgin = false;
 
@@ -117,8 +118,6 @@ namespace Context
                 float beginNumber = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes;
 
                 UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes += points;
-
-
 
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
                 {

@@ -97,7 +97,7 @@ namespace Context
         private float GUIResearchPoints;
         private float GUICreativityPoints;
         private float GUIFundsPoints;
-
+        private bool inLerp;
         /// <summary>
         /// Update processing points
         /// </summary>
@@ -116,12 +116,15 @@ namespace Context
 
 
             #region AI Calculate Fitness Score
+            float currentHealth = aiFitnessScore.fillAmount;
             float health = SDGManager.CalculateHealth();
+            if(!inLerp)
+                StartCoroutine(LerpHealth(1, currentHealth, health, aiFitnessScore));
             performanceData.CalculatePerformance(health);
-            aiFitnessScore.fillAmount = health;
 
             if (health == 0)
                 dateTimer.EndDate();
+
             #endregion
             if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0 || !TurnManager.ISINTERACTABLE)
                 turnButton.interactable = false;
@@ -213,6 +216,18 @@ namespace Context
 
             lerping = false;
             yield return null;
+        }
+
+        public IEnumerator LerpHealth(float overtime, float currentHealth, float health, Image aiFitnessScore)
+        {
+            inLerp = true;
+            float startTime = Time.time;
+            while (Time.time < (startTime + overtime))
+            {
+                aiFitnessScore.fillAmount = Mathf.Lerp(currentHealth, health, (Time.time - startTime) / overtime);
+                yield return null;
+            }
+            inLerp = false;
         }
 
     }
