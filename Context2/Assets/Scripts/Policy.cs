@@ -45,6 +45,8 @@ namespace Context
 
             approvalRequirementText.text = System.Convert.ToInt32(data.neededLocalTrust * 100).ToString() + "%";
 
+            #region Adding Listeners
+
             acceptButton.onClick.AddListener(() => isAccepted = true);
             acceptButton.onClick.AddListener(() => ToggleGameObject(AudioManager.Instance.PolicyAccept));
             acceptButton.onClick.AddListener(() => data.isResearched = true);
@@ -57,6 +59,11 @@ namespace Context
             acceptButton.onClick.AddListener(() => GameManager.Instance.AI.droneData.UpdateDroneWithoutPoints());
             acceptButton.onClick.AddListener(() => GameManager.Instance.AI.GetUpdate(data));
 
+            #region Fmod
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.corruptionData.CalculateCorruptionGain());
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.progressionData.CalculateProgressionGain());
+            #endregion
+
             declineButton.onClick.AddListener(() => isAccepted = false);
             declineButton.onClick.AddListener(() => ToggleGameObject(AudioManager.Instance.PolicyDecline));
             acceptButton.onClick.AddListener(() => data.isResearched = false);
@@ -68,6 +75,13 @@ namespace Context
             declineButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
             declineButton.onClick.AddListener(() => GameManager.Instance.AI.droneData.UpdateDroneWithoutPoints());
             declineButton.onClick.AddListener(() => GameManager.Instance.AI.GetUpdate(data));
+
+            #region Fmod
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.corruptionData.CalculateCorruptionGain());
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.progressionData.CalculateProgressionGain());
+            #endregion
+
+            #endregion
 
 
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)

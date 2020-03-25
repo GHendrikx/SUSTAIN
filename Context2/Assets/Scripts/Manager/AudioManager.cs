@@ -190,7 +190,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public void SetParameters(float performance, int gameClear, int corrupion, int progression, StudioParameterTrigger sp)
     {
-        if (performance == -999)
+        if (performance != -999)
             sp.TriggerParameters(AudioParameters.Performance, performance);
         if (gameClear != -999)
             sp.TriggerParameters(AudioParameters.GameClear, gameClear);

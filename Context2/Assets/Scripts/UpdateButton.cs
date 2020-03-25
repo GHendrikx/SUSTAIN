@@ -103,7 +103,8 @@ namespace Context
                 #region fmod parameters set
                 myButton.onClick.AddListener(() => ai.progressionData.CalculateProgressionGain());
                 myButton.onClick.AddListener(() => ai.corruptionData.CalculateCorruptionGain());
-                myButton.onClick.AddListener(() => ai.performanceData.CalculatePerformance());
+
+                //myButton.onClick.AddListener(() => ai.performanceData.CalculatePerformance());
                 #endregion
 
             }

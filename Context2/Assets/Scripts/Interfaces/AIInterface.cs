@@ -117,7 +117,11 @@ namespace Context
 
             #region AI Calculate Fitness Score
             float health = SDGManager.CalculateHealth();
-            aiFitnessScore.fillAmount = health ;
+            performanceData.CalculatePerformance(health);
+            aiFitnessScore.fillAmount = health;
+
+            if (health == 0)
+                dateTimer.EndDate();
             #endregion
 
             if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0 && !TimerToInteract.turnButtonTimer )

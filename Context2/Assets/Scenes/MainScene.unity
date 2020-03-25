@@ -1839,6 +1839,7 @@ MonoBehaviour:
   progressionData: {fileID: 1534975959}
   corruptionData: {fileID: 1534975960}
   performanceData: {fileID: 1534975962}
+  dateTimer: {fileID: 90794119}
   processingPoints: 0
   SDGPoints01: 0
   SDGPoints02: 0
@@ -2105,7 +2106,7 @@ MonoBehaviour:
   ignoreErrorWhenDuplicatedInstance: 0
   studioEventAllocatie: {fileID: 9180473486018523929}
   studioParameterBGM: {fileID: 1236360761}
-  ShowTutorial: 1
+  ShowTutorial: 0
   TutorialPanel: {fileID: 995632089}
   ioManager: {fileID: 90794113}
   uiManager: {fileID: 90794114}
@@ -4125,7 +4126,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1138160624}
-  - {fileID: 1236360762}
   - {fileID: 1233487058}
   - {fileID: 1039202743}
   m_Father: {fileID: 1228219137}
@@ -19018,7 +19018,7 @@ GameObject:
   - component: {fileID: 995632090}
   - component: {fileID: 995632094}
   m_Layer: 5
-  m_Name: intro
+  m_Name: Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19957,7 +19957,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 166764309}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1039202744
 MonoBehaviour:
@@ -23807,7 +23807,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 166764309}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1233487059
 MonoBehaviour:
@@ -23938,8 +23938,8 @@ Transform:
   m_LocalPosition: {x: -8.578308, y: -397.0484, z: -99.33493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 166764309}
-  m_RootOrder: 1
+  m_Father: {fileID: 9180473486745974707}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1239278745
 GameObject:
@@ -40524,7 +40524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &9180473484992158447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40539,7 +40539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/SoundEffects/AllocationError
-  PlayEvent: 0
+  PlayEvent: 11
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -41128,6 +41128,7 @@ Transform:
   - {fileID: 9180473486343522621}
   - {fileID: 9180473485570012579}
   - {fileID: 9180473485025049285}
+  - {fileID: 1236360762}
   m_Father: {fileID: 1228219137}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

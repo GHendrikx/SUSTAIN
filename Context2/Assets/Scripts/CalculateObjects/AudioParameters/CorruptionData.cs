@@ -33,7 +33,7 @@ namespace Context
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     currentCorruption += currentData.corruption;
-            Debug.Log(currentCorruption);
+
             AudioManager.Instance.SetParameters(-999, -999, currentCorruption, -999, GameManager.Instance.StudioParameterBGM);
         }
     }

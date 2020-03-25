@@ -127,7 +127,6 @@ namespace Context
 
             turn++;
 
-            ai.performanceData.CalculatePerformance();
             GameManager.Instance.AI.SetTurn = true;
 
 

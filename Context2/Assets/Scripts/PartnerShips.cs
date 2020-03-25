@@ -28,6 +28,8 @@ namespace Context
 
             this.data = data;
 
+            #region Adding Listeners
+
             acceptButton.onClick.AddListener(() => isAccepted = true);
             acceptButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.PolicyAccept));
             acceptButton.onClick.AddListener(() => data.isResearched = true);
@@ -40,6 +42,12 @@ namespace Context
             acceptButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
             acceptButton.onClick.AddListener(() => GameManager.Instance.AI.droneData.UpdateDroneWithoutPoints());
             acceptButton.onClick.AddListener(() => GameManager.Instance.AI.GetUpdate(data));
+
+            #region Fmod
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.corruptionData.CalculateCorruptionGain());
+            acceptButton.onClick.AddListener(() => GameManager.Instance.AI.progressionData.CalculateProgressionGain());
+            #endregion
+
             declineButton.onClick.AddListener(() => isAccepted = false);
 
             declineButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.PolicyDecline));
@@ -54,12 +62,17 @@ namespace Context
             declineButton.onClick.AddListener(() => GameManager.Instance.AI.droneData.UpdateDroneWithoutPoints());
             declineButton.onClick.AddListener(() => GameManager.Instance.AI.RemoveUpdate(data));
 
+            #region Fmod
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.corruptionData.CalculateCorruptionGain());
+            declineButton.onClick.AddListener(() => GameManager.Instance.AI.progressionData.CalculateProgressionGain());
+            #endregion
+
+            #endregion
 
             approvalRequirementText.text = System.Convert.ToInt32(data.neededSupervisorTrust * 100).ToString() + "%";
         }
         private void Update()
         {
-            //Debug.Log(data.isResearched); 
             if (isAccepted)
                 declineButton.interactable = true;
             else

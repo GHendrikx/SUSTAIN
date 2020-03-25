@@ -29,6 +29,7 @@ namespace Context
         public void CalculateProgressionGain()
         {
             currentProgression = 0;
+
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     currentProgression += currentData.progression;

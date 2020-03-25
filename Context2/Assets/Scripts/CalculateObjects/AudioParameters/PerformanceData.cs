@@ -30,10 +30,9 @@ namespace Context
         void Start() =>
             data = ioManager.data.Data;
 
-        public void CalculatePerformance()
+        public void CalculatePerformance(float health)
         {
-            currentPerformance = ai.AIFitnessScore.fillAmount * 10;
-            Debug.Log(ai.AIFitnessScore.fillAmount);
+            currentPerformance = health * 10;//ai.AIFitnessScore.fillAmount * 10;
             AudioManager.Instance.SetParameters(currentPerformance, -999, -999, -999, GameManager.Instance.StudioParameterBGM);
         }
 

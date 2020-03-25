@@ -31,6 +31,8 @@ namespace Context
         public CorruptionData corruptionData;
         public PerformanceData performanceData;
         #endregion
+        [SerializeField]
+        private DateTimer dateTimer;
 
         [SerializeField]
         private int processingPoints;

@@ -90,8 +90,7 @@ namespace Context
 
             if ((BasePoints + -amount) < 0 || (Points + amount) < 0)
             {
-                AudioManager.Instance.AllocatieError.SetActive(false);
-                AudioManager.Instance.AllocatieError.SetActive(true);
+                AudioManager.Instance.ToggleGameObject(AudioManager.Instance.AllocatieError);
                 return;
             }
 

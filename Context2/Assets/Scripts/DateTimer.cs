@@ -21,7 +21,6 @@ namespace Context {
         {
             week.text = "Week: " + date.beginWeek.ToString();
             year.text = date.beginYear.ToString();
-            CheckEndDate();
         }
         public void NextDate()
         {
@@ -37,22 +36,20 @@ namespace Context {
 
         }
 
-        private void CheckEndDate()
+        public void EndDate()
         {
-            if (WeeksLeft == 0)
-            {
-                AudioManager.Instance.StopSound();
-                AudioManager.Instance.Lose.SetActive(true);
-                gameClear.SetGameClear();
-                TimerManager.Instance.AddTimer(QuitGame, 3);
-            }
+            AudioManager.Instance.StopSound();
+            AudioManager.Instance.Lose.SetActive(true);
+            gameClear.SetGameClear();
+            TimerManager.Instance.AddTimer(QuitGame, 3);
         }
 
         public void UpdateText(TextMeshProUGUI tmp)
         {
             WeeksLeft--;
             tmp.text = WeeksLeft + timeLeft;
-            CheckEndDate();
+            if(WeeksLeft == 0)
+            EndDate();
         }
 
         private void QuitGame()
