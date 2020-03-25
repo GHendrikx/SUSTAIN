@@ -82,10 +82,10 @@ namespace Context
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.influenceData.UpdateInfluence, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.materialData.UpdateMaterial, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.dronesData.UpdateDrone, 0.1f);
+            TimerManager.Instance.AddTimer(GameManager.Instance.AI.powerData.UpdatePower, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.SDGManager.UpdateSDGValues, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.SDGCalculate.UpdateSDG, 0.1f);
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.TrustMeter.UpdateTrustMeter, 0.1f);
-            TimerManager.Instance.AddTimer(GameManager.Instance.AI.powerData.UpdatePower, 0.1f);
         }
 
 
