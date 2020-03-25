@@ -27,6 +27,9 @@ namespace Context
         public DroneData droneData;
         public CalculateSDG SDGCalculate;
         public TrustMeter TrustMeter;
+        public ProgressionData progressionData;
+        public CorruptionData corruptionData;
+        public PerformanceData performanceData;
         #endregion
 
         [SerializeField]

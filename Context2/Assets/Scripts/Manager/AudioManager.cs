@@ -1,10 +1,25 @@
-﻿using System;
+﻿using FMODUnity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
+    [SerializeField]
+    private GameObject backgroundMusic;
+    public GameObject BackgroundMusic
+    {
+        get
+        {
+            return backgroundMusic;
+        }
+        set
+        {
+            backgroundMusic = value;
+        }
+    }
+
     [SerializeField]
     private GameObject tabSound;
     public GameObject TabSound
@@ -46,7 +61,7 @@ public class AudioManager : Singleton<AudioManager>
             policyAccept = value;
         }
     }
-    
+
     [SerializeField]
     private GameObject policyDecline;
     public GameObject PolicyDecline
@@ -103,8 +118,6 @@ public class AudioManager : Singleton<AudioManager>
         }
     }
 
-    [SerializeField]
-    private GameObject[] Sounds;
 
     [SerializeField]
     private GameObject allocatieReward;
@@ -132,6 +145,36 @@ public class AudioManager : Singleton<AudioManager>
             allocatieError = value;
         }
     }
+    [SerializeField]
+    private GameObject addBuilding;
+    public GameObject AddBuilding
+    {
+        get
+        {
+            return addBuilding;
+        }
+        set
+        {
+            addBuilding = value;
+        }
+    }
+
+    [SerializeField]
+    private GameObject nextWeek;
+    public GameObject NextWeek
+    {
+        get
+        {
+            return nextWeek;
+        }
+        set
+        {
+            nextWeek = value;
+        }
+    }
+
+    [SerializeField]
+    private GameObject[] Sounds;
 
     public void StopSound()
     {
@@ -139,9 +182,21 @@ public class AudioManager : Singleton<AudioManager>
             Sounds[i].SetActive(false);
     }
 
-    public void ToggleGameObject(GameObject go)
+    public void ToggleGameObject(GameObject go, bool toggle = true)
     {
         go.SetActive(false);
         go.SetActive(true);
+    }
+
+    public void SetParameters(float performance, int gameClear, int corrupion, int progression, StudioParameterTrigger sp)
+    {
+        if (performance == -999)
+            sp.TriggerParameters(AudioParameters.Performance, performance);
+        if (gameClear != -999)
+            sp.TriggerParameters(AudioParameters.GameClear, gameClear);
+        if (corrupion != -999)
+            sp.TriggerParameters(AudioParameters.Corruption, corrupion);
+        if (progression != -999)
+            sp.TriggerParameters(AudioParameters.Progression, progression);
     }
 }

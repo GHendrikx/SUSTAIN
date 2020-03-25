@@ -24,6 +24,7 @@ public class GUILocationFinder : MonoBehaviour
     void Start()
     {
         BubbleManager = GameObject.FindObjectOfType<BubbleManager>();
+        
         UICanvas = GameObject.FindWithTag("Canvas").transform;
         Bubble = gameObject;
         rt = GetComponent<RectTransform>();
@@ -58,6 +59,7 @@ public class GUILocationFinder : MonoBehaviour
 
     void GetChange()
     {
+        return;
         string c = transform.parent.GetChild(1).GetComponent<TextMeshProUGUI>().text;
         change = int.Parse(c);
     }

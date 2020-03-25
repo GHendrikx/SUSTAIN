@@ -9,6 +9,7 @@ namespace Context
     public class UpgradeAbilities : MonoBehaviour
     {
         public static List<UpgradeAbilities> UPGRADEABILITIES = new List<UpgradeAbilities>();
+        public static List<Construction> CONSTRUCTIONLIST = new List<Construction>();
         public Data data;
         public GameObject Instance;
         public static float TEMPALLOCATIONPOOL;
@@ -85,8 +86,6 @@ namespace Context
             {
                 Debug.LogError("Contact Geoffrey Hendrikx when you get this error \n" +
                     "Give him the following information: \n" + e);
-
-                Debug.Break();
             }
 
             if ((BasePoints + -amount) < 0 || (Points + amount) < 0)

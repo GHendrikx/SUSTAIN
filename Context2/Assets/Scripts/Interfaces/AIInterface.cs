@@ -51,6 +51,17 @@ namespace Context
 
         [SerializeField]
         private Image aiFitnessScore;
+        public Image AIFitnessScore
+        {
+            get
+            {
+                return aiFitnessScore;
+            }
+            set
+            {
+                aiFitnessScore = value;
+            }
+        }
 
         #region TrustSlider
         [SerializeField]
@@ -146,6 +157,8 @@ namespace Context
             float temp6 = MaterialPoints;
             float temp7 = PowerPoints;
 
+     
+
             while (Time.time < (startTime + overtime))
             {
                 if (newCreativity != Mathf.Infinity)
@@ -187,7 +200,7 @@ namespace Context
                     MaterialPoints = temp6;
                 }
 
-                if (newPower != Mathf.Infinity)
+                if(newPower != Mathf.Infinity)
                 {
                     temp7 = Mathf.Lerp(PowerPoints, newPower, (Time.time - startTime) / overtime);
                     PowerPoints = temp7;
