@@ -123,8 +123,7 @@ namespace Context
             if (health == 0)
                 dateTimer.EndDate();
             #endregion
-
-            if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0 && !TimerToInteract.turnButtonTimer )
+            if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0 || !TurnManager.ISINTERACTABLE)
                 turnButton.interactable = false;
             else
                 turnButton.interactable = true;

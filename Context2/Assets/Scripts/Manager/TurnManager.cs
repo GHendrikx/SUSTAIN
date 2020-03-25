@@ -23,6 +23,8 @@ namespace Context
 
         private bool virgin = true;
 
+        public static bool ISINTERACTABLE = true;
+
         private void Awake()
         {
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
@@ -101,8 +103,11 @@ namespace Context
         public void GoToNextTurn()
         {
             if (!virgin)
+            {
                 AudioManager.Instance.ToggleGameObject(AudioManager.Instance.NextWeek);
-
+                ISINTERACTABLE = false;
+                TimerManager.Instance.AddTimer(() => { ISINTERACTABLE = !ISINTERACTABLE; }, 3);
+            }
             virgin = false;
 
 
