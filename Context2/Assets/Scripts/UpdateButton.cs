@@ -40,7 +40,7 @@ namespace Context
         #endregion
         private static bool firstTime = true;
 
-        private void Awake()
+        private void Start()
         {
             if (firstTime && GameManager.Instance.ShowTutorial)
             {
@@ -96,8 +96,15 @@ namespace Context
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+                myButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
                 myButton.onClick.AddListener(() => AudioManager.Instance.ResearchObject.SetActive(false));
                 myButton.onClick.AddListener(() => AudioManager.Instance.ResearchObject.SetActive(true));
+
+                #region fmod parameters set
+                myButton.onClick.AddListener(() => ai.progressionData.CalculateProgressionGain());
+                myButton.onClick.AddListener(() => ai.corruptionData.CalculateCorruptionGain());
+                myButton.onClick.AddListener(() => ai.performanceData.CalculatePerformance());
+                #endregion
 
             }
 

@@ -13,9 +13,11 @@ public class Tooltip : MonoBehaviour
     private Camera uiCamera;
     private TextMeshProUGUI tooltipText;
     private RectTransform backgroundRecTransform;
+    [SerializeField]
+    private Image backgroundImage;
     private void Awake()
-
     {
+        backgroundImage.enabled = true;
         backgroundRecTransform = transform.GetChild(0).GetComponent<RectTransform>();
         tooltipText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }

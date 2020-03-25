@@ -86,8 +86,6 @@ namespace Context
             {
                 Debug.LogError("Contact Geoffrey Hendrikx when you get this error \n" +
                     "Give him the following information: \n" + e);
-
-                Debug.Break();
             }
 
             if ((BasePoints + -amount) < 0 || (Points + amount) < 0)

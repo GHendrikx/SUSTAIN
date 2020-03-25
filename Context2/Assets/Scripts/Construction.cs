@@ -66,6 +66,7 @@ namespace Context
             SetUpdateCost();
 
             myButton.onClick.AddListener(() => GameManager.Instance.AI.GetUpdate(this.data));
+            myButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.AddBuilding));
             myButton.onClick.AddListener(() => AddConstructionCount());
         }
 

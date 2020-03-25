@@ -25,6 +25,21 @@ namespace Context
             }
         }
 
+        [SerializeField]
+        private StudioParameterTrigger studioParameterBGM;
+        public StudioParameterTrigger StudioParameterBGM
+        {
+            get
+            {
+                return studioParameterBGM;
+            }
+            set
+            {
+                studioParameterBGM = value;
+            }
+        }
+
+
         public bool ShowTutorial;
         public GameObject TutorialPanel;
         public static int CURRENTPHASE = 5;

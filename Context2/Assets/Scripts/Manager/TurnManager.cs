@@ -21,6 +21,23 @@ namespace Context
 
         private float currentDoneTarget;
 
+        private bool virgin = true;
+
+        private void Awake()
+        {
+            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
+            {
+                UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTarget;
+
+                if (UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
+                {
+                    UpgradeAbilities.UPGRADEABILITIES[i].InformationText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.name;
+                    UpgradeAbilities.UPGRADEABILITIES[i].TargetText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes + "/" +
+                    UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
+                }
+            }
+        }
+
         /// <summary>
         /// TODO: subscribe all data to the nextturn variable
         /// </summary>
@@ -71,21 +88,6 @@ namespace Context
             TimerManager.Instance.AddTimer(GameManager.Instance.AI.powerData.UpdatePower, 0.1f);
         }
 
-        private void Awake()
-        {
-            for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
-            {
-                UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTarget;
-
-                if (UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
-                {
-                    UpgradeAbilities.UPGRADEABILITIES[i].InformationText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.name;
-                    UpgradeAbilities.UPGRADEABILITIES[i].TargetText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes + "/" +
-                    UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
-                    Debug.Log("test");
-                }
-            }
-        }
 
         private void SetFirstTurn()
         {
@@ -98,6 +100,12 @@ namespace Context
 
         public void GoToNextTurn()
         {
+            if (!virgin)
+                AudioManager.Instance.ToggleGameObject(AudioManager.Instance.NextWeek);
+
+            virgin = false;
+
+
             for (int i = 0; i < UpgradeAbilities.UPGRADEABILITIES.Count; i++)
             {
                 int points = System.Convert.ToInt32(UpgradeAbilities.UPGRADEABILITIES[i].AbilityPointText.text);
@@ -119,6 +127,7 @@ namespace Context
 
             turn++;
 
+            ai.performanceData.CalculatePerformance();
             GameManager.Instance.AI.SetTurn = true;
 
 
