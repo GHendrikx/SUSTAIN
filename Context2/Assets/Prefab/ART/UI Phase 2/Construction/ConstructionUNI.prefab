@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 7858043328098617317}
   - component: {fileID: 7858043328098617316}
   m_Layer: 5
-  m_Name: Effect
+  m_Name: Weekly Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1221,7 +1221,7 @@ GameObject:
   - component: {fileID: 1396304226863374776}
   m_Layer: 5
   m_Name: ConstructionUNI
-  m_TagString: Untagged
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1550,7 +1550,12 @@ PrefabInstance:
     - target: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
       propertyPath: m_Name
-      value: Cost_EffectBlock
+      value: Weekly Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_TagString
+      value: tooltip
       objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}

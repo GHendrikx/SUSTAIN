@@ -1168,6 +1168,11 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7593541241010258147, guid: 07b46804bdf45a64bbe1b960148e4fc2,
+        type: 3}
+      propertyPath: m_TagString
+      value: tooltip
+      objectReference: {fileID: 0}
     - target: {fileID: 1468366930901687947, guid: 07b46804bdf45a64bbe1b960148e4fc2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1504,7 +1509,12 @@ PrefabInstance:
     - target: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
       propertyPath: m_Name
-      value: Cost/EffectBlock
+      value: Weekly Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_TagString
+      value: tooltip
       objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
