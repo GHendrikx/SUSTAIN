@@ -232,9 +232,6 @@ namespace Context
             else
             textColor = Color.red;
 
-            Debug.Log((Tab)data.typeOfData);
-            if ((Tab)data.typeOfData == Tab.Policies)
-                Debug.Log(c + "<>" + text);
             Transform cost = GameObject.Instantiate(costInfo.transform, costBlock.transform);
 
             cost.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;

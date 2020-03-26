@@ -66,8 +66,16 @@ namespace Context
             SetUpdateCost();
 
             myButton.onClick.AddListener(() => GameManager.Instance.AI.GetUpdate(this.data));
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
+            myButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
             myButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.AddBuilding));
             myButton.onClick.AddListener(() => AddConstructionCount());
+
+
         }
 
         private void AddConstructionCount()

@@ -28,7 +28,6 @@ namespace Context
         //Effects in Allocations
         public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock, Color color)
         {
-            Debug.Log(text);
 
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
             upgrade.GetComponentInChildren<TextMeshProUGUI>().color = color;
@@ -47,7 +46,7 @@ namespace Context
 
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform, upgradeBlock.transform);
 
-            char c = (amount > 0) ? '+' : '-';
+            string c = (amount > 0) ? "+" : string.Empty;
 
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = c + text + Environment.NewLine;
             upgrade.GetComponentInChildren<TextMeshProUGUI>().color = (amount > 0) ? Color.green : Color.red;

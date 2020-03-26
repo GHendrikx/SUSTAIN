@@ -139,8 +139,6 @@ namespace Context
             #region AI Trust
             if (svDisapproveSlider.value != SvDisapprovesPercentage && !lerpSV)
                 StartCoroutine(LerpSVPercentage(1, SvDisapprovesPercentage, (SvDisapprovesPercentage + SvNeutralPercentage)));
-            //svDisapproveSlider.value = SvDisapprovesPercentage;
-            //svNeutralSlider.value = SvDisapprovesPercentage + SvNeutralPercentage;
 
             svDisapprovePercentageTMP.text = (SvDisapprovesPercentage * 100).ToString("0.0") + "%";
             svNeutralPercentageTMP.text = (SvNeutralPercentage * 100).ToString("0.0") + "%";
@@ -148,9 +146,6 @@ namespace Context
 
             if(localDisapprovelSlider.value != LocalDisapprovesPercentage && !lerpLocal)
                 StartCoroutine(LerpLocalPercentage(1, LocalDisapprovesPercentage, (LocalNeutralPercentage + LocalDisapprovesPercentage)));
-
-            //localDisapprovelSlider.value = LocalDisapprovesPercentage;
-            //localNeutralSlider.value = LocalNeutralPercentage + LocalDisapprovesPercentage;
 
             localDisapprovePercentageTMP.text = (SvDisapprovesPercentage*100).ToString("0.0") + "%";
             localNeutralPercentageTMP.text = (LocalNeutralPercentage*100).ToString("0.0") + "%";
