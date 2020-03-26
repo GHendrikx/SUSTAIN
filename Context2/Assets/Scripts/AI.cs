@@ -388,6 +388,7 @@ namespace Context
         #region SDG
 
         #region SDGPoint
+        [SerializeField]
         private float SDGBeginValue = 4;
         [HideInInspector]
         public float SDGPoints01;

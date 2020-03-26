@@ -103,8 +103,6 @@ namespace Context
                 #region fmod parameters set
                 myButton.onClick.AddListener(() => ai.progressionData.CalculateProgressionGain());
                 myButton.onClick.AddListener(() => ai.corruptionData.CalculateCorruptionGain());
-
-                //myButton.onClick.AddListener(() => ai.performanceData.CalculatePerformance());
                 #endregion
 
             }
@@ -169,7 +167,7 @@ namespace Context
         private void SetEffects()
         {
             if (data.researchGain != 0)
-                    Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), upgradeCost, upgradeBlock);
+                Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), upgradeCost, upgradeBlock);
             if (data.creativityGain != 0)
                 Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), upgradeCost, upgradeBlock);
             if (data.fundsGain != 0)
@@ -182,6 +180,44 @@ namespace Context
                 Extensions.SetEffectGain(data.materialGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), upgradeCost, upgradeBlock);
             if (data.droneGain != 0)
                 Extensions.SetEffectGain(data.droneGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            
+           
+            if (data.sdgChange00 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange01 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange02 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange03 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange04 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange05 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange06 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange07 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange08 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange09 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange10 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange11 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange12 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange13 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange14 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange15 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+            if (data.sdgChange16 != 0)
+                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
+
+
         }
 
 
@@ -202,6 +238,8 @@ namespace Context
                 SetCostBlock(data.materialCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), costInformation, costBlock, data.materialCost);
             if (data.droneCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.droneCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), costInformation, costBlock, data.droneCost);
+
+        
         }
 
         private void AllocationUpdate()
@@ -236,7 +274,7 @@ namespace Context
 
             cost.GetComponentInChildren<TextMeshProUGUI>().text = string.Empty;
             cost.GetComponentInChildren<TextMeshProUGUI>().color = textColor;
-            //cost.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
+            cost.GetComponentInChildren<TextMeshProUGUI>().text = c + text;
             Image i = cost.GetComponentInChildren<Image>();
             i.sprite = sprite;
         }
