@@ -182,41 +182,7 @@ namespace Context
                 Extensions.SetEffectGain(data.droneGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
             
            
-            if (data.sdgChange00 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange01 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange02 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange03 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange04 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange05 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange06 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange07 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange08 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange09 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange10 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange11 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange12 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange13 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange14 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange15 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-            if (data.sdgChange16 != 0)
-                Extensions.SetEffectGain(data.sdgChange00.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-
+            
 
         }
 
