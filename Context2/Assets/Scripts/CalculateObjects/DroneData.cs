@@ -98,7 +98,7 @@ namespace Context
 
         private void CalculateDronesLimit()
         {
-            CurrentDronesLimit = 9999999;
+            CurrentDronesLimit = 0;
             foreach (Data currentData in data)
                 if (currentData.isResearched)
                     CurrentDronesLimit += currentData.droneLimit;

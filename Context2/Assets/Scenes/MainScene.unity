@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 46603508}
   - component: {fileID: 46603510}
   m_Layer: 5
-  m_Name: EnergyIcon
+  m_Name: Power
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1842,6 +1842,7 @@ MonoBehaviour:
   performanceData: {fileID: 1534975962}
   dateTimer: {fileID: 90794119}
   processingPoints: 0
+  SDGBeginValue: 4
   SDGPoints01: 0
   SDGPoints02: 0
   SDGPoints03: 0
@@ -2323,15 +2324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be776edae9943b48858288cf5cf9447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Filtered:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &94763653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3087,7 +3079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36382696, y: 0.116237074}
   m_AnchorMax: {x: 0.6349876, y: 0.21323708}
-  m_AnchoredPosition: {x: 1.2000122, y: -0.5743561}
+  m_AnchoredPosition: {x: 1.2000122, y: -0.5743408}
   m_SizeDelta: {x: -3.619995, y: 1.0100021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118379366
@@ -3248,8 +3240,8 @@ GameObject:
   - component: {fileID: 123585744}
   - component: {fileID: 123585743}
   m_Layer: 5
-  m_Name: ProcessingPowerTMP
-  m_TagString: Untagged
+  m_Name: Procesing Power
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3268,10 +3260,10 @@ RectTransform:
   m_Father: {fileID: 1288015242}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.120689765, y: 0.59800005}
+  m_AnchorMin: {x: 0.107829325, y: 0.59800005}
   m_AnchorMax: {x: 0.4852145, y: 0.61881834}
-  m_AnchoredPosition: {x: 0.04800415, y: 0.000061035156}
-  m_SizeDelta: {x: 0.095999956, y: 0}
+  m_AnchoredPosition: {x: 0.2290039, y: 0}
+  m_SizeDelta: {x: 0.74199504, y: 0.000034332}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123585743
 MonoBehaviour:
@@ -3329,7 +3321,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_textAlignment: 513
   m_characterSpacing: 0
-  m_wordSpacing: -20
+  m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -4858,7 +4850,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.17718506, y: -2.9837494}
+  m_AnchoredPosition: {x: -0.17718506, y: -2.9837341}
   m_SizeDelta: {x: -0.2880249, y: -134.83241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216779712
@@ -5477,8 +5469,8 @@ GameObject:
   - component: {fileID: 244543227}
   - component: {fileID: 244543226}
   m_Layer: 5
-  m_Name: Material TMP
-  m_TagString: Untagged
+  m_Name: Material
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5497,10 +5489,10 @@ RectTransform:
   m_Father: {fileID: 1288015242}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.61342305, y: 0.54029393}
+  m_AnchorMin: {x: 0.5916771, y: 0.54029393}
   m_AnchorMax: {x: 0.9651919, y: 0.56005424}
-  m_AnchoredPosition: {x: 0, y: -0.028320312}
-  m_SizeDelta: {x: 0, y: -0.056656}
+  m_AnchoredPosition: {x: 0.29799652, y: -0.028320312}
+  m_SizeDelta: {x: 0.603999, y: 0.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244543226
 MonoBehaviour:
@@ -5558,7 +5550,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_textAlignment: 513
   m_characterSpacing: 0
-  m_wordSpacing: -20
+  m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -5587,7 +5579,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -3.5008292, y: 0, z: 0, w: 0}
+  m_margin: {x: -0.041724026, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 244543226}
     characterCount: 11
@@ -8427,8 +8419,8 @@ GameObject:
   - component: {fileID: 375766397}
   - component: {fileID: 375766396}
   m_Layer: 5
-  m_Name: ResearchTMP
-  m_TagString: Untagged
+  m_Name: Research
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8447,10 +8439,10 @@ RectTransform:
   m_Father: {fileID: 1288015242}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.11758498, y: 0.56831384}
-  m_AnchorMax: {x: 0.48815128, y: 0.59000003}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0.22601318}
-  m_SizeDelta: {x: 0, y: -0.452}
+  m_AnchorMin: {x: 0.107829325, y: 0.56927204}
+  m_AnchorMax: {x: 0.48210973, y: 0.59000003}
+  m_AnchoredPosition: {x: 0.06098935, y: 0.1454773}
+  m_SizeDelta: {x: 1.0780213, y: 0.291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375766396
 MonoBehaviour:
@@ -8508,7 +8500,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_textAlignment: 513
   m_characterSpacing: 0
-  m_wordSpacing: -20
+  m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -8537,7 +8529,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.09038325, y: 0, z: 2.028624, w: 0}
+  m_margin: {x: 0.09038325, y: 0.37914735, z: 2.028624, w: 0.04258282}
   m_textInfo:
     textComponent: {fileID: 375766396}
     characterCount: 14
@@ -8894,7 +8886,7 @@ GameObject:
   - component: {fileID: 398431819}
   - component: {fileID: 398431821}
   m_Layer: 5
-  m_Name: Procesing Power Icon
+  m_Name: Procesing Power
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9698,7 +9690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36382696, y: 0.116237074}
   m_AnchorMax: {x: 0.6349876, y: 0.21323708}
-  m_AnchoredPosition: {x: 1.2000122, y: -0.57429504}
+  m_AnchoredPosition: {x: 1.2000122, y: -0.5742798}
   m_SizeDelta: {x: -3.619995, y: 1.0100021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452966168
@@ -10308,8 +10300,8 @@ GameObject:
   - component: {fileID: 486562779}
   - component: {fileID: 486562778}
   m_Layer: 5
-  m_Name: Influence TMP
-  m_TagString: Untagged
+  m_Name: Influence
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10328,10 +10320,10 @@ RectTransform:
   m_Father: {fileID: 1288015242}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.601, y: 0.59800005}
+  m_AnchorMin: {x: 0.5916771, y: 0.59800005}
   m_AnchorMax: {x: 0.9651919, y: 0.61977655}
-  m_AnchoredPosition: {x: -0.000015258789, y: -0.27978516}
-  m_SizeDelta: {x: 0, y: -0.5595}
+  m_AnchoredPosition: {x: 0.27355194, y: -0.27978516}
+  m_SizeDelta: {x: 0.65290534, y: 0.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486562778
 MonoBehaviour:
@@ -10389,7 +10381,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_textAlignment: 513
   m_characterSpacing: 0
-  m_wordSpacing: -20
+  m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -11865,7 +11857,7 @@ GameObject:
   - component: {fileID: 571281199}
   - component: {fileID: 571281201}
   m_Layer: 5
-  m_Name: MaterialIcon
+  m_Name: Material
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11886,7 +11878,7 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5198952, y: 0.54029393}
-  m_AnchorMax: {x: 0.5911105, y: 0.56}
+  m_AnchorMax: {x: 0.5916771, y: 0.56005424}
   m_AnchoredPosition: {x: 0.000015258789, y: 0.000030517578}
   m_SizeDelta: {x: 0.000089645386, y: -0.000045776367}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12594,7 +12586,7 @@ GameObject:
   - component: {fileID: 658979140}
   - component: {fileID: 658979142}
   m_Layer: 5
-  m_Name: FundIcon
+  m_Name: Fund
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12680,7 +12672,7 @@ GameObject:
   - component: {fileID: 659953080}
   - component: {fileID: 659953082}
   m_Layer: 5
-  m_Name: InfluenceIcon
+  m_Name: Influence
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13877,7 +13869,7 @@ GameObject:
   - component: {fileID: 722631344}
   - component: {fileID: 722631346}
   m_Layer: 5
-  m_Name: CreativityIcon
+  m_Name: Creativity
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13899,8 +13891,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.042790435, y: 0.53906053}
   m_AnchorMax: {x: 0.11050867, y: 0.56100005}
-  m_AnchoredPosition: {x: -0.013000488, y: 0.13253784}
-  m_SizeDelta: {x: -0.026, y: -0.26514}
+  m_AnchoredPosition: {x: -0.013000488, y: 0.019683838}
+  m_SizeDelta: {x: -0.026, y: -0.039305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722631344
 MonoBehaviour:
@@ -16540,7 +16532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Supervisor Trust
+  m_text: Supervisor Opinion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e47f7a80781aad499c10d8272e6a431, type: 2}
   m_sharedMaterial: {fileID: -2558156018943872908, guid: 9e47f7a80781aad499c10d8272e6a431,
@@ -16610,7 +16602,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 1.07, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 884505216}
-    characterCount: 16
+    characterCount: 18
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -18023,8 +18015,8 @@ GameObject:
   - component: {fileID: 951253523}
   - component: {fileID: 951253522}
   m_Layer: 5
-  m_Name: Funds TMP
-  m_TagString: Untagged
+  m_Name: Funds
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18045,8 +18037,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11758498, y: 0.5105522}
   m_AnchorMax: {x: 0.48210973, y: 0.531}
-  m_AnchoredPosition: {x: 0, y: -0.12403107}
-  m_SizeDelta: {x: 0, y: 0.24801}
+  m_AnchoredPosition: {x: -0.8526001, y: -0.12403107}
+  m_SizeDelta: {x: 2.9052033, y: 0.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951253522
 MonoBehaviour:
@@ -18104,7 +18096,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_textAlignment: 513
   m_characterSpacing: 0
-  m_wordSpacing: -20
+  m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -18112,7 +18104,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 8
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -18141,7 +18133,7 @@ MonoBehaviour:
     spaceCount: 1
     wordCount: 2
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -19046,7 +19038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &995632090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19619,7 +19611,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Local Trust
+  m_text: 'Public Opinion
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e47f7a80781aad499c10d8272e6a431, type: 2}
   m_sharedMaterial: {fileID: -2558156018943872908, guid: 9e47f7a80781aad499c10d8272e6a431,
@@ -19689,9 +19683,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 1.07, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1012979697}
-    characterCount: 11
+    characterCount: 15
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 2
     wordCount: 2
     linkCount: 0
     lineCount: 1
@@ -20282,7 +20276,7 @@ GameObject:
   - component: {fileID: 1057464978}
   - component: {fileID: 1057464981}
   m_Layer: 5
-  m_Name: ResearchIcon
+  m_Name: Research
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20303,9 +20297,9 @@ RectTransform:
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.042790435, y: 0.56927204}
-  m_AnchorMax: {x: 0.107829325, y: 0.58900005}
-  m_AnchoredPosition: {x: -0.23898315, y: 0}
-  m_SizeDelta: {x: -0.478, y: 0.000030518}
+  m_AnchorMax: {x: 0.107829325, y: 0.59000003}
+  m_AnchoredPosition: {x: -0.23898315, y: -0.00024414062}
+  m_SizeDelta: {x: -0.478, y: -0.00049973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1057464978
 MonoBehaviour:
@@ -25899,7 +25893,7 @@ PrefabInstance:
     - target: {fileID: 9031952448940289421, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
       propertyPath: m_Value
-      value: 0.41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8396432987365820147, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
@@ -26079,7 +26073,7 @@ PrefabInstance:
     - target: {fileID: 1340324945812561823, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
       propertyPath: m_Value
-      value: 0.66
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8787514355622465417, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
@@ -26155,6 +26149,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.37647063
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069843207251911375, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00002861
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069843207251911375, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.00033569
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4068a386d3d7044697fb0e71e734b3f, type: 3}
@@ -28706,8 +28710,8 @@ GameObject:
   - component: {fileID: 1474166938}
   - component: {fileID: 1474166937}
   m_Layer: 5
-  m_Name: Drone TMP
-  m_TagString: Untagged
+  m_Name: Drone
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28726,10 +28730,10 @@ RectTransform:
   m_Father: {fileID: 1288015242}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.61342305, y: 0.50959325}
-  m_AnchorMax: {x: 0.9651919, y: 0.531}
-  m_AnchoredPosition: {x: 0, y: 0.26000214}
-  m_SizeDelta: {x: 0, y: 0.52}
+  m_AnchorMin: {x: 0.5915206, y: 0.5105524}
+  m_AnchorMax: {x: 0.9651919, y: 0.53154415}
+  m_AnchoredPosition: {x: 0.2999878, y: 0}
+  m_SizeDelta: {x: 0.60003054, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1474166937
 MonoBehaviour:
@@ -28787,7 +28791,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_textAlignment: 513
   m_characterSpacing: 0
-  m_wordSpacing: -20
+  m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -32570,7 +32574,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07239646, y: 0.5135241}
   m_AnchorMax: {x: 0.19701913, y: 0.54999286}
-  m_AnchoredPosition: {x: -0.7700043, y: -0.30999756}
+  m_AnchoredPosition: {x: -0.76999664, y: -0.30999756}
   m_SizeDelta: {x: -5.2, y: -5.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1670886477
@@ -33469,8 +33473,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 302, y: -328.9}
-  m_SizeDelta: {x: 608.4, y: 659.4}
+  m_AnchoredPosition: {x: 302, y: -367.5}
+  m_SizeDelta: {x: 608.4, y: 736.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1732404797
 MonoBehaviour:
@@ -35024,8 +35028,8 @@ GameObject:
   - component: {fileID: 1845802618}
   - component: {fileID: 1845802617}
   m_Layer: 5
-  m_Name: Power TMP
-  m_TagString: Untagged
+  m_Name: Power
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35044,10 +35048,10 @@ RectTransform:
   m_Father: {fileID: 1288015242}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.6018422, y: 0.56927204}
+  m_AnchorMin: {x: 0.5916771, y: 0.56927204}
   m_AnchorMax: {x: 0.9651919, y: 0.59000003}
-  m_AnchoredPosition: {x: 0.000038146973, y: -0.000030517578}
-  m_SizeDelta: {x: 0.0001297, y: 0}
+  m_AnchoredPosition: {x: 0.16294861, y: -0.0002746582}
+  m_SizeDelta: {x: 0.87410027, y: -0.00044823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845802617
 MonoBehaviour:
@@ -35105,7 +35109,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_textAlignment: 513
   m_characterSpacing: 0
-  m_wordSpacing: -20
+  m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -35134,7 +35138,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.0135100335, y: -0.08888241, z: 0, w: 0}
+  m_margin: {x: 0.104366526, y: -0.08888241, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1845802617}
     characterCount: 9
@@ -35631,6 +35635,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bgContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 9031952448940289421, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8396432987365820147, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35791,6 +35800,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LocalDisapproveSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 1340324945812561823, guid: e4068a386d3d7044697fb0e71e734b3f,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8787514355622465417, guid: e4068a386d3d7044697fb0e71e734b3f,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -35897,8 +35911,8 @@ GameObject:
   - component: {fileID: 1892329784}
   - component: {fileID: 1892329783}
   m_Layer: 5
-  m_Name: TurnButton
-  m_TagString: Untagged
+  m_Name: You have unspend Processing Power
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37253,8 +37267,8 @@ GameObject:
   - component: {fileID: 1959091946}
   - component: {fileID: 1959091945}
   m_Layer: 5
-  m_Name: CreativityTMP
-  m_TagString: Untagged
+  m_Name: Creativity
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37273,10 +37287,10 @@ RectTransform:
   m_Father: {fileID: 1288015242}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.13000412, y: 0.53847003}
-  m_AnchorMax: {x: 0.4791882, y: 0.55871505}
-  m_AnchoredPosition: {x: -1.9997215, y: 1.75}
-  m_SizeDelta: {x: 4, y: 1.74}
+  m_AnchorMin: {x: 0.11050867, y: 0.53900003}
+  m_AnchorMax: {x: 0.4791882, y: 0.56100005}
+  m_AnchoredPosition: {x: -0.0126571655, y: 0.051208496}
+  m_SizeDelta: {x: 0.026, y: -0.10232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959091945
 MonoBehaviour:
@@ -37334,7 +37348,7 @@ MonoBehaviour:
   m_fontStyle: 0
   m_textAlignment: 513
   m_characterSpacing: 0
-  m_wordSpacing: -20
+  m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -37363,7 +37377,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.4821221, w: 0}
+  m_margin: {x: 0, y: 0.06963758, z: 0.4821221, w: 0.069589265}
   m_textInfo:
     textComponent: {fileID: 1959091945}
     characterCount: 6
@@ -40023,7 +40037,7 @@ GameObject:
   - component: {fileID: 2106847750}
   - component: {fileID: 2106847752}
   m_Layer: 5
-  m_Name: DroneIcon
+  m_Name: Drone
   m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40043,10 +40057,10 @@ RectTransform:
   m_Father: {fileID: 1288015242}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.52928406, y: 0.5105522}
-  m_AnchorMax: {x: 0.5911105, y: 0.52897614}
-  m_AnchoredPosition: {x: 0, y: 0.8143463}
-  m_SizeDelta: {x: 0, y: 3.63}
+  m_AnchorMin: {x: 0.5198952, y: 0.5105522}
+  m_AnchorMax: {x: 0.5915206, y: 0.53154415}
+  m_AnchoredPosition: {x: 0, y: -0.000038146973}
+  m_SizeDelta: {x: 0, y: -0.00006485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106847750
 MonoBehaviour:

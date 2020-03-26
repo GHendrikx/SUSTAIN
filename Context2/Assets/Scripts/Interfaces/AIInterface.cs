@@ -107,14 +107,14 @@ namespace Context
         {
             if (name.text != string.Empty && PlayerPrefs.GetString("Name") != null)
                 name.text = PlayerPrefs.GetString("Name");
-            processing.text = UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
-            Research.text = ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + " (+" + ResearchGain.ToString("0.0") + ")";
-            Creativity.text = CreativityPoints.ToString("0.0") + " (+" + CreativityGain.ToString("0.0") + ")";
-            Funds.text = fundsPoints.ToString("0.0") + " (+" + fundsGain.ToString("0.0") + ")";
-            Influence.text = influencePoints.ToString("0") + " (+" + influenceGain.ToString("0") + ")";
-            Power.text = powerPoints.ToString("0") + " (+" + powerGain.ToString("0") + ")";
-            Material.text = materialPoints.ToString("0") + " (+" + materialGain.ToString("0") + ")";
-            Drone.text = DronePoints.ToString("0") + " (+" + droneGain.ToString("0") + ")";
+            processing.text = " " + UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
+            Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(+" + ResearchGain.ToString("0.0") + ")";
+            Creativity.text = " " + CreativityPoints.ToString("0.0") + "(+" + CreativityGain.ToString("0.0") + ")";
+            Funds.text = " " + fundsPoints.ToString("0.0") + "(+" + fundsGain.ToString("0.0") + ")";
+            Influence.text = " " + influencePoints.ToString("0") + "(+" + influenceGain.ToString("0") + ")";
+            Power.text = " " + powerPoints.ToString("0") + "(+" + powerGain.ToString("0") + ")";
+            Material.text = " " + materialPoints.ToString("0") + "(+" + materialGain.ToString("0") + ")";
+            Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") +"(+" + droneGain.ToString("0") + ")";
 
 
             #region AI Calculate Fitness Score

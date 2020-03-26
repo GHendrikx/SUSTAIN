@@ -40,7 +40,7 @@ public class Tooltip : MonoBehaviour
             if (raycastResultList[i].gameObject.tag.Contains("tip"))
             {
                 Text = raycastResultList[i].gameObject.GetComponent<Transform>().name;
-                int textLength = Text.Length - 4;
+                int textLength = Text.Length;
                 Text = Text.Substring(0, textLength);
                 break;
             }
