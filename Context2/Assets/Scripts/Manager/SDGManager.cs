@@ -27,6 +27,9 @@ namespace Context
 
         public void UpdateSDGValues()
         {
+            for (int i = 0; i < sdgBar.Length; i++)
+                sdgBar[i].sdgIndex = i+1;
+
             SetSDGBar((SDGType)0, ai.SDGProgress01);
             SetSDGBar((SDGType)1, ai.SDGProgress02);
             SetSDGBar((SDGType)2, ai.SDGProgress03);
@@ -89,6 +92,9 @@ namespace Context
     [System.Serializable]
     public class SDGBar
     {
+        [HideInInspector]
+        public int sdgIndex;
+
         //SDG Unlocks
         [SerializeField]
         private int sdgUnlockID;

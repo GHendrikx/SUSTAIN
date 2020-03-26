@@ -129,9 +129,9 @@ namespace Context
 
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
             {
-                SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
+                SDGBar s = GameManager.Instance.AI.SDGManager.SDGBar[i];
                 if (data.sdgType[0] == i)
-                    SDGColor.color = sdgBar.Color;
+                    SDGColor.color = s.Color;
             }
             if (SDGNummer != null)
                 SDGNummer.text = data.sdgType[0].ToString();
@@ -275,129 +275,129 @@ namespace Context
                     c = "";
                 }
 
-                //HERE is the thing
-                //Debug.Log(Resources.Load<Sprite>("ART/UI_PHASE_2/16X16/v2/Iconen_ResearchPoints_3_16X16"));
-
                 Extensions.SetEffectGain(c + data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costBlock, effectBlock, temp);
             }
 
             float sdgMultiplier = 100;
-            if (data.sdgChange00 != 0)
-            {
-                Color temp = (data.sdgChange00 > 0) ? Color.green : Color.red;
-                string c = (temp == Color.green) ? "+" : "";
-                Extensions.SetEffectGain(c + (data.sdgChange00 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
-            }
+            SDGBar[] sdgBar = GameManager.Instance.AI.SDGManager.SDGBar;
+           
             if (data.sdgChange01 != 0)
             {
                 Color temp = (data.sdgChange01 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
-                Extensions.SetEffectGain(c + (data.sdgChange01 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange01 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp,sdgBar[0]);
             }
             if (data.sdgChange02 != 0)
             {
                 Color temp = (data.sdgChange02 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange02 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange02 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[1]);
             }
             if (data.sdgChange03 != 0)
             {
                 Color temp = (data.sdgChange03 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange03 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange03 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[2]);
             }
             if (data.sdgChange04 != 0)
             {
                 Color temp = (data.sdgChange04 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange04 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange04 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[3]);
             }
             if (data.sdgChange05 != 0)
             {
                 Color temp = (data.sdgChange05 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange05 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange05 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[4]);
             }
             if (data.sdgChange06 != 0)
             {
                 Color temp = (data.sdgChange06 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange06 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange06 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[5]);
             }
             if (data.sdgChange07 != 0)
             {
                 Color temp = (data.sdgChange07 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange07 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange07 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[6]);
             }
             if (data.sdgChange08 != 0)
             {
                 Color temp = (data.sdgChange08 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange08 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange08 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[7]);
             }
             if (data.sdgChange09 != 0)
             {
                 Color temp = (data.sdgChange09 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange09 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange09 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[8]);
             }
             if (data.sdgChange10 != 0)
             {
                 Color temp = (data.sdgChange10 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange10 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange10 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[9]);
             }
             if (data.sdgChange11 != 0)
             {
                 Color temp = (data.sdgChange11 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange11 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange11 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[10]);
             }
             if (data.sdgChange12 != 0)
             {
                 Color temp = (data.sdgChange12 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange12 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange12 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[11]);
             }
             if (data.sdgChange13 != 0)
             {
                 Color temp = (data.sdgChange13 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange13 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange13 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[12]);
             }
             if (data.sdgChange14 != 0)
             {
                 Color temp = (data.sdgChange14 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange14 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange14 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[13]);
             }
             if (data.sdgChange15 != 0)
             {
                 Color temp = (data.sdgChange15 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange15 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange15 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[14]);
             }
             if (data.sdgChange16 != 0)
             {
                 Color temp = (data.sdgChange16 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
 
-                Extensions.SetEffectGain(c + (data.sdgChange16 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp);
+                Extensions.SetEffectGain(c + (data.sdgChange16 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[15]);
+            }
+            if (data.sdgChange17 != 0)
+            {
+                Color temp = (data.sdgChange17 > 0) ? Color.green : Color.red;
+                string c = (temp == Color.green) ? "+" : "";
+
+                Extensions.SetEffectGain(c + (data.sdgChange17 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[16]);
             }
         }
 

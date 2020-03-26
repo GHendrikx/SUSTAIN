@@ -88,7 +88,7 @@ namespace Context
 
         private void Update()
         {
-            if (GameManager.Instance.AI == null)
+            if (GameManager.Instance == null || GameManager.Instance.AI == null)
                 return;
 
             if (GameManager.Instance.AI.ResearchPoints >= -data.researchCost &&
