@@ -167,7 +167,9 @@ namespace Context
         private void SetEffects()
         {
             if (data.researchGain != 0)
+            {
                 Extensions.SetEffectGain(data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), upgradeCost, upgradeBlock);
+            }
             if (data.creativityGain != 0)
                 Extensions.SetEffectGain(data.creativityGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Creativity16X16"), upgradeCost, upgradeBlock);
             if (data.fundsGain != 0)
@@ -180,7 +182,7 @@ namespace Context
                 Extensions.SetEffectGain(data.materialGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), upgradeCost, upgradeBlock);
             if (data.droneGain != 0)
                 Extensions.SetEffectGain(data.droneGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), upgradeCost, upgradeBlock);
-
+            #region SDG bar
             float sdgMultiplier = 100;
             SDGBar[] sdgBar = Ai.SDGManager.SDGBar;
 
@@ -302,7 +304,7 @@ namespace Context
 
                 Extensions.SetEffectGain(c + (data.sdgChange17 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, upgradeBlock, temp, sdgBar[16]);
             }
-
+            #endregion
         }
 
 

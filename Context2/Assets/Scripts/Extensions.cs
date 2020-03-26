@@ -27,7 +27,6 @@ namespace Context
         public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock, Color color, SDGBar sdgBar = null)
         {
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform, upgradeBlock.transform);
-
             try
             {
                 GameObject go = upgrade.GetChild(0).GetChild(1).gameObject;
@@ -35,16 +34,14 @@ namespace Context
                 tmpGUI.color = color;
                 tmpGUI.text = text + Environment.NewLine;
 
-                Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
+                Image i = upgrade.GetChild(0).GetChild(0).GetComponent<Image>();
                 i.sprite = sprite;
                 if (sdgBar != null)
                 {
                     i.color = sdgBar.Color;
-                    if (i.transform.childCount > 0)
-                    {
-                        TextMeshProUGUI number = i.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                        number.text = sdgBar.sdgIndex.ToString();
-                    }
+                    TextMeshProUGUI number = upgrade.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+                    number.text = sdgBar.sdgIndex.ToString();
+
                 }
             } catch (Exception ex) { }
 
@@ -55,13 +52,12 @@ namespace Context
         {
 
             int amount = System.Convert.ToInt32(text);
-
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform, upgradeBlock.transform);
 
             string c = (amount > 0) ? "+" : string.Empty;
 
-            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = c + text + Environment.NewLine;
-            upgrade.GetComponentInChildren<TextMeshProUGUI>().color = (amount > 0) ? Color.green : Color.red;
+            upgrade.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = c + text;
+            upgrade.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().color = (amount > 0) ? Color.green : Color.red;
 
             Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
             i.gameObject.AddComponent<GUILocationFinder>();
