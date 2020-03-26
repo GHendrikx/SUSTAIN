@@ -26,7 +26,7 @@ namespace Context
 
 
         //Effects in Allocations
-        public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock, Color color)
+        public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock, Color color, SDGBar sdgBar = null)
         {
 
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
@@ -35,6 +35,15 @@ namespace Context
 
             Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
 
+            if (sdgBar != null)
+            {
+                i.color = sdgBar.Color;
+                if (i.transform.childCount > 0)
+                {
+                    TextMeshPro number = i.transform.GetChild(0).GetComponent<TextMeshPro>();
+                    number.text = sdgBar.sdgIndex.ToString();
+                }
+            }
             i.sprite = sprite;
 
         }
