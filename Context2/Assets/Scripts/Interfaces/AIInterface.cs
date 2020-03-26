@@ -92,7 +92,9 @@ namespace Context
         private TextMeshProUGUI localApprovesPercentageTMP;
         #endregion
 
-        private bool lerping;
+        private bool lerpResources;
+        private bool lerpSV;
+        private bool lerpLocal;
 
         private float GUIResearchPoints;
         private float GUICreativityPoints;
@@ -135,16 +137,20 @@ namespace Context
 
 
             #region AI Trust
-            svDisapproveSlider.value = SvDisapprovesPercentage;
-            svNeutralSlider.value = SvDisapprovesPercentage + SvNeutralPercentage;
+            if (svDisapproveSlider.value != SvDisapprovesPercentage && !lerpSV)
+                StartCoroutine(LerpSVPercentage(1, SvDisapprovesPercentage, (SvDisapprovesPercentage + SvNeutralPercentage)));
+            //svDisapproveSlider.value = SvDisapprovesPercentage;
+            //svNeutralSlider.value = SvDisapprovesPercentage + SvNeutralPercentage;
 
             svDisapprovePercentageTMP.text = (SvDisapprovesPercentage * 100).ToString("0.0") + "%";
             svNeutralPercentageTMP.text = (SvNeutralPercentage * 100).ToString("0.0") + "%";
             svApprovePercentageTMP.text = (SvApprovesPercentage * 100).ToString("0.0") + "%";
 
+            if(localDisapprovelSlider.value != LocalDisapprovesPercentage && !lerpLocal)
+                StartCoroutine(LerpLocalPercentage(1, LocalDisapprovesPercentage, (LocalNeutralPercentage + LocalDisapprovesPercentage)));
 
-            localDisapprovelSlider.value = LocalDisapprovesPercentage;
-            localNeutralSlider.value = LocalNeutralPercentage + LocalDisapprovesPercentage;
+            //localDisapprovelSlider.value = LocalDisapprovesPercentage;
+            //localNeutralSlider.value = LocalNeutralPercentage + LocalDisapprovesPercentage;
 
             localDisapprovePercentageTMP.text = (SvDisapprovesPercentage*100).ToString("0.0") + "%";
             localNeutralPercentageTMP.text = (LocalNeutralPercentage*100).ToString("0.0") + "%";
@@ -152,9 +158,42 @@ namespace Context
             #endregion
         }
 
+        public IEnumerator LerpSVPercentage(float overTime, float newSVDisapprovePercentage, float newSVNeutralPercentage) 
+        {
+            lerpSV = true;
+            float currentTime = Time.time;
+            float temp1 = svDisapproveSlider.value;
+            float temp2 = svNeutralSlider.value;
+
+            while (Time.time < (currentTime + overTime))
+            {
+                svDisapproveSlider.value = Mathf.Lerp(temp1, newSVDisapprovePercentage, (Time.time - currentTime) / overTime);
+                svNeutralSlider.value = Mathf.Lerp(temp2, newSVNeutralPercentage, (Time.time - currentTime) / overTime);
+                yield return null;
+            }
+            lerpSV = false;
+        }
+
+        public IEnumerator LerpLocalPercentage(float overTime, float newLocalDisapprovePercentage, float newLocalNeutralPercentage)
+        {
+            lerpLocal = true;
+            float currentTime = Time.time;
+            float temp1 = localDisapprovelSlider.value;
+            float temp2 = localNeutralSlider.value;
+
+            while (Time.time < (currentTime + overTime))
+            {
+                localDisapprovelSlider.value = Mathf.Lerp(temp1, newLocalDisapprovePercentage, (Time.time - currentTime) / overTime);
+                localNeutralSlider.value = Mathf.Lerp(temp2, newLocalNeutralPercentage, (Time.time - currentTime) / overTime);
+                yield return null;
+            }
+
+            lerpLocal = false;
+        }
+
         public IEnumerator LerpResources(float overtime, float newResearch, float newCreativity, float newFunds, float newInfluence, float newDrones, float newMaterials, float newPower)
         {
-            lerping = true;
+            lerpResources = true;
             float startTime = Time.time;
 
             float temp1 = CreativityPoints;
@@ -216,7 +255,7 @@ namespace Context
                 yield return null;
             }
 
-            lerping = false;
+            lerpResources = false;
             yield return null;
         }
 

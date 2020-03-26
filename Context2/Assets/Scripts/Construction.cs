@@ -124,7 +124,7 @@ namespace Context
         public void SetCostBlock(string text, Sprite sprite, GameObject costInfo, GameObject costBlock, float amount)
         {
 
-            string c = string.Empty;
+            string c = "-";
 
             Color textColor = Color.white;
 
@@ -135,7 +135,6 @@ namespace Context
             }
             else
                 textColor = Color.red;
-
 
             Transform cost = GameObject.Instantiate(costInfo.transform, costBlock.transform);
 

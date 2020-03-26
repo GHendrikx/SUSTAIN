@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Context
@@ -56,7 +57,7 @@ namespace Context
             TrustChangeCalculator(ref ai.LocalLikesScore, ai.CurrentLocalLikesLove, ai.CurrentLocalNeutralLikes, tempLocalNeutralScore, tempLocalLikesScore, tempLocalLovesScore, populationGrowth, naturalDecay, false, false, false, false);
             TrustChangeCalculator(ref ai.LocalLovesScore, ai.CurrentLocalLovesControlled, ai.CurrentLocalLikesLove, tempLocalLikesScore, tempLocalLovesScore, tempLocalControlledScore, populationGrowth, naturalDecay, false, false, false, false);
             TrustChangeCalculator(ref ai.LocalControlledScore, 0, ai.CurrentLocalLikesLove, tempLocalLovesScore, tempLocalControlledScore, 0, populationGrowth, naturalDecay, false, false, true, false);
-                        
+
             TrustChangeCalculator(ref ai.GlobalRebelliousScore, ai.CurrentGlobalRebelliosAngry, 0, 0, tempGlobalRebeliousScore, tempGlobalHatesScore, populationGrowth, naturalDecay, true, false, true, false);
             TrustChangeCalculator(ref ai.GlobalHatesScore, ai.CurrentGlobalAngryDislikes, ai.CurrentGlobalRebelliosAngry, tempGlobalRebeliousScore, tempGlobalHatesScore, tempGlobalDislikesScore, populationGrowth, naturalDecay, true, false, false, false);
             TrustChangeCalculator(ref ai.GlobalDisLikesScore, ai.CurrentGlobalDislikesNeutral, ai.CurrentGlobalAngryDislikes, tempGlobalHatesScore, tempGlobalDislikesScore, tempGlobalNeutralScore, populationGrowth, naturalDecay, true, false, false, false);
@@ -64,7 +65,7 @@ namespace Context
             TrustChangeCalculator(ref ai.GlobalLikesScore, ai.CurrentGlobalLikesLove, ai.CurrentGlobalNeutralLikes, tempGlobalNeutralScore, tempGlobalLikesScore, tempGlobalLovesScore, populationGrowth, naturalDecay, false, false, false, false);
             TrustChangeCalculator(ref ai.GlobalLoveScore, ai.CurrentGlobalLovesControlled, ai.CurrentGlobalLikesLove, tempGlobalLikesScore, tempGlobalLovesScore, tempGlobalControlledScore, populationGrowth, naturalDecay, false, false, false, false);
             TrustChangeCalculator(ref ai.GlobalControlledScore, 0, ai.CurrentGlobalLikesLove, tempGlobalLovesScore, tempGlobalControlledScore, 0, populationGrowth, naturalDecay, false, false, true, false);
-                             
+
             TrustChangeCalculator(ref ai.SvRebelliousScore, ai.CurrentSvRebelliosAngry, 0, 0, tempSvRebeliousScore, tempSvHatesScore, populationGrowth, naturalDecay, true, false, true, false);
             TrustChangeCalculator(ref ai.SvHatesScore, ai.CurrentSvAngryDislikes, ai.CurrentSvRebelliosAngry, tempSvRebeliousScore, tempSvHatesScore, tempSvDislikesScore, populationGrowth, naturalDecay, true, false, false, false);
             TrustChangeCalculator(ref ai.SvDisLikesScore, ai.CurrentSvDislikesNeutral, ai.CurrentSvAngryDislikes, tempSvHatesScore, tempSvDislikesScore, tempSvNeutralScore, populationGrowth, naturalDecay, true, false, false, false);
@@ -72,7 +73,7 @@ namespace Context
             TrustChangeCalculator(ref ai.SvLikesScore, ai.CurrentSvLikesLove, ai.CurrentSvNeutralLikes, tempSvNeutralScore, tempSvLikesScore, tempSvLovesScore, populationGrowth, naturalDecay, false, false, false, false);
             TrustChangeCalculator(ref ai.SvLoveScore, ai.CurrentSvLovesControlled, ai.CurrentSvLikesLove, tempSvLikesScore, tempSvLovesScore, tempSvControlledScore, populationGrowth, naturalDecay, false, false, false, false);
             TrustChangeCalculator(ref ai.SvControlledScore, 0, ai.CurrentSvLikesLove, tempSvLovesScore, tempSvControlledScore, 0, populationGrowth, naturalDecay, false, false, true, false);
-                           
+
             TrustChangeCalculator(ref ai.NationalRebelliousScore, ai.CurrentNatRebelliosAngry, 0, 0, tempNationalRebeliousScore, tempNationalHatesScore, populationGrowth, naturalDecay, true, false, true, false);
             TrustChangeCalculator(ref ai.NationalHatesScore, ai.CurrentNatAngryDislikes, ai.CurrentNatRebelliosAngry, tempNationalRebeliousScore, tempNationalHatesScore, tempNationalDislikesScore, populationGrowth, naturalDecay, true, false, false, false);
             TrustChangeCalculator(ref ai.NationalDisLikesScore, ai.CurrentNatDislikesNeutral, ai.CurrentNatAngryDislikes, tempNationalHatesScore, tempNationalDislikesScore, tempNationalNeutralScore, populationGrowth, naturalDecay, true, false, false, false);
@@ -80,7 +81,7 @@ namespace Context
             TrustChangeCalculator(ref ai.NationalLikesScore, ai.CurrentNatLikesLove, ai.CurrentNatNeutralLikes, tempNationalNeutralScore, tempNationalLikesScore, tempNationalLovesScore, populationGrowth, naturalDecay, false, false, false, false);
             TrustChangeCalculator(ref ai.NationalLoveScore, ai.CurrentNatLovesControlled, ai.CurrentNatLikesLove, tempNationalLikesScore, tempNationalLovesScore, tempNationalControlledScore, populationGrowth, naturalDecay, false, false, false, false);
             TrustChangeCalculator(ref ai.NationalControlledScore, 0, ai.CurrentNatLikesLove, tempNationalLovesScore, tempNationalControlledScore, 0, populationGrowth, naturalDecay, false, false, true, false);
-            
+
             ai.LocalScoreTotal = ai.LocalRebelliousScore + ai.LocalHatesScore + ai.LocalLikesScore + ai.LocalControlledScore + ai.LocalLovesScore + ai.LocalDisLikesScore + ai.LocalNeutralScore;
             ai.LocalRebeliousPercentage = ai.LocalRebelliousScore / ai.LocalScoreTotal;
             ai.LocalHatesPercentage = ai.LocalHatesScore / ai.LocalScoreTotal;
@@ -167,11 +168,7 @@ namespace Context
             if (isCenter)
             {
                 scoreHuidig = (tempHuidig - GrowthRechts * temp1 + GrowthLinks * temp2 + tempLinks * decay + tempRechts * decay) * groeiFactor;
-                if (debug)
-                {
-                    //Debug.Log(scoreHuidig);
-                }
-            }                        
+            }
             else
             {
                 if (isLeft)
@@ -192,9 +189,6 @@ namespace Context
 
             }
         }
-
-
-
     }
     public enum TrustType
     {

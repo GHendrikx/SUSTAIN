@@ -123,14 +123,9 @@ namespace Context
             this.Instance = gameObject;
             this.data = data;
             if(data.typeOfData == (int)Tab.Allocatie)
-            {
                 SetRewardImage();
-            }
             if (data.typeOfData == (int)Tab.Construction)
-            {
-                informationText.text = string.Empty;
-                informationText.text += data.name;
-            }
+                informationText.text = data.name;
 
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
             {
@@ -154,6 +149,7 @@ namespace Context
                         {
                             informationText.text = string.Empty;
                             informationText.text += UpgradeAbilities.UPGRADEABILITIES[i].data.name;
+
                             //needed for the line under it
                             CalculateAllocatie();
                         }
