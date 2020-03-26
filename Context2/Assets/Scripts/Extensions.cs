@@ -30,20 +30,20 @@ namespace Context
         {
 
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
-
-            upgrade.GetComponentInChildren<TextMeshProUGUI>().color = color;
-            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text + Environment.NewLine;
+            TextMeshProUGUI tmpGUI = upgrade.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+            tmpGUI.color = color;
+            tmpGUI.GetComponent<TextMeshProUGUI>().text = text + Environment.NewLine;
 
             Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
 
             if (sdgBar != null)
             {
-                i.color = sdgBar.Color;
-                if (i.transform.childCount > 0)
-                {
-                    TextMeshProUGUI number = i.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                    number.text = sdgBar.sdgIndex.ToString();
-                }
+            //    i.color = sdgBar.Color;
+            //    if (i.transform.childCount > 0)
+            //    {
+            //        TextMeshProUGUI number = i.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            //        number.text = sdgBar.sdgIndex.ToString();
+            //    }
             }
             i.sprite = sprite;
 
