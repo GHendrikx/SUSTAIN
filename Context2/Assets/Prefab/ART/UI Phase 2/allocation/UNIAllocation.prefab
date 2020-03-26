@@ -1239,6 +1239,8 @@ MonoBehaviour:
     natLikesControlled: 0
   Instance: {fileID: 0}
   CurrentDoneTarget: 0
+  SDGNummer: {fileID: 4803367383446980282}
+  SDGColor: {fileID: 4359211637638305084}
   abilityPointText: {fileID: 8875995483492245532}
   targetText: {fileID: 7858043326275208006}
   informationText: {fileID: 7858043327865282699}
@@ -1419,12 +1421,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2009881658825172230, guid: 95d2586b53e1a4c4586614e73cf3e49e,
         type: 3}
-    - target: {fileID: 3433041468241379103, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49,
-        type: 3}
-      propertyPath: m_SpriteState.m_HighlightedSprite
-      value: 
-      objectReference: {fileID: 5735268969898723681, guid: 3ebc43d211686cb44b1096e7b344ad09,
-        type: 3}
     - target: {fileID: 4144476168880780089, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49,
         type: 3}
       propertyPath: m_text
@@ -1442,6 +1438,12 @@ PrefabInstance:
       propertyPath: m_textInfo.spaceCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3433041468241379103, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49,
+        type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 5735268969898723681, guid: 3ebc43d211686cb44b1096e7b344ad09,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49, type: 3}
 --- !u!114 &7858043327125596871 stripped
