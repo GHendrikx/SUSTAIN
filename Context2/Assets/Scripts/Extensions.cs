@@ -38,8 +38,11 @@ namespace Context
             if (sdgBar != null)
             {
                 i.color = sdgBar.Color;
-                TextMeshProUGUI number = i.GetComponent<TextMeshProUGUI>();
-                number.text = sdgBar.sdgIndex.ToString();
+                if (i.transform.childCount > 0)
+                {
+                    TextMeshPro number = i.transform.GetChild(0).GetComponent<TextMeshPro>();
+                    number.text = sdgBar.sdgIndex.ToString();
+                }
             }
             i.sprite = sprite;
 
