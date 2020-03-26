@@ -17,6 +17,10 @@ namespace Context
         public static float ALLOCATIONPOOL = 0;
         public float CurrentDoneTarget;
         [SerializeField]
+        private TextMeshProUGUI SDGNummer;
+        [SerializeField]
+        private Image SDGColor;
+        [SerializeField]
         private TextMeshProUGUI abilityPointText;
         public TextMeshProUGUI AbilityPointText
         {
@@ -127,6 +131,15 @@ namespace Context
                 informationText.text = string.Empty;
                 informationText.text += data.name;
             }
+
+            for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
+            {
+                SDGBar sdgBar = GameManager.Instance.AI.SDGManager.SDGBar[i];
+                if (data.sdgType[0] == i)
+                    SDGColor.color = sdgBar.Color;
+            }
+            if (SDGNummer != null)
+                SDGNummer.text = data.sdgType[0].ToString();
 
             if (data.desc == null)
                 descriptionText.text = string.Empty;

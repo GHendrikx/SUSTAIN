@@ -1039,6 +1039,7 @@ MonoBehaviour:
   costInformation: {fileID: 5504829431636078163, guid: 30cac3fe21b396345a71af6f7ce78276,
     type: 3}
   constructionCount: {fileID: 8875995483492245532}
+  Points: 0
 --- !u!114 &2272005128703391199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +1193,8 @@ MonoBehaviour:
     natLikesControlled: 0
   Instance: {fileID: 8497393281660433312}
   CurrentDoneTarget: 0
+  SDGNummer: {fileID: 4803367383446980282}
+  SDGColor: {fileID: 4359211637638305084}
   abilityPointText: {fileID: 8875995483492245532}
   targetText: {fileID: 0}
   informationText: {fileID: 7858043327865282699}

@@ -120,9 +120,11 @@ namespace Context
             float health = SDGManager.CalculateHealth();
             if(!inLerp)
                 StartCoroutine(LerpHealth(1, currentHealth, health, aiFitnessScore));
-            performanceData.CalculatePerformance(health);
 
-            if (health == 0)
+            if (!SDGManager.SDGBar[2].LockImage[0].gameObject.activeInHierarchy)
+                performanceData.CalculatePerformance(health);
+
+            if (health == 0 && !SDGManager.SDGBar[2].LockImage[0].gameObject.activeInHierarchy)
                 dateTimer.EndDate();
 
             #endregion

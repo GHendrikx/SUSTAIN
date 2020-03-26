@@ -32,7 +32,7 @@ namespace Context
 
         public void CalculatePerformance(float health)
         {
-            if (ai.SDGManager.SDGBar[2].LockImage[0].gameObject.activeInHierarchy)
+            if (!ai.SDGManager.SDGBar[2].LockImage[0].gameObject.activeInHierarchy)
                 return;
             
             currentPerformance = health * 10;//ai.AIFitnessScore.fillAmount * 10;
