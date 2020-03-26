@@ -30,6 +30,7 @@ namespace Context
         {
 
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
+
             upgrade.GetComponentInChildren<TextMeshProUGUI>().color = color;
             upgrade.GetComponentInChildren<TextMeshProUGUI>().text = text + Environment.NewLine;
 
@@ -40,7 +41,7 @@ namespace Context
                 i.color = sdgBar.Color;
                 if (i.transform.childCount > 0)
                 {
-                    TextMeshPro number = i.transform.GetChild(0).GetComponent<TextMeshPro>();
+                    TextMeshProUGUI number = i.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                     number.text = sdgBar.sdgIndex.ToString();
                 }
             }
