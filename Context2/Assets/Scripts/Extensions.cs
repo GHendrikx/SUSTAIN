@@ -6,9 +6,8 @@ using UnityEngine.UI;
 
 namespace Context
 {
-    public class Extensions
+    public static class Extensions
     {
-
         public static IEnumerator UpdateSlider(RectTransform rectTransform, float targetValue, float overtime)
         {
             float startTime = Time.time;
