@@ -122,6 +122,10 @@ namespace Context
         protected override void Awake()
         {
             base.Awake();
+        #if !UNITY_EDITOR
+            ShowTutorial = true;
+        #endif
+
             TutorialPanel.SetActive(ShowTutorial);
         }
         private void Start() =>

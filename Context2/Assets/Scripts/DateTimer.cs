@@ -49,7 +49,7 @@ namespace Context {
             WeeksLeft--;
             tmp.text = WeeksLeft + timeLeft;
             if(WeeksLeft == 0)
-            EndDate();
+                EndDate();
         }
 
         private void QuitGame()
