@@ -568,8 +568,8 @@ GameObject:
   - component: {fileID: 5267963700014783144}
   - component: {fileID: 8252319723282581193}
   m_Layer: 5
-  m_Name: PolicyCounter
-  m_TagString: Untagged
+  m_Name: Weekly Effect
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1682,7 +1682,7 @@ PrefabInstance:
     - target: {fileID: 3922337272375769801, guid: d758715ea461d024b87ee9e3daa4911a,
         type: 3}
       propertyPath: m_Name
-      value: Cost
+      value: Policy Change Cost
       objectReference: {fileID: 0}
     - target: {fileID: 3922337272375769801, guid: d758715ea461d024b87ee9e3daa4911a,
         type: 3}
@@ -1823,7 +1823,7 @@ PrefabInstance:
     - target: {fileID: 5517154671405821440, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
       propertyPath: m_TagString
-      value: tooltip
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
