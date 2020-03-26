@@ -25,11 +25,14 @@ namespace Context
         private GameObject SDGUnlockSound;
         public float offset = 0.5f;
 
-        public void UpdateSDGValues()
+        private void Start()
         {
             for (int i = 0; i < sdgBar.Length; i++)
                 sdgBar[i].sdgIndex = i+1;
+        }
 
+        public void UpdateSDGValues()
+        {
             SetSDGBar((SDGType)0, ai.SDGProgress01);
             SetSDGBar((SDGType)1, ai.SDGProgress02);
             SetSDGBar((SDGType)2, ai.SDGProgress03);

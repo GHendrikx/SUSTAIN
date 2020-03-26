@@ -1,7 +1,6 @@
-﻿using System;
+﻿using TMPro;
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,30 +27,35 @@ namespace Context
         //Effects in Allocations
         public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock, Color color, SDGBar sdgBar = null)
         {
+            Transform upgrade = GameObject.Instantiate(upgradeCost.transform, upgradeBlock.transform);
 
-            Transform upgrade = GameObject.Instantiate(upgradeCost.transform,upgradeBlock.transform);
-            TextMeshProUGUI tmpGUI = upgrade.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
-            tmpGUI.color = color;
-            tmpGUI.GetComponent<TextMeshProUGUI>().text = text + Environment.NewLine;
-
-            Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
-
-            if (sdgBar != null)
+            try
             {
-            //    i.color = sdgBar.Color;
-            //    if (i.transform.childCount > 0)
-            //    {
-            //        TextMeshProUGUI number = i.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-            //        number.text = sdgBar.sdgIndex.ToString();
-            //    }
-            }
-            i.sprite = sprite;
+                GameObject go = upgrade.GetChild(0).GetChild(1).gameObject;
+                TextMeshProUGUI tmpGUI = go.GetComponent<TextMeshProUGUI>();
+                tmpGUI.color = color;
+                tmpGUI.text = text + Environment.NewLine;
+
+                Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
+                Debug.Log(i);
+                i.sprite = sprite;
+                if (sdgBar != null)
+                {
+                    i.color = sdgBar.Color;
+                    if (i.transform.childCount > 0)
+                    {
+                        TextMeshProUGUI number = i.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+                        number.text = sdgBar.sdgIndex.ToString();
+                    }
+                }
+            } catch (Exception ex) { }
+
 
         }
 
         public static void SetEffectGain(string text, Sprite sprite, GameObject upgradeCost, GameObject upgradeBlock)
         {
-            
+
             int amount = System.Convert.ToInt32(text);
 
             Transform upgrade = GameObject.Instantiate(upgradeCost.transform, upgradeBlock.transform);
@@ -73,6 +77,5 @@ namespace Context
             text.color = Color.black;
             image.sprite = sprite;
         }
-
     }
 }
