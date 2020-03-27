@@ -203,7 +203,7 @@ namespace Context
 
             if (data.influenceGain > 0 || data.influenceGain < 0)
             {
-                string c;
+                string c = "";
 
                 Color temp = Color.white;
                 if (data.influenceGain > 0)
@@ -223,7 +223,7 @@ namespace Context
 
             if (data.materialGain > 0 || data.materialGain < 0)
             {
-                string c;
+                string c = "";
 
                 Color temp = Color.white;
                 if (data.materialGain > 0)
@@ -242,7 +242,7 @@ namespace Context
 
             if (data.powerGain > 0 || data.powerGain < 0)
             {
-                string c;
+                string c = "";
 
                 Color temp = Color.white;
                 if (data.powerGain > 0)
@@ -261,7 +261,7 @@ namespace Context
 
             if (data.researchGain > 0 || data.researchGain < 0)
             {
-                string c;
+                string c = "";
 
                 Color temp = Color.white;
                 if (data.researchGain > 0)

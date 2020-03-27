@@ -99,7 +99,9 @@ namespace Context
                 declineButton.interactable = false;
 
             if (GameManager.Instance.AI.LocalApprovesPercentage >= data.neededLocalTrust)
+            {
                 acceptButton.interactable = true;
+            }
             else
                 acceptButton.interactable = false;
         }
