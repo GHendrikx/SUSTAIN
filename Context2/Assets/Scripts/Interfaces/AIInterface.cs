@@ -131,9 +131,17 @@ namespace Context
 
             #endregion
             if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0 || !TurnManager.ISINTERACTABLE)
+            {
+                turnButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Unspend -";
+                turnButton.transform.GetChild(1).gameObject.SetActive(true);
                 turnButton.interactable = false;
+            }
             else
+            {
                 turnButton.interactable = true;
+                turnButton.transform.GetChild(1).gameObject.SetActive(false);
+                turnButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "End Week";
+            }
 
 
             #region AI Trust

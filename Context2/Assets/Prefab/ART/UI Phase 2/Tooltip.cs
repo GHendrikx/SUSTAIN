@@ -5,11 +5,12 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.IO;
 using TMPro;
+
 public class Tooltip : MonoBehaviour
 {
     private static Tooltip instance;
-
     private string Text ;
+    private GameObject target;
     private Camera uiCamera;
     private TextMeshProUGUI tooltipText;
     private RectTransform backgroundRecTransform;
@@ -39,6 +40,7 @@ public class Tooltip : MonoBehaviour
         {
             if (raycastResultList[i].gameObject.tag.Contains("tip"))
             {
+                target = raycastResultList[i].gameObject;
                 Text = raycastResultList[i].gameObject.GetComponent<Transform>().name;
                 int textLength = Text.Length;
                 Text = Text.Substring(0, textLength);
@@ -60,7 +62,7 @@ public class Tooltip : MonoBehaviour
             tooltipText.text = Text;
             float textpaddingSize = 4f;
 
-            Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textpaddingSize * 2f, tooltipText.preferredHeight + textpaddingSize * 2f);
+            Vector2 backgroundSize = new Vector2(tooltipText.preferredWidth + textpaddingSize * 3f, tooltipText.preferredHeight + textpaddingSize * 3f);
             backgroundRecTransform.sizeDelta = backgroundSize;
             gameObject.SetActive(true);
             Vector2 localPoint;
@@ -68,6 +70,7 @@ public class Tooltip : MonoBehaviour
             transform.localPosition = localPoint;
             backgroundRecTransform.gameObject.SetActive(true);
             tooltipText.gameObject.SetActive(true);
+
         }
         else
         {

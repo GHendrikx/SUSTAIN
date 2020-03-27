@@ -37,7 +37,6 @@ namespace Context
                 tmpGUI.text = text + Environment.NewLine;
 
                 Image i = upgrade.GetChild(0).GetChild(0).GetComponentInChildren<Image>();
-                Debug.Log(i);
                 i.sprite = sprite;
                 if (sdgBar != null)
                 {
