@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Timers;
+using UnityEngine.UI;
 
 namespace Context
 {
@@ -389,7 +390,7 @@ namespace Context
 
         #region SDGPoint
         [SerializeField]
-        private float SDGBeginValue = 4;
+        private float SDGBeginValue = 3;
         [HideInInspector]
         public float SDGPoints01;
         [HideInInspector]
@@ -754,6 +755,8 @@ namespace Context
             UpgradeAbilities.TEMPALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
             AddTimer();
             UpdateUI();
+            turnButton.onClick.AddListener(() => Processing());
+            turnButton.onClick.AddListener(() => TimerManager.Instance.AddTimer(Processing2, 3f));
         }
 
         private void Update()

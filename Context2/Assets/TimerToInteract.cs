@@ -13,7 +13,7 @@ public class TimerToInteract : MonoBehaviour
     {
         turnButtonTimer = false;
         button.interactable = turnButtonTimer;
-        TimerManager.Instance.AddTimer(() => EndTimer(), 2);
+        TimerManager.Instance.AddTimer(() => EndTimer(), 1);
         Debug.Log("Start");
     }
 

@@ -106,7 +106,8 @@ namespace Context
             {
                 AudioManager.Instance.ToggleGameObject(AudioManager.Instance.NextWeek);
                 ISINTERACTABLE = false;
-                TimerManager.Instance.AddTimer(() => { ISINTERACTABLE = !ISINTERACTABLE; }, 3);
+                TimerManager.Instance.AddTimer(() => { ISINTERACTABLE = !ISINTERACTABLE; }, 3f);
+
                 GameManager.Instance.AI.SDGManager.offset -= 0.016f;
             }
             virgin = false;
@@ -122,7 +123,7 @@ namespace Context
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
                 {
                     UpgradeAbilities.UPGRADEABILITIES[i].InformationText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.name;
-                    StartCoroutine(LerpToNumber(i, 0.5f, points, beginNumber, UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes));
+                    StartCoroutine(LerpToNumber(i, 2.5f, points, beginNumber, UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes));
                     UpgradeAbilities.UPGRADEABILITIES[i].TargetText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes + "/" +
                     UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
 
@@ -143,7 +144,7 @@ namespace Context
             while (Time.time < (startTime + overTime))
             {
                 UpgradeAbilities.UPGRADEABILITIES[i].TargetText.text = Mathf.Round(Mathf.Lerp(beginNumber, endNumber, (Time.time - startTime) / overTime)).ToString("0") + "/" + UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
-                if (Mathf.Round(Mathf.Lerp(beginNumber, endNumber, (Time.time - startTime) / overTime)) >= UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget && UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
+                if (Mathf.Round(Mathf.Lerp(beginNumber, endNumber, (Time.time - startTime) / overTime)) >= (UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget) && UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
                 {
                     UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel += 1;
                     UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget += Mathf.Round(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * Mathf.Pow(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGrowth, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel));

@@ -1536,6 +1536,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 6545446838794479567, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545446838794479567, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545446838794479567, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_Spacing.y
+      value: 5.23
+      objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}
       propertyPath: m_LocalPosition.x

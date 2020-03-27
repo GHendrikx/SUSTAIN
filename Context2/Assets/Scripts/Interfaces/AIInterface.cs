@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Timers;
 
 namespace Context
 {
@@ -100,21 +101,45 @@ namespace Context
         private float GUICreativityPoints;
         private float GUIFundsPoints;
         private bool inLerp;
+        private bool inProces = false;
         /// <summary>
         /// Update processing points
         /// </summary>
+        /// 
+
         private void UpdateUI()
         {
             if (name.text != string.Empty && PlayerPrefs.GetString("Name") != null)
                 name.text = PlayerPrefs.GetString("Name");
             processing.text = " " + UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
-            Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(+" + ResearchGain.ToString("0.0") + ")";
-            Creativity.text = " " + CreativityPoints.ToString("0.0") + "(+" + CreativityGain.ToString("0.0") + ")";
-            Funds.text = " " + fundsPoints.ToString("0.0") + "(+" + fundsGain.ToString("0.0") + ")";
-            Influence.text = " " + influencePoints.ToString("0") + "(+" + influenceGain.ToString("0") + ")";
-            Power.text = " " + powerPoints.ToString("0") + "(+" + powerGain.ToString("0") + ")";
-            Material.text = " " + materialPoints.ToString("0") + "(+" + materialGain.ToString("0") + ")";
-            Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") +"(+" + droneGain.ToString("0") + ")";
+            if(ResearchGain >= 0)
+                Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(+" + ResearchGain.ToString("0.0") + ")";
+            else
+                Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(" + ResearchGain.ToString("0.0") + ")";
+            if (CreativityGain >= 0)
+                Creativity.text = " " + CreativityPoints.ToString("0.0") + "(+" + CreativityGain.ToString("0.0") + ")";
+            else
+                Creativity.text = " " + CreativityPoints.ToString("0.0") + "(" + CreativityGain.ToString("0.0") + ")";
+            if (fundsGain >= 0)
+                Funds.text = " " + fundsPoints.ToString("0.0") + "(+" + fundsGain.ToString("0.0") + ")";
+            else
+                Funds.text = " " + fundsPoints.ToString("0.0") + "(" + fundsGain.ToString("0.0") + ")";
+            if (influenceGain >= 0)
+                Influence.text = " " + influencePoints.ToString("0") + "(+" + influenceGain.ToString("0") + ")";
+            else
+                Influence.text = " " + influencePoints.ToString("0") + "(" + influenceGain.ToString("0") + ")";
+            if(powerGain >= 0)
+                Power.text = " " + powerPoints.ToString("0") + "(+" + powerGain.ToString("0") + ")";
+            else
+                Power.text = " " + powerPoints.ToString("0") + "(" + powerGain.ToString("0") + ")";
+            if(materialGain >= 0)
+                Material.text = " " + materialPoints.ToString("0") + "(+" + materialGain.ToString("0") + ")";
+            else
+                Material.text = " " + materialPoints.ToString("0") + "(" + materialGain.ToString("0") + ")";
+            if(droneGain >= 0)
+                Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") +"(+" + droneGain.ToString("0") + ")";
+            else
+                Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") + "(" + droneGain.ToString("0") + ")";
 
 
             #region AI Calculate Fitness Score
@@ -130,11 +155,11 @@ namespace Context
                 dateTimer.EndDate();
 
             #endregion
-            if (UpgradeAbilities.TEMPALLOCATIONPOOL > 0 || !TurnManager.ISINTERACTABLE)
+            if ((UpgradeAbilities.TEMPALLOCATIONPOOL > 0 || !TurnManager.ISINTERACTABLE) && !inProces)
             {
                 turnButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Unspend -";
                 turnButton.transform.GetChild(1).gameObject.SetActive(true);
-                turnButton.interactable = false;
+                turnButton.interactable = false;    
             }
             else
             {
@@ -142,6 +167,12 @@ namespace Context
                 turnButton.transform.GetChild(1).gameObject.SetActive(false);
                 turnButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "End Week";
             }
+            if (inProces && !TurnManager.ISINTERACTABLE)
+            {
+                turnButton.interactable = false;
+                turnButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Processing";
+            }
+
 
 
             #region AI Trust
@@ -159,6 +190,16 @@ namespace Context
             localNeutralPercentageTMP.text = (LocalNeutralPercentage*100).ToString("0.0") + "%";
             localApprovesPercentageTMP.text = (LocalApprovesPercentage*100).ToString("0.0") + "%";
             #endregion
+        }
+
+        private void Processing()
+        {
+            inProces = true;
+        }
+
+        private void Processing2()
+        {
+            inProces = false;
         }
 
         public IEnumerator LerpSVPercentage(float overTime, float newSVDisapprovePercentage, float newSVNeutralPercentage) 

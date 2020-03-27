@@ -1696,12 +1696,12 @@ PrefabInstance:
     - target: {fileID: 9127304989569288486, guid: b0c13215e8b9278478cfdb7caa884419,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.8573976
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 9127304989569288486, guid: b0c13215e8b9278478cfdb7caa884419,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.20265004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9127304989569288486, guid: b0c13215e8b9278478cfdb7caa884419,
         type: 3}
@@ -1711,7 +1711,7 @@ PrefabInstance:
     - target: {fileID: 9127304989569288486, guid: b0c13215e8b9278478cfdb7caa884419,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.8003852
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 9127304989569288486, guid: b0c13215e8b9278478cfdb7caa884419,
         type: 3}
@@ -1722,6 +1722,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180416511510640426, guid: b0c13215e8b9278478cfdb7caa884419,
+        type: 3}
+      propertyPath: m_ChildAlignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180416511510640426, guid: b0c13215e8b9278478cfdb7caa884419,
+        type: 3}
+      propertyPath: m_Spacing.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180416511510640426, guid: b0c13215e8b9278478cfdb7caa884419,
+        type: 3}
+      propertyPath: m_Spacing.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180416511510640426, guid: b0c13215e8b9278478cfdb7caa884419,
+        type: 3}
+      propertyPath: m_CellSize.x
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180416511510640426, guid: b0c13215e8b9278478cfdb7caa884419,
+        type: 3}
+      propertyPath: m_CellSize.y
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180416511510640426, guid: b0c13215e8b9278478cfdb7caa884419,
+        type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c13215e8b9278478cfdb7caa884419, type: 3}

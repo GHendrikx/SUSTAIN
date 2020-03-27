@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1504,6 +1504,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545446838794479567, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545446838794479567, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545446838794479567, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_CellSize.x
+      value: 36.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545446838794479567, guid: f3ed39edc733c92469039d5d235999ed,
+        type: 3}
+      propertyPath: m_Spacing.y
+      value: 4.99
       objectReference: {fileID: 0}
     - target: {fileID: 2419162375402969734, guid: f3ed39edc733c92469039d5d235999ed,
         type: 3}

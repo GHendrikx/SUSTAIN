@@ -97,7 +97,7 @@ namespace Context
             GameObject go = GameObject.Instantiate(upgradeAbilities, transform);
             UpgradeAbilities upgrade = go.GetComponentInChildren<UpgradeAbilities>();
 
-            upgrade.PlusButton.onClick.AddListener(() => upgrade.CalculateStatus(data.allocatieCost));
+            upgrade.PlusButton.onClick.AddListener(() => upgrade.CalculateStatus(999));
             upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
             upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
             upgrade.PlusButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
