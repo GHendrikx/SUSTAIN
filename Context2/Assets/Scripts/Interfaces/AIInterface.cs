@@ -145,6 +145,7 @@ namespace Context
             #region AI Calculate Fitness Score
             float currentHealth = aiFitnessScore.fillAmount;
             float health = SDGManager.CalculateHealth();
+
             if(!inLerp)
                 StartCoroutine(LerpHealth(1, currentHealth, health, aiFitnessScore));
 
@@ -176,14 +177,16 @@ namespace Context
 
 
             #region AI Trust
-            if (svDisapproveSlider.value != SvDisapprovesPercentage && !lerpSV)
+            if (((svDisapproveSlider.value != SvDisapprovesPercentage) ||  ((svNeutralSlider.value) != (SvDisapprovesPercentage + SvNeutralPercentage))) && !lerpSV)
+            {
                 StartCoroutine(LerpSVPercentage(1, SvDisapprovesPercentage, (SvDisapprovesPercentage + SvNeutralPercentage)));
+            }
 
             svDisapprovePercentageTMP.text = (SvDisapprovesPercentage * 100).ToString("0.0") + "%";
             svNeutralPercentageTMP.text = (SvNeutralPercentage * 100).ToString("0.0") + "%";
             svApprovePercentageTMP.text = (SvApprovesPercentage * 100).ToString("0.0") + "%";
 
-            if(localDisapprovelSlider.value != LocalDisapprovesPercentage && !lerpLocal)
+            if(((localDisapprovelSlider.value != LocalDisapprovesPercentage) || ((localNeutralSlider.value) != (LocalDisapprovesPercentage + LocalNeutralPercentage))) &&!lerpLocal)
                 StartCoroutine(LerpLocalPercentage(1, LocalDisapprovesPercentage, (LocalNeutralPercentage + LocalDisapprovesPercentage)));
 
             localDisapprovePercentageTMP.text = (SvDisapprovesPercentage*100).ToString("0.0") + "%";
@@ -283,6 +286,8 @@ namespace Context
                 {
                     temp5 = Mathf.Lerp(DronePoints, newDrones, (Time.time - startTime) / overtime);
                     DronePoints = temp5;
+                    if (DronePoints > DroneLimit)
+                        DronePoints = DroneLimit;
                 }
                 
                 if (newMaterials != Mathf.Infinity)

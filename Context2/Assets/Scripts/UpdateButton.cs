@@ -410,7 +410,8 @@ namespace Context
 
         private void SetUpdateCost()
         {
-
+            if (data.allocatieCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
+                SetCostBlock(data.allocatieCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconProcessingPower16X16"), costInformation, costBlock, data.allocatieCost);
             if (data.researchCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.researchCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costInformation, costBlock, data.researchCost);
             if (data.creativityCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
@@ -425,7 +426,6 @@ namespace Context
                 SetCostBlock(data.materialCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Materials16X16"), costInformation, costBlock, data.materialCost);
             if (data.droneCost != 0 && (data.typeOfData > 0 && data.typeOfData < 5))
                 SetCostBlock(data.droneCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), costInformation, costBlock, data.droneCost);
-
         
         }
 

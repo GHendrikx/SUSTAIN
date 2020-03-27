@@ -25,7 +25,7 @@ namespace Context
         public void InitializeNewPartenerShip(Data data)
         {
             title.text = data.name;
-
+            declineButton.interactable = false;
             this.data = data;
 
             #region Adding Listeners
@@ -76,7 +76,7 @@ namespace Context
             if (isAccepted)
                 declineButton.interactable = true;
             else
-                declineButton.interactable = false;
+                
             
             if (GameManager.Instance.AI.SvApprovesPercentage >= data.neededSupervisorTrust)
                 acceptButton.interactable = true;

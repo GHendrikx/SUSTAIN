@@ -812,8 +812,8 @@ namespace Context
 
             #endregion
 
-            UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieFixedGain;
-            UpgradeAbilities.ALLOCATIONPOOL += data.allocatieFixedGain;
+            UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieCost;
+            UpgradeAbilities.ALLOCATIONPOOL += data.allocatieCost;
 
             UpdateUI();
 
@@ -828,6 +828,9 @@ namespace Context
             data.isResearched = false;
 
             #region Calculate Resources
+
+            UpgradeAbilities.TEMPALLOCATIONPOOL -= data.allocatieCost;
+            UpgradeAbilities.ALLOCATIONPOOL -= data.allocatieCost;
 
             //Calculate points
             float temp1 = ResearchPoints - data.researchCost/* - data.researchFixedGain*/;

@@ -11,7 +11,7 @@ public class DeactiveButton : MonoBehaviour
     private Image otherButtonImage;
     [SerializeField]
     private Sprite sprite;
-    
+
     private void Start()
     {
         button.onClick.AddListener(() => CheckIfOtherButtonIsActivated());

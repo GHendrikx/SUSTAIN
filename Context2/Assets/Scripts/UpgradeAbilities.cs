@@ -102,7 +102,6 @@ namespace Context
             Points = Points + amount;
             if (amount != 999)
             {
-            Debug.Log("ik ben hier");
             int fmodPoints = 0;
             if(ALLOCATIONPOOL >= 26)
                 fmodPoints = Mathf.RoundToInt((Points / ALLOCATIONPOOL) * 26 - 13);
