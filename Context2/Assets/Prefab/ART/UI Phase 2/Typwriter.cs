@@ -18,7 +18,7 @@ public class Typwriter : MonoBehaviour
     public int dialog;
 
     string txtContents;
-    void Start()
+    public void Start()
     {
         txtContents = "";
         PlayerName = PlayerPrefs.GetString("Name");
@@ -67,7 +67,7 @@ public class Typwriter : MonoBehaviour
                 break;
             //[ understood ]
             case 10:
-                txtContents = "Let’s begin by adding 5 of your processing power in Supervised Machine Learning. \n \nNexts to Supervised Machine Learning you see a + and - button. By pressing the + button you can \n \nadd your processing power. With the - button however, you can take it back.";
+                txtContents = "Let’s begin by adding 5 of your processing power in Supervised Machine Learning. \n \nNexts to Supervised Machine Learning you see a + and - button. By pressing the + button you can add your processing power. With the - button however, you can take it back.";
                 break;
             //[ understood ]
             case 11:
