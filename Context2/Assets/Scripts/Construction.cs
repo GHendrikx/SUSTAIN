@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Timers;
 using UnityEngine.UI;
 
 namespace Context
@@ -41,6 +42,8 @@ namespace Context
         [SerializeField]
         private TextMeshProUGUI constructionCount;
         public int Points;
+        public bool CanPress;
+
         public void InitializeNewConstruction(Data data, Button myButton)
         {
             UpgradeAbilities.CONSTRUCTIONLIST.Add(this);
@@ -65,17 +68,23 @@ namespace Context
             }
             SetUpdateCost();
 
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.GetUpdate(this.data));
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints());
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints());
-            myButton.onClick.AddListener(() => GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints());
-            myButton.onClick.AddListener(() => AudioManager.Instance.ToggleGameObject(AudioManager.Instance.AddBuilding));
-            myButton.onClick.AddListener(() => AddConstructionCount());
+            myButton.onClick.AddListener(() => OnClickButton());
+        }
 
+        private void OnClickButton()
+        {
+            GameManager.Instance.AI.GetUpdate(this.data);
+            GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints();
+            GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints();
+            GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints();
+            GameManager.Instance.AI.influenceData.UpdateInfluenceWithoutPoints();
+            GameManager.Instance.AI.materialData.UpdateMaterialWithoutPoints();
+            GameManager.Instance.AI.powerData.UpdatePowerWithoutPoints();
+            AudioManager.Instance.ToggleGameObject(AudioManager.Instance.AddBuilding);
+            AddConstructionCount();
 
+            CanPress = false;
+            TimerManager.Instance.AddTimer(() => { CanPress = !CanPress; },0.1f);
         }
 
         private void AddConstructionCount()
@@ -90,6 +99,8 @@ namespace Context
         {
             if (GameManager.Instance == null || GameManager.Instance.AI == null)
                 return;
+            
+            myButton.interactable = CanPress;
 
             if (GameManager.Instance.AI.ResearchPoints >= -data.researchCost &&
                 GameManager.Instance.AI.CreativityPoints >= -data.creativityCost &&
