@@ -19,6 +19,8 @@ namespace Context
         [SerializeField]
         private GameObject costInformation;
         private GameObject[] panels;
+        static private GameObject panel20;
+        static private GameObject panel20a;
 
         #region Information
         [SerializeField]
@@ -48,8 +50,12 @@ namespace Context
                 for (int i = 0; i < panels.Length; i++)
                     panels[i].SetActive(false);
                 firstTime = false;
+                panel20 = GameObject.Find("panel 20");
+                panel20a = GameObject.Find("panel 20a");
+                panel20.SetActive(false);
+                panel20a.SetActive(false);
             }
-        }
+}
 
         /// <summary>
         /// Setting new update
@@ -76,6 +82,13 @@ namespace Context
                 myButton.onClick.AddListener(() => panels[0].SetActive(false));
                 myButton.onClick.AddListener(() => panels[1].SetActive(true));
                 myButton.onClick.AddListener(() => panels[1].transform.GetChild(2).gameObject.SetActive(true));
+
+            }
+            if (data.ID == 305 && GameManager.Instance.ShowTutorial)
+            {
+                myButton.onClick.AddListener(() => panel20.SetActive(false));
+                myButton.onClick.AddListener(() => panel20a.SetActive(true));
+                myButton.onClick.AddListener(() => panel20a.transform.GetChild(1).gameObject.SetActive(true));
 
             }
 

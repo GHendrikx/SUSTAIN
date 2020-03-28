@@ -9,12 +9,26 @@ namespace Context {
         [SerializeField]
         private UnityEvent unityEvent;
         private static bool stopUpdate = false;
+        private GameObject panel10;
+        private GameObject panel20a;
 
-        // Update is called once per frame
-        private void Update()
+        private void Awake()
+        {
+            panel10 = GameObject.Find("panel 10");
+            panel20a = GameObject.Find("panel 20a");
+            stopUpdate = false;
+        }
+
+            // Update is called once per frame
+            private void Update()
         {
 
-            if (UpgradeAbilities.TEMPALLOCATIONPOOL == 0 && !stopUpdate)
+            if (panel10 && UpgradeAbilities.TEMPALLOCATIONPOOL == 0 && !stopUpdate)
+            {
+                unityEvent?.Invoke();
+                stopUpdate = true;
+            }
+            if (panel20a && UpgradeAbilities.TEMPALLOCATIONPOOL == 6 && !stopUpdate)
             {
                 unityEvent?.Invoke();
                 stopUpdate = true;
