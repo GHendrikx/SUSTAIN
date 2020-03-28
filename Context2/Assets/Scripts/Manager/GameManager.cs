@@ -46,7 +46,7 @@ namespace Context
         public static string SPRITEPATH = "ART/UI_PHASE_2/16X16/v2/";
         [SerializeField]
         private IOManager ioManager;
-        public IOManager IOManager 
+        public IOManager IOManager
         {
             get
             {
@@ -56,9 +56,9 @@ namespace Context
             {
                 ioManager = value;
             }
-        
+
         }
-        
+
         [SerializeField]
         private UIManager uiManager;
         public UIManager UIManager
@@ -122,17 +122,20 @@ namespace Context
         protected override void Awake()
         {
             base.Awake();
-        #if !UNITY_EDITOR
+#if !UNITY_EDITOR
             ShowTutorial = true;
-        #endif
+#endif
 
             TutorialPanel.SetActive(ShowTutorial);
         }
         private void Start() =>
             PlayerPrefs.SetString("Name", "");
 
-        public void QuitGame() =>
+        public void QuitGame() {
             Application.Quit();
+            Debug.Log("quit");
+        }
+           
 
         public void SwitchScene(int index) =>
             SceneManager.LoadScene(index);
