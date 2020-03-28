@@ -131,11 +131,12 @@ namespace Context
         private void Start() =>
             PlayerPrefs.SetString("Name", "");
 
-        public void QuitGame() {
+        public void QuitGame()
+        {
             Application.Quit();
             Debug.Log("quit");
         }
-           
+
 
         public void SwitchScene(int index) =>
             SceneManager.LoadScene(index);

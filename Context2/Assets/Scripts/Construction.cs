@@ -46,6 +46,7 @@ namespace Context
 
         public void InitializeNewConstruction(Data data, Button myButton)
         {
+            CanPress = true;
             UpgradeAbilities.CONSTRUCTIONLIST.Add(this);
             if (title != null)
                 title.text = data.name;
@@ -84,7 +85,7 @@ namespace Context
             AddConstructionCount();
 
             CanPress = false;
-            TimerManager.Instance.AddTimer(() => { CanPress = !CanPress; },0.1f);
+            TimerManager.Instance.AddTimer(() => { CanPress = !CanPress; },1f);
         }
 
         private void AddConstructionCount()
@@ -100,15 +101,14 @@ namespace Context
             if (GameManager.Instance == null || GameManager.Instance.AI == null)
                 return;
             
-            myButton.interactable = CanPress;
-
             if (GameManager.Instance.AI.ResearchPoints >= -data.researchCost &&
                 GameManager.Instance.AI.CreativityPoints >= -data.creativityCost &&
                 GameManager.Instance.AI.FundsPoints >= -data.fundsCost &&
                 GameManager.Instance.AI.InfluencePoints >= -data.influenceCost &&
                 GameManager.Instance.AI.DronePoints >= -data.droneCost &&
                 GameManager.Instance.AI.MaterialPoints >= -data.materialCost &&
-                GameManager.Instance.AI.PowerPoints >= -data.powerCost)
+                GameManager.Instance.AI.PowerPoints >= -data.powerCost &&
+                CanPress)
                 myButton.interactable = true;
             else
             {
