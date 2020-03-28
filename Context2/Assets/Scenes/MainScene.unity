@@ -503,6 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 3
@@ -2698,6 +2699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 9
@@ -5006,6 +5008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 10
@@ -7616,6 +7619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 8
@@ -8144,6 +8148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 14
@@ -9364,6 +9369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 20
@@ -11186,6 +11192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 11
@@ -14339,6 +14346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 0
@@ -17921,6 +17929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerName: 
+  PlayerNameWithoutExe: 
   inputField: {fileID: 1749469006}
   textDisplay: {fileID: 152658340}
 --- !u!1 &921026283
@@ -18575,6 +18584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 17
@@ -20912,6 +20922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 15
@@ -23055,6 +23066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 5
@@ -25033,6 +25045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 2
@@ -25322,6 +25335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 19
@@ -25496,6 +25510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 6
@@ -27095,6 +27110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 4
@@ -27554,6 +27570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 13
@@ -28905,6 +28922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 12
@@ -30119,6 +30137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 21
@@ -35030,6 +35049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 18
@@ -38624,6 +38644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 16
@@ -39103,7 +39124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "[ Understood ]\t\t[ Ha ha? ] \t[ 404 not found ]"
+  m_text: "[ Understood ]\t\t[ Ha ha? ] \t[ 404 Not Found ]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9e47f7a80781aad499c10d8272e6a431, type: 2}
   m_sharedMaterial: {fileID: -2558156018943872908, guid: 9e47f7a80781aad499c10d8272e6a431,
@@ -39256,6 +39277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   blinkSpeed: 0.8
+  PlayerNameWithoutExe: 
   Playername: {fileID: 0}
   randomSound: {fileID: 1039202742}
   dialog: 7

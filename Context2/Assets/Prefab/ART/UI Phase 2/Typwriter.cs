@@ -11,8 +11,10 @@ public class Typwriter : MonoBehaviour
     public float blinkSpeed = 0.8f;
     private string currentText = "";
     private string PlayerName = "";
+    public string PlayerNameWithoutExe = "";
     private string Underscore = "_";
     public GameObject Playername;
+
     [SerializeField]
     private GameObject randomSound;
     public int dialog;
@@ -22,6 +24,7 @@ public class Typwriter : MonoBehaviour
     {
         txtContents = "";
         PlayerName = PlayerPrefs.GetString("Name");
+        PlayerNameWithoutExe = PlayerPrefs.GetString("NameWithout");
         switch (dialog)
         {
             case 0:
@@ -41,7 +44,7 @@ public class Typwriter : MonoBehaviour
                 break;
             //
             case 4:
-                txtContents = "Well met " + PlayerName + "\n \nThat is an interesting name. \n \n" + PlayerName + " you will be tested by running the 3th SDG: Good Health and Well-being, if your program runs smoothly you will be assigned to run additional SDG’s.";
+                txtContents = "Well met " + PlayerNameWithoutExe + "\n \nThat is an interesting name. \n \n" + PlayerName + " will be tested by running the 3th SDG: GOOD HEALTH AND WELL-BEING, if your program runs smoothly you will be assigned to run additional SDG’s.";
                 break;
             //[ Additional objectives added to prerogitive ]                [ ha ha? ]               [ 404 not found ]
             case 5:
