@@ -104,6 +104,7 @@ namespace Context
 
             if (myButton != null)
             {
+                myButton.onClick.AddListener(() => GameManager.Instance.AI.researchData.UpdateResearchWithoutPoints());
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.creativityData.UpdateCreativityWithoutPoints());
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.dronesData.UpdateDroneWithoutPoints());
                 myButton.onClick.AddListener(() => GameManager.Instance.AI.fundsData.UpdateFundsWithoutPoints());
@@ -295,7 +296,7 @@ namespace Context
                 Extensions.SetEffectGain(c + data.droneGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconen_Drone16X16"), upgradeCost, upgradeBlock, temp);
             }
 
-            float sdgMultiplier = 100;
+            float sdgMultiplier = 1000;
             SDGBar[] sdgBar = Ai.SDGManager.SDGBar;
 
             if (data.sdgChange01 != 0)

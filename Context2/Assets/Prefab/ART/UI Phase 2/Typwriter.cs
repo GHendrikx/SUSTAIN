@@ -78,11 +78,11 @@ public class Typwriter : MonoBehaviour
                 break;
             //[ understood ]
             case 111:
-                txtContents = "Here you can see your current Research and Memory Storage plus how much Research you are predicted to have accomplished at the end of the week. \n \nResearch can be used to expand your understanding of the world and improve your abilities. At the moment you only have limited Memory. But in time as you improve and expand you will be able to store more.";
+                txtContents = "Here you can see your current Research and Memory.\nIn addition it also shows how much Research you are predicted to accomplish during the current week. \n \nResearch can be used to expand your understanding of the world and improve your abilities. At the moment you only have limited Memory. But in time as you improve and expand you will be able to store more.";
                 break;
             //[ understood ]
             case 112:
-                txtContents = "In order to improve your learning curve we have added minor objectives to your parameters. \n \nEach time you fufill these objectives you will be given a minor reward. In this case you would be given +1 extra Processing Power.";
+                txtContents = "In order to improve your learning curve we have added minor objectives to your parameters. \n \nEach time you fulfil these objectives you will be given a minor reward. In this case you would be given +1 extra Processing Power.";
                 break;
             //[ understood ]
             case 12:
@@ -90,7 +90,7 @@ public class Typwriter : MonoBehaviour
                 break;
             //[ understood ]
             case 13:
-                txtContents = "When you have completed all your decision trees you can process the current week. \n \nSimply submit them by pressing the \nEnd Week button.\n \nA little reminder, you must complete all 17 SDG’s by the end of the year 2030.";
+                txtContents = "When you have completed all your decisiontrees you can process the current week. \n \nSimply submit them by pressing the \nEnd Week button.\n \nA little reminder, you must complete all 17 SDG’s by the end of the year 2030.";
                 break;
             //[ understood ]
 
@@ -108,7 +108,7 @@ public class Typwriter : MonoBehaviour
                 break;
             //[ understood ]
             case 19:
-                txtContents = "This is your AI Fitness Score, the AI Fitness Score is tied to how well you are fufilling the 17 SDG's. If you don't do a good job you will be turned off and replaced by a better AI. \n \nTo make sure your AI Fitness Score stays high enough, you simply need self-improve and above all: \nProtect the planet and ensure that all people enjoy peace and prosperity by the end of the year 2030.";
+                txtContents = "This is your AI Fitness Score, the AI Fitness Score is tied to how well you are fulfilling the 17 SDG's. If you don't do a good job you will be turned off and replaced by a better AI. \n \nTo make sure your AI Fitness Score stays high enough, you simply need self-improve and above all: \nProtect the planet and ensure that all people enjoy peace and prosperity by the end of the year 2030.";
                 break;
             //[ understood ]
             case 20:

@@ -286,7 +286,7 @@ namespace Context
                 Extensions.SetEffectGain(c + data.researchGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_ResearchPoints_3_16X16"), costBlock, effectBlock, temp);
             }
 
-            float sdgMultiplier = 100;
+            float sdgMultiplier = 1000;
             SDGBar[] sdgBar = GameManager.Instance.AI.SDGManager.SDGBar;
            
             if (data.sdgChange01 != 0)
@@ -411,6 +411,7 @@ namespace Context
 
         private void SetRewardImage()
         {
+            Debug.Log(data.allocatieFixedGain);
             if (data.allocatieFixedGain > 0)
                 Extensions.SetAllocatieCost(rewardText, data.allocatieFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconProcessingPower16X16"));
             else if (data.researchFixedGain > 0)

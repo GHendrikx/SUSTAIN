@@ -14,7 +14,7 @@ namespace Context
         private TrustType trustType;
 
         private float populationGrowth = 1.00009f;
-        private float naturalDecay = 0.01f;
+        private float naturalDecay = 0.015f;
 
         public void UpdateTrustMeter()
         {

@@ -149,15 +149,19 @@ namespace Context
                     UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel += 1;
                     UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget += Mathf.Round(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * Mathf.Pow(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGrowth, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel));
                     GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
-                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.researchFixedGain;
-                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.creativityFixedGain;
-                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.fundsFixedGain;
-                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.influenceFixedGain;
-                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.materialFixedGain;
-                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.powerFixedGain;
-                    GameManager.Instance.IOManager.data.Data[0].researchFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.droneFixedGain;
+                    ai.ResearchPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.researchFixedGain;
+                    ai.CreativityPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.creativityFixedGain;
+                    ai.FundsPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.fundsFixedGain;
+                    ai.InfluencePoints += UpgradeAbilities.UPGRADEABILITIES[i].data.influenceFixedGain;
+                    ai.MaterialPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.materialFixedGain;
+                    ai.PowerPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.powerFixedGain;
+                    ai.DronePoints += UpgradeAbilities.UPGRADEABILITIES[i].data.droneFixedGain;
                     UpgradeAbilities.TEMPALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     UpgradeAbilities.ALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
+                    if (ai.ResearchPoints >= ai.ResearchLimit)
+                        ai.ResearchPoints = ai.ResearchLimit;
+                    if (ai.DronePoints >= ai.DroneLimit)
+                        ai.DronePoints = ai.DroneLimit;
                     //speel hier rewardsound
                     AudioManager.Instance.ToggleGameObject(AudioManager.Instance.AllocatieReward);
                 }

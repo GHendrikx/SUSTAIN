@@ -38,7 +38,7 @@ namespace Context
         #endregion
 
         public static float SDGBASELOG = 1.5f;
-        public static float SDGDECAY = 0.002f;
+        public static float SDGDECAY = 0.001f;
 
         // Start is called before the first frame update
         private void Start()
