@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 16b2ae23a2c41ba42ad77119b56b5ece
+guid: 38274813bbffb3c4fa6510ebac9a0110
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8517470534714776281
-    second: Kruisje_0
+      213: 4252784722506761965
+    second: iconSupervisorTrust16X16_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -44,12 +44,12 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 16, y: 32, z: 32, w: 16}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kruisje_0
+      name: iconSupervisorTrust16X16_0
       rect:
         serializedVersion: 2
-        x: 837
-        y: 706
-        width: 23
-        height: 23
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d004f1c034a2f314ca887e2c6174b25e
-      internalID: 8517470534714776281
+      spriteID: 5cf27a8171e47d24392d877900e7f0e3
+      internalID: 4252784722506761965
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b775fc35c139f15409b333e88908c07f
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

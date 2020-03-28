@@ -108,7 +108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6685864, y: 0.016279062}
   m_AnchorMax: {x: 0.76600003, y: 0.3958792}
-  m_AnchoredPosition: {x: 0.000091552734, y: -0.00074387}
+  m_AnchoredPosition: {x: 0.000091552734, y: -0.00074386597}
   m_SizeDelta: {x: -0, y: -0.0015106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8691401209643550136
@@ -1421,6 +1421,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2009881658825172230, guid: 95d2586b53e1a4c4586614e73cf3e49e,
         type: 3}
+    - target: {fileID: 3433041468434954722, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49,
+        type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 5993000628296052534, guid: 338508c6ec9e88845ac871c01b9b4c74,
+        type: 3}
     - target: {fileID: 4144476168880780089, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49,
         type: 3}
       propertyPath: m_text
@@ -1443,6 +1449,12 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
       objectReference: {fileID: 5735268969898723681, guid: 3ebc43d211686cb44b1096e7b344ad09,
+        type: 3}
+    - target: {fileID: 3433041468241379103, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49,
+        type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: -5132546143556759548, guid: b8123a65173292e45b11e47311b4a1be,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa8eca01bd5dc3e4a9a2d21f5e2b1b49, type: 3}
