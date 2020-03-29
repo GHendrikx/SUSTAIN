@@ -93,12 +93,27 @@ namespace Context
         }
         private void Update()
         {
-            if (isAccepted)
+            if (isAccepted &&                
+                GameManager.Instance.AI.CreativityPoints >= +data.creativityCost &&
+                GameManager.Instance.AI.FundsPoints >= +data.fundsCost &&
+                GameManager.Instance.AI.InfluencePoints >= +data.influenceCost &&
+                GameManager.Instance.AI.DronePoints >= +data.droneCost &&
+                GameManager.Instance.AI.MaterialPoints >= +data.materialCost &&
+                GameManager.Instance.AI.PowerPoints >= +data.powerCost &&
+                GameManager.Instance.AI.ProcessingPoints >= +data.allocatieCost)
                 declineButton.interactable = true;
             else
                 declineButton.interactable = false;
 
-            if (GameManager.Instance.AI.LocalApprovesPercentage >= data.neededLocalTrust)
+            if (GameManager.Instance.AI.LocalApprovesPercentage >= data.neededLocalTrust &&
+                GameManager.Instance.AI.ResearchPoints >= -data.researchCost &&
+                GameManager.Instance.AI.CreativityPoints >= -data.creativityCost &&
+                GameManager.Instance.AI.FundsPoints >= -data.fundsCost &&
+                GameManager.Instance.AI.InfluencePoints >= -data.influenceCost &&
+                GameManager.Instance.AI.DronePoints >= -data.droneCost &&
+                GameManager.Instance.AI.MaterialPoints >= -data.materialCost &&
+                GameManager.Instance.AI.PowerPoints >= -data.powerCost &&
+                GameManager.Instance.AI.ProcessingPoints >= -data.allocatieCost)
             {
                 acceptButton.interactable = true;
             }

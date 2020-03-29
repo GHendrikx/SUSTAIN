@@ -224,7 +224,6 @@ namespace Context
                     c = "";
                     temp = Color.red;
                 }
-                Debug.Log(costBlock + " " + effectBlock);
 
                 Extensions.SetEffectGain(c + data.influenceGain.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_Stat16X16"), costBlock, effectBlock, temp);
             }
