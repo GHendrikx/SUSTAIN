@@ -157,6 +157,7 @@ namespace Context
                     ai.MaterialPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.materialFixedGain;
                     ai.PowerPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.powerFixedGain;
                     ai.DronePoints += UpgradeAbilities.UPGRADEABILITIES[i].data.droneFixedGain;
+                    Debug.Log(UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.ID);
                     UpgradeAbilities.TEMPALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     UpgradeAbilities.ALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     if (ai.ResearchPoints >= ai.ResearchLimit)

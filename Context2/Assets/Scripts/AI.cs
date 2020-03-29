@@ -767,7 +767,7 @@ namespace Context
 
             if (SetTurn)
             {
-                UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
+                //UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
                 SetTurn = false;
             }
         }
@@ -810,7 +810,7 @@ namespace Context
             //(Time.time - startTime) / overtime 
             StartCoroutine(LerpResources(1, temp1, temp2, temp3,temp4,temp5,temp6,temp7));
 
-            #endregion
+            #endregion            
             UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieCost;
             UpgradeAbilities.ALLOCATIONPOOL += data.allocatieCost;
 
@@ -846,8 +846,8 @@ namespace Context
 
             #endregion
 
-            UpgradeAbilities.TEMPALLOCATIONPOOL -= data.allocatieFixedGain;
-            UpgradeAbilities.ALLOCATIONPOOL -= data.allocatieFixedGain;
+            //UpgradeAbilities.TEMPALLOCATIONPOOL -= data.allocatieFixedGain;
+            //UpgradeAbilities.ALLOCATIONPOOL -= data.allocatieFixedGain;
 
             UpdateUI();
 
