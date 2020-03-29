@@ -2533,7 +2533,7 @@ MonoBehaviour:
   ignoreErrorWhenDuplicatedInstance: 0
   studioEventAllocatie: {fileID: 9180473486018523929}
   studioParameterBGM: {fileID: 1236360761}
-  ShowTutorial: 0
+  ShowTutorial: 1
   TutorialPanel: {fileID: 995632089}
   ioManager: {fileID: 90794113}
   uiManager: {fileID: 90794114}
