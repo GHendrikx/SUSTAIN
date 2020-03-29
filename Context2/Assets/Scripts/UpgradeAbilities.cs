@@ -411,7 +411,6 @@ namespace Context
 
         private void SetRewardImage()
         {
-            Debug.Log(data.allocatieFixedGain);
             if (data.allocatieFixedGain > 0)
                 Extensions.SetAllocatieCost(rewardText, data.allocatieFixedGain, rewardImage, Resources.Load<Sprite>(GameManager.SPRITEPATH + "iconProcessingPower16X16"));
             else if (data.researchFixedGain > 0)

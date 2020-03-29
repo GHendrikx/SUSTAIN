@@ -118,7 +118,7 @@ namespace Context
                 int points = System.Convert.ToInt32(UpgradeAbilities.UPGRADEABILITIES[i].AbilityPointText.text);
                 float beginNumber = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes;
 
-                UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes += points;
+                UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes += points * UpgradeAbilities.UPGRADEABILITIES[i].data.doneAmount;
 
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
                 {
@@ -148,6 +148,7 @@ namespace Context
                 {
                     UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel += 1;
                     UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget += Mathf.Round(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * Mathf.Pow(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGrowth, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel));
+                    GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     ai.ResearchPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.researchFixedGain;
                     ai.CreativityPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.creativityFixedGain;

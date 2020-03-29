@@ -390,7 +390,7 @@ namespace Context
 
         #region SDGPoint
         [SerializeField]
-        private float SDGBeginValue = 2;
+        private float SDGBeginValue = 1.5f;
         [HideInInspector]
         public float SDGPoints01;
         [HideInInspector]
@@ -811,7 +811,6 @@ namespace Context
             StartCoroutine(LerpResources(1, temp1, temp2, temp3,temp4,temp5,temp6,temp7));
 
             #endregion
-
             UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieCost;
             UpgradeAbilities.ALLOCATIONPOOL += data.allocatieCost;
 
@@ -828,7 +827,6 @@ namespace Context
             data.isResearched = false;
 
             #region Calculate Resources
-
             UpgradeAbilities.TEMPALLOCATIONPOOL -= data.allocatieCost;
             UpgradeAbilities.ALLOCATIONPOOL -= data.allocatieCost;
 

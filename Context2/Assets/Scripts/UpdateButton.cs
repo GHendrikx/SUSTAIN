@@ -145,7 +145,8 @@ namespace Context
                 Ai.InfluencePoints >= -data.influenceCost &&
                 Ai.DronePoints >= -data.droneCost &&
                 Ai.MaterialPoints >= -data.materialCost &&
-                Ai.PowerPoints >= -data.powerCost)
+                Ai.PowerPoints >= -data.powerCost &&
+                Ai.ProcessingPoints >= -data.allocatieCost)
                 myButton.interactable = true;
             else
                 myButton.interactable = false;
@@ -158,7 +159,6 @@ namespace Context
 
             Ai.GetUpdate(data);
             data.isResearched = true;
-            AllocationUpdate();
             Destroy(this.gameObject);
         }
 
@@ -442,20 +442,7 @@ namespace Context
                 SetCostBlock(data.droneCost.ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "Iconen_Drone16X16"), costInformation, costBlock, data.droneCost);
         
         }
-
-        private void AllocationUpdate()
-        {
-            float currentAllocationMod = GameManager.Instance.UIManager.CalculateAllocationMod();
-            float temp = UpgradeAbilities.ALLOCATIONPOOL;
-            float calculation = currentAllocationMod - temp;
-
-            if (currentAllocationMod > BackupAllocationPoints)
-                UpgradeAbilities.TEMPALLOCATIONPOOL += calculation;
-
-            UpgradeAbilities.ALLOCATIONPOOL = currentAllocationMod;
-        }
-
-
+        
         public void SetCostBlock(string text, Sprite sprite, GameObject costInfo, GameObject costBlock, float amount)
         {
 
