@@ -147,7 +147,7 @@ public class GSpreadSheetsToJson : EditorWindow {
 			}
 			GUILayout.Label("");
 			GUI.backgroundColor = UnityEngine.Color.green;
-			if(GUILayout.Button("Make Data \nGreat Again 2"))
+			if(GUILayout.Button("Download Data"/*"Make Data \nGreat Again 2"*/))
 			{
 				progress = 0;
 				DownloadToJson();

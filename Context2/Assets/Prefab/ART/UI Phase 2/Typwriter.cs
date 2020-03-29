@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using TMPro;
+using UnityEngine.Timers;
 
 public class Typwriter : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Typwriter : MonoBehaviour
     [SerializeField]
     private GameObject randomSound;
     public int dialog;
-
+    public int i;
     string txtContents;
     public void Start()
     {
@@ -131,7 +132,21 @@ public class Typwriter : MonoBehaviour
 
         StartCoroutine(ShowText());
         StartCoroutine(Blink());
+
+        string text = "3rrwel;ek;sfd";
+
+        TimerManager.Instance.AddTimer(AddLetter, 0.1f);
+
     }
+
+    void AddLetter()
+    {
+        this.GetComponent<TextMeshProUGUI>().text += text[i];
+        i++;
+        TimerManager.Instance.AddTimer(AddLetter, 0.1f);
+
+    }
+
     IEnumerator Blink()
     {
         while (true)
