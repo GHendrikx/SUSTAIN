@@ -111,7 +111,6 @@ namespace Context
         {
             //Debug.Log(System.Math.Round(creativityData.CurrentCreativityPoints, 1) + " CREATIVITY " + System.Math.Round(CreativityPoints, 1));
             //Debug.Log(System.Math.Round(researchData.CurrentResearchPoints, 1) + " RESEARCH " + System.Math.Round(ResearchPoints, 1));
-            Debug.Log(UpgradeAbilities.CURRENTALLOCATIONPOOL + " ALLOCATIE " + UpgradeAbilities.ALLOCATIONPOOL);
 
             if (name.text != string.Empty && PlayerPrefs.GetString("Name") != null)
                 name.text = PlayerPrefs.GetString("Name");

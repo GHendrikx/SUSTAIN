@@ -187,7 +187,7 @@ namespace Context
                         ai.MaterialPoints = ai.materialData.CurrentMaterialPoints;
                         ai.PowerPoints = ai.powerData.CurrentPowerPoints;
                         ai.DronePoints = ai.droneData.CurrentDronesPoints;
-                    }, 1f);
+                    }, 2f);
 
 
                     //speel hier rewardsound

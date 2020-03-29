@@ -11,11 +11,15 @@ namespace Context {
         private static bool stopUpdate = false;
         private GameObject panel10;
         private GameObject panel20a;
+        private GameObject panel24;
+        private GameObject tabs;
 
         private void Awake()
         {
             panel10 = GameObject.Find("panel 10");
             panel20a = GameObject.Find("panel 20a");
+            panel24 = GameObject.Find("panel 24");
+            tabs = GameObject.Find("tabs-allocation-partnerships-construction");
             stopUpdate = false;
         }
 
@@ -32,6 +36,12 @@ namespace Context {
             {
                 unityEvent?.Invoke();
                 stopUpdate = true;
+            }
+            if (panel24 && (tabs.transform.GetChild(2).name == "tabPartnerships"))
+            {
+                unityEvent?.Invoke();
+                stopUpdate = true;
+                Debug.Log("hello");
             }
         }
 
