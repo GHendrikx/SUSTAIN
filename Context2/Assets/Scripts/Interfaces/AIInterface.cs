@@ -25,7 +25,7 @@ namespace Context
         private TextMeshProUGUI Material;
         [SerializeField]
         private TextMeshProUGUI Drone;
-        
+
 
         [SerializeField]
         private TextMeshProUGUI name;
@@ -109,44 +109,85 @@ namespace Context
 
         private void UpdateUI()
         {
+            //Debug.Log(System.Math.Round(creativityData.CurrentCreativityPoints, 1) + " CREATIVITY " + System.Math.Round(CreativityPoints, 1));
+            //Debug.Log(System.Math.Round(researchData.CurrentResearchPoints, 1) + " RESEARCH " + System.Math.Round(ResearchPoints, 1));
+            Debug.Log(UpgradeAbilities.CURRENTALLOCATIONPOOL + " ALLOCATIE " + UpgradeAbilities.ALLOCATIONPOOL);
+
             if (name.text != string.Empty && PlayerPrefs.GetString("Name") != null)
                 name.text = PlayerPrefs.GetString("Name");
             processing.text = " " + UpgradeAbilities.TEMPALLOCATIONPOOL + "/" + UpgradeAbilities.ALLOCATIONPOOL.ToString();
-            if(ResearchGain >= 0)
-                Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(+" + ResearchGain.ToString("0.0") + ")";
+            if (UpgradeAbilities.CURRENTALLOCATIONPOOL < UpgradeAbilities.ALLOCATIONPOOL)
+            {
+                processing.color = Color.green;
+                TimerManager.Instance.AddTimer(() => { processing.color = Color.white; }, 0.5f);
+            }
+            else if (UpgradeAbilities.CURRENTALLOCATIONPOOL > UpgradeAbilities.ALLOCATIONPOOL)
+            {
+                processing.color = Color.red;
+                TimerManager.Instance.AddTimer(() => { processing.color = Color.white; }, 0.5f);
+            }              
+            
+            Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(+" + ResearchGain.ToString("0.0") + ")";
+            if (System.Math.Round(researchData.CurrentResearchPoints, 1) > System.Math.Round(ResearchPoints, 1))
+                Research.color = Color.green;
+            else if (System.Math.Round(researchData.CurrentResearchPoints, 1) < System.Math.Round(ResearchPoints, 1))
+                Research.color = Color.red;
             else
-                Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(" + ResearchGain.ToString("0.0") + ")";
-            if (CreativityGain >= 0)
-                Creativity.text = " " + CreativityPoints.ToString("0.0") + "(+" + CreativityGain.ToString("0.0") + ")";
-            else
-                Creativity.text = " " + CreativityPoints.ToString("0.0") + "(" + CreativityGain.ToString("0.0") + ")";
-            if (fundsGain >= 0)
-                Funds.text = " " + fundsPoints.ToString("0.0") + "(+" + fundsGain.ToString("0.0") + ")";
-            else
-                Funds.text = " " + fundsPoints.ToString("0.0") + "(" + fundsGain.ToString("0.0") + ")";
-            if (influenceGain >= 0)
-                Influence.text = " " + influencePoints.ToString("0") + "(+" + influenceGain.ToString("0") + ")";
-            else
-                Influence.text = " " + influencePoints.ToString("0") + "(" + influenceGain.ToString("0") + ")";
-            if(powerGain >= 0)
-                Power.text = " " + powerPoints.ToString("0") + "(+" + powerGain.ToString("0") + ")";
-            else
-                Power.text = " " + powerPoints.ToString("0") + "(" + powerGain.ToString("0") + ")";
-            if(materialGain >= 0)
-                Material.text = " " + materialPoints.ToString("0") + "(+" + materialGain.ToString("0") + ")";
-            else
-                Material.text = " " + materialPoints.ToString("0") + "(" + materialGain.ToString("0") + ")";
-            if(droneGain >= 0)
-                Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") +"(+" + droneGain.ToString("0") + ")";
-            else
-                Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") + "(" + droneGain.ToString("0") + ")";
+                TimerManager.Instance.AddTimer(() => { Research.color = Color.white; }, 0.1f);
 
+            Creativity.text = " " + CreativityPoints.ToString("0.0") + "(+" + CreativityGain.ToString("0.0") + ")";
+            if (System.Math.Round(creativityData.CurrentCreativityPoints, 1) > System.Math.Round(CreativityPoints, 1))
+                Creativity.color = Color.green;
+            else if (System.Math.Round(creativityData.CurrentCreativityPoints, 1) < System.Math.Round(CreativityPoints, 1))
+                Creativity.color = Color.red;
+            else
+                TimerManager.Instance.AddTimer(() => { Creativity.color = Color.white; }, 0.1f);
+
+            Funds.text = " " + fundsPoints.ToString("0.0") + "(+" + fundsGain.ToString("0.0") + ")";
+            if (System.Math.Round(fundsData.CurrentFundsPoints, 1) > System.Math.Round(fundsPoints, 1))
+                Funds.color = Color.green;
+            else if (System.Math.Round(fundsData.CurrentFundsPoints, 1) < System.Math.Round(fundsPoints, 1))
+                Funds.color = Color.red;
+            else
+                TimerManager.Instance.AddTimer(() => { Funds.color = Color.white; }, 0.1f);
+
+            Influence.text = " " + influencePoints.ToString("0.0") + "(+" + influenceGain.ToString("0.0") + ")";
+            if (System.Math.Round(influenceData.CurrentInfluencePoints, 1) > System.Math.Round(influencePoints, 1))
+                Influence.color = Color.green;
+            else if (System.Math.Round(influenceData.CurrentInfluencePoints, 1) < System.Math.Round(influencePoints, 1))
+                Influence.color = Color.red;
+            else
+                TimerManager.Instance.AddTimer(() => { Influence.color = Color.white; }, 0.1f);
+
+            Power.text = " " + powerPoints.ToString("0.0") + "(+" + powerGain.ToString("0.0") + ")";
+            if (System.Math.Round(powerData.CurrentPowerPoints, 1) > System.Math.Round(powerPoints, 1))
+                Power.color = Color.green;
+            else if (System.Math.Round(powerData.CurrentPowerPoints, 1) < System.Math.Round(powerPoints, 1))
+                Power.color = Color.red;
+            else
+                TimerManager.Instance.AddTimer(() => { Power.color = Color.white; }, 0.1f);
+
+            Material.text = " " + materialPoints.ToString("0.0") + "(+" + materialGain.ToString("0.0") + ")";
+            if (System.Math.Round(materialData.CurrentMaterialPoints, 1) > System.Math.Round(materialPoints, 1))
+                Material.color = Color.green;
+            else if (System.Math.Round(materialData.CurrentMaterialPoints, 1) < System.Math.Round(materialPoints, 1))
+                Material.color = Color.red;
+            else
+                TimerManager.Instance.AddTimer(() => { Material.color = Color.white; }, 0.1f);
+
+            Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") + "(+" + droneGain.ToString("0") + ")";
+            if (System.Math.Round(droneData.CurrentDronesPoints, 1) > System.Math.Round(DronePoints, 1))
+                Drone.color = Color.green;
+            else if (System.Math.Round(droneData.CurrentDronesPoints, 1) < System.Math.Round(DronePoints, 1))
+                Drone.color = Color.red;
+            else
+                TimerManager.Instance.AddTimer(() => { Drone.color = Color.white; }, 0.1f);
 
             #region AI Calculate Fitness Score
             float currentHealth = aiFitnessScore.fillAmount;
             float health = SDGManager.CalculateHealth();
 
-            if(!inLerp)
+            if (!inLerp)
                 StartCoroutine(LerpHealth(1, currentHealth, health, aiFitnessScore));
 
             if (!SDGManager.SDGBar[2].LockImage[0].gameObject.activeInHierarchy)
@@ -160,7 +201,7 @@ namespace Context
             {
                 turnButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Unspend -";
                 turnButton.transform.GetChild(1).gameObject.SetActive(true);
-                turnButton.interactable = false;    
+                turnButton.interactable = false;
             }
             else
             {
@@ -177,7 +218,7 @@ namespace Context
 
 
             #region AI Trust
-            if (((svDisapproveSlider.value != SvDisapprovesPercentage) ||  ((svNeutralSlider.value) != (SvDisapprovesPercentage + SvNeutralPercentage))) && !lerpSV)
+            if (((svDisapproveSlider.value != SvDisapprovesPercentage) || ((svNeutralSlider.value) != (SvDisapprovesPercentage + SvNeutralPercentage))) && !lerpSV)
             {
                 StartCoroutine(LerpSVPercentage(1, SvDisapprovesPercentage, (SvDisapprovesPercentage + SvNeutralPercentage)));
             }
@@ -186,12 +227,12 @@ namespace Context
             svNeutralPercentageTMP.text = (SvNeutralPercentage * 100).ToString("0.0") + "%";
             svApprovePercentageTMP.text = (SvApprovesPercentage * 100).ToString("0.0") + "%";
 
-            if(((localDisapprovelSlider.value != LocalDisapprovesPercentage) || ((localNeutralSlider.value) != (LocalDisapprovesPercentage + LocalNeutralPercentage))) &&!lerpLocal)
+            if (((localDisapprovelSlider.value != LocalDisapprovesPercentage) || ((localNeutralSlider.value) != (LocalDisapprovesPercentage + LocalNeutralPercentage))) && !lerpLocal)
                 StartCoroutine(LerpLocalPercentage(1, LocalDisapprovesPercentage, (LocalNeutralPercentage + LocalDisapprovesPercentage)));
 
-            localDisapprovePercentageTMP.text = (SvDisapprovesPercentage*100).ToString("0.0") + "%";
-            localNeutralPercentageTMP.text = (LocalNeutralPercentage*100).ToString("0.0") + "%";
-            localApprovesPercentageTMP.text = (LocalApprovesPercentage*100).ToString("0.0") + "%";
+            localDisapprovePercentageTMP.text = (SvDisapprovesPercentage * 100).ToString("0.0") + "%";
+            localNeutralPercentageTMP.text = (LocalNeutralPercentage * 100).ToString("0.0") + "%";
+            localApprovesPercentageTMP.text = (LocalApprovesPercentage * 100).ToString("0.0") + "%";
             #endregion
         }
 
@@ -205,7 +246,7 @@ namespace Context
             inProces = false;
         }
 
-        public IEnumerator LerpSVPercentage(float overTime, float newSVDisapprovePercentage, float newSVNeutralPercentage) 
+        public IEnumerator LerpSVPercentage(float overTime, float newSVDisapprovePercentage, float newSVNeutralPercentage)
         {
             lerpSV = true;
             float currentTime = Time.time;
@@ -251,23 +292,22 @@ namespace Context
             float temp6 = MaterialPoints;
             float temp7 = PowerPoints;
 
-     
 
             while (Time.time < (startTime + overtime))
             {
                 if (newCreativity != Mathf.Infinity)
                 {
-                    
+
                     temp1 = Mathf.Lerp(CreativityPoints, newCreativity, (Time.time - startTime) / overtime);
                     CreativityPoints = temp1;
                 }
-                
+
                 if (newFunds != Mathf.Infinity)
                 {
                     temp2 = Mathf.Lerp(FundsPoints, newFunds, (Time.time - startTime) / overtime);
                     FundsPoints = temp2;
                 }
-                
+
                 if (newResearch != Mathf.Infinity)
                 {
                     temp3 = Mathf.Lerp(ResearchPoints, newResearch, (Time.time - startTime) / overtime);
@@ -281,7 +321,7 @@ namespace Context
                     temp4 = Mathf.Lerp(InfluencePoints, newInfluence, (Time.time - startTime) / overtime);
                     InfluencePoints = temp4;
                 }
-                
+
                 if (newDrones != Mathf.Infinity)
                 {
                     temp5 = Mathf.Lerp(DronePoints, newDrones, (Time.time - startTime) / overtime);
@@ -289,14 +329,14 @@ namespace Context
                     if (DronePoints > DroneLimit)
                         DronePoints = DroneLimit;
                 }
-                
+
                 if (newMaterials != Mathf.Infinity)
                 {
                     temp6 = Mathf.Lerp(MaterialPoints, newMaterials, (Time.time - startTime) / overtime);
                     MaterialPoints = temp6;
                 }
 
-                if(newPower != Mathf.Infinity)
+                if (newPower != Mathf.Infinity)
                 {
                     temp7 = Mathf.Lerp(PowerPoints, newPower, (Time.time - startTime) / overtime);
                     PowerPoints = temp7;

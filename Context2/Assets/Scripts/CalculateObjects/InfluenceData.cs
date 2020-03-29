@@ -42,6 +42,7 @@ namespace Context
 
         private void CalculateInfluencePoints()
         {
+            CurrentInfluencePoints = ai.InfluencePoints + CurrentInfluenceGain;
             float temp1 = ai.InfluencePoints + CurrentInfluenceGain;
 
             //research creativity funds influence drones materials
