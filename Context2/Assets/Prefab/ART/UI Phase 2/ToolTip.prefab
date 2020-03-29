@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56be108931f50e848931776101626a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiCamera: {fileID: 0}
+  backgroundImage: {fileID: 0}
 --- !u!1 &6112031122513325832
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +86,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 4, y: 4}
-  m_SizeDelta: {x: 251.01, y: 38.1}
+  m_SizeDelta: {x: 2120.09, y: 38.1}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6112031122513325845
 CanvasRenderer:

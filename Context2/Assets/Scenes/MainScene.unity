@@ -1917,8 +1917,9 @@ GameObject:
   - component: {fileID: 86626858}
   - component: {fileID: 86626857}
   m_Layer: 5
-  m_Name: 4 (TMP)
-  m_TagString: Untagged
+  m_Name: Ensure inclusive and equitable quality education and promote lifelong learning
+    opportunities for all
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5823,8 +5824,8 @@ GameObject:
   - component: {fileID: 222062099}
   - component: {fileID: 222062098}
   m_Layer: 5
-  m_Name: 1 (TMP)
-  m_TagString: Untagged
+  m_Name: End extreme poverty in all forms by 2030
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7360,8 +7361,8 @@ GameObject:
   - component: {fileID: 290826848}
   - component: {fileID: 290826847}
   m_Layer: 5
-  m_Name: 5- (TMP)
-  m_TagString: Untagged
+  m_Name: Achieve gender equality and empower all women and girls
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9260,7 +9261,7 @@ GameObject:
   - component: {fileID: 371033536}
   m_Layer: 5
   m_Name: 4 procesbar
-  m_TagString: Untagged
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10369,8 +10370,9 @@ GameObject:
   - component: {fileID: 428715749}
   - component: {fileID: 428715748}
   m_Layer: 5
-  m_Name: 2 (TMP)
-  m_TagString: Untagged
+  m_Name: End hunger, achieve food security and improved nutrition and promote sustainable
+    agriculture
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10654,7 +10656,7 @@ GameObject:
   - component: {fileID: 442499666}
   m_Layer: 5
   m_Name: bg
-  m_TagString: Untagged
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10709,7 +10711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -12650,8 +12652,9 @@ GameObject:
   - component: {fileID: 519876039}
   - component: {fileID: 519876038}
   m_Layer: 5
-  m_Name: '8 (TMP) '
-  m_TagString: Untagged
+  m_Name: Promote inclusive and sustainable economic growth, employment and decent
+    work for all
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14933,8 +14936,8 @@ GameObject:
   - component: {fileID: 700161614}
   - component: {fileID: 700161613}
   m_Layer: 5
-  m_Name: '3 (TMP) '
-  m_TagString: Untagged
+  m_Name: Ensure healthy lives and promote well-being for all
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15937,8 +15940,8 @@ GameObject:
   - component: {fileID: 754213845}
   - component: {fileID: 754213844}
   m_Layer: 5
-  m_Name: '17 (TMP) '
-  m_TagString: Untagged
+  m_Name: Revitalize the global partnership for sustainable development
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18342,8 +18345,10 @@ GameObject:
   - component: {fileID: 893845521}
   - component: {fileID: 893845520}
   m_Layer: 5
-  m_Name: 15 (TMP)
-  m_TagString: Untagged
+  m_Name: Protect, restore and promote sustainable use of terrestrial ecosystems,
+    sustainably manage forests, combat desertification, and halt and reverse land
+    degradation and halt biodiversity loss.
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18938,7 +18943,7 @@ GameObject:
   - component: {fileID: 912581379}
   m_Layer: 5
   m_Name: 4- Bar
-  m_TagString: Untagged
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20065,8 +20070,8 @@ GameObject:
   - component: {fileID: 973336361}
   - component: {fileID: 973336360}
   m_Layer: 5
-  m_Name: 11 (TMP)
-  m_TagString: Untagged
+  m_Name: Make cities and human settlements inclusive, safe, resilient and sustainable
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20643,7 +20648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &995632090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26945,8 +26950,8 @@ GameObject:
   - component: {fileID: 1287553077}
   - component: {fileID: 1287553076}
   m_Layer: 5
-  m_Name: 10 (TMP)
-  m_TagString: Untagged
+  m_Name: Reduce Inequality within and among countries
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30003,8 +30008,9 @@ GameObject:
   - component: {fileID: 1410213753}
   - component: {fileID: 1410213752}
   m_Layer: 5
-  m_Name: '9 (TMP) '
-  m_TagString: Untagged
+  m_Name: Build resilient infrastructure, promote inclusive and sustainable industrialization
+    and foster innovation
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31185,7 +31191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.4117647}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -33221,8 +33227,9 @@ GameObject:
   - component: {fileID: 1543465331}
   - component: {fileID: 1543465330}
   m_Layer: 5
-  m_Name: '7 (TMP) '
-  m_TagString: Untagged
+  m_Name: Ensure access to affordable, reliable, sustainable and modern energy for
+    all
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34820,7 +34827,7 @@ GameObject:
   - component: {fileID: 1621268543}
   m_Layer: 5
   m_Name: SDG_Lock4
-  m_TagString: Untagged
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35501,7 +35508,7 @@ GameObject:
   - component: {fileID: 1674407332}
   m_Layer: 5
   m_Name: 4 lock
-  m_TagString: Untagged
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37865,8 +37872,8 @@ GameObject:
   - component: {fileID: 1802618805}
   - component: {fileID: 1802618804}
   m_Layer: 5
-  m_Name: '12 (TMP) '
-  m_TagString: Untagged
+  m_Name: Ensure sustinable consumption and production patterns
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38648,8 +38655,8 @@ GameObject:
   - component: {fileID: 1883426078}
   - component: {fileID: 1883426077}
   m_Layer: 5
-  m_Name: 13 (TMP)
-  m_TagString: Untagged
+  m_Name: Take urgent action to combat climate change and its impact
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39812,8 +39819,9 @@ GameObject:
   - component: {fileID: 1909909831}
   - component: {fileID: 1909909830}
   m_Layer: 5
-  m_Name: 14 (TMP)
-  m_TagString: Untagged
+  m_Name: Conserve and sustainably use the oceans, seas and marine resources for sustainable
+    development
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39968,8 +39976,8 @@ GameObject:
   - component: {fileID: 1912859438}
   - component: {fileID: 1912859437}
   m_Layer: 5
-  m_Name: 16 (TMP)
-  m_TagString: Untagged
+  m_Name: Promote just, peaceful and inclusive societies
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42111,8 +42119,9 @@ GameObject:
   - component: {fileID: 2031053085}
   - component: {fileID: 2031053084}
   m_Layer: 5
-  m_Name: '6 (TMP) '
-  m_TagString: Untagged
+  m_Name: Ensure availability and sustainable management of water and sanitation for
+    all
+  m_TagString: tooltip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
