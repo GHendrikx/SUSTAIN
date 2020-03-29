@@ -12,6 +12,7 @@ namespace Context
         public static List<Construction> CONSTRUCTIONLIST = new List<Construction>();
         public Data data;
         public GameObject Instance;
+        public static float CURRENTALLOCATIONPOOL;
         public static float TEMPALLOCATIONPOOL;
         [SerializeField]
         public static float ALLOCATIONPOOL = 0;
@@ -86,7 +87,8 @@ namespace Context
             {
                 Points = Convert.ToInt32(abilityPointText.text);
                 data.amount = Points;
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Debug.LogError("Contact Geoffrey Hendrikx when you get this error \n" +
                     "Give him the following information: \n" + e);
@@ -102,18 +104,18 @@ namespace Context
             Points = Points + amount;
             if (amount != 999)
             {
-            int fmodPoints = 0;
-            if(ALLOCATIONPOOL >= 26)
-                fmodPoints = Mathf.RoundToInt((Points / ALLOCATIONPOOL) * 26 - 13);
-            else
-                fmodPoints = Mathf.RoundToInt((Points / ALLOCATIONPOOL) * ALLOCATIONPOOL * 2 - ALLOCATIONPOOL);
+                int fmodPoints = 0;
+                if (ALLOCATIONPOOL >= 26)
+                    fmodPoints = Mathf.RoundToInt((Points / ALLOCATIONPOOL) * 26 - 13);
+                else
+                    fmodPoints = Mathf.RoundToInt((Points / ALLOCATIONPOOL) * ALLOCATIONPOOL * 2 - ALLOCATIONPOOL);
 
-            //Set the FMod points. 
-            GameManager.Instance.StudioEventAllocatie.Params[0].Value = fmodPoints;
-            GameManager.Instance.StudioEventAllocatie.Play();
-            
-            abilityPointText.text = Points.ToString();
-            TEMPALLOCATIONPOOL = BasePoints;
+                //Set the FMod points. 
+                GameManager.Instance.StudioEventAllocatie.Params[0].Value = fmodPoints;
+                GameManager.Instance.StudioEventAllocatie.Play();
+
+                abilityPointText.text = Points.ToString();
+                TEMPALLOCATIONPOOL = BasePoints;
             }
         }
 
@@ -159,7 +161,7 @@ namespace Context
                                 UpgradeAbilities.UPGRADEABILITIES[i].InformationText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.name;
                                 UpgradeAbilities.UPGRADEABILITIES[i].TargetText.text = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes + "/" +
                                 UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
-                            }  
+                            }
                         }
 
             if (data.creativityGain > 0 || data.creativityGain < 0)
@@ -287,12 +289,12 @@ namespace Context
 
             float sdgMultiplier = 1000;
             SDGBar[] sdgBar = GameManager.Instance.AI.SDGManager.SDGBar;
-           
+
             if (data.sdgChange01 != 0)
             {
                 Color temp = (data.sdgChange01 > 0) ? Color.green : Color.red;
                 string c = (temp == Color.green) ? "+" : "";
-                Extensions.SetEffectGain(c + (data.sdgChange01 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp,sdgBar[0]);
+                Extensions.SetEffectGain(c + (data.sdgChange01 * sdgMultiplier).ToString(), Resources.Load<Sprite>(GameManager.SPRITEPATH + "icon_SDG16X16"), costBlock, effectBlock, temp, sdgBar[0]);
             }
             if (data.sdgChange02 != 0)
             {
@@ -429,12 +431,12 @@ namespace Context
 
             else
             {
-                 rewardText.gameObject.SetActive(false);
-                 rewardImage.gameObject.SetActive(false);
+                rewardText.gameObject.SetActive(false);
+                rewardImage.gameObject.SetActive(false);
 
             }
         }
-        
+
         private void LockCheck()
         {
             for (int i = 0; i < UPGRADEABILITIES.Count; i++)

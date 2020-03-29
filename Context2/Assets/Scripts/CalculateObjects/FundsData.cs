@@ -42,6 +42,7 @@ namespace Context
 
         private void CalculateFundsPoints()
         {
+            CurrentFundsPoints = ai.FundsPoints + CurrentFundsGain;
             float temp1 = ai.FundsPoints + CurrentFundsGain;
             StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, temp1, Mathf.Infinity,Mathf.Infinity, Mathf.Infinity, Mathf.Infinity));
         }

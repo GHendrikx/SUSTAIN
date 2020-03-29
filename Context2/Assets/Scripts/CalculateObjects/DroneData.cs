@@ -60,6 +60,10 @@ namespace Context
 
         private void CalculateDronesPoints()
         {
+            CurrentDronesPoints = ai.DronePoints + CurrentDronesGain;
+            if (CurrentDronesPoints > ai.DroneLimit)
+                CurrentDronesPoints = ai.DroneLimit;
+
             float temp1 = ai.DronePoints + CurrentDronesGain;
             StartCoroutine(ai.LerpResources(1, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, temp1, Mathf.Infinity, Mathf.Infinity));
         }

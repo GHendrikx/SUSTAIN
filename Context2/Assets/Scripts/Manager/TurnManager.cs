@@ -139,6 +139,20 @@ namespace Context
 
         public IEnumerator LerpToNumber(int i, float overTime, int points, float beginNumber, float endNumber)
         {
+            if (endNumber >= (UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget))
+            {
+                ai.researchData.CurrentResearchPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.researchFixedGain;
+                ai.creativityData.CurrentCreativityPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.creativityFixedGain;
+                ai.fundsData.CurrentFundsPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.fundsFixedGain;
+                ai.influenceData.CurrentInfluencePoints += UpgradeAbilities.UPGRADEABILITIES[i].data.influenceFixedGain;
+                ai.materialData.CurrentMaterialPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.materialFixedGain;
+                ai.powerData.CurrentPowerPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.powerFixedGain;
+                ai.droneData.CurrentDronesPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.droneFixedGain;
+                if (ai.researchData.CurrentResearchPoints >= ai.ResearchLimit)
+                    ai.researchData.CurrentResearchPoints = ai.ResearchLimit;
+                if (ai.droneData.CurrentDronesPoints >= ai.DroneLimit)
+                    ai.droneData.CurrentDronesPoints = ai.DroneLimit;
+            }
             float startTime = Time.time;
 
             while (Time.time < (startTime + overTime))
@@ -146,10 +160,9 @@ namespace Context
                 UpgradeAbilities.UPGRADEABILITIES[i].TargetText.text = Mathf.Round(Mathf.Lerp(beginNumber, endNumber, (Time.time - startTime) / overTime)).ToString("0") + "/" + UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget + " " + UpgradeAbilities.UPGRADEABILITIES[i].data.doneDesc;
                 if (Mathf.Round(Mathf.Lerp(beginNumber, endNumber, (Time.time - startTime) / overTime)) >= (UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget) && UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
                 {
+
                     UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel += 1;
                     UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget += Mathf.Round(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGain * Mathf.Pow(UpgradeAbilities.UPGRADEABILITIES[i].data.doneGrowth, UpgradeAbilities.UPGRADEABILITIES[i].data.doneLevel));
-                    GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
-                    GameManager.Instance.IOManager.data.Data[0].allocatieFixedGain += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     ai.ResearchPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.researchFixedGain;
                     ai.CreativityPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.creativityFixedGain;
                     ai.FundsPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.fundsFixedGain;
@@ -159,10 +172,24 @@ namespace Context
                     ai.DronePoints += UpgradeAbilities.UPGRADEABILITIES[i].data.droneFixedGain;
                     UpgradeAbilities.TEMPALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
                     UpgradeAbilities.ALLOCATIONPOOL += UpgradeAbilities.UPGRADEABILITIES[i].data.allocatieFixedGain;
+                    Debug.Log(UpgradeAbilities.ALLOCATIONPOOL);
+                    TimerManager.Instance.AddTimer(() => { UpgradeAbilities.CURRENTALLOCATIONPOOL = UpgradeAbilities.ALLOCATIONPOOL; }, 0.1f);
                     if (ai.ResearchPoints >= ai.ResearchLimit)
                         ai.ResearchPoints = ai.ResearchLimit;
                     if (ai.DronePoints >= ai.DroneLimit)
                         ai.DronePoints = ai.DroneLimit;
+                    TimerManager.Instance.AddTimer(() =>
+                    {
+                        ai.ResearchPoints = ai.researchData.CurrentResearchPoints;
+                        ai.CreativityPoints = ai.creativityData.CurrentCreativityPoints;
+                        ai.FundsPoints = ai.fundsData.CurrentFundsPoints;
+                        ai.InfluencePoints = ai.influenceData.CurrentInfluencePoints;
+                        ai.MaterialPoints = ai.materialData.CurrentMaterialPoints;
+                        ai.PowerPoints = ai.powerData.CurrentPowerPoints;
+                        ai.DronePoints = ai.droneData.CurrentDronesPoints;
+                    }, 1f);
+
+
                     //speel hier rewardsound
                     AudioManager.Instance.ToggleGameObject(AudioManager.Instance.AllocatieReward);
                 }

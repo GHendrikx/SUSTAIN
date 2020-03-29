@@ -602,8 +602,8 @@ namespace Context
                 currentGlobalNeutralControlled = value;
             }
         }
-            #endregion
-        
+        #endregion
+
         [Space(10)]
 
         #region SvTrustData
@@ -689,9 +689,9 @@ namespace Context
         //Gecombineerd met rebelious hates dialikes neutral likes loves controlled
         #region Score
         [HideInInspector]
-        public float GlobalRebelliousScore, GlobalHatesScore, GlobalDisLikesScore,GlobalNeutralScore,GlobalLikesScore, GlobalLoveScore, GlobalControlledScore;
+        public float GlobalRebelliousScore, GlobalHatesScore, GlobalDisLikesScore, GlobalNeutralScore, GlobalLikesScore, GlobalLoveScore, GlobalControlledScore;
         [HideInInspector]
-        public float LocalRebelliousScore, LocalHatesScore, LocalDisLikesScore,LocalNeutralScore,LocalLikesScore, LocalLovesScore, LocalControlledScore;
+        public float LocalRebelliousScore, LocalHatesScore, LocalDisLikesScore, LocalNeutralScore, LocalLikesScore, LocalLovesScore, LocalControlledScore;
         [HideInInspector]
         public float NationalRebelliousScore, NationalHatesScore, NationalDisLikesScore, NationalNeutralScore, NationalLikesScore, NationalLoveScore, NationalControlledScore;
         [HideInInspector]
@@ -717,12 +717,6 @@ namespace Context
         #endregion
         #endregion
 
-        #region Debug Variable
-        [HideInInspector]
-        public float CurrentResearchGainMod;
-        [HideInInspector]
-        public float CurrentDroneGainMod;
-        #endregion
 
         private bool addPoints;
 
@@ -753,6 +747,7 @@ namespace Context
             //name.text = PlayerPrefs.GetString("Name");
             UpgradeAbilities.ALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
             UpgradeAbilities.TEMPALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
+            UpgradeAbilities.CURRENTALLOCATIONPOOL = GameManager.Instance.UIManager.CalculateAllocationMod();
             AddTimer();
             UpdateUI();
             turnButton.onClick.AddListener(() => Processing());
@@ -786,6 +781,14 @@ namespace Context
 
             #region Calculate Resources
 
+            researchData.CurrentResearchPoints = ResearchPoints + data.researchCost;
+            creativityData.CurrentCreativityPoints = CreativityPoints + data.creativityCost;
+            fundsData.CurrentFundsPoints = fundsPoints + data.fundsCost;
+            influenceData.CurrentInfluencePoints = InfluencePoints + data.influenceCost;
+            droneData.CurrentDronesPoints = DronePoints + data.droneCost;
+            materialData.CurrentMaterialPoints = materialPoints + data.materialCost;
+            powerData.CurrentPowerPoints = powerPoints + data.powerCost;
+
             //Calculate points
             float temp1 = ResearchPoints + data.researchCost/* - data.researchFixedGain*/;
             float temp2 = CreativityPoints + data.creativityCost/* - data.creativityFixedGain*/;
@@ -796,7 +799,9 @@ namespace Context
             float temp7 = powerPoints + data.powerCost;
             if (temp1 >= ResearchLimit)
                 temp1 = ResearchLimit;
-           
+            if (temp5 >= DroneLimit)
+                temp5 = DroneLimit;
+
             #region without lerp ugly as hell
             //ResearchPoints -= data.researchCost - data.researchFixedGain;
             //CreativityPoints -= data.creativityCost - data.creativityFixedGain;
@@ -808,11 +813,15 @@ namespace Context
 
             //time lerping = .5f
             //(Time.time - startTime) / overtime 
-            StartCoroutine(LerpResources(1, temp1, temp2, temp3,temp4,temp5,temp6,temp7));
+            StartCoroutine(LerpResources(1, temp1, temp2, temp3, temp4, temp5, temp6, temp7));
 
             #endregion            
             UpgradeAbilities.TEMPALLOCATIONPOOL += data.allocatieCost;
             UpgradeAbilities.ALLOCATIONPOOL += data.allocatieCost;
+            TimerManager.Instance.AddTimer(() =>
+            {
+                UpgradeAbilities.CURRENTALLOCATIONPOOL = UpgradeAbilities.ALLOCATIONPOOL;
+            }, 0.1f);
 
             UpdateUI();
 
@@ -826,9 +835,19 @@ namespace Context
         {
             data.isResearched = false;
 
+            researchData.CurrentResearchPoints = ResearchPoints - data.researchCost;
+            creativityData.CurrentCreativityPoints = CreativityPoints - data.creativityCost;
+            fundsData.CurrentFundsPoints = fundsPoints - data.fundsCost;
+            influenceData.CurrentInfluencePoints = InfluencePoints - data.influenceCost;
+            droneData.CurrentDronesPoints = DronePoints - data.droneCost;
+            materialData.CurrentMaterialPoints = materialPoints - data.materialCost;
+            powerData.CurrentPowerPoints = powerPoints - data.powerCost;
+
             #region Calculate Resources
             UpgradeAbilities.TEMPALLOCATIONPOOL -= data.allocatieCost;
             UpgradeAbilities.ALLOCATIONPOOL -= data.allocatieCost;
+            TimerManager.Instance.AddTimer(() => { UpgradeAbilities.CURRENTALLOCATIONPOOL = UpgradeAbilities.ALLOCATIONPOOL; }, 0.1f);           
+
 
             //Calculate points
             float temp1 = ResearchPoints - data.researchCost/* - data.researchFixedGain*/;
@@ -841,6 +860,8 @@ namespace Context
 
             if (temp1 >= ResearchLimit)
                 temp1 = ResearchLimit;
+            if (temp5 >= DroneLimit)
+                temp5 = DroneLimit;
 
             StartCoroutine(LerpResources(1, temp1, temp2, temp3, temp4, temp5, temp6, temp7));
 
