@@ -117,7 +117,7 @@ namespace Context
             {
                 int points = System.Convert.ToInt32(UpgradeAbilities.UPGRADEABILITIES[i].AbilityPointText.text);
                 float beginNumber = UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes;
-
+                Debug.Log("timoes");
                 UpgradeAbilities.UPGRADEABILITIES[i].data.doneTimes += points * UpgradeAbilities.UPGRADEABILITIES[i].data.doneAmount;
 
                 if (UpgradeAbilities.UPGRADEABILITIES[i].data.hasTarget)
@@ -139,6 +139,7 @@ namespace Context
 
         public IEnumerator LerpToNumber(int i, float overTime, int points, float beginNumber, float endNumber)
         {
+            
             if (endNumber >= (UpgradeAbilities.UPGRADEABILITIES[i].CurrentDoneTarget))
             {
                 ai.researchData.CurrentResearchPoints += UpgradeAbilities.UPGRADEABILITIES[i].data.researchFixedGain;

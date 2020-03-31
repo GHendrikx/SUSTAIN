@@ -2881,7 +2881,7 @@ MonoBehaviour:
   ignoreErrorWhenDuplicatedInstance: 0
   studioEventAllocatie: {fileID: 9180473486018523929}
   studioParameterBGM: {fileID: 1236360761}
-  ShowTutorial: 0
+  ShowTutorial: 1
   TutorialPanel: {fileID: 995632089}
   ioManager: {fileID: 90794113}
   uiManager: {fileID: 90794114}
@@ -17264,7 +17264,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 42.91169, y: 25.659101, z: 39.725048, w: 7.967207}
+  m_margin: {x: 42.91169, y: 60.258366, z: 39.725048, w: 68.139854}
   m_textInfo:
     textComponent: {fileID: 715415207}
     characterCount: 0
@@ -36599,7 +36599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1567713251
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38013,7 +38013,7 @@ PrefabInstance:
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
@@ -38023,7 +38023,7 @@ PrefabInstance:
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
@@ -38038,12 +38038,12 @@ PrefabInstance:
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.38199866
+      value: 0.294
       objectReference: {fileID: 0}
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.55275005
+      value: 0.55300003
       objectReference: {fileID: 0}
     - target: {fileID: 5521441519933594232, guid: b8353a7fee0d5d347b8f4d40c3736e4f,
         type: 3}
