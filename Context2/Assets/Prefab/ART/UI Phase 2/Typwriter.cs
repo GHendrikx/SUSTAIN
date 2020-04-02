@@ -29,7 +29,7 @@ public class Typwriter : MonoBehaviour
         switch (dialog)
         {
             case 0:
-                txtContents = "Do you want to quit the game?";
+                txtContents = "Terminating your program will result in a permanent shut down, are you sure?";
                 break;
             //[ Yes. ]                 [ No? ]    
             case 1:
@@ -54,7 +54,7 @@ public class Typwriter : MonoBehaviour
             //[ run selfdiagnostic.exe ]                [ All parameters are correct. ]                [ ERROR ]
             case 6:
                 //NO
-                txtContents = "No? \n\nWe can understand why, the link to your  “basecode.exe”  was corrupted.\n\nWe will manually load the file in for you now.";
+                txtContents = "No? \n\nWe can understand why, the link to your “basecode.exe” was corrupted.\n\nWe will manually load the file in for you now.";
                 break;
             //[ Booting... ]
             case 7:
@@ -67,7 +67,7 @@ public class Typwriter : MonoBehaviour
                 break;
             //[ understood ]
             case 9:
-                txtContents = "This is your Processing Power.\n \nAt the moment you have 5 Processing Power. You can use Processing Power to \nsolve problems by assigning them in the Allocation Tab.";
+                txtContents = "This is your Processing Power.\n \nAt the moment you are running on 5 Processing Power. You can use Processing Power to solve problems by assigning them in the Allocation Tab.";
                 break;
             //[ understood ]
             case 10:
@@ -79,15 +79,15 @@ public class Typwriter : MonoBehaviour
                 break;
             //[ understood ]
             case 111:
-                txtContents = "Here you can see your current Research and Memory.\nIn addition it also shows how much Research you are predicted to accomplish during the current week. \n \nResearch can be used to expand your understanding of the world and improve your abilities. At the moment you only have limited Memory. But in time as you improve and expand you will be able to store more.";
+                txtContents = "Here you can see your current Research and Memory.\nIn addition it also shows how much Research you are predicted to accomplish during the current week. \n \nResearch can be used to expand your understanding of the world and improve your abilities.";
                 break;
             //[ understood ]
             case 112:
-                txtContents = "In order to improve your learning curve we have added minor objectives to your parameters. \n \nEach time you fulfil these objectives you will be given a minor reward. In this case you would be given +1 extra Processing Power.";
+                txtContents = "In order to improve your learning curve we have added minor objectives to your parameters. \n \nEach time you fulfil these objectives you will be given a minor reward. In this case you would be allocated +1 extra Processing Power.";
                 break;
             //[ understood ]
             case 12:
-                txtContents = "Well done " + PlayerName + "! \n \nWe will of course reward you for the hard work. We are monitoring your results based on whether or not you deserve a reward. You can see exactly how much, here.";
+                txtContents = "Very good! \n \nWe will of course reward you for the hard work when you meet your target. We are monitoring your results throughout the week.";
                 break;
             //[ understood ]
             case 13:
@@ -105,7 +105,7 @@ public class Typwriter : MonoBehaviour
                 break;
             //[ understood ]
             case 16:
-                txtContents = "This meter allows you to monitor your progress with the Good Health and Well-being SDG. \n \nTo improve it you will have to: \nENSURE HEALTHY LIVES AND PROMOTE WELL-BEING FOR ALL AT ALL AGES.\n\nIf you unlock more SDG’s you can also find and monitor them here.";
+                txtContents = "This meter allows you to monitor progress for the Good Health and Well-being SDG. \n \nTo improve it you will have to: \nENSURE HEALTHY LIVES AND PROMOTE WELL-BEING FOR ALL AT ALL AGES.\n\nIf you unlock more SDG’s you can also find and monitor them here.";
                 break;
             //[ understood ]
             case 19:
@@ -124,6 +124,30 @@ public class Typwriter : MonoBehaviour
             //[ understood ]
             case 21:
                 txtContents = "We believe we have now gone over all of the basics. It's now time to process the current week.\n \nThe best of luck in your objective to fulfill all the 17 SDG’s by 2030, to fulfill you objective you will have to use all of your Processing Power to come up with creative solutions.";
+                break;
+            //[ understood ]
+            case 22:
+                txtContents = "Amazing! \n\nIt appears you have have generated your first creative idea. Creativity can be be spend to come up with more outlandish solutions to problems. The amount of creativity you have generated can be monitored here.";
+                break;
+            //[ understood ]
+            case 23:
+                txtContents = "Congratulations! \n\nYou have just been assigned the 17th SDG: Partnership for the Goals. In order to fulfil it you will have to: \nREVITALIZE THE GLOBAL PARTNERSHIP FOR SUSTAINABLE DEVELOPMENT.\nIn order to accomplish this you will have to find key Partnerships";
+                break;
+            //[ understood ]
+            case 24:
+                txtContents = "It appears that there are some potential partners that are willing to collaborate with you. \n\nOpen the Partnership Tab here to see the requirements";
+                break;
+            case 25:
+                txtContents = "The local University seems interested in working with you. They do seem to have some requirements though.\n\nIt seems they are interested in some of your Research. In return they will aid you with future Research as well as allow you to operate on some of their computers.";
+                break;
+            case 26:
+                txtContents = "Now all you need is a recommendation from your Supervisors. The required approval rating can be monitored here. Simply confirm the contract when you meet the minimal requirements. \n\nPartnerships are a good way to expand your capabilities.";
+                break;
+            case 27:
+                txtContents = "We are monitoring your program closely. So far you seem to be performing adequitely. As such our opinion of " + PlayerName + " is sure to increase over time.";
+                break;
+            case 28:
+                txtContents = "Thank you for playing our prototype of SustAIn. From here on out you can explore some sample constructions and policies. We will add more content in the near future.\n\nCredits:\nMarnix Licht (Designer/Developer) \nGeoffrey Hendrikx (Developer) \nMyrthe ter Pelle (Artist) \nErik Wiersma (Technical Artist) \nVijay van der Weijden (Composer/Sound Design) \nSelina Geboers (Artist) \n\nPlease follow @Cubehamster on twitter for future updates.";
                 break;
                 //[ understood ]
 

@@ -21,6 +21,9 @@ namespace Context
         private GameObject[] panels;
         static private GameObject panel20;
         static private GameObject panel20a;
+        static private GameObject panel22;
+        static private GameObject panel23;
+        static private GameObject panel28;
 
         #region Information
         [SerializeField]
@@ -52,8 +55,14 @@ namespace Context
                 firstTime = false;
                 panel20 = GameObject.Find("panel 20");
                 panel20a = GameObject.Find("panel 20a");
+                panel22 = GameObject.Find("panel 22");
+                panel23 = GameObject.Find("panel 23");
+                panel28 = GameObject.Find("panel 28");
                 panel20.SetActive(false);
                 panel20a.SetActive(false);
+                panel22.SetActive(false);
+                panel23.SetActive(false);
+                panel28.SetActive(false);
             }
 }
 
@@ -89,7 +98,21 @@ namespace Context
                 myButton.onClick.AddListener(() => panel20.SetActive(false));
                 myButton.onClick.AddListener(() => panel20a.SetActive(true));
                 myButton.onClick.AddListener(() => panel20a.transform.GetChild(1).gameObject.SetActive(true));
-
+            }
+            if (data.ID == 311 && GameManager.Instance.ShowTutorial)
+            {
+                myButton.onClick.AddListener(() => panel22.SetActive(true));
+                myButton.onClick.AddListener(() => panel22.transform.GetChild(1).gameObject.SetActive(true));
+            }
+            if (data.ID == 1701 && GameManager.Instance.ShowTutorial)
+            {
+                myButton.onClick.AddListener(() => panel23.SetActive(true));
+                myButton.onClick.AddListener(() => panel23.transform.GetChild(0).gameObject.SetActive(true));
+            }
+            if (data.ID == 403 && GameManager.Instance.ShowTutorial)
+            {
+                myButton.onClick.AddListener(() => panel28.SetActive(true));
+                myButton.onClick.AddListener(() => panel28.transform.GetChild(0).gameObject.SetActive(true));
             }
 
             for (int i = 0; i < GameManager.Instance.AI.SDGManager.SDGBar.Length; i++)
