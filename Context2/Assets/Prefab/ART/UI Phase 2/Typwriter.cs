@@ -147,7 +147,7 @@ public class Typwriter : MonoBehaviour
                 txtContents = "We are monitoring your program closely. So far you seem to be performing adequitely. As such our opinion of " + PlayerName + " is sure to increase over time.";
                 break;
             case 28:
-                txtContents = "Thank you for playing our prototype of SustAIn. From here on out you can explore some sample constructions and policies. We will add more content in the near future.\n\nCredits:\nMarnix Licht (Designer/Developer) \nGeoffrey Hendrikx (Developer) \nMyrthe ter Pelle (Artist) \nErik Wiersma (Technical Artist) \nVijay van der Weijden (Composer/Sound Design) \nSelina Geboers (Artist) \n\nPlease follow @Cubehamster on twitter for future updates.";
+                txtContents = "Thank you for playing our prototype of SustAIn. From here on out you can explore some sample constructions and policies. We will add more content in the near future.\n\nCredits:\nMarnix Licht (Game Design) \nGeoffrey Hendrikx (Developer) \nMyrthe ter Pelle (Artist) \nErik Wiersma (Technical Artist) \nSelina Geboers (Artist) \n\nPlease follow @Cubehamster on twitter for future updates.";
                 break;
                 //[ understood ]
 

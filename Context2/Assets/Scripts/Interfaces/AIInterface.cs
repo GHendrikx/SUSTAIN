@@ -124,12 +124,9 @@ namespace Context
             {
                 processing.color = Color.red;
                 TimerManager.Instance.AddTimer(() => { processing.color = Color.white; }, 0.5f);
-            }
-
-            if (ResearchGain >= 0)
-                Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(+" + ResearchGain.ToString("0.0") + ")";
-            else
-                Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(" + ResearchGain.ToString("0.0") + ")";
+            }              
+            
+            Research.text = " " + ResearchPoints.ToString("0.0") + "/" + ResearchLimit.ToString() + "(+" + ResearchGain.ToString("0.0") + ")";
             if (System.Math.Round(researchData.CurrentResearchPoints, 1) > System.Math.Round(ResearchPoints, 1))
                 Research.color = Color.green;
             else if (System.Math.Round(researchData.CurrentResearchPoints, 1) < System.Math.Round(ResearchPoints, 1))
@@ -137,10 +134,7 @@ namespace Context
             else
                 TimerManager.Instance.AddTimer(() => { Research.color = Color.white; }, 0.1f);
 
-            if (CreativityGain >= 0)
-                Creativity.text = " " + CreativityPoints.ToString("0.0") + "(+" + CreativityGain.ToString("0.0") + ")";
-            else
-                Creativity.text = " " + CreativityPoints.ToString("0.0") + "(" + CreativityGain.ToString("0.0") + ")";
+            Creativity.text = " " + CreativityPoints.ToString("0.0") + "(+" + CreativityGain.ToString("0.0") + ")";
             if (System.Math.Round(creativityData.CurrentCreativityPoints, 1) > System.Math.Round(CreativityPoints, 1))
                 Creativity.color = Color.green;
             else if (System.Math.Round(creativityData.CurrentCreativityPoints, 1) < System.Math.Round(CreativityPoints, 1))
@@ -148,10 +142,7 @@ namespace Context
             else
                 TimerManager.Instance.AddTimer(() => { Creativity.color = Color.white; }, 0.1f);
 
-            if (fundsGain >= 0)
-                Funds.text = " " + fundsPoints.ToString("0.0") + "(+" + fundsGain.ToString("0.0") + ")";
-            else
-                Funds.text = " " + fundsPoints.ToString("0.0") + "(" + fundsGain.ToString("0.0") + ")";
+            Funds.text = " " + fundsPoints.ToString("0.0") + "(+" + fundsGain.ToString("0.0") + ")";
             if (System.Math.Round(fundsData.CurrentFundsPoints, 1) > System.Math.Round(fundsPoints, 1))
                 Funds.color = Color.green;
             else if (System.Math.Round(fundsData.CurrentFundsPoints, 1) < System.Math.Round(fundsPoints, 1))
@@ -159,10 +150,7 @@ namespace Context
             else
                 TimerManager.Instance.AddTimer(() => { Funds.color = Color.white; }, 0.1f);
 
-            if (influenceGain >= 0)
-                Influence.text = " " + influencePoints.ToString("0.0") + "(+" + influenceGain.ToString("0.0") + ")";
-            else
-                Influence.text = " " + influencePoints.ToString("0.0") + "(" + influenceGain.ToString("0.0") + ")";
+            Influence.text = " " + influencePoints.ToString("0.0") + "(+" + influenceGain.ToString("0.0") + ")";
             if (System.Math.Round(influenceData.CurrentInfluencePoints, 1) > System.Math.Round(influencePoints, 1))
                 Influence.color = Color.green;
             else if (System.Math.Round(influenceData.CurrentInfluencePoints, 1) < System.Math.Round(influencePoints, 1))
@@ -170,10 +158,7 @@ namespace Context
             else
                 TimerManager.Instance.AddTimer(() => { Influence.color = Color.white; }, 0.1f);
 
-            if (powerGain >= 0)
-                Power.text = " " + powerPoints.ToString("0.0") + "(+" + powerGain.ToString("0.0") + ")";
-            else
-                Power.text = " " + powerPoints.ToString("0.0") + "(" + powerGain.ToString("0.0") + ")";
+            Power.text = " " + powerPoints.ToString("0.0") + "(+" + powerGain.ToString("0.0") + ")";
             if (System.Math.Round(powerData.CurrentPowerPoints, 1) > System.Math.Round(powerPoints, 1))
                 Power.color = Color.green;
             else if (System.Math.Round(powerData.CurrentPowerPoints, 1) < System.Math.Round(powerPoints, 1))
@@ -181,10 +166,7 @@ namespace Context
             else
                 TimerManager.Instance.AddTimer(() => { Power.color = Color.white; }, 0.1f);
 
-            if (materialGain >= 0)
-                Material.text = " " + materialPoints.ToString("0.0") + "(+" + materialGain.ToString("0.0") + ")";
-            else
-                Material.text = " " + materialPoints.ToString("0.0") + "(" + materialGain.ToString("0.0") + ")";
+            Material.text = " " + materialPoints.ToString("0.0") + "(+" + materialGain.ToString("0.0") + ")";
             if (System.Math.Round(materialData.CurrentMaterialPoints, 1) > System.Math.Round(materialPoints, 1))
                 Material.color = Color.green;
             else if (System.Math.Round(materialData.CurrentMaterialPoints, 1) < System.Math.Round(materialPoints, 1))
@@ -192,10 +174,7 @@ namespace Context
             else
                 TimerManager.Instance.AddTimer(() => { Material.color = Color.white; }, 0.1f);
 
-            if (droneGain >= 0)
-                Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") + "(+" + droneGain.ToString("0") + ")";
-            else
-                Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") + "(" + droneGain.ToString("0") + ")";
+            Drone.text = " " + DronePoints.ToString("0") + "/" + DroneLimit.ToString("0") + "(+" + droneGain.ToString("0") + ")";
             if (System.Math.Round(droneData.CurrentDronesPoints, 1) > System.Math.Round(DronePoints, 1))
                 Drone.color = Color.green;
             else if (System.Math.Round(droneData.CurrentDronesPoints, 1) < System.Math.Round(DronePoints, 1))
